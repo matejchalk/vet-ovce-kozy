@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-contentful-typescript",
-  "description": "Gatsby Contentful TypeScript starter",
-  "version": "0.3.0",
-  "author": "Filip Havrlent <filip@havrlent.com>",
+  "name": "vet-ovce-kozy",
+  "description": "Website built with Gatsby, Contentful and Netlify",
+  "version": "0.0.0",
+  "author": "Matej Chalk <matejchalk@gmail.com>",
   "dependencies": {
     "@types/react-helmet": "^5.0.7",
     "dotenv": "^6.0.0",
@@ -29,8 +29,8 @@
   ],
   "license": "MIT",
   "scripts": {
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "develop": "gatsby develop",
     "format": "prettier --write '**/*.tsx'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -41,6 +41,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/matejchalk/vet-ovce-kozy"
   }
 }
