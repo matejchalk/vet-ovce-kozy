@@ -1,11 +1,11 @@
 if (process.env.ENVIROMENT !== 'production') {
-  require('dotenv').config()
+  require('dotenv').config();
 }
 
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
   accessToken: process.env.ACCESS_TOKEN,
-}
+};
 
 module.exports = {
   siteMetadata: {
@@ -43,4 +43,4 @@ module.exports = {
       },
     },
   ],
-}
+};

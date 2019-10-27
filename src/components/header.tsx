@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
 type Props = {
-  siteTitle: string
-}
+  siteTitle: string;
+};
 
 const Header = ({ siteTitle }: Props) => (
   <div
@@ -32,6 +32,6 @@ const Header = ({ siteTitle }: Props) => (
       </h1>
     </div>
   </div>
-)
+);
 
-export default Header
+export default Header;

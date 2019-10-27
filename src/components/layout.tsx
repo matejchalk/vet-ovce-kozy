@@ -1,14 +1,14 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-import Header from './header'
+import Header from './header';
 
-import './layout.scss'
+import './layout.scss';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: Props) => (
   <StaticQuery
@@ -46,6 +46,6 @@ const Layout = ({ children }: Props) => (
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;

@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import { css } from 'emotion'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import { css } from 'emotion';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
 const header = css({
   color: '#0505',
-})
+});
 
 class IndexPage extends Component {
   render() {
@@ -17,7 +17,7 @@ class IndexPage extends Component {
         <p>Now go build something great.</p>
         <Link to="/page-2/">Go to page 2</Link>
       </Layout>
-    )
+    );
   }
 }
-export default IndexPage
+export default IndexPage;
