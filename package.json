@@ -33,11 +33,11 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "format": "prettier --write '**/*.tsx'",
+    "format": "prettier --write '**/*'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.14.2",
+    "prettier": "^1.18.2",
     "tslint-config-prettier": "^1.15.0",
     "tslint-react": "^3.6.0"
   },

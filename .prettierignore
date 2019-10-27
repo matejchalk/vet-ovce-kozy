@@ -1,0 +1,13 @@
+# directories
+.cache/
+.idea/
+node_modules/
+public/
+src/images/
+
+# files
+.env
+.gitignore
+.nvmrc
+.prettierignore
+LICENSE
