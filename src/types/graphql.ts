@@ -28,7 +28,7 @@ export type ContentfulArticle = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  internal?: Maybe<Internal_14>;
+  internal?: Maybe<Internal_16>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -711,7 +711,7 @@ export type ContentfulAsset = Node & {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   node_locale?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_15>;
+  internal?: Maybe<Internal_17>;
   fixed?: Maybe<ContentfulFixed>;
   resolutions?: Maybe<ContentfulResolutions>;
   fluid?: Maybe<ContentfulFluid>;
@@ -1257,7 +1257,7 @@ export type ContentfulContentType = Node & {
   name?: Maybe<Scalars['String']>;
   displayField?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_13>;
+  internal?: Maybe<Internal_15>;
 };
 
 /** A connection to a list of items. */
@@ -1606,7 +1606,7 @@ export type Directory = Node & {
   parent?: Maybe<Node>;
   /** The children of this node. */
   children?: Maybe<Array<Maybe<Node>>>;
-  internal?: Maybe<Internal_11>;
+  internal?: Maybe<Internal_12>;
   sourceInstanceName?: Maybe<Scalars['String']>;
   absolutePath?: Maybe<Scalars['String']>;
   relativePath?: Maybe<Scalars['String']>;
@@ -2651,6 +2651,12 @@ export type DirectoryUidQueryInteger_2 = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
+export type DuotoneGradient = {
+  highlight?: Maybe<Scalars['String']>;
+  shadow?: Maybe<Scalars['String']>;
+  opacity?: Maybe<Scalars['Int']>;
+};
+
 /** Node of type File */
 export type File = Node & {
   __typename?: 'File';
@@ -2660,7 +2666,9 @@ export type File = Node & {
   parent?: Maybe<Node>;
   /** The children of this node. */
   children?: Maybe<Array<Maybe<Node>>>;
-  internal?: Maybe<Internal_12>;
+  /** The child of this node of type imageSharp */
+  childImageSharp?: Maybe<ImageSharp>;
+  internal?: Maybe<Internal_13>;
   sourceInstanceName?: Maybe<Scalars['String']>;
   absolutePath?: Maybe<Scalars['String']>;
   relativePath?: Maybe<Scalars['String']>;
@@ -3275,6 +3283,7 @@ export type FileConnectionSort = {
 
 export enum FileConnectionSortByFieldsEnum {
   id = 'id',
+  children = 'children',
   internal___contentDigest = 'internal___contentDigest',
   internal___type = 'internal___type',
   internal___mediaType = 'internal___mediaType',
@@ -3383,6 +3392,7 @@ export type FileDirQueryString_2 = {
 
 export enum FileDistinctEnum {
   id = 'id',
+  children = 'children',
   internal___contentDigest = 'internal___contentDigest',
   internal___type = 'internal___type',
   internal___mediaType = 'internal___mediaType',
@@ -3488,6 +3498,7 @@ export type FileGroupConnectionEdge = {
 
 export enum FileGroupEnum {
   id = 'id',
+  children = 'children',
   internal___contentDigest = 'internal___contentDigest',
   internal___type = 'internal___type',
   internal___mediaType = 'internal___mediaType',
@@ -3761,11 +3772,11 @@ export type FilterContentfulAsset = {
   description?: Maybe<ContentfulAssetConnectionDescriptionQueryString_2>;
   node_locale?: Maybe<ContentfulAssetConnectionNodeLocaleQueryString_2>;
   internal?: Maybe<ContentfulAssetConnectionInternalInputObject_2>;
-  fixed?: Maybe<FixedTypeName_4>;
-  resolutions?: Maybe<ResolutionsTypeName_4>;
-  fluid?: Maybe<FluidTypeName_4>;
-  sizes?: Maybe<SizesTypeName_4>;
-  resize?: Maybe<ResizeTypeName_4>;
+  fixed?: Maybe<FixedTypeName_8>;
+  resolutions?: Maybe<ResolutionsTypeName_8>;
+  fluid?: Maybe<FluidTypeName_8>;
+  sizes?: Maybe<SizesTypeName_8>;
+  resize?: Maybe<ResizeTypeName_8>;
 };
 
 /** Filter connection on its fields */
@@ -3861,6 +3872,18 @@ export type FilterFile = {
 };
 
 /** Filter connection on its fields */
+export type FilterImageSharp = {
+  id?: Maybe<ImageSharpConnectionIdQueryString_2>;
+  internal?: Maybe<ImageSharpConnectionInternalInputObject_2>;
+  fixed?: Maybe<FixedTypeName_7>;
+  resolutions?: Maybe<ResolutionsTypeName_7>;
+  fluid?: Maybe<FluidTypeName_7>;
+  sizes?: Maybe<SizesTypeName_7>;
+  original?: Maybe<OriginalTypeName_4>;
+  resize?: Maybe<ResizeTypeName_7>;
+};
+
+/** Filter connection on its fields */
 export type FilterSitePage = {
   jsonName?: Maybe<SitePageConnectionJsonNameQueryString>;
   internalComponentName?: Maybe<
@@ -3891,7 +3914,7 @@ export type FilterSitePlugin = {
   internal?: Maybe<SitePluginConnectionInternalInputObject_2>;
 };
 
-export type FixedAspectRatioQueryFloat_3 = {
+export type FixedAspectRatioQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -3902,7 +3925,7 @@ export type FixedAspectRatioQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FixedAspectRatioQueryFloat_4 = {
+export type FixedAspectRatioQueryFloat_6 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -3913,25 +3936,7 @@ export type FixedAspectRatioQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FixedBase64QueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedBase64QueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedHeightQueryFloat_3 = {
+export type FixedAspectRatioQueryFloat_7 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -3942,7 +3947,7 @@ export type FixedHeightQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FixedHeightQueryFloat_4 = {
+export type FixedAspectRatioQueryFloat_8 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -3953,7 +3958,7 @@ export type FixedHeightQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FixedSrcQueryString_3 = {
+export type FixedBase64QueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -3962,7 +3967,7 @@ export type FixedSrcQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FixedSrcQueryString_4 = {
+export type FixedBase64QueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -3971,7 +3976,7 @@ export type FixedSrcQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FixedSrcSetQueryString_3 = {
+export type FixedBase64QueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -3980,7 +3985,7 @@ export type FixedSrcSetQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FixedSrcSetQueryString_4 = {
+export type FixedBase64QueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -3989,85 +3994,7 @@ export type FixedSrcSetQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FixedSrcSetWebpQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedSrcSetWebpQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedSrcWebpQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedSrcWebpQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedTracedSvgQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedTracedSvgQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type FixedTypeName_3 = {
-  base64?: Maybe<FixedBase64QueryString_3>;
-  tracedSVG?: Maybe<FixedTracedSvgQueryString_3>;
-  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_3>;
-  width?: Maybe<FixedWidthQueryFloat_3>;
-  height?: Maybe<FixedHeightQueryFloat_3>;
-  src?: Maybe<FixedSrcQueryString_3>;
-  srcSet?: Maybe<FixedSrcSetQueryString_3>;
-  srcWebp?: Maybe<FixedSrcWebpQueryString_3>;
-  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_3>;
-};
-
-export type FixedTypeName_4 = {
-  base64?: Maybe<FixedBase64QueryString_4>;
-  tracedSVG?: Maybe<FixedTracedSvgQueryString_4>;
-  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_4>;
-  width?: Maybe<FixedWidthQueryFloat_4>;
-  height?: Maybe<FixedHeightQueryFloat_4>;
-  src?: Maybe<FixedSrcQueryString_4>;
-  srcSet?: Maybe<FixedSrcSetQueryString_4>;
-  srcWebp?: Maybe<FixedSrcWebpQueryString_4>;
-  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_4>;
-};
-
-export type FixedWidthQueryFloat_3 = {
+export type FixedHeightQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4078,7 +4005,7 @@ export type FixedWidthQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FixedWidthQueryFloat_4 = {
+export type FixedHeightQueryFloat_6 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4089,7 +4016,7 @@ export type FixedWidthQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FluidAspectRatioQueryFloat_3 = {
+export type FixedHeightQueryFloat_7 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4100,7 +4027,7 @@ export type FluidAspectRatioQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FluidAspectRatioQueryFloat_4 = {
+export type FixedHeightQueryFloat_8 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4111,7 +4038,7 @@ export type FluidAspectRatioQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type FluidBase64QueryString_3 = {
+export type FixedOriginalNameQueryString_3 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4120,7 +4047,7 @@ export type FluidBase64QueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidBase64QueryString_4 = {
+export type FixedOriginalNameQueryString_4 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4129,7 +4056,7 @@ export type FluidBase64QueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSizesQueryString_3 = {
+export type FixedSrcQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4138,7 +4065,7 @@ export type FluidSizesQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSizesQueryString_4 = {
+export type FixedSrcQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4147,7 +4074,7 @@ export type FluidSizesQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcQueryString_3 = {
+export type FixedSrcQueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4156,7 +4083,7 @@ export type FluidSrcQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcQueryString_4 = {
+export type FixedSrcQueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4165,7 +4092,7 @@ export type FluidSrcQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcSetQueryString_3 = {
+export type FixedSrcSetQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4174,7 +4101,7 @@ export type FluidSrcSetQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcSetQueryString_4 = {
+export type FixedSrcSetQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4183,7 +4110,7 @@ export type FluidSrcSetQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcSetWebpQueryString_3 = {
+export type FixedSrcSetQueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4192,7 +4119,7 @@ export type FluidSrcSetWebpQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcSetWebpQueryString_4 = {
+export type FixedSrcSetQueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4201,7 +4128,7 @@ export type FluidSrcSetWebpQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcWebpQueryString_3 = {
+export type FixedSrcSetWebpQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4210,7 +4137,7 @@ export type FluidSrcWebpQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidSrcWebpQueryString_4 = {
+export type FixedSrcSetWebpQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4219,7 +4146,7 @@ export type FluidSrcWebpQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidTracedSvgQueryString_3 = {
+export type FixedSrcSetWebpQueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4228,7 +4155,7 @@ export type FluidTracedSvgQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidTracedSvgQueryString_4 = {
+export type FixedSrcSetWebpQueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4237,26 +4164,550 @@ export type FluidTracedSvgQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidTypeName_3 = {
-  base64?: Maybe<FluidBase64QueryString_3>;
-  tracedSVG?: Maybe<FluidTracedSvgQueryString_3>;
-  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_3>;
-  src?: Maybe<FluidSrcQueryString_3>;
-  srcSet?: Maybe<FluidSrcSetQueryString_3>;
-  srcWebp?: Maybe<FluidSrcWebpQueryString_3>;
-  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_3>;
-  sizes?: Maybe<FluidSizesQueryString_3>;
+export type FixedSrcWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type FluidTypeName_4 = {
-  base64?: Maybe<FluidBase64QueryString_4>;
-  tracedSVG?: Maybe<FluidTracedSvgQueryString_4>;
-  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_4>;
-  src?: Maybe<FluidSrcQueryString_4>;
-  srcSet?: Maybe<FluidSrcSetQueryString_4>;
-  srcWebp?: Maybe<FluidSrcWebpQueryString_4>;
-  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_4>;
-  sizes?: Maybe<FluidSizesQueryString_4>;
+export type FixedSrcWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedSrcWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedSrcWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedTracedSvgQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedTracedSvgQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedTracedSvgQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedTracedSvgQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FixedTypeName_5 = {
+  base64?: Maybe<FixedBase64QueryString_5>;
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_5>;
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_5>;
+  width?: Maybe<FixedWidthQueryFloat_5>;
+  height?: Maybe<FixedHeightQueryFloat_5>;
+  src?: Maybe<FixedSrcQueryString_5>;
+  srcSet?: Maybe<FixedSrcSetQueryString_5>;
+  srcWebp?: Maybe<FixedSrcWebpQueryString_5>;
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_5>;
+  originalName?: Maybe<FixedOriginalNameQueryString_3>;
+};
+
+export type FixedTypeName_6 = {
+  base64?: Maybe<FixedBase64QueryString_6>;
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_6>;
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_6>;
+  width?: Maybe<FixedWidthQueryFloat_6>;
+  height?: Maybe<FixedHeightQueryFloat_6>;
+  src?: Maybe<FixedSrcQueryString_6>;
+  srcSet?: Maybe<FixedSrcSetQueryString_6>;
+  srcWebp?: Maybe<FixedSrcWebpQueryString_6>;
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_6>;
+};
+
+export type FixedTypeName_7 = {
+  base64?: Maybe<FixedBase64QueryString_7>;
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_7>;
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_7>;
+  width?: Maybe<FixedWidthQueryFloat_7>;
+  height?: Maybe<FixedHeightQueryFloat_7>;
+  src?: Maybe<FixedSrcQueryString_7>;
+  srcSet?: Maybe<FixedSrcSetQueryString_7>;
+  srcWebp?: Maybe<FixedSrcWebpQueryString_7>;
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_7>;
+  originalName?: Maybe<FixedOriginalNameQueryString_4>;
+};
+
+export type FixedTypeName_8 = {
+  base64?: Maybe<FixedBase64QueryString_8>;
+  tracedSVG?: Maybe<FixedTracedSvgQueryString_8>;
+  aspectRatio?: Maybe<FixedAspectRatioQueryFloat_8>;
+  width?: Maybe<FixedWidthQueryFloat_8>;
+  height?: Maybe<FixedHeightQueryFloat_8>;
+  src?: Maybe<FixedSrcQueryString_8>;
+  srcSet?: Maybe<FixedSrcSetQueryString_8>;
+  srcWebp?: Maybe<FixedSrcWebpQueryString_8>;
+  srcSetWebp?: Maybe<FixedSrcSetWebpQueryString_8>;
+};
+
+export type FixedWidthQueryFloat_5 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FixedWidthQueryFloat_6 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FixedWidthQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FixedWidthQueryFloat_8 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FluidAspectRatioQueryFloat_5 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FluidAspectRatioQueryFloat_6 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FluidAspectRatioQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FluidAspectRatioQueryFloat_8 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FluidBase64QueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidBase64QueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidBase64QueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidBase64QueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidOriginalImgQueryString_3 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidOriginalImgQueryString_4 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidOriginalNameQueryString_3 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidOriginalNameQueryString_4 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSizesQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSizesQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSizesQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSizesQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcSetWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidSrcWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidTracedSvgQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidTracedSvgQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidTracedSvgQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidTracedSvgQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FluidTypeName_5 = {
+  base64?: Maybe<FluidBase64QueryString_5>;
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_5>;
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_5>;
+  src?: Maybe<FluidSrcQueryString_5>;
+  srcSet?: Maybe<FluidSrcSetQueryString_5>;
+  srcWebp?: Maybe<FluidSrcWebpQueryString_5>;
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_5>;
+  sizes?: Maybe<FluidSizesQueryString_5>;
+  originalImg?: Maybe<FluidOriginalImgQueryString_3>;
+  originalName?: Maybe<FluidOriginalNameQueryString_3>;
+};
+
+export type FluidTypeName_6 = {
+  base64?: Maybe<FluidBase64QueryString_6>;
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_6>;
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_6>;
+  src?: Maybe<FluidSrcQueryString_6>;
+  srcSet?: Maybe<FluidSrcSetQueryString_6>;
+  srcWebp?: Maybe<FluidSrcWebpQueryString_6>;
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_6>;
+  sizes?: Maybe<FluidSizesQueryString_6>;
+};
+
+export type FluidTypeName_7 = {
+  base64?: Maybe<FluidBase64QueryString_7>;
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_7>;
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_7>;
+  src?: Maybe<FluidSrcQueryString_7>;
+  srcSet?: Maybe<FluidSrcSetQueryString_7>;
+  srcWebp?: Maybe<FluidSrcWebpQueryString_7>;
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_7>;
+  sizes?: Maybe<FluidSizesQueryString_7>;
+  originalImg?: Maybe<FluidOriginalImgQueryString_4>;
+  originalName?: Maybe<FluidOriginalNameQueryString_4>;
+};
+
+export type FluidTypeName_8 = {
+  base64?: Maybe<FluidBase64QueryString_8>;
+  tracedSVG?: Maybe<FluidTracedSvgQueryString_8>;
+  aspectRatio?: Maybe<FluidAspectRatioQueryFloat_8>;
+  src?: Maybe<FluidSrcQueryString_8>;
+  srcSet?: Maybe<FluidSrcSetQueryString_8>;
+  srcWebp?: Maybe<FluidSrcWebpQueryString_8>;
+  srcSetWebp?: Maybe<FluidSrcSetWebpQueryString_8>;
+  sizes?: Maybe<FluidSizesQueryString_8>;
 };
 
 export type Image_2 = {
@@ -4264,6 +4715,27 @@ export type Image_2 = {
   width?: Maybe<Scalars['Int']>;
   height?: Maybe<Scalars['Int']>;
 };
+
+export enum ImageCropFocus {
+  CENTER = 'CENTER',
+  NORTH = 'NORTH',
+  NORTHEAST = 'NORTHEAST',
+  EAST = 'EAST',
+  SOUTHEAST = 'SOUTHEAST',
+  SOUTH = 'SOUTH',
+  SOUTHWEST = 'SOUTHWEST',
+  WEST = 'WEST',
+  NORTHWEST = 'NORTHWEST',
+  ENTROPY = 'ENTROPY',
+  ATTENTION = 'ATTENTION',
+}
+
+export enum ImageFormat {
+  NO_CHANGE = 'NO_CHANGE',
+  JPG = 'JPG',
+  PNG = 'PNG',
+  WEBP = 'WEBP',
+}
 
 export enum ImageResizingBehavior {
   NO_CHANGE = 'NO_CHANGE',
@@ -4282,10 +4754,399 @@ export enum ImageResizingBehavior {
   SCALE = 'SCALE',
 }
 
+/** Node of type ImageSharp */
+export type ImageSharp = Node & {
+  __typename?: 'ImageSharp';
+  /** The id of this node. */
+  id: Scalars['ID'];
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<Array<Maybe<Node>>>;
+  internal?: Maybe<Internal_14>;
+  fixed?: Maybe<ImageSharpFixed>;
+  resolutions?: Maybe<ImageSharpResolutions>;
+  fluid?: Maybe<ImageSharpFluid>;
+  sizes?: Maybe<ImageSharpSizes>;
+  original?: Maybe<ImageSharpOriginal>;
+  resize?: Maybe<ImageSharpResize>;
+};
+
+/** Node of type ImageSharp */
+export type ImageSharpFixedArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  rotate?: Maybe<Scalars['Int']>;
+};
+
+/** Node of type ImageSharp */
+export type ImageSharpResolutionsArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  rotate?: Maybe<Scalars['Int']>;
+};
+
+/** Node of type ImageSharp */
+export type ImageSharpFluidArgs = {
+  maxWidth?: Maybe<Scalars['Int']>;
+  maxHeight?: Maybe<Scalars['Int']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  rotate?: Maybe<Scalars['Int']>;
+};
+
+/** Node of type ImageSharp */
+export type ImageSharpSizesArgs = {
+  maxWidth?: Maybe<Scalars['Int']>;
+  maxHeight?: Maybe<Scalars['Int']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  traceSVG?: Maybe<Potrace>;
+  quality?: Maybe<Scalars['Int']>;
+  toFormat?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  rotate?: Maybe<Scalars['Int']>;
+};
+
+/** Node of type ImageSharp */
+export type ImageSharpResizeArgs = {
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  quality?: Maybe<Scalars['Int']>;
+  jpegProgressive?: Maybe<Scalars['Boolean']>;
+  pngCompressionLevel?: Maybe<Scalars['Int']>;
+  grayscale?: Maybe<Scalars['Boolean']>;
+  duotone?: Maybe<DuotoneGradient>;
+  base64?: Maybe<Scalars['Boolean']>;
+  traceSVG?: Maybe<Potrace>;
+  toFormat?: Maybe<ImageFormat>;
+  cropFocus?: Maybe<ImageCropFocus>;
+  rotate?: Maybe<Scalars['Int']>;
+};
+
+/** A connection to a list of items. */
+export type ImageSharpConnection = {
+  __typename?: 'ImageSharpConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<ImageSharpEdge>>>;
+  totalCount?: Maybe<Scalars['Int']>;
+  distinct?: Maybe<Array<Maybe<Scalars['String']>>>;
+  group?: Maybe<Array<Maybe<ImageSharpGroupConnectionConnection>>>;
+};
+
+/** A connection to a list of items. */
+export type ImageSharpConnectionDistinctArgs = {
+  field?: Maybe<ImageSharpDistinctEnum>;
+};
+
+/** A connection to a list of items. */
+export type ImageSharpConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field?: Maybe<ImageSharpGroupEnum>;
+};
+
+export type ImageSharpConnectionIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpConnectionInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpConnectionInternalInputObject_2 = {
+  contentDigest?: Maybe<ImageSharpConnectionInternalContentDigestQueryString_2>;
+  type?: Maybe<ImageSharpConnectionInternalTypeQueryString_2>;
+  owner?: Maybe<ImageSharpConnectionInternalOwnerQueryString_2>;
+};
+
+export type ImageSharpConnectionInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpConnectionInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpConnectionSort = {
+  fields: Array<Maybe<ImageSharpConnectionSortByFieldsEnum>>;
+  order?: Maybe<ImageSharpConnectionSortOrderValues>;
+};
+
+export enum ImageSharpConnectionSortByFieldsEnum {
+  id = 'id',
+  parent = 'parent',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___owner = 'internal___owner',
+  fixed___base64 = 'fixed___base64',
+  fixed___tracedSVG = 'fixed___tracedSVG',
+  fixed___aspectRatio = 'fixed___aspectRatio',
+  fixed___width = 'fixed___width',
+  fixed___height = 'fixed___height',
+  fixed___src = 'fixed___src',
+  fixed___srcSet = 'fixed___srcSet',
+  fixed___srcWebp = 'fixed___srcWebp',
+  fixed___srcSetWebp = 'fixed___srcSetWebp',
+  fixed___originalName = 'fixed___originalName',
+  resolutions___base64 = 'resolutions___base64',
+  resolutions___tracedSVG = 'resolutions___tracedSVG',
+  resolutions___aspectRatio = 'resolutions___aspectRatio',
+  resolutions___width = 'resolutions___width',
+  resolutions___height = 'resolutions___height',
+  resolutions___src = 'resolutions___src',
+  resolutions___srcSet = 'resolutions___srcSet',
+  resolutions___srcWebp = 'resolutions___srcWebp',
+  resolutions___srcSetWebp = 'resolutions___srcSetWebp',
+  resolutions___originalName = 'resolutions___originalName',
+  fluid___base64 = 'fluid___base64',
+  fluid___tracedSVG = 'fluid___tracedSVG',
+  fluid___aspectRatio = 'fluid___aspectRatio',
+  fluid___src = 'fluid___src',
+  fluid___srcSet = 'fluid___srcSet',
+  fluid___srcWebp = 'fluid___srcWebp',
+  fluid___srcSetWebp = 'fluid___srcSetWebp',
+  fluid___sizes = 'fluid___sizes',
+  fluid___originalImg = 'fluid___originalImg',
+  fluid___originalName = 'fluid___originalName',
+  sizes___base64 = 'sizes___base64',
+  sizes___tracedSVG = 'sizes___tracedSVG',
+  sizes___aspectRatio = 'sizes___aspectRatio',
+  sizes___src = 'sizes___src',
+  sizes___srcSet = 'sizes___srcSet',
+  sizes___srcWebp = 'sizes___srcWebp',
+  sizes___srcSetWebp = 'sizes___srcSetWebp',
+  sizes___sizes = 'sizes___sizes',
+  sizes___originalImg = 'sizes___originalImg',
+  sizes___originalName = 'sizes___originalName',
+  original___width = 'original___width',
+  original___height = 'original___height',
+  original___src = 'original___src',
+  resize___src = 'resize___src',
+  resize___tracedSVG = 'resize___tracedSVG',
+  resize___width = 'resize___width',
+  resize___height = 'resize___height',
+  resize___aspectRatio = 'resize___aspectRatio',
+  resize___originalName = 'resize___originalName',
+}
+
+export enum ImageSharpConnectionSortOrderValues {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+
+export enum ImageSharpDistinctEnum {
+  id = 'id',
+  parent = 'parent',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___owner = 'internal___owner',
+}
+
+/** An edge in a connection. */
+export type ImageSharpEdge = {
+  __typename?: 'ImageSharpEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<ImageSharp>;
+  /** The next edge in the connection */
+  next?: Maybe<ImageSharp>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ImageSharp>;
+};
+
+export type ImageSharpFixed = {
+  __typename?: 'ImageSharpFixed';
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  width?: Maybe<Scalars['Float']>;
+  height?: Maybe<Scalars['Float']>;
+  src?: Maybe<Scalars['String']>;
+  srcSet?: Maybe<Scalars['String']>;
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+  originalName?: Maybe<Scalars['String']>;
+};
+
+export type ImageSharpFluid = {
+  __typename?: 'ImageSharpFluid';
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  src?: Maybe<Scalars['String']>;
+  srcSet?: Maybe<Scalars['String']>;
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+  sizes?: Maybe<Scalars['String']>;
+  originalImg?: Maybe<Scalars['String']>;
+  originalName?: Maybe<Scalars['String']>;
+};
+
+/** A connection to a list of items. */
+export type ImageSharpGroupConnectionConnection = {
+  __typename?: 'imageSharpGroupConnectionConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<ImageSharpGroupConnectionEdge>>>;
+  field?: Maybe<Scalars['String']>;
+  fieldValue?: Maybe<Scalars['String']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+/** An edge in a connection. */
+export type ImageSharpGroupConnectionEdge = {
+  __typename?: 'imageSharpGroupConnectionEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<ImageSharp>;
+  /** The next edge in the connection */
+  next?: Maybe<ImageSharp>;
+  /** The previous edge in the connection */
+  previous?: Maybe<ImageSharp>;
+};
+
+export enum ImageSharpGroupEnum {
+  id = 'id',
+  parent = 'parent',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___owner = 'internal___owner',
+}
+
+export type ImageSharpIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpInternalInputObject_2 = {
+  contentDigest?: Maybe<ImageSharpInternalContentDigestQueryString_2>;
+  type?: Maybe<ImageSharpInternalTypeQueryString_2>;
+  owner?: Maybe<ImageSharpInternalOwnerQueryString_2>;
+};
+
+export type ImageSharpInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ImageSharpOriginal = {
+  __typename?: 'ImageSharpOriginal';
+  width?: Maybe<Scalars['Float']>;
+  height?: Maybe<Scalars['Float']>;
+  src?: Maybe<Scalars['String']>;
+};
+
+export type ImageSharpResize = {
+  __typename?: 'ImageSharpResize';
+  src?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  width?: Maybe<Scalars['Int']>;
+  height?: Maybe<Scalars['Int']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  originalName?: Maybe<Scalars['String']>;
+};
+
+export type ImageSharpResolutions = {
+  __typename?: 'ImageSharpResolutions';
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  width?: Maybe<Scalars['Float']>;
+  height?: Maybe<Scalars['Float']>;
+  src?: Maybe<Scalars['String']>;
+  srcSet?: Maybe<Scalars['String']>;
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+  originalName?: Maybe<Scalars['String']>;
+};
+
+export type ImageSharpSizes = {
+  __typename?: 'ImageSharpSizes';
+  base64?: Maybe<Scalars['String']>;
+  tracedSVG?: Maybe<Scalars['String']>;
+  aspectRatio?: Maybe<Scalars['Float']>;
+  src?: Maybe<Scalars['String']>;
+  srcSet?: Maybe<Scalars['String']>;
+  srcWebp?: Maybe<Scalars['String']>;
+  srcSetWebp?: Maybe<Scalars['String']>;
+  sizes?: Maybe<Scalars['String']>;
+  originalImg?: Maybe<Scalars['String']>;
+  originalName?: Maybe<Scalars['String']>;
+};
+
 export type Internal_10 = {
   __typename?: 'internal_10';
-  contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
+  contentDigest?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -4293,7 +5154,6 @@ export type Internal_11 = {
   __typename?: 'internal_11';
   contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -4301,22 +5161,23 @@ export type Internal_12 = {
   __typename?: 'internal_12';
   contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
-  mediaType?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
 export type Internal_13 = {
   __typename?: 'internal_13';
-  type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  mediaType?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
 export type Internal_14 = {
   __typename?: 'internal_14';
-  type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -4329,16 +5190,22 @@ export type Internal_15 = {
 
 export type Internal_16 = {
   __typename?: 'internal_16';
-  contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
+  contentDigest?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
-export type Internal_9 = {
-  __typename?: 'internal_9';
+export type Internal_17 = {
+  __typename?: 'internal_17';
   type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
-  description?: Maybe<Scalars['String']>;
+  owner?: Maybe<Scalars['String']>;
+};
+
+export type Internal_18 = {
+  __typename?: 'internal_18';
+  contentDigest?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -4350,6 +5217,80 @@ export type Node = {
   parent?: Maybe<Node>;
   /** The children of this node. */
   children?: Maybe<Array<Maybe<Node>>>;
+};
+
+export type OriginalHeightQueryFloat_3 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type OriginalHeightQueryFloat_4 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type OriginalSrcQueryString_3 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type OriginalSrcQueryString_4 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type OriginalTypeName_3 = {
+  width?: Maybe<OriginalWidthQueryFloat_3>;
+  height?: Maybe<OriginalHeightQueryFloat_3>;
+  src?: Maybe<OriginalSrcQueryString_3>;
+};
+
+export type OriginalTypeName_4 = {
+  width?: Maybe<OriginalWidthQueryFloat_4>;
+  height?: Maybe<OriginalHeightQueryFloat_4>;
+  src?: Maybe<OriginalSrcQueryString_4>;
+};
+
+export type OriginalWidthQueryFloat_3 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type OriginalWidthQueryFloat_4 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
 export type PackageJson_2 = {
@@ -4396,6 +5337,27 @@ export type PluginOptions_2 = {
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
+export type Potrace = {
+  turnPolicy?: Maybe<PotraceTurnPolicy>;
+  turdSize?: Maybe<Scalars['Float']>;
+  alphaMax?: Maybe<Scalars['Float']>;
+  optCurve?: Maybe<Scalars['Boolean']>;
+  optTolerance?: Maybe<Scalars['Float']>;
+  threshold?: Maybe<Scalars['Int']>;
+  blackOnWhite?: Maybe<Scalars['Boolean']>;
+  color?: Maybe<Scalars['String']>;
+  background?: Maybe<Scalars['String']>;
+};
+
+export enum PotraceTurnPolicy {
+  TURNPOLICY_BLACK = 'TURNPOLICY_BLACK',
+  TURNPOLICY_WHITE = 'TURNPOLICY_WHITE',
+  TURNPOLICY_LEFT = 'TURNPOLICY_LEFT',
+  TURNPOLICY_RIGHT = 'TURNPOLICY_RIGHT',
+  TURNPOLICY_MINORITY = 'TURNPOLICY_MINORITY',
+  TURNPOLICY_MAJORITY = 'TURNPOLICY_MAJORITY',
+}
+
 export type PublicUrlQueryString_3 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
@@ -4424,6 +5386,8 @@ export type Query = {
   allDirectory?: Maybe<DirectoryConnection>;
   /** Connection to all File nodes */
   allFile?: Maybe<FileConnection>;
+  /** Connection to all ImageSharp nodes */
+  allImageSharp?: Maybe<ImageSharpConnection>;
   /** Connection to all ContentfulContentType nodes */
   allContentfulContentType?: Maybe<ContentfulContentTypeConnection>;
   /** Connection to all ContentfulArticle nodes */
@@ -4435,6 +5399,7 @@ export type Query = {
   site?: Maybe<Site>;
   directory?: Maybe<Directory>;
   file?: Maybe<File>;
+  imageSharp?: Maybe<ImageSharp>;
   contentfulContentType?: Maybe<ContentfulContentType>;
   contentfulArticle?: Maybe<ContentfulArticle>;
   contentfulAsset?: Maybe<ContentfulAsset>;
@@ -4466,6 +5431,13 @@ export type QueryAllFileArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<FileConnectionSort>;
   filter?: Maybe<FilterFile>;
+};
+
+export type QueryAllImageSharpArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  sort?: Maybe<ImageSharpConnectionSort>;
+  filter?: Maybe<FilterImageSharp>;
 };
 
 export type QueryAllContentfulContentTypeArgs = {
@@ -4604,6 +5576,17 @@ export type QueryFileArgs = {
   publicURL?: Maybe<PublicUrlQueryString_3>;
 };
 
+export type QueryImageSharpArgs = {
+  id?: Maybe<ImageSharpIdQueryString_2>;
+  internal?: Maybe<ImageSharpInternalInputObject_2>;
+  fixed?: Maybe<FixedTypeName_5>;
+  resolutions?: Maybe<ResolutionsTypeName_5>;
+  fluid?: Maybe<FluidTypeName_5>;
+  sizes?: Maybe<SizesTypeName_5>;
+  original?: Maybe<OriginalTypeName_3>;
+  resize?: Maybe<ResizeTypeName_5>;
+};
+
 export type QueryContentfulContentTypeArgs = {
   id?: Maybe<ContentfulContentTypeIdQueryString_2>;
   name?: Maybe<ContentfulContentTypeNameQueryString_2>;
@@ -4632,14 +5615,14 @@ export type QueryContentfulAssetArgs = {
   description?: Maybe<ContentfulAssetDescriptionQueryString_2>;
   node_locale?: Maybe<ContentfulAssetNodeLocaleQueryString_2>;
   internal?: Maybe<ContentfulAssetInternalInputObject_2>;
-  fixed?: Maybe<FixedTypeName_3>;
-  resolutions?: Maybe<ResolutionsTypeName_3>;
-  fluid?: Maybe<FluidTypeName_3>;
-  sizes?: Maybe<SizesTypeName_3>;
-  resize?: Maybe<ResizeTypeName_3>;
+  fixed?: Maybe<FixedTypeName_6>;
+  resolutions?: Maybe<ResolutionsTypeName_6>;
+  fluid?: Maybe<FluidTypeName_6>;
+  sizes?: Maybe<SizesTypeName_6>;
+  resize?: Maybe<ResizeTypeName_6>;
 };
 
-export type ResizeAspectRatioQueryFloat_3 = {
+export type ResizeAspectRatioQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4650,7 +5633,29 @@ export type ResizeAspectRatioQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResizeAspectRatioQueryFloat_4 = {
+export type ResizeAspectRatioQueryFloat_6 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResizeAspectRatioQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResizeAspectRatioQueryFloat_8 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4679,7 +5684,7 @@ export type ResizeBase64QueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResizeHeightQueryInt_3 = {
+export type ResizeHeightQueryInt_5 = {
   eq?: Maybe<Scalars['Int']>;
   ne?: Maybe<Scalars['Int']>;
   gt?: Maybe<Scalars['Int']>;
@@ -4690,7 +5695,7 @@ export type ResizeHeightQueryInt_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-export type ResizeHeightQueryInt_4 = {
+export type ResizeHeightQueryInt_6 = {
   eq?: Maybe<Scalars['Int']>;
   ne?: Maybe<Scalars['Int']>;
   gt?: Maybe<Scalars['Int']>;
@@ -4701,7 +5706,29 @@ export type ResizeHeightQueryInt_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-export type ResizeSrcQueryString_3 = {
+export type ResizeHeightQueryInt_7 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type ResizeHeightQueryInt_8 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type ResizeOriginalNameQueryString_3 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4710,7 +5737,7 @@ export type ResizeSrcQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResizeSrcQueryString_4 = {
+export type ResizeOriginalNameQueryString_4 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4719,7 +5746,7 @@ export type ResizeSrcQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResizeTracedSvgQueryString_3 = {
+export type ResizeSrcQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4728,7 +5755,7 @@ export type ResizeTracedSvgQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResizeTracedSvgQueryString_4 = {
+export type ResizeSrcQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4737,25 +5764,97 @@ export type ResizeTracedSvgQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResizeTypeName_3 = {
+export type ResizeSrcQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeSrcQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeTracedSvgQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeTracedSvgQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeTracedSvgQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeTracedSvgQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResizeTypeName_5 = {
+  src?: Maybe<ResizeSrcQueryString_5>;
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_5>;
+  width?: Maybe<ResizeWidthQueryInt_5>;
+  height?: Maybe<ResizeHeightQueryInt_5>;
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_5>;
+  originalName?: Maybe<ResizeOriginalNameQueryString_3>;
+};
+
+export type ResizeTypeName_6 = {
   base64?: Maybe<ResizeBase64QueryString_3>;
-  tracedSVG?: Maybe<ResizeTracedSvgQueryString_3>;
-  src?: Maybe<ResizeSrcQueryString_3>;
-  width?: Maybe<ResizeWidthQueryInt_3>;
-  height?: Maybe<ResizeHeightQueryInt_3>;
-  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_3>;
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_6>;
+  src?: Maybe<ResizeSrcQueryString_6>;
+  width?: Maybe<ResizeWidthQueryInt_6>;
+  height?: Maybe<ResizeHeightQueryInt_6>;
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_6>;
 };
 
-export type ResizeTypeName_4 = {
+export type ResizeTypeName_7 = {
+  src?: Maybe<ResizeSrcQueryString_7>;
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_7>;
+  width?: Maybe<ResizeWidthQueryInt_7>;
+  height?: Maybe<ResizeHeightQueryInt_7>;
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_7>;
+  originalName?: Maybe<ResizeOriginalNameQueryString_4>;
+};
+
+export type ResizeTypeName_8 = {
   base64?: Maybe<ResizeBase64QueryString_4>;
-  tracedSVG?: Maybe<ResizeTracedSvgQueryString_4>;
-  src?: Maybe<ResizeSrcQueryString_4>;
-  width?: Maybe<ResizeWidthQueryInt_4>;
-  height?: Maybe<ResizeHeightQueryInt_4>;
-  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_4>;
+  tracedSVG?: Maybe<ResizeTracedSvgQueryString_8>;
+  src?: Maybe<ResizeSrcQueryString_8>;
+  width?: Maybe<ResizeWidthQueryInt_8>;
+  height?: Maybe<ResizeHeightQueryInt_8>;
+  aspectRatio?: Maybe<ResizeAspectRatioQueryFloat_8>;
 };
 
-export type ResizeWidthQueryInt_3 = {
+export type ResizeWidthQueryInt_5 = {
   eq?: Maybe<Scalars['Int']>;
   ne?: Maybe<Scalars['Int']>;
   gt?: Maybe<Scalars['Int']>;
@@ -4766,7 +5865,7 @@ export type ResizeWidthQueryInt_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-export type ResizeWidthQueryInt_4 = {
+export type ResizeWidthQueryInt_6 = {
   eq?: Maybe<Scalars['Int']>;
   ne?: Maybe<Scalars['Int']>;
   gt?: Maybe<Scalars['Int']>;
@@ -4777,7 +5876,29 @@ export type ResizeWidthQueryInt_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
-export type ResolutionsAspectRatioQueryFloat_3 = {
+export type ResizeWidthQueryInt_7 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type ResizeWidthQueryInt_8 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type ResolutionsAspectRatioQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4788,7 +5909,7 @@ export type ResolutionsAspectRatioQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResolutionsAspectRatioQueryFloat_4 = {
+export type ResolutionsAspectRatioQueryFloat_6 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4799,25 +5920,7 @@ export type ResolutionsAspectRatioQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResolutionsBase64QueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsBase64QueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsHeightQueryFloat_3 = {
+export type ResolutionsAspectRatioQueryFloat_7 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4828,7 +5931,7 @@ export type ResolutionsHeightQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResolutionsHeightQueryFloat_4 = {
+export type ResolutionsAspectRatioQueryFloat_8 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4839,7 +5942,7 @@ export type ResolutionsHeightQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResolutionsSrcQueryString_3 = {
+export type ResolutionsBase64QueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4848,7 +5951,7 @@ export type ResolutionsSrcQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResolutionsSrcQueryString_4 = {
+export type ResolutionsBase64QueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4857,7 +5960,7 @@ export type ResolutionsSrcQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResolutionsSrcSetQueryString_3 = {
+export type ResolutionsBase64QueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4866,7 +5969,7 @@ export type ResolutionsSrcSetQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResolutionsSrcSetQueryString_4 = {
+export type ResolutionsBase64QueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -4875,85 +5978,7 @@ export type ResolutionsSrcSetQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type ResolutionsSrcSetWebpQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsSrcSetWebpQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsSrcWebpQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsSrcWebpQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsTracedSvgQueryString_3 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsTracedSvgQueryString_4 = {
-  eq?: Maybe<Scalars['String']>;
-  ne?: Maybe<Scalars['String']>;
-  regex?: Maybe<Scalars['String']>;
-  glob?: Maybe<Scalars['String']>;
-  in?: Maybe<Array<Maybe<Scalars['String']>>>;
-  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
-};
-
-export type ResolutionsTypeName_3 = {
-  base64?: Maybe<ResolutionsBase64QueryString_3>;
-  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_3>;
-  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_3>;
-  width?: Maybe<ResolutionsWidthQueryFloat_3>;
-  height?: Maybe<ResolutionsHeightQueryFloat_3>;
-  src?: Maybe<ResolutionsSrcQueryString_3>;
-  srcSet?: Maybe<ResolutionsSrcSetQueryString_3>;
-  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_3>;
-  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_3>;
-};
-
-export type ResolutionsTypeName_4 = {
-  base64?: Maybe<ResolutionsBase64QueryString_4>;
-  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_4>;
-  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_4>;
-  width?: Maybe<ResolutionsWidthQueryFloat_4>;
-  height?: Maybe<ResolutionsHeightQueryFloat_4>;
-  src?: Maybe<ResolutionsSrcQueryString_4>;
-  srcSet?: Maybe<ResolutionsSrcSetQueryString_4>;
-  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_4>;
-  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_4>;
-};
-
-export type ResolutionsWidthQueryFloat_3 = {
+export type ResolutionsHeightQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4964,7 +5989,321 @@ export type ResolutionsWidthQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type ResolutionsWidthQueryFloat_4 = {
+export type ResolutionsHeightQueryFloat_6 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsHeightQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsHeightQueryFloat_8 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsOriginalNameQueryString_3 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsOriginalNameQueryString_4 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcSetWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsSrcWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsTracedSvgQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsTracedSvgQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsTracedSvgQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsTracedSvgQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type ResolutionsTypeName_5 = {
+  base64?: Maybe<ResolutionsBase64QueryString_5>;
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_5>;
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_5>;
+  width?: Maybe<ResolutionsWidthQueryFloat_5>;
+  height?: Maybe<ResolutionsHeightQueryFloat_5>;
+  src?: Maybe<ResolutionsSrcQueryString_5>;
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_5>;
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_5>;
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_5>;
+  originalName?: Maybe<ResolutionsOriginalNameQueryString_3>;
+};
+
+export type ResolutionsTypeName_6 = {
+  base64?: Maybe<ResolutionsBase64QueryString_6>;
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_6>;
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_6>;
+  width?: Maybe<ResolutionsWidthQueryFloat_6>;
+  height?: Maybe<ResolutionsHeightQueryFloat_6>;
+  src?: Maybe<ResolutionsSrcQueryString_6>;
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_6>;
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_6>;
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_6>;
+};
+
+export type ResolutionsTypeName_7 = {
+  base64?: Maybe<ResolutionsBase64QueryString_7>;
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_7>;
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_7>;
+  width?: Maybe<ResolutionsWidthQueryFloat_7>;
+  height?: Maybe<ResolutionsHeightQueryFloat_7>;
+  src?: Maybe<ResolutionsSrcQueryString_7>;
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_7>;
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_7>;
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_7>;
+  originalName?: Maybe<ResolutionsOriginalNameQueryString_4>;
+};
+
+export type ResolutionsTypeName_8 = {
+  base64?: Maybe<ResolutionsBase64QueryString_8>;
+  tracedSVG?: Maybe<ResolutionsTracedSvgQueryString_8>;
+  aspectRatio?: Maybe<ResolutionsAspectRatioQueryFloat_8>;
+  width?: Maybe<ResolutionsWidthQueryFloat_8>;
+  height?: Maybe<ResolutionsHeightQueryFloat_8>;
+  src?: Maybe<ResolutionsSrcQueryString_8>;
+  srcSet?: Maybe<ResolutionsSrcSetQueryString_8>;
+  srcWebp?: Maybe<ResolutionsSrcWebpQueryString_8>;
+  srcSetWebp?: Maybe<ResolutionsSrcSetWebpQueryString_8>;
+};
+
+export type ResolutionsWidthQueryFloat_5 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsWidthQueryFloat_6 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsWidthQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type ResolutionsWidthQueryFloat_8 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -4990,7 +6329,7 @@ export type Site = Node & {
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   buildTime?: Maybe<Scalars['Date']>;
-  internal?: Maybe<Internal_16>;
+  internal?: Maybe<Internal_18>;
 };
 
 /** Node of type Site */
@@ -5091,7 +6430,7 @@ export type SitePage = Node & {
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_9>;
+  internal?: Maybe<Internal_10>;
 };
 
 export type SitePageComponentChunkNameQueryString = {
@@ -6370,7 +7709,7 @@ export type SitePlugin = Node & {
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<PackageJson_2>;
-  internal?: Maybe<Internal_10>;
+  internal?: Maybe<Internal_11>;
 };
 
 export type SitePluginBrowserApIsQueryList_2 = {
@@ -7397,7 +8736,7 @@ export type SiteSiteMetadataTitleQueryString_2 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesAspectRatioQueryFloat_3 = {
+export type SizesAspectRatioQueryFloat_5 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -7408,7 +8747,7 @@ export type SizesAspectRatioQueryFloat_3 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type SizesAspectRatioQueryFloat_4 = {
+export type SizesAspectRatioQueryFloat_6 = {
   eq?: Maybe<Scalars['Float']>;
   ne?: Maybe<Scalars['Float']>;
   gt?: Maybe<Scalars['Float']>;
@@ -7419,7 +8758,29 @@ export type SizesAspectRatioQueryFloat_4 = {
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
 };
 
-export type SizesBase64QueryString_3 = {
+export type SizesAspectRatioQueryFloat_7 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type SizesAspectRatioQueryFloat_8 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type SizesBase64QueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7428,7 +8789,7 @@ export type SizesBase64QueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesBase64QueryString_4 = {
+export type SizesBase64QueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7437,7 +8798,7 @@ export type SizesBase64QueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSizesQueryString_3 = {
+export type SizesBase64QueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7446,7 +8807,7 @@ export type SizesSizesQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSizesQueryString_4 = {
+export type SizesBase64QueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7455,7 +8816,7 @@ export type SizesSizesQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcQueryString_3 = {
+export type SizesOriginalImgQueryString_3 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7464,7 +8825,7 @@ export type SizesSrcQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcQueryString_4 = {
+export type SizesOriginalImgQueryString_4 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7473,7 +8834,7 @@ export type SizesSrcQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcSetQueryString_3 = {
+export type SizesOriginalNameQueryString_3 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7482,7 +8843,7 @@ export type SizesSrcSetQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcSetQueryString_4 = {
+export type SizesOriginalNameQueryString_4 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7491,7 +8852,7 @@ export type SizesSrcSetQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcSetWebpQueryString_3 = {
+export type SizesSizesQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7500,7 +8861,7 @@ export type SizesSrcSetWebpQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcSetWebpQueryString_4 = {
+export type SizesSizesQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7509,7 +8870,7 @@ export type SizesSrcSetWebpQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcWebpQueryString_3 = {
+export type SizesSizesQueryString_7 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7518,7 +8879,7 @@ export type SizesSrcWebpQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesSrcWebpQueryString_4 = {
+export type SizesSizesQueryString_8 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7527,7 +8888,7 @@ export type SizesSrcWebpQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesTracedSvgQueryString_3 = {
+export type SizesSrcQueryString_5 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7536,7 +8897,7 @@ export type SizesTracedSvgQueryString_3 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesTracedSvgQueryString_4 = {
+export type SizesSrcQueryString_6 = {
   eq?: Maybe<Scalars['String']>;
   ne?: Maybe<Scalars['String']>;
   regex?: Maybe<Scalars['String']>;
@@ -7545,26 +8906,214 @@ export type SizesTracedSvgQueryString_4 = {
   nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesTypeName_3 = {
-  base64?: Maybe<SizesBase64QueryString_3>;
-  tracedSVG?: Maybe<SizesTracedSvgQueryString_3>;
-  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_3>;
-  src?: Maybe<SizesSrcQueryString_3>;
-  srcSet?: Maybe<SizesSrcSetQueryString_3>;
-  srcWebp?: Maybe<SizesSrcWebpQueryString_3>;
-  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_3>;
-  sizes?: Maybe<SizesSizesQueryString_3>;
+export type SizesSrcQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
-export type SizesTypeName_4 = {
-  base64?: Maybe<SizesBase64QueryString_4>;
-  tracedSVG?: Maybe<SizesTracedSvgQueryString_4>;
-  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_4>;
-  src?: Maybe<SizesSrcQueryString_4>;
-  srcSet?: Maybe<SizesSrcSetQueryString_4>;
-  srcWebp?: Maybe<SizesSrcWebpQueryString_4>;
-  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_4>;
-  sizes?: Maybe<SizesSizesQueryString_4>;
+export type SizesSrcQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcSetWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcWebpQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcWebpQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcWebpQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesSrcWebpQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesTracedSvgQueryString_5 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesTracedSvgQueryString_6 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesTracedSvgQueryString_7 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesTracedSvgQueryString_8 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SizesTypeName_5 = {
+  base64?: Maybe<SizesBase64QueryString_5>;
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_5>;
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_5>;
+  src?: Maybe<SizesSrcQueryString_5>;
+  srcSet?: Maybe<SizesSrcSetQueryString_5>;
+  srcWebp?: Maybe<SizesSrcWebpQueryString_5>;
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_5>;
+  sizes?: Maybe<SizesSizesQueryString_5>;
+  originalImg?: Maybe<SizesOriginalImgQueryString_3>;
+  originalName?: Maybe<SizesOriginalNameQueryString_3>;
+};
+
+export type SizesTypeName_6 = {
+  base64?: Maybe<SizesBase64QueryString_6>;
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_6>;
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_6>;
+  src?: Maybe<SizesSrcQueryString_6>;
+  srcSet?: Maybe<SizesSrcSetQueryString_6>;
+  srcWebp?: Maybe<SizesSrcWebpQueryString_6>;
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_6>;
+  sizes?: Maybe<SizesSizesQueryString_6>;
+};
+
+export type SizesTypeName_7 = {
+  base64?: Maybe<SizesBase64QueryString_7>;
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_7>;
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_7>;
+  src?: Maybe<SizesSrcQueryString_7>;
+  srcSet?: Maybe<SizesSrcSetQueryString_7>;
+  srcWebp?: Maybe<SizesSrcWebpQueryString_7>;
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_7>;
+  sizes?: Maybe<SizesSizesQueryString_7>;
+  originalImg?: Maybe<SizesOriginalImgQueryString_4>;
+  originalName?: Maybe<SizesOriginalNameQueryString_4>;
+};
+
+export type SizesTypeName_8 = {
+  base64?: Maybe<SizesBase64QueryString_8>;
+  tracedSVG?: Maybe<SizesTracedSvgQueryString_8>;
+  aspectRatio?: Maybe<SizesAspectRatioQueryFloat_8>;
+  src?: Maybe<SizesSrcQueryString_8>;
+  srcSet?: Maybe<SizesSrcSetQueryString_8>;
+  srcWebp?: Maybe<SizesSrcWebpQueryString_8>;
+  srcSetWebp?: Maybe<SizesSrcSetWebpQueryString_8>;
+  sizes?: Maybe<SizesSizesQueryString_8>;
 };
 
 export type GatsbyContentfulFixedFragment = {
@@ -7700,6 +9249,199 @@ export type GatsbyContentfulSizes_WithWebp_NoBase64Fragment = {
   ContentfulSizes,
   'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
 >;
+
+export type GatsbyImageSharpFixedFragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_TracedSvgFragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<ImageSharpFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_WithWebpFragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<
+  ImageSharpFixed,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpFixed_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<
+  ImageSharpFixed,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpFixed_NoBase64Fragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<ImageSharpFixed, 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpFixed_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpFixed';
+} & Pick<
+  ImageSharpFixed,
+  'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpFluidFragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
+
+export type GatsbyImageSharpFluid_TracedSvgFragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
+
+export type GatsbyImageSharpFluid_WithWebpFragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  | 'base64'
+  | 'aspectRatio'
+  | 'src'
+  | 'srcSet'
+  | 'srcWebp'
+  | 'srcSetWebp'
+  | 'sizes'
+>;
+
+export type GatsbyImageSharpFluid_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  | 'tracedSVG'
+  | 'aspectRatio'
+  | 'src'
+  | 'srcSet'
+  | 'srcWebp'
+  | 'srcSetWebp'
+  | 'sizes'
+>;
+
+export type GatsbyImageSharpFluid_NoBase64Fragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpFluid_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpFluid';
+} & Pick<
+  ImageSharpFluid,
+  'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
+
+export type GatsbyImageSharpResolutionsFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet'
+>;
+
+export type GatsbyImageSharpResolutions_TracedSvgFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'
+>;
+
+export type GatsbyImageSharpResolutions_WithWebpFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'base64' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpResolutions_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpResolutions_NoBase64Fragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<ImageSharpResolutions, 'width' | 'height' | 'src' | 'srcSet'>;
+
+export type GatsbyImageSharpResolutions_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpResolutions';
+} & Pick<
+  ImageSharpResolutions,
+  'width' | 'height' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp'
+>;
+
+export type GatsbyImageSharpSizesFragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
+
+export type GatsbyImageSharpSizes_TracedSvgFragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'sizes'
+>;
+
+export type GatsbyImageSharpSizes_WithWebpFragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  | 'base64'
+  | 'aspectRatio'
+  | 'src'
+  | 'srcSet'
+  | 'srcWebp'
+  | 'srcSetWebp'
+  | 'sizes'
+>;
+
+export type GatsbyImageSharpSizes_WithWebp_TracedSvgFragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  | 'tracedSVG'
+  | 'aspectRatio'
+  | 'src'
+  | 'srcSet'
+  | 'srcWebp'
+  | 'srcSetWebp'
+  | 'sizes'
+>;
+
+export type GatsbyImageSharpSizes_NoBase64Fragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
+
+export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
+  __typename?: 'ImageSharpSizes';
+} & Pick<
+  ImageSharpSizes,
+  'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
+>;
+
+export type LogoQueryVariables = {};
+
+export type LogoQuery = { __typename?: 'Query' } & {
+  file: Maybe<
+    { __typename?: 'File' } & {
+      childImageSharp: Maybe<
+        { __typename?: 'ImageSharp' } & {
+          fixed: Maybe<
+            { __typename?: 'ImageSharpFixed' } & Pick<
+              ImageSharpFixed,
+              'width' | 'height' | 'src' | 'srcSet'
+            >
+          >;
+        }
+      >;
+    }
+  >;
+};
 
 export type SiteTitleQueryVariables = {};
 

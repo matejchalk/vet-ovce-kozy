@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link, StaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+import { oc } from 'ts-optchain';
+import { LogoQuery } from '../types/graphql';
 
 type Props = {
   siteTitle: string;
@@ -19,6 +22,25 @@ const Header = ({ siteTitle }: Props) => (
         padding: '1.45rem 1.0875rem',
       }}
     >
+      <StaticQuery
+        query={graphql`
+          query Logo {
+            file(relativePath: { eq: "gatsby-icon.png" }) {
+              childImageSharp {
+                fixed(width: 50, height: 50) {
+                  width
+                  height
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
+        `}
+        render={(data: LogoQuery) => (
+          <Img fixed={oc(data).file.childImageSharp.fixed()} alt={'Logo'} />
+        )}
+      />
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
