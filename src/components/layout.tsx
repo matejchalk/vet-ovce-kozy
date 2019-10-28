@@ -1,6 +1,8 @@
+import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import { oc } from 'ts-optchain';
+import { SiteTitleQuery } from '../types/graphql';
 
 import Header from './header';
 
@@ -13,7 +15,7 @@ type Props = {
 const Layout = ({ children }: Props) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteTitle {
         site {
           siteMetadata {
             title
@@ -21,10 +23,10 @@ const Layout = ({ children }: Props) => (
         }
       }
     `}
-    render={data => (
+    render={(data: SiteTitleQuery) => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={oc(data).site.siteMetadata.title('')}
           meta={[
             { name: 'description', content: 'Sample' },
             { name: 'keywords', content: 'sample, something' },
@@ -32,7 +34,7 @@ const Layout = ({ children }: Props) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={oc(data).site.siteMetadata.title('')} />
         <div>{children}</div>
       </>
     )}

@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-contentful-typescript',
         short_name: 'starter',
@@ -26,15 +26,15 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    `gatsby-plugin-typescript`,
+    'gatsby-plugin-typescript',
     'gatsby-transformer-remark',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-source-contentful`,
+      resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
     {
-      resolve: `gatsby-plugin-emotion`,
+      resolve: 'gatsby-plugin-emotion',
     },
     {
       resolve: 'gatsby-plugin-sass',
@@ -42,5 +42,6 @@ module.exports = {
         includePaths: ['src/styles'],
       },
     },
+    'gatsby-plugin-extract-schema',
   ],
 };

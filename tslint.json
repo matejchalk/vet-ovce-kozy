@@ -127,5 +127,8 @@
         "require-const-for-all-caps"
       ]
     }
+  },
+  "linterOptions": {
+    "exclude": ["./src/types/graphql.ts"]
   }
 }
