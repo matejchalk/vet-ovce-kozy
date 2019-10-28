@@ -28,7 +28,7 @@ export type ContentfulArticle = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
-  internal?: Maybe<Internal_10>;
+  internal?: Maybe<Internal_14>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -711,7 +711,7 @@ export type ContentfulAsset = Node & {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   node_locale?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_11>;
+  internal?: Maybe<Internal_15>;
   fixed?: Maybe<ContentfulFixed>;
   resolutions?: Maybe<ContentfulResolutions>;
   fluid?: Maybe<ContentfulFluid>;
@@ -1257,7 +1257,7 @@ export type ContentfulContentType = Node & {
   name?: Maybe<Scalars['String']>;
   displayField?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_9>;
+  internal?: Maybe<Internal_13>;
 };
 
 /** A connection to a list of items. */
@@ -1597,12 +1597,2146 @@ export type DevDependencies_2 = {
   version?: Maybe<Scalars['String']>;
 };
 
+/** Node of type Directory */
+export type Directory = Node & {
+  __typename?: 'Directory';
+  /** The id of this node. */
+  id: Scalars['ID'];
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<Array<Maybe<Node>>>;
+  internal?: Maybe<Internal_11>;
+  sourceInstanceName?: Maybe<Scalars['String']>;
+  absolutePath?: Maybe<Scalars['String']>;
+  relativePath?: Maybe<Scalars['String']>;
+  extension?: Maybe<Scalars['String']>;
+  size?: Maybe<Scalars['Int']>;
+  prettySize?: Maybe<Scalars['String']>;
+  modifiedTime?: Maybe<Scalars['Date']>;
+  accessTime?: Maybe<Scalars['Date']>;
+  changeTime?: Maybe<Scalars['Date']>;
+  birthTime?: Maybe<Scalars['Date']>;
+  root?: Maybe<Scalars['String']>;
+  dir?: Maybe<Scalars['String']>;
+  base?: Maybe<Scalars['String']>;
+  ext?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  relativeDirectory?: Maybe<Scalars['String']>;
+  dev?: Maybe<Scalars['Int']>;
+  mode?: Maybe<Scalars['Int']>;
+  nlink?: Maybe<Scalars['Int']>;
+  uid?: Maybe<Scalars['Int']>;
+  gid?: Maybe<Scalars['Int']>;
+  rdev?: Maybe<Scalars['Int']>;
+  blksize?: Maybe<Scalars['Int']>;
+  ino?: Maybe<Scalars['Int']>;
+  blocks?: Maybe<Scalars['Int']>;
+  atimeMs?: Maybe<Scalars['Float']>;
+  mtimeMs?: Maybe<Scalars['Float']>;
+  ctimeMs?: Maybe<Scalars['Float']>;
+  birthtimeMs?: Maybe<Scalars['Float']>;
+  atime?: Maybe<Scalars['Date']>;
+  mtime?: Maybe<Scalars['Date']>;
+  ctime?: Maybe<Scalars['Date']>;
+  birthtime?: Maybe<Scalars['Date']>;
+};
+
+/** Node of type Directory */
+export type DirectoryModifiedTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryAccessTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryChangeTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryBirthTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryAtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryMtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryCtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type Directory */
+export type DirectoryBirthtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type DirectoryAbsolutePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryAccessTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryAtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryAtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryBaseQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryBirthtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryBirthtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryBirthTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryBlksizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryBlocksQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryChangeTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+/** A connection to a list of items. */
+export type DirectoryConnection = {
+  __typename?: 'DirectoryConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<DirectoryEdge>>>;
+  totalCount?: Maybe<Scalars['Int']>;
+  distinct?: Maybe<Array<Maybe<Scalars['String']>>>;
+  group?: Maybe<Array<Maybe<DirectoryGroupConnectionConnection>>>;
+};
+
+/** A connection to a list of items. */
+export type DirectoryConnectionDistinctArgs = {
+  field?: Maybe<DirectoryDistinctEnum>;
+};
+
+/** A connection to a list of items. */
+export type DirectoryConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field?: Maybe<DirectoryGroupEnum>;
+};
+
+export type DirectoryConnectionAbsolutePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionAccessTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionAtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryConnectionAtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionBaseQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionBirthtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryConnectionBirthtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionBirthTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionBlksizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionBlocksQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionChangeTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionCtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryConnectionCtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionDevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionDirQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionExtensionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionExtQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionGidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionInoQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionInternalDescriptionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionInternalInputObject_2 = {
+  contentDigest?: Maybe<DirectoryConnectionInternalContentDigestQueryString_2>;
+  type?: Maybe<DirectoryConnectionInternalTypeQueryString_2>;
+  description?: Maybe<DirectoryConnectionInternalDescriptionQueryString_2>;
+  owner?: Maybe<DirectoryConnectionInternalOwnerQueryString_2>;
+};
+
+export type DirectoryConnectionInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionModeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionModifiedTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionMtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryConnectionMtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionNlinkQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionPrettySizeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionRdevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionRelativeDirectoryQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionRelativePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionRootQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionSizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryConnectionSort = {
+  fields: Array<Maybe<DirectoryConnectionSortByFieldsEnum>>;
+  order?: Maybe<DirectoryConnectionSortOrderValues>;
+};
+
+export enum DirectoryConnectionSortByFieldsEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+}
+
+export enum DirectoryConnectionSortOrderValues {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+
+export type DirectoryConnectionSourceInstanceNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryConnectionUidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryCtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryCtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryDevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryDirQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export enum DirectoryDistinctEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+}
+
+/** An edge in a connection. */
+export type DirectoryEdge = {
+  __typename?: 'DirectoryEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<Directory>;
+  /** The next edge in the connection */
+  next?: Maybe<Directory>;
+  /** The previous edge in the connection */
+  previous?: Maybe<Directory>;
+};
+
+export type DirectoryExtensionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryExtQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryGidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+/** A connection to a list of items. */
+export type DirectoryGroupConnectionConnection = {
+  __typename?: 'directoryGroupConnectionConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<DirectoryGroupConnectionEdge>>>;
+  field?: Maybe<Scalars['String']>;
+  fieldValue?: Maybe<Scalars['String']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+/** An edge in a connection. */
+export type DirectoryGroupConnectionEdge = {
+  __typename?: 'directoryGroupConnectionEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<Directory>;
+  /** The next edge in the connection */
+  next?: Maybe<Directory>;
+  /** The previous edge in the connection */
+  previous?: Maybe<Directory>;
+};
+
+export enum DirectoryGroupEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+}
+
+export type DirectoryIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryInoQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryInternalDescriptionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryInternalInputObject_2 = {
+  contentDigest?: Maybe<DirectoryInternalContentDigestQueryString_2>;
+  type?: Maybe<DirectoryInternalTypeQueryString_2>;
+  description?: Maybe<DirectoryInternalDescriptionQueryString_2>;
+  owner?: Maybe<DirectoryInternalOwnerQueryString_2>;
+};
+
+export type DirectoryInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryModeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryModifiedTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryMtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type DirectoryMtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryNlinkQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryPrettySizeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryRdevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectoryRelativeDirectoryQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryRelativePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryRootQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectorySizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type DirectorySourceInstanceNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type DirectoryUidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+/** Node of type File */
+export type File = Node & {
+  __typename?: 'File';
+  /** The id of this node. */
+  id: Scalars['ID'];
+  /** The parent of this node. */
+  parent?: Maybe<Node>;
+  /** The children of this node. */
+  children?: Maybe<Array<Maybe<Node>>>;
+  internal?: Maybe<Internal_12>;
+  sourceInstanceName?: Maybe<Scalars['String']>;
+  absolutePath?: Maybe<Scalars['String']>;
+  relativePath?: Maybe<Scalars['String']>;
+  extension?: Maybe<Scalars['String']>;
+  size?: Maybe<Scalars['Int']>;
+  prettySize?: Maybe<Scalars['String']>;
+  modifiedTime?: Maybe<Scalars['Date']>;
+  accessTime?: Maybe<Scalars['Date']>;
+  changeTime?: Maybe<Scalars['Date']>;
+  birthTime?: Maybe<Scalars['Date']>;
+  root?: Maybe<Scalars['String']>;
+  dir?: Maybe<Scalars['String']>;
+  base?: Maybe<Scalars['String']>;
+  ext?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  relativeDirectory?: Maybe<Scalars['String']>;
+  dev?: Maybe<Scalars['Int']>;
+  mode?: Maybe<Scalars['Int']>;
+  nlink?: Maybe<Scalars['Int']>;
+  uid?: Maybe<Scalars['Int']>;
+  gid?: Maybe<Scalars['Int']>;
+  rdev?: Maybe<Scalars['Int']>;
+  blksize?: Maybe<Scalars['Int']>;
+  ino?: Maybe<Scalars['Int']>;
+  blocks?: Maybe<Scalars['Int']>;
+  atimeMs?: Maybe<Scalars['Float']>;
+  mtimeMs?: Maybe<Scalars['Float']>;
+  ctimeMs?: Maybe<Scalars['Float']>;
+  birthtimeMs?: Maybe<Scalars['Float']>;
+  atime?: Maybe<Scalars['Date']>;
+  mtime?: Maybe<Scalars['Date']>;
+  ctime?: Maybe<Scalars['Date']>;
+  birthtime?: Maybe<Scalars['Date']>;
+  /** Copy file to static directory and return public url to it */
+  publicURL?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileModifiedTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileAccessTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileChangeTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileBirthTimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileAtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileMtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileCtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+/** Node of type File */
+export type FileBirthtimeArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
 export type File_2 = {
   __typename?: 'file_2';
   url?: Maybe<Scalars['String']>;
   details?: Maybe<Details_2>;
   fileName?: Maybe<Scalars['String']>;
   contentType?: Maybe<Scalars['String']>;
+};
+
+export type FileAbsolutePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileAccessTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileAtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileAtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileBaseQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileBirthtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileBirthtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileBirthTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileBlksizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileBlocksQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileChangeTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+/** A connection to a list of items. */
+export type FileConnection = {
+  __typename?: 'FileConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<FileEdge>>>;
+  totalCount?: Maybe<Scalars['Int']>;
+  distinct?: Maybe<Array<Maybe<Scalars['String']>>>;
+  group?: Maybe<Array<Maybe<FileGroupConnectionConnection>>>;
+};
+
+/** A connection to a list of items. */
+export type FileConnectionDistinctArgs = {
+  field?: Maybe<FileDistinctEnum>;
+};
+
+/** A connection to a list of items. */
+export type FileConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field?: Maybe<FileGroupEnum>;
+};
+
+export type FileConnectionAbsolutePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionAccessTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionAtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileConnectionAtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionBaseQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionBirthtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileConnectionBirthtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionBirthTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionBlksizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionBlocksQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionChangeTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionCtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileConnectionCtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionDevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionDirQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionExtensionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionExtQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionGidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionInoQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionInternalDescriptionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionInternalInputObject_2 = {
+  contentDigest?: Maybe<FileConnectionInternalContentDigestQueryString_2>;
+  type?: Maybe<FileConnectionInternalTypeQueryString_2>;
+  mediaType?: Maybe<FileConnectionInternalMediaTypeQueryString_2>;
+  description?: Maybe<FileConnectionInternalDescriptionQueryString_2>;
+  owner?: Maybe<FileConnectionInternalOwnerQueryString_2>;
+};
+
+export type FileConnectionInternalMediaTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionModeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionModifiedTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionMtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileConnectionMtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionNlinkQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionPrettySizeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionRdevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionRelativeDirectoryQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionRelativePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionRootQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionSizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileConnectionSort = {
+  fields: Array<Maybe<FileConnectionSortByFieldsEnum>>;
+  order?: Maybe<FileConnectionSortOrderValues>;
+};
+
+export enum FileConnectionSortByFieldsEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___mediaType = 'internal___mediaType',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+  publicURL = 'publicURL',
+}
+
+export enum FileConnectionSortOrderValues {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+
+export type FileConnectionSourceInstanceNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileConnectionUidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileCtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileCtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileDevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileDirQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export enum FileDistinctEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___mediaType = 'internal___mediaType',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+}
+
+/** An edge in a connection. */
+export type FileEdge = {
+  __typename?: 'FileEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<File>;
+  /** The next edge in the connection */
+  next?: Maybe<File>;
+  /** The previous edge in the connection */
+  previous?: Maybe<File>;
+};
+
+export type FileExtensionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileExtQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileGidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+/** A connection to a list of items. */
+export type FileGroupConnectionConnection = {
+  __typename?: 'fileGroupConnectionConnection';
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<FileGroupConnectionEdge>>>;
+  field?: Maybe<Scalars['String']>;
+  fieldValue?: Maybe<Scalars['String']>;
+  totalCount?: Maybe<Scalars['Int']>;
+};
+
+/** An edge in a connection. */
+export type FileGroupConnectionEdge = {
+  __typename?: 'fileGroupConnectionEdge';
+  /** The item at the end of the edge */
+  node?: Maybe<File>;
+  /** The next edge in the connection */
+  next?: Maybe<File>;
+  /** The previous edge in the connection */
+  previous?: Maybe<File>;
+};
+
+export enum FileGroupEnum {
+  id = 'id',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___type = 'internal___type',
+  internal___mediaType = 'internal___mediaType',
+  internal___description = 'internal___description',
+  internal___owner = 'internal___owner',
+  sourceInstanceName = 'sourceInstanceName',
+  absolutePath = 'absolutePath',
+  relativePath = 'relativePath',
+  extension = 'extension',
+  size = 'size',
+  prettySize = 'prettySize',
+  modifiedTime = 'modifiedTime',
+  accessTime = 'accessTime',
+  changeTime = 'changeTime',
+  birthTime = 'birthTime',
+  root = 'root',
+  dir = 'dir',
+  base = 'base',
+  ext = 'ext',
+  name = 'name',
+  relativeDirectory = 'relativeDirectory',
+  dev = 'dev',
+  mode = 'mode',
+  nlink = 'nlink',
+  uid = 'uid',
+  gid = 'gid',
+  rdev = 'rdev',
+  blksize = 'blksize',
+  ino = 'ino',
+  blocks = 'blocks',
+  atimeMs = 'atimeMs',
+  mtimeMs = 'mtimeMs',
+  ctimeMs = 'ctimeMs',
+  birthtimeMs = 'birthtimeMs',
+  atime = 'atime',
+  mtime = 'mtime',
+  ctime = 'ctime',
+  birthtime = 'birthtime',
+}
+
+export type FileIdQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileInoQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileInternalContentDigestQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileInternalDescriptionQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileInternalInputObject_2 = {
+  contentDigest?: Maybe<FileInternalContentDigestQueryString_2>;
+  type?: Maybe<FileInternalTypeQueryString_2>;
+  mediaType?: Maybe<FileInternalMediaTypeQueryString_2>;
+  description?: Maybe<FileInternalDescriptionQueryString_2>;
+  owner?: Maybe<FileInternalOwnerQueryString_2>;
+};
+
+export type FileInternalMediaTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileInternalOwnerQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileInternalTypeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileModeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileModifiedTimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileMtimeMsQueryFloat_2 = {
+  eq?: Maybe<Scalars['Float']>;
+  ne?: Maybe<Scalars['Float']>;
+  gt?: Maybe<Scalars['Float']>;
+  gte?: Maybe<Scalars['Float']>;
+  lt?: Maybe<Scalars['Float']>;
+  lte?: Maybe<Scalars['Float']>;
+  in?: Maybe<Array<Maybe<Scalars['Float']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type FileMtimeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileNlinkQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FilePrettySizeQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileRdevQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileRelativeDirectoryQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileRelativePathQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileRootQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileSizeQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
+};
+
+export type FileSourceInstanceNameQueryString_2 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type FileUidQueryInteger_2 = {
+  eq?: Maybe<Scalars['Int']>;
+  ne?: Maybe<Scalars['Int']>;
+  gt?: Maybe<Scalars['Int']>;
+  gte?: Maybe<Scalars['Int']>;
+  lt?: Maybe<Scalars['Int']>;
+  lte?: Maybe<Scalars['Int']>;
+  in?: Maybe<Array<Maybe<Scalars['Int']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['Int']>>>;
 };
 
 /** Filter connection on its fields */
@@ -1643,6 +3777,87 @@ export type FilterContentfulContentType = {
   >;
   description?: Maybe<ContentfulContentTypeConnectionDescriptionQueryString_2>;
   internal?: Maybe<ContentfulContentTypeConnectionInternalInputObject_2>;
+};
+
+/** Filter connection on its fields */
+export type FilterDirectory = {
+  id?: Maybe<DirectoryConnectionIdQueryString_2>;
+  internal?: Maybe<DirectoryConnectionInternalInputObject_2>;
+  sourceInstanceName?: Maybe<
+    DirectoryConnectionSourceInstanceNameQueryString_2
+  >;
+  absolutePath?: Maybe<DirectoryConnectionAbsolutePathQueryString_2>;
+  relativePath?: Maybe<DirectoryConnectionRelativePathQueryString_2>;
+  extension?: Maybe<DirectoryConnectionExtensionQueryString_2>;
+  size?: Maybe<DirectoryConnectionSizeQueryInteger_2>;
+  prettySize?: Maybe<DirectoryConnectionPrettySizeQueryString_2>;
+  modifiedTime?: Maybe<DirectoryConnectionModifiedTimeQueryString_2>;
+  accessTime?: Maybe<DirectoryConnectionAccessTimeQueryString_2>;
+  changeTime?: Maybe<DirectoryConnectionChangeTimeQueryString_2>;
+  birthTime?: Maybe<DirectoryConnectionBirthTimeQueryString_2>;
+  root?: Maybe<DirectoryConnectionRootQueryString_2>;
+  dir?: Maybe<DirectoryConnectionDirQueryString_2>;
+  base?: Maybe<DirectoryConnectionBaseQueryString_2>;
+  ext?: Maybe<DirectoryConnectionExtQueryString_2>;
+  name?: Maybe<DirectoryConnectionNameQueryString_2>;
+  relativeDirectory?: Maybe<DirectoryConnectionRelativeDirectoryQueryString_2>;
+  dev?: Maybe<DirectoryConnectionDevQueryInteger_2>;
+  mode?: Maybe<DirectoryConnectionModeQueryInteger_2>;
+  nlink?: Maybe<DirectoryConnectionNlinkQueryInteger_2>;
+  uid?: Maybe<DirectoryConnectionUidQueryInteger_2>;
+  gid?: Maybe<DirectoryConnectionGidQueryInteger_2>;
+  rdev?: Maybe<DirectoryConnectionRdevQueryInteger_2>;
+  blksize?: Maybe<DirectoryConnectionBlksizeQueryInteger_2>;
+  ino?: Maybe<DirectoryConnectionInoQueryInteger_2>;
+  blocks?: Maybe<DirectoryConnectionBlocksQueryInteger_2>;
+  atimeMs?: Maybe<DirectoryConnectionAtimeMsQueryFloat_2>;
+  mtimeMs?: Maybe<DirectoryConnectionMtimeMsQueryFloat_2>;
+  ctimeMs?: Maybe<DirectoryConnectionCtimeMsQueryFloat_2>;
+  birthtimeMs?: Maybe<DirectoryConnectionBirthtimeMsQueryFloat_2>;
+  atime?: Maybe<DirectoryConnectionAtimeQueryString_2>;
+  mtime?: Maybe<DirectoryConnectionMtimeQueryString_2>;
+  ctime?: Maybe<DirectoryConnectionCtimeQueryString_2>;
+  birthtime?: Maybe<DirectoryConnectionBirthtimeQueryString_2>;
+};
+
+/** Filter connection on its fields */
+export type FilterFile = {
+  id?: Maybe<FileConnectionIdQueryString_2>;
+  internal?: Maybe<FileConnectionInternalInputObject_2>;
+  sourceInstanceName?: Maybe<FileConnectionSourceInstanceNameQueryString_2>;
+  absolutePath?: Maybe<FileConnectionAbsolutePathQueryString_2>;
+  relativePath?: Maybe<FileConnectionRelativePathQueryString_2>;
+  extension?: Maybe<FileConnectionExtensionQueryString_2>;
+  size?: Maybe<FileConnectionSizeQueryInteger_2>;
+  prettySize?: Maybe<FileConnectionPrettySizeQueryString_2>;
+  modifiedTime?: Maybe<FileConnectionModifiedTimeQueryString_2>;
+  accessTime?: Maybe<FileConnectionAccessTimeQueryString_2>;
+  changeTime?: Maybe<FileConnectionChangeTimeQueryString_2>;
+  birthTime?: Maybe<FileConnectionBirthTimeQueryString_2>;
+  root?: Maybe<FileConnectionRootQueryString_2>;
+  dir?: Maybe<FileConnectionDirQueryString_2>;
+  base?: Maybe<FileConnectionBaseQueryString_2>;
+  ext?: Maybe<FileConnectionExtQueryString_2>;
+  name?: Maybe<FileConnectionNameQueryString_2>;
+  relativeDirectory?: Maybe<FileConnectionRelativeDirectoryQueryString_2>;
+  dev?: Maybe<FileConnectionDevQueryInteger_2>;
+  mode?: Maybe<FileConnectionModeQueryInteger_2>;
+  nlink?: Maybe<FileConnectionNlinkQueryInteger_2>;
+  uid?: Maybe<FileConnectionUidQueryInteger_2>;
+  gid?: Maybe<FileConnectionGidQueryInteger_2>;
+  rdev?: Maybe<FileConnectionRdevQueryInteger_2>;
+  blksize?: Maybe<FileConnectionBlksizeQueryInteger_2>;
+  ino?: Maybe<FileConnectionInoQueryInteger_2>;
+  blocks?: Maybe<FileConnectionBlocksQueryInteger_2>;
+  atimeMs?: Maybe<FileConnectionAtimeMsQueryFloat_2>;
+  mtimeMs?: Maybe<FileConnectionMtimeMsQueryFloat_2>;
+  ctimeMs?: Maybe<FileConnectionCtimeMsQueryFloat_2>;
+  birthtimeMs?: Maybe<FileConnectionBirthtimeMsQueryFloat_2>;
+  atime?: Maybe<FileConnectionAtimeQueryString_2>;
+  mtime?: Maybe<FileConnectionMtimeQueryString_2>;
+  ctime?: Maybe<FileConnectionCtimeQueryString_2>;
+  birthtime?: Maybe<FileConnectionBirthtimeQueryString_2>;
+  publicURL?: Maybe<PublicUrlQueryString_4>;
 };
 
 /** Filter connection on its fields */
@@ -2069,15 +4284,16 @@ export enum ImageResizingBehavior {
 
 export type Internal_10 = {
   __typename?: 'internal_10';
-  type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
 export type Internal_11 = {
   __typename?: 'internal_11';
-  type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
+  type?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -2085,19 +4301,34 @@ export type Internal_12 = {
   __typename?: 'internal_12';
   contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
-  owner?: Maybe<Scalars['String']>;
-};
-
-export type Internal_7 = {
-  __typename?: 'internal_7';
-  type?: Maybe<Scalars['String']>;
-  contentDigest?: Maybe<Scalars['String']>;
+  mediaType?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
-export type Internal_8 = {
-  __typename?: 'internal_8';
+export type Internal_13 = {
+  __typename?: 'internal_13';
+  type?: Maybe<Scalars['String']>;
+  contentDigest?: Maybe<Scalars['String']>;
+  owner?: Maybe<Scalars['String']>;
+};
+
+export type Internal_14 = {
+  __typename?: 'internal_14';
+  type?: Maybe<Scalars['String']>;
+  contentDigest?: Maybe<Scalars['String']>;
+  owner?: Maybe<Scalars['String']>;
+};
+
+export type Internal_15 = {
+  __typename?: 'internal_15';
+  type?: Maybe<Scalars['String']>;
+  contentDigest?: Maybe<Scalars['String']>;
+  owner?: Maybe<Scalars['String']>;
+};
+
+export type Internal_16 = {
+  __typename?: 'internal_16';
   contentDigest?: Maybe<Scalars['String']>;
   type?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
@@ -2107,6 +4338,7 @@ export type Internal_9 = {
   __typename?: 'internal_9';
   type?: Maybe<Scalars['String']>;
   contentDigest?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
   owner?: Maybe<Scalars['String']>;
 };
 
@@ -2155,13 +4387,31 @@ export type PluginOptions_2 = {
   theme_color?: Maybe<Scalars['String']>;
   display?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
+  path?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
   host?: Maybe<Scalars['String']>;
   environment?: Maybe<Scalars['String']>;
   includePaths?: Maybe<Array<Maybe<Scalars['String']>>>;
-  path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+};
+
+export type PublicUrlQueryString_3 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type PublicUrlQueryString_4 = {
+  eq?: Maybe<Scalars['String']>;
+  ne?: Maybe<Scalars['String']>;
+  regex?: Maybe<Scalars['String']>;
+  glob?: Maybe<Scalars['String']>;
+  in?: Maybe<Array<Maybe<Scalars['String']>>>;
+  nin?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type Query = {
@@ -2170,6 +4420,10 @@ export type Query = {
   allSitePage?: Maybe<SitePageConnection>;
   /** Connection to all SitePlugin nodes */
   allSitePlugin?: Maybe<SitePluginConnection>;
+  /** Connection to all Directory nodes */
+  allDirectory?: Maybe<DirectoryConnection>;
+  /** Connection to all File nodes */
+  allFile?: Maybe<FileConnection>;
   /** Connection to all ContentfulContentType nodes */
   allContentfulContentType?: Maybe<ContentfulContentTypeConnection>;
   /** Connection to all ContentfulArticle nodes */
@@ -2179,6 +4433,8 @@ export type Query = {
   sitePage?: Maybe<SitePage>;
   sitePlugin?: Maybe<SitePlugin>;
   site?: Maybe<Site>;
+  directory?: Maybe<Directory>;
+  file?: Maybe<File>;
   contentfulContentType?: Maybe<ContentfulContentType>;
   contentfulArticle?: Maybe<ContentfulArticle>;
   contentfulAsset?: Maybe<ContentfulAsset>;
@@ -2196,6 +4452,20 @@ export type QueryAllSitePluginArgs = {
   limit?: Maybe<Scalars['Int']>;
   sort?: Maybe<SitePluginConnectionSort>;
   filter?: Maybe<FilterSitePlugin>;
+};
+
+export type QueryAllDirectoryArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  sort?: Maybe<DirectoryConnectionSort>;
+  filter?: Maybe<FilterDirectory>;
+};
+
+export type QueryAllFileArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  sort?: Maybe<FileConnectionSort>;
+  filter?: Maybe<FilterFile>;
 };
 
 export type QueryAllContentfulContentTypeArgs = {
@@ -2255,6 +4525,83 @@ export type QuerySiteArgs = {
   buildTime?: Maybe<SiteBuildTimeQueryString_2>;
   id?: Maybe<SiteIdQueryString_2>;
   internal?: Maybe<SiteInternalInputObject_2>;
+};
+
+export type QueryDirectoryArgs = {
+  id?: Maybe<DirectoryIdQueryString_2>;
+  internal?: Maybe<DirectoryInternalInputObject_2>;
+  sourceInstanceName?: Maybe<DirectorySourceInstanceNameQueryString_2>;
+  absolutePath?: Maybe<DirectoryAbsolutePathQueryString_2>;
+  relativePath?: Maybe<DirectoryRelativePathQueryString_2>;
+  extension?: Maybe<DirectoryExtensionQueryString_2>;
+  size?: Maybe<DirectorySizeQueryInteger_2>;
+  prettySize?: Maybe<DirectoryPrettySizeQueryString_2>;
+  modifiedTime?: Maybe<DirectoryModifiedTimeQueryString_2>;
+  accessTime?: Maybe<DirectoryAccessTimeQueryString_2>;
+  changeTime?: Maybe<DirectoryChangeTimeQueryString_2>;
+  birthTime?: Maybe<DirectoryBirthTimeQueryString_2>;
+  root?: Maybe<DirectoryRootQueryString_2>;
+  dir?: Maybe<DirectoryDirQueryString_2>;
+  base?: Maybe<DirectoryBaseQueryString_2>;
+  ext?: Maybe<DirectoryExtQueryString_2>;
+  name?: Maybe<DirectoryNameQueryString_2>;
+  relativeDirectory?: Maybe<DirectoryRelativeDirectoryQueryString_2>;
+  dev?: Maybe<DirectoryDevQueryInteger_2>;
+  mode?: Maybe<DirectoryModeQueryInteger_2>;
+  nlink?: Maybe<DirectoryNlinkQueryInteger_2>;
+  uid?: Maybe<DirectoryUidQueryInteger_2>;
+  gid?: Maybe<DirectoryGidQueryInteger_2>;
+  rdev?: Maybe<DirectoryRdevQueryInteger_2>;
+  blksize?: Maybe<DirectoryBlksizeQueryInteger_2>;
+  ino?: Maybe<DirectoryInoQueryInteger_2>;
+  blocks?: Maybe<DirectoryBlocksQueryInteger_2>;
+  atimeMs?: Maybe<DirectoryAtimeMsQueryFloat_2>;
+  mtimeMs?: Maybe<DirectoryMtimeMsQueryFloat_2>;
+  ctimeMs?: Maybe<DirectoryCtimeMsQueryFloat_2>;
+  birthtimeMs?: Maybe<DirectoryBirthtimeMsQueryFloat_2>;
+  atime?: Maybe<DirectoryAtimeQueryString_2>;
+  mtime?: Maybe<DirectoryMtimeQueryString_2>;
+  ctime?: Maybe<DirectoryCtimeQueryString_2>;
+  birthtime?: Maybe<DirectoryBirthtimeQueryString_2>;
+};
+
+export type QueryFileArgs = {
+  id?: Maybe<FileIdQueryString_2>;
+  internal?: Maybe<FileInternalInputObject_2>;
+  sourceInstanceName?: Maybe<FileSourceInstanceNameQueryString_2>;
+  absolutePath?: Maybe<FileAbsolutePathQueryString_2>;
+  relativePath?: Maybe<FileRelativePathQueryString_2>;
+  extension?: Maybe<FileExtensionQueryString_2>;
+  size?: Maybe<FileSizeQueryInteger_2>;
+  prettySize?: Maybe<FilePrettySizeQueryString_2>;
+  modifiedTime?: Maybe<FileModifiedTimeQueryString_2>;
+  accessTime?: Maybe<FileAccessTimeQueryString_2>;
+  changeTime?: Maybe<FileChangeTimeQueryString_2>;
+  birthTime?: Maybe<FileBirthTimeQueryString_2>;
+  root?: Maybe<FileRootQueryString_2>;
+  dir?: Maybe<FileDirQueryString_2>;
+  base?: Maybe<FileBaseQueryString_2>;
+  ext?: Maybe<FileExtQueryString_2>;
+  name?: Maybe<FileNameQueryString_2>;
+  relativeDirectory?: Maybe<FileRelativeDirectoryQueryString_2>;
+  dev?: Maybe<FileDevQueryInteger_2>;
+  mode?: Maybe<FileModeQueryInteger_2>;
+  nlink?: Maybe<FileNlinkQueryInteger_2>;
+  uid?: Maybe<FileUidQueryInteger_2>;
+  gid?: Maybe<FileGidQueryInteger_2>;
+  rdev?: Maybe<FileRdevQueryInteger_2>;
+  blksize?: Maybe<FileBlksizeQueryInteger_2>;
+  ino?: Maybe<FileInoQueryInteger_2>;
+  blocks?: Maybe<FileBlocksQueryInteger_2>;
+  atimeMs?: Maybe<FileAtimeMsQueryFloat_2>;
+  mtimeMs?: Maybe<FileMtimeMsQueryFloat_2>;
+  ctimeMs?: Maybe<FileCtimeMsQueryFloat_2>;
+  birthtimeMs?: Maybe<FileBirthtimeMsQueryFloat_2>;
+  atime?: Maybe<FileAtimeQueryString_2>;
+  mtime?: Maybe<FileMtimeQueryString_2>;
+  ctime?: Maybe<FileCtimeQueryString_2>;
+  birthtime?: Maybe<FileBirthtimeQueryString_2>;
+  publicURL?: Maybe<PublicUrlQueryString_3>;
 };
 
 export type QueryContentfulContentTypeArgs = {
@@ -2643,7 +4990,7 @@ export type Site = Node & {
   pathPrefix?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   buildTime?: Maybe<Scalars['Date']>;
-  internal?: Maybe<Internal_12>;
+  internal?: Maybe<Internal_16>;
 };
 
 /** Node of type Site */
@@ -2744,7 +5091,7 @@ export type SitePage = Node & {
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
-  internal?: Maybe<Internal_7>;
+  internal?: Maybe<Internal_9>;
 };
 
 export type SitePageComponentChunkNameQueryString = {
@@ -3275,6 +5622,7 @@ export type SitePageConnectionPluginCreatorPluginOptionsInputObject = {
     SitePageConnectionPluginCreatorPluginOptionsDisplayQueryString
   >;
   icon?: Maybe<SitePageConnectionPluginCreatorPluginOptionsIconQueryString>;
+  path?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathQueryString>;
   spaceId?: Maybe<
     SitePageConnectionPluginCreatorPluginOptionsSpaceIdQueryString
   >;
@@ -3288,7 +5636,6 @@ export type SitePageConnectionPluginCreatorPluginOptionsInputObject = {
   includePaths?: Maybe<
     SitePageConnectionPluginCreatorPluginOptionsIncludePathsQueryList
   >;
-  path?: Maybe<SitePageConnectionPluginCreatorPluginOptionsPathQueryString>;
   pathCheck?: Maybe<
     SitePageConnectionPluginCreatorPluginOptionsPathCheckQueryBoolean
   >;
@@ -3899,12 +6246,12 @@ export type SitePagePluginCreatorPluginOptionsInputObject = {
   theme_color?: Maybe<SitePagePluginCreatorPluginOptionsThemeColorQueryString>;
   display?: Maybe<SitePagePluginCreatorPluginOptionsDisplayQueryString>;
   icon?: Maybe<SitePagePluginCreatorPluginOptionsIconQueryString>;
+  path?: Maybe<SitePagePluginCreatorPluginOptionsPathQueryString>;
   spaceId?: Maybe<SitePagePluginCreatorPluginOptionsSpaceIdQueryString>;
   accessToken?: Maybe<SitePagePluginCreatorPluginOptionsAccessTokenQueryString>;
   host?: Maybe<SitePagePluginCreatorPluginOptionsHostQueryString>;
   environment?: Maybe<SitePagePluginCreatorPluginOptionsEnvironmentQueryString>;
   includePaths?: Maybe<SitePagePluginCreatorPluginOptionsIncludePathsQueryList>;
-  path?: Maybe<SitePagePluginCreatorPluginOptionsPathQueryString>;
   pathCheck?: Maybe<SitePagePluginCreatorPluginOptionsPathCheckQueryBoolean>;
 };
 
@@ -4023,7 +6370,7 @@ export type SitePlugin = Node & {
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<PackageJson_2>;
-  internal?: Maybe<Internal_8>;
+  internal?: Maybe<Internal_10>;
 };
 
 export type SitePluginBrowserApIsQueryList_2 = {
@@ -4373,6 +6720,7 @@ export type SitePluginConnectionPluginOptionsInputObject_2 = {
   theme_color?: Maybe<SitePluginConnectionPluginOptionsThemeColorQueryString_2>;
   display?: Maybe<SitePluginConnectionPluginOptionsDisplayQueryString_2>;
   icon?: Maybe<SitePluginConnectionPluginOptionsIconQueryString_2>;
+  path?: Maybe<SitePluginConnectionPluginOptionsPathQueryString_2>;
   spaceId?: Maybe<SitePluginConnectionPluginOptionsSpaceIdQueryString_2>;
   accessToken?: Maybe<
     SitePluginConnectionPluginOptionsAccessTokenQueryString_2
@@ -4384,7 +6732,6 @@ export type SitePluginConnectionPluginOptionsInputObject_2 = {
   includePaths?: Maybe<
     SitePluginConnectionPluginOptionsIncludePathsQueryList_2
   >;
-  path?: Maybe<SitePluginConnectionPluginOptionsPathQueryString_2>;
   pathCheck?: Maybe<SitePluginConnectionPluginOptionsPathCheckQueryBoolean_2>;
 };
 
@@ -4475,12 +6822,12 @@ export enum SitePluginConnectionSortByFieldsEnum {
   pluginOptions___theme_color = 'pluginOptions___theme_color',
   pluginOptions___display = 'pluginOptions___display',
   pluginOptions___icon = 'pluginOptions___icon',
+  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
   pluginOptions___host = 'pluginOptions___host',
   pluginOptions___environment = 'pluginOptions___environment',
   pluginOptions___includePaths = 'pluginOptions___includePaths',
-  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
@@ -4537,12 +6884,12 @@ export enum SitePluginDistinctEnum {
   pluginOptions___theme_color = 'pluginOptions___theme_color',
   pluginOptions___display = 'pluginOptions___display',
   pluginOptions___icon = 'pluginOptions___icon',
+  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
   pluginOptions___host = 'pluginOptions___host',
   pluginOptions___environment = 'pluginOptions___environment',
   pluginOptions___includePaths = 'pluginOptions___includePaths',
-  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
@@ -4610,12 +6957,12 @@ export enum SitePluginGroupEnum {
   pluginOptions___theme_color = 'pluginOptions___theme_color',
   pluginOptions___display = 'pluginOptions___display',
   pluginOptions___icon = 'pluginOptions___icon',
+  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
   pluginOptions___host = 'pluginOptions___host',
   pluginOptions___environment = 'pluginOptions___environment',
   pluginOptions___includePaths = 'pluginOptions___includePaths',
-  pluginOptions___path = 'pluginOptions___path',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
@@ -4924,12 +7271,12 @@ export type SitePluginPluginOptionsInputObject_2 = {
   theme_color?: Maybe<SitePluginPluginOptionsThemeColorQueryString_2>;
   display?: Maybe<SitePluginPluginOptionsDisplayQueryString_2>;
   icon?: Maybe<SitePluginPluginOptionsIconQueryString_2>;
+  path?: Maybe<SitePluginPluginOptionsPathQueryString_2>;
   spaceId?: Maybe<SitePluginPluginOptionsSpaceIdQueryString_2>;
   accessToken?: Maybe<SitePluginPluginOptionsAccessTokenQueryString_2>;
   host?: Maybe<SitePluginPluginOptionsHostQueryString_2>;
   environment?: Maybe<SitePluginPluginOptionsEnvironmentQueryString_2>;
   includePaths?: Maybe<SitePluginPluginOptionsIncludePathsQueryList_2>;
-  path?: Maybe<SitePluginPluginOptionsPathQueryString_2>;
   pathCheck?: Maybe<SitePluginPluginOptionsPathCheckQueryBoolean_2>;
 };
 
