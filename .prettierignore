@@ -11,3 +11,4 @@ src/images/
 .nvmrc
 .prettierignore
 LICENSE
+schema.json
