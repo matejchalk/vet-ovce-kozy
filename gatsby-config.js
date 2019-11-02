@@ -2,6 +2,9 @@ if (process.env.ENVIROMENT !== 'production') {
   require('dotenv').config();
 }
 
+const APP_NAME = 'VetOvceKozy';
+const APP_COLOR = '#64af5f';
+
 const contentfulConfig = {
   spaceId: process.env.SPACE_ID,
   accessToken: process.env.ACCESS_TOKEN,
@@ -9,20 +12,20 @@ const contentfulConfig = {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful TypeScript starter',
+    title: APP_NAME,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-contentful-typescript',
-        short_name: 'starter',
+        name: APP_NAME,
+        short_name: APP_NAME,
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: APP_COLOR,
+        theme_color: APP_COLOR,
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/logo.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
