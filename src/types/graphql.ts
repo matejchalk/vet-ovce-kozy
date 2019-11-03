@@ -7793,44 +7793,21 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type ArticlesQueryVariables = {};
+export type BackgroundImageQueryVariables = {};
 
-export type ArticlesQuery = { __typename?: 'Query' } & {
-  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
-    edges: Array<
-      { __typename?: 'ContentfulArticleEdge' } & {
-        node: { __typename?: 'ContentfulArticle' } & Pick<
-          ContentfulArticle,
-          'title'
-        > & {
-            author: Maybe<
-              { __typename?: 'ContentfulMember' } & Pick<
-                ContentfulMember,
-                'name'
-              >
-            >;
-            category: Maybe<
-              { __typename?: 'ContentfulCategory' } & {
-                image: Maybe<
-                  { __typename?: 'ContentfulAsset' } & {
-                    fixed: Maybe<
-                      { __typename?: 'ContentfulFixed' } & Pick<
-                        ContentfulFixed,
-                        'src' | 'srcSet' | 'width' | 'height'
-                      >
-                    >;
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes'
-                      >
-                    >;
-                  }
-                >;
-              }
-            >;
-          };
-      }
-    >;
-  };
+export type BackgroundImageQuery = { __typename?: 'Query' } & {
+  file: Maybe<
+    { __typename?: 'File' } & {
+      childImageSharp: Maybe<
+        { __typename?: 'ImageSharp' } & {
+          fluid: Maybe<
+            { __typename?: 'ImageSharpFluid' } & Pick<
+              ImageSharpFluid,
+              'src' | 'srcSet' | 'aspectRatio' | 'sizes'
+            >
+          >;
+        }
+      >;
+    }
+  >;
 };

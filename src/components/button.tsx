@@ -7,10 +7,11 @@ type Props = {
   text: string;
   path: string;
   ripple?: 'tint' | 'shade';
+  className?: string;
 };
 
-const Button = ({ text, path, ripple = 'tint' }: Props) => (
-  <Link to={path} className={`${styles.button} ${styles[ripple]}`}>
+const Button = ({ text, path, ripple = 'tint', className }: Props) => (
+  <Link to={path} className={`${styles.button} ${styles[ripple]} ${className}`}>
     {text}
   </Link>
 );

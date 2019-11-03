@@ -1,0 +1,24 @@
+@import 'variables';
+
+.intro {
+  padding: 25vh 20% 15vh;
+  min-height: calc(100vh - #{$vok-header-height});
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.heading {
+  font-family: $vok-font-serif;
+  font-size: 48px;
+  line-height: 64px;
+  text-align: center;
+  color: $vok-white;
+  text-shadow: 0 4px 4px rgba($vok-black, 0.25);
+  max-width: 420px;
+}
+
+.button {
+  align-self: flex-end;
+}
