@@ -1,63 +1,63 @@
-import React from 'react';
-import { graphql, Link, StaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
+import { MdClose, MdMenu } from 'react-icons/md';
 import { oc } from 'ts-optchain';
+import { I18N } from '../i18n';
 import { LogoQuery } from '../types/graphql';
 import { getFixedImage } from '../utils';
+
+import './header.scss';
 
 type Props = {
   siteTitle: string;
 };
 
-const Header = ({ siteTitle }: Props) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <StaticQuery
-        query={graphql`
-          query Logo {
-            file(relativePath: { eq: "logo.png" }) {
-              childImageSharp {
-                fixed(width: 100) {
-                  width
-                  height
-                  src
-                  srcSet
-                }
-              }
-            }
+const Header = ({ siteTitle }: Props) => {
+  const { file } = useStaticQuery<LogoQuery>(graphql`
+    query Logo {
+      file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fixed(height: 90) {
+            width
+            height
+            src
+            srcSet
           }
-        `}
-        render={(data: LogoQuery) => (
+        }
+      }
+    }
+  `);
+
+  const { about, services, articles, contact } = I18N.pages;
+  const pages = [about, services, articles, contact];
+
+  return (
+    <header>
+      <div className="logo">
+        <Link to={'/'}>
           <Img
-            fixed={getFixedImage(oc(data).file.childImageSharp())}
-            alt={'Logo'}
+            fixed={getFixedImage(oc(file).childImageSharp())}
+            alt={siteTitle}
           />
-        )}
-      />
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
         </Link>
-      </h1>
-    </div>
-  </div>
-);
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label htmlFor="menu-toggle" className="open">
+        <MdMenu />
+      </label>
+      <label htmlFor="menu-toggle" className="close">
+        <MdClose />
+      </label>
+      <nav>
+        {pages.map(({ title, path }) => (
+          <Link to={`/${path}`} activeClassName="active">
+            {title}
+          </Link>
+        ))}
+      </nav>
+    </header>
+  );
+};
 
 export default Header;

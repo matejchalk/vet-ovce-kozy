@@ -10,3 +10,27 @@ $vok-light-brown: #83781b;
 $vok-brown-gradient: linear-gradient(25deg, $vok-dark-brown, $vok-light-brown);
 $vok-dark-grey: #2f2b2a;
 $vok-white: #ffffff;
+$vok-light-grey: #bfbfbf;
+$vok-light-blue: #0086ff;
+
+/* sizes */
+$vok-header-height: 90px;
+
+/* breakpoints */
+@mixin screen-gt-xs {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin screen-gt-sm {
+  @media screen and (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin screen-gt-lg {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}

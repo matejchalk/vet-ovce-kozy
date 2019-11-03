@@ -10,6 +10,7 @@ body {
 body {
   line-height: 1;
   font-family: $vok-font-sans;
+  padding-top: $vok-header-height;
 }
 
 * {
@@ -17,6 +18,7 @@ body {
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 input {

@@ -1,0 +1,113 @@
+@import 'variables';
+
+$header-padding: 20px;
+$header-padding-gt-sm: 40px;
+$icon-size: 45px;
+$link-margin-gt-sm: 10px;
+$link-padding-gt-sm: 10px;
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  height: $vok-header-height;
+  width: 100%;
+  background: $vok-white;
+  box-shadow: 0 2px 2px $vok-light-grey;
+  display: flex;
+  padding: 0 $header-padding;
+
+  @include screen-gt-sm {
+    justify-content: space-between;
+    padding-left: $header-padding-gt-sm;
+    padding-right: $header-padding-gt-sm - $link-padding-gt-sm -
+      $link-margin-gt-sm;
+  }
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-right: -$icon-size;
+
+  @include screen-gt-sm {
+    width: auto;
+    margin: 0;
+  }
+}
+
+input {
+  display: none;
+}
+
+label {
+  font-size: $icon-size;
+  color: $vok-blue;
+  padding: ($vok-header-height - $icon-size) / 2 0;
+
+  &.open {
+    display: block;
+
+    input:checked ~ & {
+      display: none;
+    }
+  }
+
+  &.close {
+    display: none;
+
+    input:checked ~ & {
+      display: block;
+    }
+  }
+
+  @include screen-gt-sm {
+    display: none !important;
+  }
+}
+
+nav {
+  position: fixed;
+  top: $vok-header-height;
+  left: 0;
+  z-index: 101;
+  background: $vok-white;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  transition: transform 0.3s;
+  transform: translateX(100%);
+
+  input:checked ~ & {
+    transform: translateX(0);
+  }
+
+  @include screen-gt-sm {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    padding-top: 0;
+  }
+
+  a {
+    display: block;
+    color: $vok-blue;
+    font-size: 24px;
+    line-height: 2.5;
+    margin-top: 10px;
+    margin-left: $header-padding;
+
+    &.active {
+      text-decoration: underline;
+      color: $vok-light-blue;
+    }
+
+    @include screen-gt-sm {
+      display: inline-block;
+      line-height: $vok-header-height;
+      margin: 0 $link-margin-gt-sm;
+      padding: 0 $link-padding-gt-sm;
+    }
+  }
+}
