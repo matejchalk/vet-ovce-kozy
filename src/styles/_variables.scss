@@ -16,10 +16,11 @@ $vok-black: #000000;
 $vok-light-grey: #bfbfbf;
 $vok-light-blue: #0086ff;
 
-/* sizes */
+/* header */
 $vok-header-height: 90px;
 
 /* breakpoints */
+
 @mixin screen-gt-xs {
   @media screen and (min-width: 600px) {
     @content;
@@ -36,4 +37,22 @@ $vok-header-height: 90px;
   @media screen and (min-width: 1280px) {
     @content;
   }
+}
+
+/* card */
+
+$vok-card-offset: 16px;
+
+@mixin card-content-padding {
+  padding-left: $vok-card-offset;
+  padding-right: $vok-card-offset;
+  @content;
+}
+
+%vok-card {
+  background: $vok-white;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba($vok-black, 0.25);
+  overflow: hidden;
+  padding: $vok-card-offset 0;
 }

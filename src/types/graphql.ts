@@ -7819,6 +7819,12 @@ export type ArticlesQuery = { __typename?: 'Query' } & {
                         'src' | 'srcSet' | 'width' | 'height'
                       >
                     >;
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes'
+                      >
+                    >;
                   }
                 >;
               }

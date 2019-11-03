@@ -1,13 +1,14 @@
 import { css } from 'emotion';
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 import { oc } from 'ts-optchain';
 import Button from '../components/button';
+import Card from '../components/card';
 
 import Layout from '../components/layout';
 import { ArticlesQuery } from '../types/graphql';
-import { getFixedImage } from '../utils';
+import { getFixedImage, getFluidImage } from '../utils';
 
 const header = css({
   color: '#0505',
@@ -33,6 +34,12 @@ const IndexPage = () => {
                   width
                   height
                 }
+                fluid {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                }
               }
             }
           }
@@ -40,6 +47,7 @@ const IndexPage = () => {
       }
     }
   `);
+
   return (
     <Layout>
       <h1 className={header}>Hi people</h1>
@@ -52,6 +60,11 @@ const IndexPage = () => {
         }}
       >
         <Button path="/page-2" text={'Go to page 2'} ripple="shade" />
+        <Card
+          title={'Hello world'}
+          image={getFluidImage(oc(edges[0]).node.category.image())}
+          link={{ text: 'Page 2', path: '/page-2' }}
+        />
       </div>
       <div
         style={{
