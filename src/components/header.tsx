@@ -3,6 +3,7 @@ import { graphql, Link, StaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import { oc } from 'ts-optchain';
 import { LogoQuery } from '../types/graphql';
+import { getFixedImage } from '../utils';
 
 type Props = {
   siteTitle: string;
@@ -38,7 +39,10 @@ const Header = ({ siteTitle }: Props) => (
           }
         `}
         render={(data: LogoQuery) => (
-          <Img fixed={oc(data).file.childImageSharp.fixed()} alt={'Logo'} />
+          <Img
+            fixed={getFixedImage(oc(data).file.childImageSharp())}
+            alt={'Logo'}
+          />
         )}
       />
       <h1 style={{ margin: 0 }}>

@@ -6,6 +6,7 @@ import { oc } from 'ts-optchain';
 
 import Layout from '../components/layout';
 import { ArticlesQuery } from '../types/graphql';
+import { getFixedImage } from '../utils';
 
 const header = css({
   color: '#0505',
@@ -47,7 +48,7 @@ const IndexPage = () => {
       <ul>
         {edges.map(({ node: { title, author, category } }) => (
           <li>
-            <Img fixed={oc(category).image.fixed()} />
+            <Img fixed={getFixedImage(oc(category).image())} />
             <strong>{title}</strong> ({oc(author).name()})
           </li>
         ))}
