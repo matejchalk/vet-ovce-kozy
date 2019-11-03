@@ -6,7 +6,7 @@ $icon-size: 45px;
 $link-margin-gt-sm: 10px;
 $link-padding-gt-sm: 10px;
 
-header {
+.header {
   position: fixed;
   top: 0;
   z-index: 100;
@@ -36,11 +36,11 @@ header {
   }
 }
 
-input {
+.input {
   display: none;
 }
 
-label {
+.label {
   font-size: $icon-size;
   color: $vok-blue;
   padding: ($vok-header-height - $icon-size) / 2 0;
@@ -48,7 +48,7 @@ label {
   &.open {
     display: block;
 
-    input:checked ~ & {
+    .input:checked ~ & {
       display: none;
     }
   }
@@ -56,7 +56,7 @@ label {
   &.close {
     display: none;
 
-    input:checked ~ & {
+    .input:checked ~ & {
       display: block;
     }
   }
@@ -66,7 +66,7 @@ label {
   }
 }
 
-nav {
+.nav {
   position: fixed;
   top: $vok-header-height;
   left: 0;
@@ -78,7 +78,7 @@ nav {
   transition: transform 0.3s;
   transform: translateX(100%);
 
-  input:checked ~ & {
+  .input:checked ~ & {
     transform: translateX(0);
   }
 
@@ -90,7 +90,7 @@ nav {
     padding-top: 0;
   }
 
-  a {
+  .link {
     display: block;
     color: $vok-blue;
     font-size: 24px;
@@ -98,16 +98,20 @@ nav {
     margin-top: 10px;
     margin-left: $header-padding;
 
-    &.active {
-      text-decoration: underline;
-      color: $vok-light-blue;
-    }
-
     @include screen-gt-sm {
       display: inline-block;
       line-height: $vok-header-height;
       margin: 0 $link-margin-gt-sm;
       padding: 0 $link-padding-gt-sm;
+    }
+
+    &.active {
+      text-decoration: underline;
+      color: $vok-light-blue;
+    }
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }

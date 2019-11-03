@@ -39,7 +39,9 @@
   "scripts": {
     "start": "gatsby develop",
     "build": "gatsby build",
-    "generate": "graphql-codegen",
+    "generate": "npm run generate:graphql && npm run generate:scss",
+    "generate:graphql": "graphql-codegen",
+    "generate:scss": "tsm src/ --includePaths src/styles/ --exportType default",
     "format": "prettier --write '**/*'",
     "lint": "tslint --project tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -55,7 +57,8 @@
     "pretty-quick": "^2.0.0",
     "tslint-config-prettier": "^1.15.0",
     "tslint-immutable": "^6.0.1",
-    "tslint-react": "^3.6.0"
+    "tslint-react": "^3.6.0",
+    "typed-scss-modules": "0.0.12"
   },
   "repository": {
     "type": "git",

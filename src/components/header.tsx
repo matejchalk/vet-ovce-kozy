@@ -7,7 +7,7 @@ import { I18N } from '../i18n';
 import { LogoQuery } from '../types/graphql';
 import { getFixedImage } from '../utils';
 
-import './header.scss';
+import styles from './header.module.scss';
 
 type Props = {
   siteTitle: string;
@@ -33,8 +33,8 @@ const Header = ({ siteTitle }: Props) => {
   const pages = [about, services, articles, contact];
 
   return (
-    <header>
-      <div className="logo">
+    <header className={styles.header}>
+      <div className={styles.logo}>
         <Link to={'/'}>
           <Img
             fixed={getFixedImage(oc(file).childImageSharp())}
@@ -42,16 +42,23 @@ const Header = ({ siteTitle }: Props) => {
           />
         </Link>
       </div>
-      <input id="menu-toggle" type="checkbox" />
-      <label htmlFor="menu-toggle" className="open">
+      <input id="menu-toggle" type="checkbox" className={styles.input} />
+      <label htmlFor="menu-toggle" className={`${styles.label} ${styles.open}`}>
         <MdMenu />
       </label>
-      <label htmlFor="menu-toggle" className="close">
+      <label
+        htmlFor="menu-toggle"
+        className={`${styles.label} ${styles.close}`}
+      >
         <MdClose />
       </label>
-      <nav>
+      <nav className={styles.nav}>
         {pages.map(({ title, path }) => (
-          <Link to={`/${path}`} activeClassName="active">
+          <Link
+            to={`/${path}`}
+            className={styles.link}
+            activeClassName={styles.active}
+          >
             {title}
           </Link>
         ))}

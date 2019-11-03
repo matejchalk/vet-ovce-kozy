@@ -6,7 +6,7 @@ import { SiteTitleQuery } from '../types/graphql';
 
 import Header from './header';
 
-import './layout.scss';
+import '../styles/global.scss';
 
 type Props = {
   children: React.ReactNode;

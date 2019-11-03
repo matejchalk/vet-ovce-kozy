@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-import './button.scss';
+import styles from './button.module.scss';
 
 type Props = {
   text: string;
@@ -10,7 +10,7 @@ type Props = {
 };
 
 const Button = ({ text, path, ripple = 'tint' }: Props) => (
-  <Link to={path} className={`button ${ripple}`}>
+  <Link to={path} className={`${styles.button} ${styles[ripple]}`}>
     {text}
   </Link>
 );
