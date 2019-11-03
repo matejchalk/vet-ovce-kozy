@@ -3,6 +3,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Img from 'gatsby-image';
 import { oc } from 'ts-optchain';
+import Button from '../components/button';
 
 import Layout from '../components/layout';
 import { ArticlesQuery } from '../types/graphql';
@@ -44,7 +45,21 @@ const IndexPage = () => {
       <h1 className={header}>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
-      <Link to="/page-2/">Go to page 2</Link>
+      <div
+        style={{
+          padding: '50px 200px',
+          background: 'linear-gradient(21.74deg, #5B4730 21.81%, #83781B 100%)',
+        }}
+      >
+        <Button path="/page-2" text={'Go to page 2'} ripple="shade" />
+      </div>
+      <div
+        style={{
+          padding: '50px 200px',
+        }}
+      >
+        <Button path="/page-2" text={'Go to page 2'} />
+      </div>
       <ul>
         {edges.map(({ node: { title, author, category } }) => (
           <li>
