@@ -6,7 +6,11 @@ export const I18N = {
     contact: { title: 'Kontakt', path: 'kontakt' },
   },
   description: 'Veterinární péče pro ovce a kozy',
+  headings: {
+    goals: 'Co je naším cílem?',
+  },
   buttons: {
     articles: 'Naše články',
+    services: 'Naše služby',
   },
 };

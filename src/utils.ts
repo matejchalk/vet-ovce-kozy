@@ -2,6 +2,10 @@ import { FixedObject, FluidObject } from 'gatsby-image';
 import { oc } from 'ts-optchain';
 import { ContentfulAsset, ImageSharp, Maybe } from './types/graphql';
 
+export function exists<T>(value: T | null | undefined): value is T {
+  return value != null;
+}
+
 /* Safely traverses GraphQL fixed image response */
 export function getFixedImage(
   image?: Maybe<Pick<ImageSharp, 'fixed'> | Pick<ContentfulAsset, 'fixed'>>

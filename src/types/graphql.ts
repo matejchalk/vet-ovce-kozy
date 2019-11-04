@@ -7793,9 +7793,9 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type BackgroundImageQueryVariables = {};
+export type HomePageQueryVariables = {};
 
-export type BackgroundImageQuery = { __typename?: 'Query' } & {
+export type HomePageQuery = { __typename?: 'Query' } & {
   file: Maybe<
     { __typename?: 'File' } & {
       childImageSharp: Maybe<
@@ -7807,6 +7807,31 @@ export type BackgroundImageQuery = { __typename?: 'Query' } & {
             >
           >;
         }
+      >;
+    }
+  >;
+  contentfulHomePage: Maybe<
+    { __typename?: 'ContentfulHomePage' } & {
+      goals: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ContentfulGoal' } & Pick<
+              ContentfulGoal,
+              'title'
+            > & {
+                image: Maybe<
+                  { __typename?: 'ContentfulAsset' } & {
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                      >
+                    >;
+                  }
+                >;
+              }
+          >
+        >
       >;
     }
   >;

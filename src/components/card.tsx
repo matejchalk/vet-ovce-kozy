@@ -11,10 +11,11 @@ type Props = {
     text: string;
     path: string;
   };
+  className?: string;
 };
 
-const Card = ({ image, title, link }: Props) => (
-  <div className={styles.card}>
+const Card = ({ image, title, link, className }: Props) => (
+  <div className={`${styles.card} ${className}`}>
     <Img fluid={image} />
     <span className={styles.title}>{title}</span>
     {link && (
