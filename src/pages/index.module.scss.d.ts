@@ -4,7 +4,7 @@ export interface Styles {
   introButton: string;
   goals: string;
   goalsTitle: string;
-  goalsCard: string;
+  goalsCards: string;
   goalsButton: string;
 }
 

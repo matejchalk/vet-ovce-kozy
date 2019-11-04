@@ -69,16 +69,16 @@ const IndexPage = () => {
       </BackgroundImage>
       <section className={styles.goals}>
         <h2 className={styles.goalsTitle}>{goals}</h2>
-        {oc(contentfulHomePage)
-          .goals([])
-          .filter(exists)
-          .map(({ title, image }) => (
-            <Card
-              title={title || ''}
-              image={getFluidImage(image)}
-              className={styles.goalsCard}
-            />
-          ))}
+        <ul className={styles.goalsCards}>
+          {oc(contentfulHomePage)
+            .goals([])
+            .filter(exists)
+            .map(({ title, image }, index) => (
+              <li key={index}>
+                <Card title={title || ''} image={getFluidImage(image)} />
+              </li>
+            ))}
+        </ul>
         <Button
           text={services}
           path={servicesPath}

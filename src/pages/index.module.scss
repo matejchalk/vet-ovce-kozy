@@ -46,7 +46,7 @@ $goals-gap: 75px;
   background: $vok-brown-gradient;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
 .goals-title {
@@ -58,11 +58,26 @@ $goals-gap: 75px;
   margin-bottom: $goals-gap;
 }
 
-.goals-card:not(:last-of-type) {
-  margin-bottom: 65px;
+.goals-cards {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    margin-bottom: 65px;
+  }
+
+  @include screen-gt-sm {
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > * {
+      width: 30%;
+      margin-bottom: 0 !important;
+    }
+  }
 }
 
 .goals-button {
-  align-self: center;
   margin-top: $goals-gap;
 }
