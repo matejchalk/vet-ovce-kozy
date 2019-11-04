@@ -19,6 +19,7 @@ const IndexPage = () => {
             srcSet
             aspectRatio
             sizes
+            base64
           }
         }
       }
@@ -37,6 +38,8 @@ const IndexPage = () => {
     <Layout>
       <BackgroundImage
         fluid={getFluidImage(oc(file).childImageSharp())}
+        backgroundColor="#bacdba"
+        Tag="section"
         className={styles.intro}
       >
         <h1 className={styles.heading}>{description}</h1>

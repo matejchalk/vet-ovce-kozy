@@ -39,6 +39,29 @@ $vok-header-height: 90px;
   }
 }
 
+/* section */
+
+$vok-section-padding: 10%;
+$vok-section-padding-gt-sm: calc((100% - 750px) / 2);
+$vok-section-padding-gt-lg: calc((100% - 1050px) / 2);
+
+@mixin section-content-padding {
+  padding-left: $vok-section-padding;
+  padding-right: $vok-section-padding;
+
+  @include screen-gt-sm {
+    padding-left: $vok-section-padding-gt-sm;
+    padding-right: $vok-section-padding-gt-sm;
+  }
+
+  @include screen-gt-lg {
+    padding-left: $vok-section-padding-gt-lg;
+    padding-right: $vok-section-padding-gt-lg;
+  }
+
+  @content;
+}
+
 /* card */
 
 $vok-card-offset: 16px;
@@ -46,6 +69,7 @@ $vok-card-offset: 16px;
 @mixin card-content-padding {
   padding-left: $vok-card-offset;
   padding-right: $vok-card-offset;
+
   @content;
 }
 

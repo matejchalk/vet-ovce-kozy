@@ -7803,7 +7803,7 @@ export type BackgroundImageQuery = { __typename?: 'Query' } & {
           fluid: Maybe<
             { __typename?: 'ImageSharpFluid' } & Pick<
               ImageSharpFluid,
-              'src' | 'srcSet' | 'aspectRatio' | 'sizes'
+              'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
             >
           >;
         }
