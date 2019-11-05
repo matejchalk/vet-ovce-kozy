@@ -9,7 +9,6 @@ $vok-blue-tint: #4079ac;
 $vok-blue-shade: #265d8f;
 $vok-dark-brown: #5b4730;
 $vok-light-brown: #83781b;
-$vok-brown-gradient: linear-gradient(75deg, $vok-dark-brown, $vok-light-brown);
 $vok-dark-grey: #2f2b2a;
 $vok-white: #ffffff;
 $vok-black: #000000;
@@ -57,6 +56,16 @@ $vok-section-padding-gt-lg: calc((100% - 1050px) / 2);
   @include screen-gt-lg {
     padding-left: $vok-section-padding-gt-lg;
     padding-right: $vok-section-padding-gt-lg;
+  }
+
+  @content;
+}
+
+@mixin brown-gradient-background {
+  background: linear-gradient(75deg, $vok-dark-brown, $vok-light-brown);
+
+  @media (orientation: landscape) {
+    background: linear-gradient(25deg, $vok-dark-brown, $vok-light-brown);
   }
 
   @content;

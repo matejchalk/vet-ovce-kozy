@@ -41,9 +41,9 @@ $goals-gap: 75px;
 
 .goals {
   @include section-content-padding;
+  @include brown-gradient-background;
   padding-top: $goals-padding;
   padding-bottom: $goals-padding;
-  background: $vok-brown-gradient;
   display: flex;
   flex-direction: column;
   align-items: center;
