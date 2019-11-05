@@ -28,7 +28,7 @@ const IndexPage = () => {
         goals {
           title
           image {
-            fluid {
+            fluid(maxWidth: 315, maxHeight: 236, quality: 100) {
               src
               srcSet
               aspectRatio
