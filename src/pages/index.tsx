@@ -62,7 +62,7 @@ const IndexPage = () => {
         <h1 className={styles.introText}>{description}</h1>
         <Button
           text={articles}
-          path={articlesPath}
+          path={`/${articlesPath}`}
           ripple="shade"
           className={styles.introButton}
         />
@@ -81,7 +81,7 @@ const IndexPage = () => {
         </ul>
         <Button
           text={services}
-          path={servicesPath}
+          path={`/${servicesPath}`}
           ripple="shade"
           className={styles.goalsButton}
         />
