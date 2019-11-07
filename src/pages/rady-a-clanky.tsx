@@ -5,14 +5,14 @@ import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
 import { I18N } from '../i18n';
-import { ArticlesQuery } from '../types/graphql';
+import { ArticlePreviewsQuery } from '../types/graphql';
 import { getFluidImage } from '../utils';
 
 import styles from './rady-a-clanky.module.scss';
 
 const ArticlesPage = () => {
-  const { allContentfulArticle } = useStaticQuery<ArticlesQuery>(graphql`
-    query Articles {
+  const { allContentfulArticle } = useStaticQuery<ArticlePreviewsQuery>(graphql`
+    query ArticlePreviews {
       allContentfulArticle(sort: { fields: date, order: DESC }) {
         edges {
           node {
