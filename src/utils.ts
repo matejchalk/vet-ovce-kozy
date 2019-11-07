@@ -12,9 +12,9 @@ export function getFixedImage(
 ): FixedObject | undefined {
   const fixed = oc(image).fixed();
   if (fixed != null) {
-    const { width, height, src, srcSet } = fixed;
+    const { width, height, src, srcSet, base64 } = fixed;
     if (width != null && height != null && src != null && srcSet != null) {
-      return { width, height, src, srcSet };
+      return { width, height, src, srcSet, base64: base64 || undefined };
     }
   }
   return undefined;
@@ -26,9 +26,9 @@ export function getFluidImage(
 ): FluidObject | undefined {
   const fluid = oc(image).fluid();
   if (fluid != null) {
-    const { src, srcSet, aspectRatio, sizes } = fluid;
+    const { src, srcSet, aspectRatio, sizes, base64 } = fluid;
     if (src != null && srcSet != null && aspectRatio != null && sizes != null) {
-      return { src, srcSet, aspectRatio, sizes };
+      return { src, srcSet, aspectRatio, sizes, base64: base64 || undefined };
     }
   }
   return undefined;

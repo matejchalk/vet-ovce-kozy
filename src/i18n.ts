@@ -8,9 +8,12 @@ export const I18N = {
   description: 'Veterinární péče pro ovce a kozy',
   headings: {
     goals: 'Co je naším cílem?',
+    articles: 'Nejnovější články',
   },
   buttons: {
     articles: 'Naše články',
     services: 'Naše služby',
+    read: 'Číst',
+    loadMore: 'Načíst další',
   },
 };

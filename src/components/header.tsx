@@ -55,6 +55,7 @@ const Header = ({ siteTitle }: Props) => {
       <nav className={styles.nav}>
         {pages.map(({ title, path }) => (
           <Link
+            key={path}
             to={`/${path}`}
             className={styles.link}
             activeClassName={styles.active}

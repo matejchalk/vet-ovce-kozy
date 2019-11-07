@@ -7793,6 +7793,36 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
+export type ArticlesQueryVariables = {};
+
+export type ArticlesQuery = { __typename?: 'Query' } & {
+  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
+    edges: Array<
+      { __typename?: 'ContentfulArticleEdge' } & {
+        node: { __typename?: 'ContentfulArticle' } & Pick<
+          ContentfulArticle,
+          'slug' | 'title'
+        > & {
+            category: Maybe<
+              { __typename?: 'ContentfulCategory' } & {
+                image: Maybe<
+                  { __typename?: 'ContentfulAsset' } & {
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                      >
+                    >;
+                  }
+                >;
+              }
+            >;
+          };
+      }
+    >;
+  };
+};
+
 export type HomePageQueryVariables = {};
 
 export type HomePageQuery = { __typename?: 'Query' } & {

@@ -1,0 +1,47 @@
+@import 'variables';
+
+$padding: 85px;
+$gap: 75px;
+
+.wrapper {
+  @include section-content-padding;
+  @include brown-gradient-background;
+  padding-top: $padding;
+  padding-bottom: $padding;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-family: $vok-font-serif;
+  color: $vok-white;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: $gap;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    margin-bottom: 65px;
+  }
+
+  @include screen-gt-sm {
+    flex-direction: row;
+    justify-content: space-between;
+
+    & > * {
+      width: 30%;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+.button {
+  margin-top: $gap;
+}
