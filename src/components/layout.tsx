@@ -35,7 +35,7 @@ const Layout = ({ children }: Props) => (
           <html lang="en" />
         </Helmet>
         <Header siteTitle={oc(data).site.siteMetadata.title('')} />
-        <div>{children}</div>
+        {children}
       </>
     )}
   />
