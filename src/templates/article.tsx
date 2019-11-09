@@ -19,7 +19,10 @@ const ArticleTemplate = ({ data: { contentfulArticle } }: Props) => {
           <h1 className={styles.title}>{oc(contentfulArticle).title()}</h1>
           <div className={styles.author}>
             <Img
-              fixed={getFixedImage(oc(contentfulArticle).author.avatar())}
+              fixed={getFixedImage(
+                oc(contentfulArticle).author.avatar() ||
+                  oc(contentfulArticle).author.photo()
+              )}
               className={styles.authorAvatar}
             />
             <div>
@@ -57,18 +60,26 @@ export const pageQuery = graphql`
       author {
         name
         avatar {
-          fixed(width: 55, height: 55) {
-            width
-            height
-            src
-            srcSet
-          }
+          ...AuthorAvatar
+        }
+        photo {
+          ...AuthorAvatar
         }
       }
       date
       content {
         json
       }
+    }
+  }
+
+  fragment AuthorAvatar on ContentfulAsset {
+    fixed(width: 55, height: 55) {
+      width
+      height
+      src
+      srcSet
+      base64
     }
   }
 `;

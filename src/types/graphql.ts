@@ -6357,6 +6357,7 @@ export type QuerySitePageArgs = {
   component?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -6895,6 +6896,7 @@ export type SitePage = Node & {
   component?: Maybe<Scalars['String']>;
   componentChunkName?: Maybe<Scalars['String']>;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
@@ -6918,6 +6920,15 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
   field: SitePageFieldsEnum;
+};
+
+export type SitePageContext = {
+  __typename?: 'SitePageContext';
+  slug?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextFilterInput = {
+  slug?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -7019,6 +7030,7 @@ export enum SitePageFieldsEnum {
   component = 'component',
   componentChunkName = 'componentChunkName',
   isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
+  context___slug = 'context___slug',
   pluginCreator___id = 'pluginCreator___id',
   pluginCreator___parent___id = 'pluginCreator___parent___id',
   pluginCreator___parent___parent___id = 'pluginCreator___parent___parent___id',
@@ -7105,6 +7117,7 @@ export type SitePageFilterInput = {
   component?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
@@ -7793,6 +7806,36 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
+export type ArticlePreviewsQueryVariables = {};
+
+export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
+  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
+    edges: Array<
+      { __typename?: 'ContentfulArticleEdge' } & {
+        node: { __typename?: 'ContentfulArticle' } & Pick<
+          ContentfulArticle,
+          'slug' | 'title'
+        > & {
+            category: Maybe<
+              { __typename?: 'ContentfulCategory' } & {
+                image: Maybe<
+                  { __typename?: 'ContentfulAsset' } & {
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                      >
+                    >;
+                  }
+                >;
+              }
+            >;
+          };
+      }
+    >;
+  };
+};
+
 export type HomePageQueryVariables = {};
 
 export type HomePageQuery = { __typename?: 'Query' } & {
@@ -7837,36 +7880,6 @@ export type HomePageQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type ArticlePreviewsQueryVariables = {};
-
-export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
-  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
-    edges: Array<
-      { __typename?: 'ContentfulArticleEdge' } & {
-        node: { __typename?: 'ContentfulArticle' } & Pick<
-          ContentfulArticle,
-          'slug' | 'title'
-        > & {
-            category: Maybe<
-              { __typename?: 'ContentfulCategory' } & {
-                image: Maybe<
-                  { __typename?: 'ContentfulAsset' } & {
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                      >
-                    >;
-                  }
-                >;
-              }
-            >;
-          };
-      }
-    >;
-  };
-};
-
 export type ArticleDetailQueryVariables = {
   slug: Scalars['String'];
 };
@@ -7897,14 +7910,10 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
             'name'
           > & {
               avatar: Maybe<
-                { __typename?: 'ContentfulAsset' } & {
-                  fixed: Maybe<
-                    { __typename?: 'ContentfulFixed' } & Pick<
-                      ContentfulFixed,
-                      'width' | 'height' | 'src' | 'srcSet'
-                    >
-                  >;
-                }
+                { __typename?: 'ContentfulAsset' } & AuthorAvatarFragment
+              >;
+              photo: Maybe<
+                { __typename?: 'ContentfulAsset' } & AuthorAvatarFragment
               >;
             }
         >;
@@ -7915,5 +7924,14 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
           >
         >;
       }
+  >;
+};
+
+export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & {
+  fixed: Maybe<
+    { __typename?: 'ContentfulFixed' } & Pick<
+      ContentfulFixed,
+      'width' | 'height' | 'src' | 'srcSet' | 'base64'
+    >
   >;
 };
