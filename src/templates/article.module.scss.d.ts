@@ -6,6 +6,19 @@ export interface Styles {
   title: string;
   author: string;
   authorAvatar: string;
+  content: string;
+  bold: string;
+  italic: string;
+  underline: string;
+  paragraph: string;
+  heading2: string;
+  heading3: string;
+  orderedList: string;
+  unorderedList: string;
+  listItem: string;
+  quote: string;
+  hyperlink: string;
+  entryHyperlink: string;
 }
 
 export type ClassNames = keyof Styles;

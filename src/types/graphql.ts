@@ -7925,6 +7925,23 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
         >;
       }
   >;
+  allContentfulAsset: { __typename?: 'ContentfulAssetConnection' } & {
+    edges: Array<
+      { __typename?: 'ContentfulAssetEdge' } & {
+        node: { __typename?: 'ContentfulAsset' } & Pick<
+          ContentfulAsset,
+          'contentful_id'
+        > & {
+            fluid: Maybe<
+              { __typename?: 'ContentfulFluid' } & Pick<
+                ContentfulFluid,
+                'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+              >
+            >;
+          };
+      }
+    >;
+  };
 };
 
 export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & {

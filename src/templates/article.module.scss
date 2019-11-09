@@ -1,6 +1,8 @@
 @import 'variables';
 
 $section-padding-v: 70px;
+$margin-v: 30px;
+$list-offset: 40px;
 
 %author-text {
   font-size: 14px;
@@ -32,7 +34,7 @@ $section-padding-v: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px 0;
+  margin: $margin-v 0;
 }
 
 .author-avatar {
@@ -48,4 +50,80 @@ $section-padding-v: 70px;
 
 .date {
   @extend %author-text;
+}
+
+.content {
+  @include card-content-padding;
+  margin-top: $margin-v;
+
+  & > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+/* rich text */
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.paragraph {
+  font-size: 18px;
+}
+
+.heading-2 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.heading-3 {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ordered-list {
+  padding-left: $list-offset;
+}
+
+.unordered-list {
+  padding-left: $list-offset;
+}
+
+.list-item {
+  .ordered-list > & {
+    list-style-type: decimal;
+  }
+
+  .unordered-list > & {
+    list-style-type: disc;
+  }
+}
+
+.quote {
+  font-style: italic;
+
+  &::before {
+    content: '\201E';
+  }
+
+  &::after {
+    content: '\201C';
+  }
+
+  & > p {
+    display: inline;
+  }
+}
+
+.hyperlink,
+.entry-hyperlink {
+  color: $vok-light-blue;
 }

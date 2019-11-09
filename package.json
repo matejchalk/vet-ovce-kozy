@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "author": "Matej Chalk <matejchalk@gmail.com>",
   "dependencies": {
-    "@types/react-helmet": "^5.0.7",
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^13.4.0",
     "dotenv": "^6.0.0",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
@@ -53,6 +54,7 @@
     "@graphql-codegen/cli": "^1.8.2",
     "@graphql-codegen/typescript": "^1.8.2",
     "@graphql-codegen/typescript-operations": "^1.8.2",
+    "@types/react-helmet": "^5.0.7",
     "husky": "^3.0.9",
     "prettier": "^1.18.2",
     "pretty-quick": "^2.0.0",
