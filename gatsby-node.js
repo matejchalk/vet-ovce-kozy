@@ -1,4 +1,5 @@
 const path = require('path');
+const i18n = require('./src/i18n.json');
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -25,5 +26,15 @@ exports.createPages = async ({ graphql, actions }) => {
       component: articleTemplate,
       context: { slug },
     });
+  });
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+  Object.entries(i18n.pages).forEach(([key, { path }]) => {
+    if (page.path.replace(/\//g, '') === key) {
+      deletePage(page);
+      createPage({ ...page, path });
+    }
   });
 };

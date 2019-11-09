@@ -5,7 +5,7 @@ import { oc } from 'ts-optchain';
 import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
-import { I18N } from '../i18n';
+import i18n from '../i18n.json';
 import { HomePageQuery } from '../types/graphql';
 import { exists, getFluidImage } from '../utils';
 import styles from './index.module.scss';
@@ -49,7 +49,7 @@ const IndexPage = () => {
     description,
     headings: { goals },
     buttons: { articles, services },
-  } = I18N;
+  } = i18n;
 
   return (
     <Layout>

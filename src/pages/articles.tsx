@@ -4,11 +4,11 @@ import { oc } from 'ts-optchain';
 import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
-import { I18N } from '../i18n';
+import i18n from '../i18n.json';
 import { ArticlePreviewsQuery } from '../types/graphql';
 import { getFluidImage } from '../utils';
 
-import styles from './rady-a-clanky.module.scss';
+import styles from './articles.module.scss';
 
 const ArticlesPage = () => {
   const { allContentfulArticle } = useStaticQuery<ArticlePreviewsQuery>(graphql`
@@ -38,7 +38,7 @@ const ArticlesPage = () => {
   const {
     headings: { articles },
     buttons: { read, loadMore },
-  } = I18N;
+  } = i18n;
 
   return (
     <Layout>

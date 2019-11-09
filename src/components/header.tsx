@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { oc } from 'ts-optchain';
-import { I18N } from '../i18n';
+import i18n from '../i18n.json';
 import { LogoQuery } from '../types/graphql';
 import { getFixedImage } from '../utils';
 
@@ -29,7 +29,7 @@ const Header = ({ siteTitle }: Props) => {
     }
   `);
 
-  const { about, services, articles, contact } = I18N.pages;
+  const { about, services, articles, contact } = i18n.pages;
   const pages = [about, services, articles, contact];
 
   return (

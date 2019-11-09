@@ -19,7 +19,8 @@
     "pretty": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"],
   "plugins": [{ "transform": "ts-optchain/transform" }]
