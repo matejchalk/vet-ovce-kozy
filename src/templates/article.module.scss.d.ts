@@ -13,10 +13,12 @@ export interface Styles {
   paragraph: string;
   heading2: string;
   heading3: string;
+  heading4: string;
   orderedList: string;
   unorderedList: string;
   listItem: string;
   quote: string;
+  embeddedAsset: string;
   hyperlink: string;
   entryHyperlink: string;
 }

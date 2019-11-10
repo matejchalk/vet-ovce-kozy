@@ -2,7 +2,7 @@
 
 $section-padding-v: 70px;
 $margin-v: 30px;
-$list-offset: 40px;
+$list-offset: 30px;
 
 %author-text {
   font-size: 14px;
@@ -24,9 +24,13 @@ $list-offset: 40px;
   @include card-content-padding;
   font-family: $vok-font-serif;
   font-size: 24px;
-  line-height: 32px;
+  line-height: 1.33;
   text-align: center;
   font-weight: bold;
+
+  @include screen-gt-xs {
+    font-size: 32px;
+  }
 }
 
 .author {
@@ -58,6 +62,10 @@ $list-offset: 40px;
 
   & > *:not(:last-child) {
     margin-bottom: 16px;
+
+    @include screen-gt-sm {
+      margin-bottom: 24px;
+    }
   }
 }
 
@@ -77,16 +85,41 @@ $list-offset: 40px;
 
 .paragraph {
   font-size: 18px;
+  line-height: 23px;
+
+  @include screen-gt-sm {
+    font-size: 20px;
+  }
 }
 
 .heading-2 {
   font-weight: bold;
   font-size: 22px;
+  padding-top: 8px;
+
+  @include screen-gt-sm {
+    font-size: 24px;
+  }
 }
 
 .heading-3 {
   font-weight: bold;
   font-size: 20px;
+  padding-top: 6px;
+
+  @include screen-gt-sm {
+    font-size: 22px;
+  }
+}
+
+.heading-4 {
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 4px;
+
+  @include screen-gt-sm {
+    font-size: 20px;
+  }
 }
 
 .ordered-list {
@@ -98,6 +131,8 @@ $list-offset: 40px;
 }
 
 .list-item {
+  padding-left: 5px;
+
   .ordered-list > & {
     list-style-type: decimal;
   }
@@ -105,10 +140,16 @@ $list-offset: 40px;
   .unordered-list > & {
     list-style-type: disc;
   }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
 }
 
 .quote {
   font-style: italic;
+  border-left: 4px solid $vok-light-grey;
+  padding-left: 16px;
 
   &::before {
     content: '\201E';
@@ -123,7 +164,24 @@ $list-offset: 40px;
   }
 }
 
+.content > .embedded-asset {
+  max-width: 650px;
+  margin: 32px auto;
+
+  @include screen-gt-xs {
+    margin: 40px auto;
+  }
+
+  @include screen-gt-sm {
+    margin: 48px auto;
+  }
+}
+
 .hyperlink,
 .entry-hyperlink {
   color: $vok-light-blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

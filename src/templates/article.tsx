@@ -36,6 +36,9 @@ const ArticleTemplate = ({
       [BLOCKS.HEADING_3]: (node, children) => (
         <h3 className={styles.heading3}>{children}</h3>
       ),
+      [BLOCKS.HEADING_4]: (node, children) => (
+        <h4 className={styles.heading4}>{children}</h4>
+      ),
       [BLOCKS.OL_LIST]: (node, children) => (
         <ol className={styles.orderedList}>{children}</ol>
       ),
@@ -57,7 +60,12 @@ const ArticleTemplate = ({
         if (asset == null) {
           return <></>;
         }
-        return <Img fluid={getFluidImage(asset.node)} />;
+        return (
+          <Img
+            fluid={getFluidImage(asset.node)}
+            className={styles.embeddedAsset}
+          />
+        );
       },
 
       [INLINES.HYPERLINK]: (node, children) => (
@@ -151,7 +159,7 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
-          fluid(maxWidth: 1018, quality: 100) {
+          fluid(maxWidth: 650, quality: 100) {
             src
             srcSet
             aspectRatio

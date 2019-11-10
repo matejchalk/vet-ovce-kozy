@@ -74,10 +74,22 @@ $vok-section-padding-gt-lg: calc((100% - 1050px) / 2);
 /* card */
 
 $vok-card-offset: 16px;
+$vok-card-offset-gt-xs: 32px;
+$vok-card-offset-gt-sm: 48px;
 
 @mixin card-content-padding {
   padding-left: $vok-card-offset;
   padding-right: $vok-card-offset;
+
+  @include screen-gt-xs {
+    padding-left: $vok-card-offset-gt-xs;
+    padding-right: $vok-card-offset-gt-xs;
+  }
+
+  @include screen-gt-sm {
+    padding-left: $vok-card-offset-gt-sm;
+    padding-right: $vok-card-offset-gt-sm;
+  }
 
   @content;
 }
@@ -88,4 +100,12 @@ $vok-card-offset: 16px;
   box-shadow: 0 0 10px rgba($vok-black, 0.25);
   overflow: hidden;
   padding: $vok-card-offset 0;
+
+  @include screen-gt-xs {
+    padding: $vok-card-offset-gt-xs 0;
+  }
+
+  @include screen-gt-sm {
+    padding: $vok-card-offset-gt-sm 0;
+  }
 }
