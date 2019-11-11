@@ -63,7 +63,6 @@ const IndexPage = () => {
         <Button
           text={articles}
           path={`/${articlesPath}`}
-          ripple="shade"
           className={styles.introButton}
         />
       </BackgroundImage>
@@ -82,7 +81,6 @@ const IndexPage = () => {
         <Button
           text={services}
           path={`/${servicesPath}`}
-          ripple="shade"
           className={styles.goalsButton}
         />
       </section>

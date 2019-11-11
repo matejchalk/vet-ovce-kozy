@@ -20,7 +20,7 @@ const Card = ({ image, title, link, className }: Props) => (
     <span className={styles.title}>{title}</span>
     {link && (
       <div className={styles.buttonWrapper}>
-        <Button text={link.text} path={link.path} />
+        <Button text={link.text} path={link.path} ripple="tint" />
       </div>
     )}
   </div>
