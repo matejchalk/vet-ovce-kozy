@@ -6,7 +6,6 @@ import { oc } from 'ts-optchain';
 import i18n from '../i18n.json';
 import { LogoQuery } from '../types/graphql';
 import { getFixedImage } from '../utils';
-
 import styles from './header.module.scss';
 
 type Props = {
@@ -18,7 +17,7 @@ const Header = ({ siteTitle }: Props) => {
     query Logo {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fixed(height: 90) {
+          fixed(height: 80) {
             width
             height
             src

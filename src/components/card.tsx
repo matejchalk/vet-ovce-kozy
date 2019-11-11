@@ -1,7 +1,6 @@
 import Img, { FluidObject } from 'gatsby-image';
 import React from 'react';
 import Button from './button';
-
 import styles from './card.module.scss';
 
 type Props = {
