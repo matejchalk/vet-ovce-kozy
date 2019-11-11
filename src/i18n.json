@@ -14,6 +14,10 @@
     "articles": "Naše články",
     "services": "Naše služby",
     "read": "Číst",
-    "loadMore": "Načíst další"
+    "previous": "Předchozí",
+    "next": "Další"
+  },
+  "other": {
+    "continued": "pokr."
   }
 }

@@ -3,6 +3,9 @@
 .card {
   @extend %vok-card;
   padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {

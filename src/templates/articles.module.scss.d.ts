@@ -1,7 +1,10 @@
 export interface Styles {
   wrapper: string;
   title: string;
-  cards: string;
+  previews: string;
+  preview: string;
+  card: string;
+  nav: string;
   button: string;
 }
 

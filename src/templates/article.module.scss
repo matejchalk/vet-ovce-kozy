@@ -3,6 +3,8 @@
 $section-padding-v: 70px;
 $margin-v: 30px;
 $list-offset: 30px;
+$card-offset-gt-xs: 32px;
+$card-offset-gt-sm: 48px;
 
 %author-text {
   font-size: 14px;
@@ -18,6 +20,14 @@ $list-offset: 30px;
 
 .article {
   @extend %vok-card;
+
+  @include screen-gt-xs {
+    padding: $card-offset-gt-xs 0;
+  }
+
+  @include screen-gt-sm {
+    padding: $card-offset-gt-sm 0;
+  }
 }
 
 .title {
@@ -30,6 +40,13 @@ $list-offset: 30px;
 
   @include screen-gt-xs {
     font-size: 32px;
+    padding-left: $card-offset-gt-xs;
+    padding-right: $card-offset-gt-xs;
+  }
+
+  @include screen-gt-sm {
+    padding-left: $card-offset-gt-sm;
+    padding-right: $card-offset-gt-sm;
   }
 }
 
