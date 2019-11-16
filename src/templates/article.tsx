@@ -121,7 +121,7 @@ const ArticleTemplate = ({
         title={title}
         description={description}
         keywords={keywords}
-        image={oc(image).src()}
+        image={`https:${oc(image).src()}`}
         path={pathname}
         isArticle
       />
