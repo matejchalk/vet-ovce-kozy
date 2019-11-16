@@ -109,11 +109,13 @@ const ArticleTemplate = ({
       year: 'numeric',
     });
 
-  const title = oc(contentfulArticle).title() || '';
+  const title = oc(contentfulArticle).title() || undefined;
   const image = getFluidImage(oc(contentfulArticle).category.image());
   const description = getFirstParagraphFromRichText(richTextDocument);
   const categoryTitle = oc(contentfulArticle).category.title();
   const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
+  const author = oc(contentfulArticle).author.name() || undefined;
+  const datePublished = oc(contentfulArticle).date() || undefined;
 
   return (
     <Layout>
@@ -124,6 +126,8 @@ const ArticleTemplate = ({
         image={`https:${oc(image).src()}`}
         path={pathname}
         isArticle
+        author={author}
+        datePublished={datePublished}
       />
       <section className={styles.section}>
         <article className={styles.article}>

@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Article, WebPage, WithContext } from 'schema-dts';
 import { oc } from 'ts-optchain';
 import { LANG } from '../constants';
 import { SiteMetadataQuery } from '../types/graphql';
@@ -13,6 +14,8 @@ type Props = {
   keywords?: string[];
   path?: string;
   isArticle?: boolean;
+  author?: string;
+  datePublished?: string;
 };
 
 const SEO = (props: Props) => {
@@ -48,6 +51,44 @@ const SEO = (props: Props) => {
     props.image || `${siteUrl}${require(`../images/${defaultImage}`)}`;
   const type = props.isArticle ? 'article' : 'website';
 
+  const websiteSchema: WithContext<WebPage> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage', // TODO: other types?
+    name: defaultTitle,
+    ...(title && { headline: title }),
+    inLanguage: LANG,
+    url,
+    mainEntityOfPage: url,
+    ...(description && { description }),
+    image: {
+      '@type': 'ImageObject',
+      url: image,
+    },
+  };
+
+  const articleSchema: WithContext<Article> = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    ...(props.author && {
+      author: {
+        '@type': 'Person',
+        name: props.author,
+      },
+    }),
+    ...(props.datePublished && { datePublished: props.datePublished }),
+    ...(description && { description }),
+    ...(title && { headline: title, name: title }),
+    inLanguage: LANG,
+    image: {
+      '@type': 'ImageObject',
+      url: image,
+    },
+    url,
+    mainEntityOfPage: url,
+  };
+
+  const schema = props.isArticle ? articleSchema : websiteSchema;
+
   return (
     <Helmet
       title={title}
@@ -65,7 +106,7 @@ const SEO = (props: Props) => {
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:locale" content={LANG} />
-      {/*TODO: <meta property="og:image:alt" content="Alt test for image" />*/}
+      {/*TODO: <meta property="og:image:alt" content="Alt text for image" />*/}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title || defaultTitle} />
@@ -73,6 +114,7 @@ const SEO = (props: Props) => {
       <meta name="twitter:image" content={image} />
       {/*TODO: <meta name="twitter:image:alt" content="Alt text for image" />*/}
       <link rel="canonical" href={url} />
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );
 };
