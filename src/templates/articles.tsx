@@ -37,7 +37,7 @@ const ArticlesPage = ({
 
   return (
     <Layout>
-      <section className={styles.wrapper}>
+      <section className={styles.section}>
         <h1 className={styles.title}>{pageTitle}</h1>
         <ul className={styles.previews}>
           {oc(allContentfulArticle)

@@ -1,0 +1,26 @@
+@import 'variables';
+
+.section {
+  @include section-content-padding;
+  @include brown-gradient-background;
+  @include stretch-section-to-viewport-height;
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  @extend %vok-card;
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}

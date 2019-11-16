@@ -71,6 +71,12 @@ $vok-section-padding-gt-lg: calc((100% - 1050px) / 2);
   @content;
 }
 
+@mixin stretch-section-to-viewport-height {
+  min-height: calc(100vh - #{$vok-header-height});
+
+  @content;
+}
+
 /* card */
 
 $vok-card-offset: 16px;

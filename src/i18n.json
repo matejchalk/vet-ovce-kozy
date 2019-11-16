@@ -15,9 +15,11 @@
     "services": "Naše služby",
     "read": "Číst",
     "previous": "Předchozí",
-    "next": "Další"
+    "next": "Další",
+    "backToHome": "Zpět na hlavní stránku"
   },
   "other": {
-    "continued": "pokr."
+    "continued": "pokr.",
+    "pageNotFound": "Stránka nenalezena"
   }
 }

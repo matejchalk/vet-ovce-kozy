@@ -15,7 +15,7 @@ type Props = {
 
 const Card = ({ image, title, link, className }: Props) => (
   <div className={`${styles.card} ${className}`}>
-    <Img fluid={image} />
+    {image && <Img fluid={image} />}
     <span className={styles.title}>{title}</span>
     {link && (
       <div className={styles.buttonWrapper}>

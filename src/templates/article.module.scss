@@ -16,6 +16,7 @@ $card-offset-gt-sm: 48px;
 .section {
   @include section-content-padding;
   @include brown-gradient-background;
+  @include stretch-section-to-viewport-height;
   padding-top: $section-padding-v;
   padding-bottom: $section-padding-v;
 }

@@ -4,9 +4,10 @@ $padding: 85px;
 $gap: 75px;
 $previews-gap: 40px;
 
-.wrapper {
+.section {
   @include section-content-padding;
   @include brown-gradient-background;
+  @include stretch-section-to-viewport-height;
   padding-top: $padding;
   padding-bottom: $padding;
   display: flex;
