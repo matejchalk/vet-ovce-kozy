@@ -15,7 +15,7 @@ const contentfulConfig = {
 module.exports = {
   siteMetadata: {
     title: APP_NAME,
-    titleTemplate: `%s | ${APP_NAME}`,
+    titleTemplate: `%s · ${APP_NAME}`,
     description: i18n.description,
     keywords: i18n.keywords,
     url: process.env.URL,

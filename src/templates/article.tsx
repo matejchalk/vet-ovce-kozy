@@ -8,18 +8,26 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import { LANG } from '../constants';
 import { ArticleDetailQuery } from '../types/graphql';
-import { getFixedImage, getFluidImage } from '../utils';
+import {
+  getFirstParagraphFromRichText,
+  getFixedImage,
+  getFluidImage,
+} from '../utils';
 import styles from './article.module.scss';
 
 type Props = {
   data: ArticleDetailQuery;
+  location: Location;
 };
 
 const ArticleTemplate = ({
   data: { contentfulArticle, allContentfulAsset },
+  location,
 }: Props) => {
+  const richTextDocument = oc(contentfulArticle).content.json();
   const richTextOptions: Options = {
     renderMark: {
       [MARKS.BOLD]: text => <strong className={styles.bold}>{text}</strong>,
@@ -90,10 +98,7 @@ const ArticleTemplate = ({
     },
   };
 
-  const content = documentToReactComponents(
-    oc(contentfulArticle).content.json(),
-    richTextOptions
-  );
+  const content = documentToReactComponents(richTextDocument, richTextOptions);
 
   const date =
     contentfulArticle &&
@@ -104,11 +109,26 @@ const ArticleTemplate = ({
       year: 'numeric',
     });
 
+  const title = oc(contentfulArticle).title() || '';
+  const image = getFluidImage(oc(contentfulArticle).category.image());
+  const description = getFirstParagraphFromRichText(richTextDocument);
+  const categoryTitle = oc(contentfulArticle).category.title();
+  const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
+  const path = location.pathname;
+
   return (
     <Layout>
+      <SEO
+        title={title}
+        description={description}
+        keywords={keywords}
+        image={oc(image).src()}
+        path={path}
+        isArticle
+      />
       <section className={styles.section}>
         <article className={styles.article}>
-          <h1 className={styles.title}>{oc(contentfulArticle).title()}</h1>
+          <h1 className={styles.title}>{title}</h1>
           <div className={styles.author}>
             <Img
               fixed={getFixedImage(
@@ -124,7 +144,7 @@ const ArticleTemplate = ({
               <div className={styles.date}>{date}</div>
             </div>
           </div>
-          <Img fluid={getFluidImage(oc(contentfulArticle).category.image())} />
+          <Img fluid={image} />
           <main className={styles.content}>{content}</main>
         </article>
       </section>
@@ -140,6 +160,7 @@ export const pageQuery = graphql`
       slug
       title
       category {
+        title
         image {
           fluid(maxWidth: 1050, quality: 100) {
             src

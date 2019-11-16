@@ -1,6 +1,7 @@
 import { FixedObject, FluidObject } from 'gatsby-image';
 import { oc } from 'ts-optchain';
 import { ContentfulAsset, ImageSharp, Maybe } from './types/graphql';
+import { BLOCKS, Document, Text } from '@contentful/rich-text-types';
 
 export function exists<T>(value: T | null | undefined): value is T {
   return value != null;
@@ -32,4 +33,19 @@ export function getFluidImage(
     }
   }
   return undefined;
+}
+
+export function getFirstParagraphFromRichText(
+  document: Document
+): string | undefined {
+  const firstParagraphNode = document.content.find(
+    ({ nodeType }) => nodeType === BLOCKS.PARAGRAPH
+  );
+  if (firstParagraphNode == null) {
+    return undefined;
+  }
+  return firstParagraphNode.content
+    .filter((node): node is Text => node.nodeType === 'text')
+    .map(({ value }) => value)
+    .join('');
 }

@@ -40,7 +40,7 @@ const SEO = (props: Props) => {
   const title = props.title;
   const description = props.description || defaultDescription;
   const keywords = [...(props.keywords || []), ...defaultKeywords].join(', ');
-  const url = `${siteUrl}${props.path || '/'}`;
+  const url = `${siteUrl}${props.path || ''}`;
   const image = props.image || require(`../images/${defaultImage}`);
   const type = props.isArticle ? 'article' : 'website';
 

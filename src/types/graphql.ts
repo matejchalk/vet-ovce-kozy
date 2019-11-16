@@ -7842,6 +7842,27 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
+export type SiteMetadataQueryVariables = {};
+
+export type SiteMetadataQuery = { __typename?: 'Query' } & {
+  site: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & Pick<
+          SiteSiteMetadata,
+          'titleTemplate'
+        > & {
+            defaultTitle: SiteSiteMetadata['title'];
+            defaultDescription: SiteSiteMetadata['description'];
+            defaultKeywords: SiteSiteMetadata['keywords'];
+            siteUrl: SiteSiteMetadata['url'];
+            defaultImage: SiteSiteMetadata['image'];
+          }
+      >;
+    }
+  >;
+};
+
 export type HomePageQueryVariables = {};
 
 export type HomePageQuery = { __typename?: 'Query' } & {
@@ -7886,27 +7907,6 @@ export type HomePageQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type SiteMetadataQueryVariables = {};
-
-export type SiteMetadataQuery = { __typename?: 'Query' } & {
-  site: Maybe<
-    { __typename?: 'Site' } & {
-      siteMetadata: Maybe<
-        { __typename?: 'SiteSiteMetadata' } & Pick<
-          SiteSiteMetadata,
-          'titleTemplate'
-        > & {
-            defaultTitle: SiteSiteMetadata['title'];
-            defaultDescription: SiteSiteMetadata['description'];
-            defaultKeywords: SiteSiteMetadata['keywords'];
-            siteUrl: SiteSiteMetadata['url'];
-            defaultImage: SiteSiteMetadata['image'];
-          }
-      >;
-    }
-  >;
-};
-
 export type ArticleDetailQueryVariables = {
   slug: Scalars['String'];
 };
@@ -7918,18 +7918,21 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
       'slug' | 'title' | 'date'
     > & {
         category: Maybe<
-          { __typename?: 'ContentfulCategory' } & {
-            image: Maybe<
-              { __typename?: 'ContentfulAsset' } & {
-                fluid: Maybe<
-                  { __typename?: 'ContentfulFluid' } & Pick<
-                    ContentfulFluid,
-                    'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                  >
-                >;
-              }
-            >;
-          }
+          { __typename?: 'ContentfulCategory' } & Pick<
+            ContentfulCategory,
+            'title'
+          > & {
+              image: Maybe<
+                { __typename?: 'ContentfulAsset' } & {
+                  fluid: Maybe<
+                    { __typename?: 'ContentfulFluid' } & Pick<
+                      ContentfulFluid,
+                      'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                    >
+                  >;
+                }
+              >;
+            }
         >;
         author: Maybe<
           { __typename?: 'ContentfulMember' } & Pick<
