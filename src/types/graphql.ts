@@ -349,12 +349,12 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___article___category___id = 'teamMembers___article___category___id',
   teamMembers___article___category___children = 'teamMembers___article___category___children',
   teamMembers___article___category___title = 'teamMembers___article___category___title',
+  teamMembers___article___category___article = 'teamMembers___article___category___article',
   teamMembers___article___category___spaceId = 'teamMembers___article___category___spaceId',
   teamMembers___article___category___contentful_id = 'teamMembers___article___category___contentful_id',
   teamMembers___article___category___createdAt = 'teamMembers___article___category___createdAt',
   teamMembers___article___category___updatedAt = 'teamMembers___article___category___updatedAt',
   teamMembers___article___category___node_locale = 'teamMembers___article___category___node_locale',
-  teamMembers___article___category___article = 'teamMembers___article___category___article',
   teamMembers___article___author___id = 'teamMembers___article___author___id',
   teamMembers___article___author___children = 'teamMembers___article___author___children',
   teamMembers___article___author___name = 'teamMembers___article___author___name',
@@ -922,11 +922,6 @@ export enum ContentfulArticleFieldsEnum {
   category___image___resize___width = 'category___image___resize___width',
   category___image___resize___height = 'category___image___resize___height',
   category___image___resize___aspectRatio = 'category___image___resize___aspectRatio',
-  category___spaceId = 'category___spaceId',
-  category___contentful_id = 'category___contentful_id',
-  category___createdAt = 'category___createdAt',
-  category___updatedAt = 'category___updatedAt',
-  category___node_locale = 'category___node_locale',
   category___article = 'category___article',
   category___article___id = 'category___article___id',
   category___article___parent___id = 'category___article___parent___id',
@@ -948,12 +943,12 @@ export enum ContentfulArticleFieldsEnum {
   category___article___category___id = 'category___article___category___id',
   category___article___category___children = 'category___article___category___children',
   category___article___category___title = 'category___article___category___title',
+  category___article___category___article = 'category___article___category___article',
   category___article___category___spaceId = 'category___article___category___spaceId',
   category___article___category___contentful_id = 'category___article___category___contentful_id',
   category___article___category___createdAt = 'category___article___category___createdAt',
   category___article___category___updatedAt = 'category___article___category___updatedAt',
   category___article___category___node_locale = 'category___article___category___node_locale',
-  category___article___category___article = 'category___article___category___article',
   category___article___author___id = 'category___article___author___id',
   category___article___author___children = 'category___article___author___children',
   category___article___author___name = 'category___article___author___name',
@@ -979,6 +974,11 @@ export enum ContentfulArticleFieldsEnum {
   category___article___childContentfulArticleContentRichTextNode___content = 'category___article___childContentfulArticleContentRichTextNode___content',
   category___article___childContentfulArticleContentRichTextNode___nodeType = 'category___article___childContentfulArticleContentRichTextNode___nodeType',
   category___article___childContentfulArticleContentRichTextNode___json = 'category___article___childContentfulArticleContentRichTextNode___json',
+  category___spaceId = 'category___spaceId',
+  category___contentful_id = 'category___contentful_id',
+  category___createdAt = 'category___createdAt',
+  category___updatedAt = 'category___updatedAt',
+  category___node_locale = 'category___node_locale',
   author___id = 'author___id',
   author___parent___id = 'author___parent___id',
   author___parent___parent___id = 'author___parent___parent___id',
@@ -1161,12 +1161,12 @@ export enum ContentfulArticleFieldsEnum {
   author___article___category___id = 'author___article___category___id',
   author___article___category___children = 'author___article___category___children',
   author___article___category___title = 'author___article___category___title',
+  author___article___category___article = 'author___article___category___article',
   author___article___category___spaceId = 'author___article___category___spaceId',
   author___article___category___contentful_id = 'author___article___category___contentful_id',
   author___article___category___createdAt = 'author___article___category___createdAt',
   author___article___category___updatedAt = 'author___article___category___updatedAt',
   author___article___category___node_locale = 'author___article___category___node_locale',
-  author___article___category___article = 'author___article___category___article',
   author___article___author___id = 'author___article___author___id',
   author___article___author___children = 'author___article___author___children',
   author___article___author___name = 'author___article___author___name',
@@ -1722,12 +1722,12 @@ export type ContentfulCategory = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   image?: Maybe<ContentfulAsset>;
+  article?: Maybe<Array<Maybe<ContentfulArticle>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   node_locale?: Maybe<Scalars['String']>;
-  article?: Maybe<Array<Maybe<ContentfulArticle>>>;
 };
 
 export type ContentfulCategoryCreatedAtArgs = {
@@ -1945,11 +1945,6 @@ export enum ContentfulCategoryFieldsEnum {
   image___resize___width = 'image___resize___width',
   image___resize___height = 'image___resize___height',
   image___resize___aspectRatio = 'image___resize___aspectRatio',
-  spaceId = 'spaceId',
-  contentful_id = 'contentful_id',
-  createdAt = 'createdAt',
-  updatedAt = 'updatedAt',
-  node_locale = 'node_locale',
   article = 'article',
   article___id = 'article___id',
   article___parent___id = 'article___parent___id',
@@ -2013,11 +2008,6 @@ export enum ContentfulCategoryFieldsEnum {
   article___category___image___title = 'article___category___image___title',
   article___category___image___description = 'article___category___image___description',
   article___category___image___node_locale = 'article___category___image___node_locale',
-  article___category___spaceId = 'article___category___spaceId',
-  article___category___contentful_id = 'article___category___contentful_id',
-  article___category___createdAt = 'article___category___createdAt',
-  article___category___updatedAt = 'article___category___updatedAt',
-  article___category___node_locale = 'article___category___node_locale',
   article___category___article = 'article___category___article',
   article___category___article___id = 'article___category___article___id',
   article___category___article___children = 'article___category___article___children',
@@ -2029,6 +2019,11 @@ export enum ContentfulCategoryFieldsEnum {
   article___category___article___createdAt = 'article___category___article___createdAt',
   article___category___article___updatedAt = 'article___category___article___updatedAt',
   article___category___article___node_locale = 'article___category___article___node_locale',
+  article___category___spaceId = 'article___category___spaceId',
+  article___category___contentful_id = 'article___category___contentful_id',
+  article___category___createdAt = 'article___category___createdAt',
+  article___category___updatedAt = 'article___category___updatedAt',
+  article___category___node_locale = 'article___category___node_locale',
   article___author___id = 'article___author___id',
   article___author___parent___id = 'article___author___parent___id',
   article___author___parent___children = 'article___author___parent___children',
@@ -2127,6 +2122,11 @@ export enum ContentfulCategoryFieldsEnum {
   article___childContentfulArticleContentRichTextNode___content = 'article___childContentfulArticleContentRichTextNode___content',
   article___childContentfulArticleContentRichTextNode___nodeType = 'article___childContentfulArticleContentRichTextNode___nodeType',
   article___childContentfulArticleContentRichTextNode___json = 'article___childContentfulArticleContentRichTextNode___json',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  node_locale = 'node_locale',
 }
 
 export type ContentfulCategoryFilterInput = {
@@ -2136,12 +2136,12 @@ export type ContentfulCategoryFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  article?: Maybe<ContentfulArticleFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  article?: Maybe<ContentfulArticleFilterListInput>;
 };
 
 export type ContentfulCategoryGroupConnection = {
@@ -3647,11 +3647,6 @@ export enum ContentfulMemberFieldsEnum {
   article___category___image___title = 'article___category___image___title',
   article___category___image___description = 'article___category___image___description',
   article___category___image___node_locale = 'article___category___image___node_locale',
-  article___category___spaceId = 'article___category___spaceId',
-  article___category___contentful_id = 'article___category___contentful_id',
-  article___category___createdAt = 'article___category___createdAt',
-  article___category___updatedAt = 'article___category___updatedAt',
-  article___category___node_locale = 'article___category___node_locale',
   article___category___article = 'article___category___article',
   article___category___article___id = 'article___category___article___id',
   article___category___article___children = 'article___category___article___children',
@@ -3663,6 +3658,11 @@ export enum ContentfulMemberFieldsEnum {
   article___category___article___createdAt = 'article___category___article___createdAt',
   article___category___article___updatedAt = 'article___category___article___updatedAt',
   article___category___article___node_locale = 'article___category___article___node_locale',
+  article___category___spaceId = 'article___category___spaceId',
+  article___category___contentful_id = 'article___category___contentful_id',
+  article___category___createdAt = 'article___category___createdAt',
+  article___category___updatedAt = 'article___category___updatedAt',
+  article___category___node_locale = 'article___category___node_locale',
   article___author___id = 'article___author___id',
   article___author___parent___id = 'article___author___parent___id',
   article___author___parent___children = 'article___author___parent___children',
@@ -6680,12 +6680,12 @@ export type QueryContentfulCategoryArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  article?: Maybe<ContentfulArticleFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  article?: Maybe<ContentfulArticleFilterListInput>;
 };
 
 export type QueryAllContentfulCategoryArgs = {
@@ -6855,6 +6855,11 @@ export enum SiteFieldsEnum {
   internal___owner = 'internal___owner',
   internal___type = 'internal___type',
   siteMetadata___title = 'siteMetadata___title',
+  siteMetadata___titleTemplate = 'siteMetadata___titleTemplate',
+  siteMetadata___description = 'siteMetadata___description',
+  siteMetadata___keywords = 'siteMetadata___keywords',
+  siteMetadata___url = 'siteMetadata___url',
+  siteMetadata___image = 'siteMetadata___image',
   port = 'port',
   host = 'host',
   polyfill = 'polyfill',
@@ -6925,10 +6930,24 @@ export type SitePageConnectionGroupArgs = {
 export type SitePageContext = {
   __typename?: 'SitePageContext';
   slug?: Maybe<Scalars['String']>;
+  pageNumber?: Maybe<Scalars['Int']>;
+  humanPageNumber?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  numberOfPages?: Maybe<Scalars['Int']>;
+  previousPagePath?: Maybe<Scalars['String']>;
+  nextPagePath?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>;
+  pageNumber?: Maybe<IntQueryOperatorInput>;
+  humanPageNumber?: Maybe<IntQueryOperatorInput>;
+  skip?: Maybe<IntQueryOperatorInput>;
+  limit?: Maybe<IntQueryOperatorInput>;
+  numberOfPages?: Maybe<IntQueryOperatorInput>;
+  previousPagePath?: Maybe<StringQueryOperatorInput>;
+  nextPagePath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -7031,6 +7050,13 @@ export enum SitePageFieldsEnum {
   componentChunkName = 'componentChunkName',
   isCreatedByStatefulCreatePages = 'isCreatedByStatefulCreatePages',
   context___slug = 'context___slug',
+  context___pageNumber = 'context___pageNumber',
+  context___humanPageNumber = 'context___humanPageNumber',
+  context___skip = 'context___skip',
+  context___limit = 'context___limit',
+  context___numberOfPages = 'context___numberOfPages',
+  context___previousPagePath = 'context___previousPagePath',
+  context___nextPagePath = 'context___nextPagePath',
   pluginCreator___id = 'pluginCreator___id',
   pluginCreator___parent___id = 'pluginCreator___parent___id',
   pluginCreator___parent___parent___id = 'pluginCreator___parent___parent___id',
@@ -7442,10 +7468,20 @@ export type SitePluginSortInput = {
 export type SiteSiteMetadata = {
   __typename?: 'SiteSiteMetadata';
   title?: Maybe<Scalars['String']>;
+  titleTemplate?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  keywords?: Maybe<Array<Maybe<Scalars['String']>>>;
+  url?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  titleTemplate?: Maybe<StringQueryOperatorInput>;
+  description?: Maybe<StringQueryOperatorInput>;
+  keywords?: Maybe<StringQueryOperatorInput>;
+  url?: Maybe<StringQueryOperatorInput>;
+  image?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {
@@ -7806,36 +7842,6 @@ export type SiteTitleQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type ArticlePreviewsQueryVariables = {};
-
-export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
-  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
-    edges: Array<
-      { __typename?: 'ContentfulArticleEdge' } & {
-        node: { __typename?: 'ContentfulArticle' } & Pick<
-          ContentfulArticle,
-          'slug' | 'title'
-        > & {
-            category: Maybe<
-              { __typename?: 'ContentfulCategory' } & {
-                image: Maybe<
-                  { __typename?: 'ContentfulAsset' } & {
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                      >
-                    >;
-                  }
-                >;
-              }
-            >;
-          };
-      }
-    >;
-  };
-};
-
 export type HomePageQueryVariables = {};
 
 export type HomePageQuery = { __typename?: 'Query' } & {
@@ -7875,6 +7881,27 @@ export type HomePageQuery = { __typename?: 'Query' } & {
               }
           >
         >
+      >;
+    }
+  >;
+};
+
+export type SiteMetadataQueryVariables = {};
+
+export type SiteMetadataQuery = { __typename?: 'Query' } & {
+  site: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & Pick<
+          SiteSiteMetadata,
+          'titleTemplate'
+        > & {
+            defaultTitle: SiteSiteMetadata['title'];
+            defaultDescription: SiteSiteMetadata['description'];
+            defaultKeywords: SiteSiteMetadata['keywords'];
+            siteUrl: SiteSiteMetadata['url'];
+            defaultImage: SiteSiteMetadata['image'];
+          }
       >;
     }
   >;
@@ -7951,4 +7978,37 @@ export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & {
       'width' | 'height' | 'src' | 'srcSet' | 'base64'
     >
   >;
+};
+
+export type ArticlePreviewsQueryVariables = {
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+};
+
+export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
+  allContentfulArticle: { __typename?: 'ContentfulArticleConnection' } & {
+    edges: Array<
+      { __typename?: 'ContentfulArticleEdge' } & {
+        node: { __typename?: 'ContentfulArticle' } & Pick<
+          ContentfulArticle,
+          'slug' | 'title'
+        > & {
+            category: Maybe<
+              { __typename?: 'ContentfulCategory' } & {
+                image: Maybe<
+                  { __typename?: 'ContentfulAsset' } & {
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                      >
+                    >;
+                  }
+                >;
+              }
+            >;
+          };
+      }
+    >;
+  };
 };

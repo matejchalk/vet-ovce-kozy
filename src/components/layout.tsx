@@ -1,44 +1,32 @@
-import { graphql, StaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { oc } from 'ts-optchain';
-import { SiteTitleQuery } from '../types/graphql';
-
-import Header from './header';
-
+import SEO from '../seo';
 import '../styles/global.scss';
+import { SiteTitleQuery } from '../types/graphql';
+import Header from './header';
 
 type Props = {
   children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitle {
-        site {
-          siteMetadata {
-            title
-          }
+const Layout = ({ children }: Props) => {
+  const { site } = useStaticQuery<SiteTitleQuery>(graphql`
+    query SiteTitle {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `}
-    render={(data: SiteTitleQuery) => (
-      <>
-        <Helmet
-          title={oc(data).site.siteMetadata.title('')}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={oc(data).site.siteMetadata.title('')} />
-        {children}
-      </>
-    )}
-  />
-);
+    }
+  `);
+  return (
+    <>
+      <SEO />
+      <Header siteTitle={oc(site).siteMetadata.title('')} />
+      {children}
+    </>
+  );
+};
 
 export default Layout;

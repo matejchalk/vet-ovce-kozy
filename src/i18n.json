@@ -6,6 +6,7 @@
     "contact": { "title": "Kontakt", "path": "kontakt" }
   },
   "description": "Veterinární péče pro ovce a kozy",
+  "keywords": ["veterinární péče", "ovce", "kozy"],
   "headings": {
     "goals": "Co je naším cílem?",
     "articles": "Nejnovější články"

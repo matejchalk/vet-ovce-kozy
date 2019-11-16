@@ -2,6 +2,8 @@ if (process.env.ENVIROMENT !== 'production') {
   require('dotenv').config();
 }
 
+const i18n = require('./src/i18n.json');
+
 const APP_NAME = 'VetOvceKozy';
 const APP_COLOR = '#64af5f';
 
@@ -13,6 +15,11 @@ const contentfulConfig = {
 module.exports = {
   siteMetadata: {
     title: APP_NAME,
+    titleTemplate: `%s | ${APP_NAME}`,
+    description: i18n.description,
+    keywords: i18n.keywords,
+    url: process.env.URL,
+    image: `${process.env.URL || ''}/images/logo.png`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
