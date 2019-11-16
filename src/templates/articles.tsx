@@ -4,6 +4,7 @@ import { oc } from 'ts-optchain';
 import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import i18n from '../i18n.json';
 import { ArticlePreviewsQuery } from '../types/graphql';
 import { getFluidImage } from '../utils';
@@ -20,13 +21,18 @@ type Props = {
     previousPagePath?: string;
     nextPagePath?: string;
   };
+  location: Location;
 };
 
 const ArticlesPage = ({
   data: { allContentfulArticle },
   pageContext: { humanPageNumber, previousPagePath, nextPagePath },
+  location: { pathname },
 }: Props) => {
   const {
+    pages: {
+      articles: { title },
+    },
     headings: { articles },
     buttons: { read, previous, next },
     other: { continued },
@@ -37,6 +43,7 @@ const ArticlesPage = ({
 
   return (
     <Layout>
+      <SEO title={title} path={pathname} />
       <section className={styles.section}>
         <h1 className={styles.title}>{pageTitle}</h1>
         <ul className={styles.previews}>

@@ -25,7 +25,7 @@ type Props = {
 
 const ArticleTemplate = ({
   data: { contentfulArticle, allContentfulAsset },
-  location,
+  location: { pathname },
 }: Props) => {
   const richTextDocument = oc(contentfulArticle).content.json();
   const richTextOptions: Options = {
@@ -114,7 +114,6 @@ const ArticleTemplate = ({
   const description = getFirstParagraphFromRichText(richTextDocument);
   const categoryTitle = oc(contentfulArticle).category.title();
   const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
-  const path = location.pathname;
 
   return (
     <Layout>
@@ -123,7 +122,7 @@ const ArticleTemplate = ({
         description={description}
         keywords={keywords}
         image={oc(image).src()}
-        path={path}
+        path={pathname}
         isArticle
       />
       <section className={styles.section}>
