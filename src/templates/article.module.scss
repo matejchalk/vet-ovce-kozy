@@ -2,6 +2,8 @@
 
 $section-padding-v: 70px;
 $margin-v: 30px;
+$margin-v-gt-sm: 48px;
+$card-content-padding-gt-sm: 48px;
 $list-offset: 30px;
 $card-offset-gt-xs: 32px;
 $card-offset-gt-sm: 48px;
@@ -77,6 +79,12 @@ $card-offset-gt-sm: 48px;
   @include card-content-padding;
   margin-top: $margin-v;
 
+  @include screen-gt-sm {
+    margin-top: $margin-v-gt-sm;
+    padding-left: $card-content-padding-gt-sm;
+    padding-right: $card-content-padding-gt-sm;
+  }
+
   & > *:not(:last-child) {
     margin-bottom: 16px;
 
@@ -102,7 +110,7 @@ $card-offset-gt-sm: 48px;
 
 .paragraph {
   font-size: 18px;
-  line-height: 23px;
+  line-height: 1.3;
 
   @include screen-gt-sm {
     font-size: 20px;
