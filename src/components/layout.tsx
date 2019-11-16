@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { oc } from 'ts-optchain';
-import SEO from '../seo';
+import SEO from './seo';
 import '../styles/global.scss';
 import { SiteTitleQuery } from '../types/graphql';
 import Header from './header';

@@ -2,8 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { oc } from 'ts-optchain';
-import { LANG } from './constants';
-import { SiteMetadataQuery } from './types/graphql';
+import { LANG } from '../constants';
+import { SiteMetadataQuery } from '../types/graphql';
 
 type Props = {
   title?: string;
@@ -41,7 +41,7 @@ const SEO = (props: Props) => {
   const description = props.description || defaultDescription;
   const keywords = [...(props.keywords || []), ...defaultKeywords].join(', ');
   const url = `${siteUrl}${props.path || '/'}`;
-  const image = props.image || defaultImage;
+  const image = props.image || require(`../images/${defaultImage}`);
   const type = props.isArticle ? 'article' : 'website';
 
   return (

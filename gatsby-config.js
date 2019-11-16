@@ -19,7 +19,7 @@ module.exports = {
     description: i18n.description,
     keywords: i18n.keywords,
     url: process.env.URL,
-    image: `${process.env.URL || ''}/images/logo.png`,
+    image: 'logo.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
