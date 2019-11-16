@@ -49,3 +49,7 @@ export function getFirstParagraphFromRichText(
     .map(({ value }) => value)
     .join('');
 }
+
+export function forceEndingPeriod(text: string): string {
+  return text.replace(/(?<!\.)$/, '.');
+}

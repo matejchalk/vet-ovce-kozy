@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { oc } from 'ts-optchain';
 import { LANG } from '../constants';
 import { SiteMetadataQuery } from '../types/graphql';
+import { forceEndingPeriod } from '../utils';
 
 type Props = {
   title?: string;
@@ -38,7 +39,9 @@ const SEO = (props: Props) => {
   const defaultImage = oc(site).siteMetadata.defaultImage('');
 
   const title = props.title;
-  const description = props.description || defaultDescription;
+  const description = forceEndingPeriod(
+    props.description || defaultDescription
+  );
   const keywords = [...(props.keywords || []), ...defaultKeywords].join(', ');
   const url = `${siteUrl}${props.path || ''}`;
   const image =
@@ -54,11 +57,22 @@ const SEO = (props: Props) => {
       <html lang={LANG} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta property="og:url" content={url} />
-      <meta property="og:type" content={type} />
+      <meta name="robots" content="index, follow" />
       <meta property="og:title" content={title || defaultTitle} />
+      <meta property="og:type" content={type} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+      <meta property="og:site_name" content={defaultTitle} />
+      <meta property="og:locale" content={LANG} />
+      {/*TODO: <meta property="og:image:alt" content="Alt test for image" />*/}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:url" content={url} />
+      <meta name="twitter:title" content={title || defaultTitle} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      {/*TODO: <meta name="twitter:image:alt" content="Alt text for image" />*/}
+      <link rel="canonical" href={url} />
     </Helmet>
   );
 };
