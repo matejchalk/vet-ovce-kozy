@@ -8,6 +8,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
+import { LANG } from '../constants';
 import { ArticleDetailQuery } from '../types/graphql';
 import { getFixedImage, getFluidImage } from '../utils';
 import styles from './article.module.scss';
@@ -80,7 +81,7 @@ const ArticleTemplate = ({
       ),
       [INLINES.ENTRY_HYPERLINK]: (node, children) => (
         <Link
-          to={`/${node.data.target.fields.slug.cs}`}
+          to={`/${node.data.target.fields.slug[LANG]}`}
           className={styles.entryHyperlink}
         >
           {children}
@@ -93,6 +94,15 @@ const ArticleTemplate = ({
     oc(contentfulArticle).content.json(),
     richTextOptions
   );
+
+  const date =
+    contentfulArticle &&
+    contentfulArticle.date &&
+    new Date(contentfulArticle.date).toLocaleDateString(LANG, {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
 
   return (
     <Layout>
@@ -111,7 +121,7 @@ const ArticleTemplate = ({
               <div className={styles.authorName}>
                 {oc(contentfulArticle).author.name()}
               </div>
-              <div className={styles.date}>{oc(contentfulArticle).date()}</div>
+              <div className={styles.date}>{date}</div>
             </div>
           </div>
           <Img fluid={getFluidImage(oc(contentfulArticle).category.image())} />
