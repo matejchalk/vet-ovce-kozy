@@ -22,6 +22,7 @@ const Header = ({ siteTitle }: Props) => {
             height
             src
             srcSet
+            base64
           }
         }
       }
