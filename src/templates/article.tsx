@@ -71,6 +71,7 @@ const ArticleTemplate = ({
         return (
           <Img
             fluid={getFluidImage(asset.node)}
+            alt={asset.node.description || ''}
             className={styles.embeddedAsset}
           />
         );
@@ -109,12 +110,15 @@ const ArticleTemplate = ({
     });
 
   const title = oc(contentfulArticle).title() || undefined;
-  const image = getFluidImage(oc(contentfulArticle).category.image());
+  const image = oc(contentfulArticle).category.image();
   const description = getFirstParagraphFromRichText(richTextDocument);
-  const categoryTitle = oc(contentfulArticle).category.title();
+  const categoryTitle = oc(contentfulArticle).category.title('');
   const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
-  const author = oc(contentfulArticle).author.name() || undefined;
+  const author = oc(contentfulArticle).author.name('');
   const datePublished = oc(contentfulArticle).date() || undefined;
+
+  const avatar = oc(contentfulArticle).author.avatar();
+  const photo = oc(contentfulArticle).author.photo();
 
   return (
     <Layout
@@ -122,7 +126,10 @@ const ArticleTemplate = ({
         title,
         description,
         keywords,
-        image: `https:${oc(image).src()}`,
+        image: {
+          src: `https:${oc(image).fluid.src()}`,
+          alt: oc(image).description() || categoryTitle,
+        },
         path: pathname,
         isArticle: true,
         author,
@@ -134,20 +141,22 @@ const ArticleTemplate = ({
           <h1 className={styles.title}>{title}</h1>
           <div className={styles.author}>
             <Img
-              fixed={getFixedImage(
-                oc(contentfulArticle).author.avatar() ||
-                  oc(contentfulArticle).author.photo()
-              )}
+              fixed={getFixedImage(avatar || photo)}
+              alt={
+                (avatar ? avatar.description : oc(photo).description()) ||
+                author
+              }
               className={styles.authorAvatar}
             />
             <div>
-              <div className={styles.authorName}>
-                {oc(contentfulArticle).author.name()}
-              </div>
+              <div className={styles.authorName}>{author}</div>
               <div className={styles.date}>{date}</div>
             </div>
           </div>
-          <Img fluid={image} />
+          <Img
+            fluid={getFluidImage(image)}
+            alt={oc(image).description() || categoryTitle}
+          />
           <main className={styles.content}>{content}</main>
         </article>
       </section>
@@ -165,6 +174,7 @@ export const pageQuery = graphql`
       category {
         title
         image {
+          description
           fluid(maxWidth: 1050, quality: 100) {
             src
             srcSet
@@ -193,6 +203,7 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
+          description
           fluid(maxWidth: 650, quality: 100) {
             src
             srcSet
@@ -206,6 +217,7 @@ export const pageQuery = graphql`
   }
 
   fragment AuthorAvatar on ContentfulAsset {
+    description
     fixed(width: 55, height: 55) {
       width
       height

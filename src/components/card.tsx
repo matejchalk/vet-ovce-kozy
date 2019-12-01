@@ -4,7 +4,10 @@ import Button from './button';
 import styles from './card.module.scss';
 
 type Props = {
-  image?: FluidObject;
+  image?: {
+    fluid: FluidObject;
+    alt?: string;
+  };
   title: string;
   link?: {
     text: string;
@@ -15,7 +18,7 @@ type Props = {
 
 const Card = ({ image, title, link, className }: Props) => (
   <div className={`${styles.card} ${className}`}>
-    {image && <Img fluid={image} />}
+    {image && <Img fluid={image.fluid} alt={image.alt || title} />}
     <span className={styles.title}>{title}</span>
     {link && (
       <div className={styles.buttonWrapper}>

@@ -47,16 +47,26 @@ const ArticlesPage = ({
         <ul className={styles.previews}>
           {oc(allContentfulArticle)
             .edges([])
-            .map(({ node: { slug, title: articleTitle, category } }, index) => (
-              <li key={slug || index} className={styles.preview}>
-                <Card
-                  title={articleTitle || ''}
-                  image={getFluidImage(oc(category).image())}
-                  link={{ text: read, path: `/${slug}` }}
-                  className={styles.card}
-                />
-              </li>
-            ))}
+            .map(({ node: { slug, title: articleTitle, category } }, index) => {
+              const fluid = getFluidImage(oc(category).image());
+              return (
+                <li key={slug || index} className={styles.preview}>
+                  <Card
+                    title={articleTitle || ''}
+                    image={
+                      fluid && {
+                        fluid,
+                        alt:
+                          oc(category).image.description() ||
+                          oc(category).title(''),
+                      }
+                    }
+                    link={{ text: read, path: `/${slug}` }}
+                    className={styles.card}
+                  />
+                </li>
+              );
+            })}
         </ul>
         <nav className={styles.nav}>
           {previousPagePath && (
@@ -89,7 +99,9 @@ export const pageQuery = graphql`
           slug
           title
           category {
+            title
             image {
+              description
               fluid(maxWidth: 750, maxHeight: 422, quality: 100) {
                 src
                 srcSet

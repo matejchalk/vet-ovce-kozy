@@ -36,8 +36,10 @@ const SEO = (props: SEOProps) => {
   );
   const keywords = [...(props.keywords || []), ...defaultKeywords].join(', ');
   const url = `${siteUrl}${props.path || ''}`;
-  const image =
-    props.image || `${siteUrl}${require(`../images/${defaultImage}`)}`;
+  const imageSrc =
+    oc(props).image.src() ||
+    `${siteUrl}${require(`../images/${defaultImage}`)}`;
+  const imageAlt = oc(props).image.alt() || defaultTitle;
   const type = props.isArticle ? 'article' : 'website';
 
   const websiteSchema: WithContext<WebPage> = {
@@ -51,7 +53,7 @@ const SEO = (props: SEOProps) => {
     ...(description && { description }),
     image: {
       '@type': 'ImageObject',
-      url: image,
+      url: imageSrc,
     },
   };
 
@@ -70,7 +72,7 @@ const SEO = (props: SEOProps) => {
     inLanguage: LANG,
     image: {
       '@type': 'ImageObject',
-      url: image,
+      url: imageSrc,
     },
     url,
     mainEntityOfPage: url,
@@ -91,17 +93,17 @@ const SEO = (props: SEOProps) => {
       <meta property="og:title" content={title || defaultTitle} />
       <meta property="og:type" content={type} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageSrc} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:locale" content={LANG} />
-      {/*TODO: <meta property="og:image:alt" content="Alt text for image" />*/}
+      <meta property="og:image:alt" content={imageAlt} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title || defaultTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      {/*TODO: <meta name="twitter:image:alt" content="Alt text for image" />*/}
+      <meta name="twitter:image" content={imageSrc} />
+      <meta name="twitter:image:alt" content={imageAlt} />
       <link rel="canonical" href={url} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>

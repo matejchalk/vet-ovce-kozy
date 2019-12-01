@@ -28,6 +28,7 @@ const IndexPage = () => {
         goals {
           title
           image {
+            description
             fluid(maxWidth: 315, maxHeight: 236, quality: 100) {
               src
               srcSet
@@ -72,11 +73,22 @@ const IndexPage = () => {
           {oc(contentfulHomePage)
             .goals([])
             .filter(exists)
-            .map(({ title, image }, index) => (
-              <li key={index}>
-                <Card title={title || ''} image={getFluidImage(image)} />
-              </li>
-            ))}
+            .map(({ title, image }, index) => {
+              const fluid = getFluidImage(image);
+              return (
+                <li key={index}>
+                  <Card
+                    title={title || ''}
+                    image={
+                      fluid && {
+                        fluid,
+                        alt: (image && image.description) || undefined,
+                      }
+                    }
+                  />
+                </li>
+              );
+            })}
         </ul>
         <Button
           text={services}

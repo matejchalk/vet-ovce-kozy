@@ -4098,13 +4098,13 @@ export type ContentfulService = Node & {
   children: Array<Node>;
   internal: Internal;
   title?: Maybe<Scalars['String']>;
+  examples?: Maybe<Array<Maybe<Scalars['String']>>>;
   services_page?: Maybe<Array<Maybe<ContentfulServicesPage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   node_locale?: Maybe<Scalars['String']>;
-  examples?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type ContentfulServiceCreatedAtArgs = {
@@ -4236,6 +4236,7 @@ export enum ContentfulServiceFieldsEnum {
   internal___owner = 'internal___owner',
   internal___type = 'internal___type',
   title = 'title',
+  examples = 'examples',
   services_page = 'services_page',
   services_page___id = 'services_page___id',
   services_page___parent___id = 'services_page___parent___id',
@@ -4292,6 +4293,7 @@ export enum ContentfulServiceFieldsEnum {
   services_page___services___internal___owner = 'services_page___services___internal___owner',
   services_page___services___internal___type = 'services_page___services___internal___type',
   services_page___services___title = 'services_page___services___title',
+  services_page___services___examples = 'services_page___services___examples',
   services_page___services___services_page = 'services_page___services___services_page',
   services_page___services___services_page___id = 'services_page___services___services_page___id',
   services_page___services___services_page___children = 'services_page___services___services_page___children',
@@ -4307,7 +4309,6 @@ export enum ContentfulServiceFieldsEnum {
   services_page___services___createdAt = 'services_page___services___createdAt',
   services_page___services___updatedAt = 'services_page___services___updatedAt',
   services_page___services___node_locale = 'services_page___services___node_locale',
-  services_page___services___examples = 'services_page___services___examples',
   services_page___spaceId = 'services_page___spaceId',
   services_page___contentful_id = 'services_page___contentful_id',
   services_page___createdAt = 'services_page___createdAt',
@@ -4318,7 +4319,6 @@ export enum ContentfulServiceFieldsEnum {
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
   node_locale = 'node_locale',
-  examples = 'examples',
 }
 
 export type ContentfulServiceFilterInput = {
@@ -4327,13 +4327,13 @@ export type ContentfulServiceFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  examples?: Maybe<StringQueryOperatorInput>;
   services_page?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  examples?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulServiceFilterListInput = {
@@ -4539,6 +4539,7 @@ export enum ContentfulServicesPageFieldsEnum {
   services___internal___owner = 'services___internal___owner',
   services___internal___type = 'services___internal___type',
   services___title = 'services___title',
+  services___examples = 'services___examples',
   services___services_page = 'services___services_page',
   services___services_page___id = 'services___services_page___id',
   services___services_page___parent___id = 'services___services_page___parent___id',
@@ -4559,13 +4560,13 @@ export enum ContentfulServicesPageFieldsEnum {
   services___services_page___services___id = 'services___services_page___services___id',
   services___services_page___services___children = 'services___services_page___services___children',
   services___services_page___services___title = 'services___services_page___services___title',
+  services___services_page___services___examples = 'services___services_page___services___examples',
   services___services_page___services___services_page = 'services___services_page___services___services_page',
   services___services_page___services___spaceId = 'services___services_page___services___spaceId',
   services___services_page___services___contentful_id = 'services___services_page___services___contentful_id',
   services___services_page___services___createdAt = 'services___services_page___services___createdAt',
   services___services_page___services___updatedAt = 'services___services_page___services___updatedAt',
   services___services_page___services___node_locale = 'services___services_page___services___node_locale',
-  services___services_page___services___examples = 'services___services_page___services___examples',
   services___services_page___spaceId = 'services___services_page___spaceId',
   services___services_page___contentful_id = 'services___services_page___contentful_id',
   services___services_page___createdAt = 'services___services_page___createdAt',
@@ -4576,7 +4577,6 @@ export enum ContentfulServicesPageFieldsEnum {
   services___createdAt = 'services___createdAt',
   services___updatedAt = 'services___updatedAt',
   services___node_locale = 'services___node_locale',
-  services___examples = 'services___examples',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
@@ -6636,13 +6636,13 @@ export type QueryContentfulServiceArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  examples?: Maybe<StringQueryOperatorInput>;
   services_page?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  examples?: Maybe<StringQueryOperatorInput>;
 };
 
 export type QueryAllContentfulServiceArgs = {
@@ -7890,14 +7890,17 @@ export type HomePageQuery = { __typename?: 'Query' } & {
               'title'
             > & {
                 image: Maybe<
-                  { __typename?: 'ContentfulAsset' } & {
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                      >
-                    >;
-                  }
+                  { __typename?: 'ContentfulAsset' } & Pick<
+                    ContentfulAsset,
+                    'description'
+                  > & {
+                      fluid: Maybe<
+                        { __typename?: 'ContentfulFluid' } & Pick<
+                          ContentfulFluid,
+                          'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                        >
+                      >;
+                    }
                 >;
               }
           >
@@ -7942,14 +7945,17 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
             'title'
           > & {
               image: Maybe<
-                { __typename?: 'ContentfulAsset' } & {
-                  fluid: Maybe<
-                    { __typename?: 'ContentfulFluid' } & Pick<
-                      ContentfulFluid,
-                      'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                    >
-                  >;
-                }
+                { __typename?: 'ContentfulAsset' } & Pick<
+                  ContentfulAsset,
+                  'description'
+                > & {
+                    fluid: Maybe<
+                      { __typename?: 'ContentfulFluid' } & Pick<
+                        ContentfulFluid,
+                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                      >
+                    >;
+                  }
               >;
             }
         >;
@@ -7979,7 +7985,7 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
       { __typename?: 'ContentfulAssetEdge' } & {
         node: { __typename?: 'ContentfulAsset' } & Pick<
           ContentfulAsset,
-          'contentful_id'
+          'contentful_id' | 'description'
         > & {
             fluid: Maybe<
               { __typename?: 'ContentfulFluid' } & Pick<
@@ -7993,14 +7999,17 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
   };
 };
 
-export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & {
-  fixed: Maybe<
-    { __typename?: 'ContentfulFixed' } & Pick<
-      ContentfulFixed,
-      'width' | 'height' | 'src' | 'srcSet' | 'base64'
-    >
-  >;
-};
+export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & Pick<
+  ContentfulAsset,
+  'description'
+> & {
+    fixed: Maybe<
+      { __typename?: 'ContentfulFixed' } & Pick<
+        ContentfulFixed,
+        'width' | 'height' | 'src' | 'srcSet' | 'base64'
+      >
+    >;
+  };
 
 export type ArticlePreviewsQueryVariables = {
   skip: Scalars['Int'];
@@ -8016,18 +8025,28 @@ export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
           'slug' | 'title'
         > & {
             category: Maybe<
-              { __typename?: 'ContentfulCategory' } & {
-                image: Maybe<
-                  { __typename?: 'ContentfulAsset' } & {
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                      >
-                    >;
-                  }
-                >;
-              }
+              { __typename?: 'ContentfulCategory' } & Pick<
+                ContentfulCategory,
+                'title'
+              > & {
+                  image: Maybe<
+                    { __typename?: 'ContentfulAsset' } & Pick<
+                      ContentfulAsset,
+                      'description'
+                    > & {
+                        fluid: Maybe<
+                          { __typename?: 'ContentfulFluid' } & Pick<
+                            ContentfulFluid,
+                            | 'src'
+                            | 'srcSet'
+                            | 'aspectRatio'
+                            | 'sizes'
+                            | 'base64'
+                          >
+                        >;
+                      }
+                  >;
+                }
             >;
           };
       }

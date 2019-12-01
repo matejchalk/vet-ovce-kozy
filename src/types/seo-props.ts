@@ -1,6 +1,9 @@
 type SEOProps = {
   title?: string;
-  image?: string;
+  image?: {
+    src: string;
+    alt?: string;
+  };
   description?: string;
   keywords?: string[];
   path?: string;
