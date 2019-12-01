@@ -7907,6 +7907,25 @@ export type HomePageQuery = { __typename?: 'Query' } & {
   >;
 };
 
+export type ServicesQueryVariables = {};
+
+export type ServicesQuery = { __typename?: 'Query' } & {
+  contentfulServicesPage: Maybe<
+    { __typename?: 'ContentfulServicesPage' } & {
+      services: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ContentfulService' } & Pick<
+              ContentfulService,
+              'title' | 'examples'
+            >
+          >
+        >
+      >;
+    }
+  >;
+};
+
 export type ArticleDetailQueryVariables = {
   slug: Scalars['String'];
 };

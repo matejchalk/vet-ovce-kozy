@@ -1,0 +1,68 @@
+@import 'variables';
+
+$service-font-size: 24px;
+$example-font-size: 22px;
+$line-height: 1.3;
+
+.section {
+  @include section-content-padding;
+  @include brown-gradient-background;
+  @include stretch-section-to-viewport-height;
+  padding-top: 85px;
+  padding-bottom: 85px;
+}
+
+.title {
+  font-family: $vok-font-serif;
+  color: $vok-white;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-bottom: 75px;
+}
+
+.services {
+  @extend %vok-card;
+  padding: 32px 24px;
+
+  @include screen-gt-sm {
+    padding: 48px;
+  }
+}
+
+.service-check {
+  color: $vok-green;
+  position: absolute;
+  left: 0;
+  height: $service-font-size * $line-height;
+}
+
+.service {
+  position: relative;
+  padding-left: 1.5em;
+  font-size: 24px;
+  line-height: $line-height;
+}
+
+.examples {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.example-check {
+  color: $vok-light-brown;
+  position: absolute;
+  left: 0;
+  height: $example-font-size * $line-height;
+}
+
+.example {
+  font-size: 22px;
+  position: relative;
+  padding-left: 1.5em;
+  line-height: $line-height;
+
+  &:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+}
