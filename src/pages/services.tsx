@@ -25,46 +25,53 @@ const ServicesPage = ({ location: { pathname } }: Props) => {
     }
   `);
 
+  const services = oc(contentfulServicesPage)
+    .services([])
+    .filter(exists);
+
   const {
-    headings: { services },
+    headings: { services: heading },
     pages: {
       services: { title },
     },
   } = i18n;
+
+  const serviceTitles = services
+    .map(service => service.title)
+    .filter(exists)
+    .map(serviceTitle => serviceTitle.toLowerCase());
+  const description = `${heading} - ${serviceTitles.join(', ')}`;
   const keywords = [title.toLowerCase()];
 
   return (
     <Layout>
       <SEO
         title={title}
-        description={services}
+        description={description}
         path={pathname}
         keywords={keywords}
       />
       <section className={styles.section}>
-        <h1 className={styles.title}>{services}</h1>
+        <h1 className={styles.title}>{heading}</h1>
         <ul className={styles.services}>
-          {oc(contentfulServicesPage)
-            .services([])
-            .filter(exists)
-            .map(({ title, examples }) => (
-              <li className={styles.service}>
-                <MdCheckCircle className={styles.serviceCheck} />
-                {title}
-                {examples && examples.length > 0 && (
-                  <ul className={styles.examples}>
-                    {(examples || [])
-                      .filter((example): example is string => !!example)
-                      .map(example => (
-                        <li className={styles.example}>
-                          <MdCheckCircle className={styles.exampleCheck} />
-                          {example}
-                        </li>
-                      ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+          {services.map(({ title: serviceTitle, examples }) => (
+            <li className={styles.service}>
+              <MdCheckCircle className={styles.serviceCheck} />
+              {serviceTitle}
+              {examples && examples.length > 0 && (
+                <ul className={styles.examples}>
+                  {(examples || [])
+                    .filter((example): example is string => !!example)
+                    .map(example => (
+                      <li className={styles.example}>
+                        <MdCheckCircle className={styles.exampleCheck} />
+                        {example}
+                      </li>
+                    ))}
+                </ul>
+              )}
+            </li>
+          ))}
         </ul>
       </section>
     </Layout>

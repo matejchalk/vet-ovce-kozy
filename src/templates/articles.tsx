@@ -49,10 +49,10 @@ const ArticlesPage = ({
         <ul className={styles.previews}>
           {oc(allContentfulArticle)
             .edges([])
-            .map(({ node: { slug, title, category } }, index) => (
+            .map(({ node: { slug, title: articleTitle, category } }, index) => (
               <li key={slug || index} className={styles.preview}>
                 <Card
-                  title={title || ''}
+                  title={articleTitle || ''}
                   image={getFluidImage(oc(category).image())}
                   link={{ text: read, path: `/${slug}` }}
                   className={styles.card}
