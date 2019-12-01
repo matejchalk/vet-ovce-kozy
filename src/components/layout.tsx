@@ -8,9 +8,10 @@ import Header from './header';
 
 type Props = {
   children: React.ReactNode;
+  seo?: SEOProps;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, seo }: Props) => {
   const { site } = useStaticQuery<SiteTitleQuery>(graphql`
     query SiteTitle {
       site {
@@ -22,7 +23,7 @@ const Layout = ({ children }: Props) => {
   `);
   return (
     <>
-      <SEO />
+      <SEO {...seo} />
       <Header siteTitle={oc(site).siteMetadata.title('')} />
       {children}
     </>

@@ -8,7 +8,6 @@ import Img from 'gatsby-image';
 import React from 'react';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import { LANG } from '../constants';
 import { ArticleDetailQuery } from '../types/graphql';
 import {
@@ -118,17 +117,18 @@ const ArticleTemplate = ({
   const datePublished = oc(contentfulArticle).date() || undefined;
 
   return (
-    <Layout>
-      <SEO
-        title={title}
-        description={description}
-        keywords={keywords}
-        image={`https:${oc(image).src()}`}
-        path={pathname}
-        isArticle
-        author={author}
-        datePublished={datePublished}
-      />
+    <Layout
+      seo={{
+        title,
+        description,
+        keywords,
+        image: `https:${oc(image).src()}`,
+        path: pathname,
+        isArticle: true,
+        author,
+        datePublished,
+      }}
+    >
       <section className={styles.section}>
         <article className={styles.article}>
           <h1 className={styles.title}>{title}</h1>

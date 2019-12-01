@@ -1,12 +1,11 @@
-import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { MdCheckCircle } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import i18n from '../i18n.json';
 import { ServicesQuery } from '../types/graphql';
 import { exists } from '../utils';
-import { MdCheckCircle } from 'react-icons/md';
-import i18n from '../i18n.json';
 import styles from './services.module.scss';
 
 type Props = {
@@ -44,13 +43,7 @@ const ServicesPage = ({ location: { pathname } }: Props) => {
   const keywords = [title.toLowerCase()];
 
   return (
-    <Layout>
-      <SEO
-        title={title}
-        description={description}
-        path={pathname}
-        keywords={keywords}
-      />
+    <Layout seo={{ title, description, path: pathname, keywords }}>
       <section className={styles.section}>
         <h1 className={styles.title}>{heading}</h1>
         <ul className={styles.services}>

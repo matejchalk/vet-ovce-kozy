@@ -7,18 +7,7 @@ import { LANG } from '../constants';
 import { SiteMetadataQuery } from '../types/graphql';
 import { forceEndingPeriod } from '../utils';
 
-type Props = {
-  title?: string;
-  image?: string;
-  description?: string;
-  keywords?: string[];
-  path?: string;
-  isArticle?: boolean;
-  author?: string;
-  datePublished?: string;
-};
-
-const SEO = (props: Props) => {
+const SEO = (props: SEOProps) => {
   const { site } = useStaticQuery<SiteMetadataQuery>(graphql`
     query SiteMetadata {
       site {

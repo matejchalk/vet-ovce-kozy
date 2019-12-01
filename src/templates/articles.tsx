@@ -4,7 +4,6 @@ import { oc } from 'ts-optchain';
 import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
 import i18n from '../i18n.json';
 import { ArticlePreviewsQuery } from '../types/graphql';
 import { getFluidImage } from '../utils';
@@ -42,8 +41,7 @@ const ArticlesPage = ({
     humanPageNumber <= 1 ? articles : `${articles} (${continued})`;
 
   return (
-    <Layout>
-      <SEO title={title} path={pathname} />
+    <Layout seo={{ title, path: pathname }}>
       <section className={styles.section}>
         <h1 className={styles.title}>{pageTitle}</h1>
         <ul className={styles.previews}>
