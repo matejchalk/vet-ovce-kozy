@@ -32,7 +32,10 @@ module.exports = {
         background_color: APP_COLOR,
         theme_color: APP_COLOR,
         display: 'minimal-ui',
-        icon: 'src/images/logo.png', // This path is relative to the root of the site.
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
+        icon_options: {
+          purpose: 'maskable',
+        },
       },
     },
     'gatsby-plugin-offline',
