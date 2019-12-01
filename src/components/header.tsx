@@ -42,12 +42,22 @@ const Header = ({ siteTitle }: Props) => {
           />
         </Link>
       </div>
-      <input id="menu-toggle" type="checkbox" className={styles.input} />
-      <label htmlFor="menu-toggle" className={`${styles.label} ${styles.open}`}>
+      <input
+        id="menu-toggle"
+        type="checkbox"
+        aria-hidden
+        className={styles.input}
+      />
+      <label
+        htmlFor="menu-toggle"
+        aria-hidden
+        className={`${styles.label} ${styles.open}`}
+      >
         <MdMenu />
       </label>
       <label
         htmlFor="menu-toggle"
+        aria-hidden
         className={`${styles.label} ${styles.close}`}
       >
         <MdClose />
