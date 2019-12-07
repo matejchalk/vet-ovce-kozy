@@ -507,6 +507,303 @@ export type ContentfulAboutPageSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulAddress = Node & {
+  __typename?: 'ContentfulAddress';
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  street?: Maybe<Scalars['String']>;
+  city?: Maybe<Scalars['String']>;
+  postCode?: Maybe<Scalars['String']>;
+  contact_page?: Maybe<Array<Maybe<ContentfulContactPage>>>;
+  spaceId?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  node_locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAddressCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAddressUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAddressConnection = {
+  __typename?: 'ContentfulAddressConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulAddressEdge>;
+  nodes: Array<ContentfulAddress>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContentfulAddressGroupConnection>;
+};
+
+export type ContentfulAddressConnectionDistinctArgs = {
+  field: ContentfulAddressFieldsEnum;
+};
+
+export type ContentfulAddressConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: ContentfulAddressFieldsEnum;
+};
+
+export type ContentfulAddressEdge = {
+  __typename?: 'ContentfulAddressEdge';
+  next?: Maybe<ContentfulAddress>;
+  node: ContentfulAddress;
+  previous?: Maybe<ContentfulAddress>;
+};
+
+export enum ContentfulAddressFieldsEnum {
+  id = 'id',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type',
+  street = 'street',
+  city = 'city',
+  postCode = 'postCode',
+  contact_page = 'contact_page',
+  contact_page___id = 'contact_page___id',
+  contact_page___parent___id = 'contact_page___parent___id',
+  contact_page___parent___parent___id = 'contact_page___parent___parent___id',
+  contact_page___parent___parent___children = 'contact_page___parent___parent___children',
+  contact_page___parent___children = 'contact_page___parent___children',
+  contact_page___parent___children___id = 'contact_page___parent___children___id',
+  contact_page___parent___children___children = 'contact_page___parent___children___children',
+  contact_page___parent___internal___content = 'contact_page___parent___internal___content',
+  contact_page___parent___internal___contentDigest = 'contact_page___parent___internal___contentDigest',
+  contact_page___parent___internal___description = 'contact_page___parent___internal___description',
+  contact_page___parent___internal___fieldOwners = 'contact_page___parent___internal___fieldOwners',
+  contact_page___parent___internal___ignoreType = 'contact_page___parent___internal___ignoreType',
+  contact_page___parent___internal___mediaType = 'contact_page___parent___internal___mediaType',
+  contact_page___parent___internal___owner = 'contact_page___parent___internal___owner',
+  contact_page___parent___internal___type = 'contact_page___parent___internal___type',
+  contact_page___children = 'contact_page___children',
+  contact_page___children___id = 'contact_page___children___id',
+  contact_page___children___parent___id = 'contact_page___children___parent___id',
+  contact_page___children___parent___children = 'contact_page___children___parent___children',
+  contact_page___children___children = 'contact_page___children___children',
+  contact_page___children___children___id = 'contact_page___children___children___id',
+  contact_page___children___children___children = 'contact_page___children___children___children',
+  contact_page___children___internal___content = 'contact_page___children___internal___content',
+  contact_page___children___internal___contentDigest = 'contact_page___children___internal___contentDigest',
+  contact_page___children___internal___description = 'contact_page___children___internal___description',
+  contact_page___children___internal___fieldOwners = 'contact_page___children___internal___fieldOwners',
+  contact_page___children___internal___ignoreType = 'contact_page___children___internal___ignoreType',
+  contact_page___children___internal___mediaType = 'contact_page___children___internal___mediaType',
+  contact_page___children___internal___owner = 'contact_page___children___internal___owner',
+  contact_page___children___internal___type = 'contact_page___children___internal___type',
+  contact_page___internal___content = 'contact_page___internal___content',
+  contact_page___internal___contentDigest = 'contact_page___internal___contentDigest',
+  contact_page___internal___description = 'contact_page___internal___description',
+  contact_page___internal___fieldOwners = 'contact_page___internal___fieldOwners',
+  contact_page___internal___ignoreType = 'contact_page___internal___ignoreType',
+  contact_page___internal___mediaType = 'contact_page___internal___mediaType',
+  contact_page___internal___owner = 'contact_page___internal___owner',
+  contact_page___internal___type = 'contact_page___internal___type',
+  contact_page___page = 'contact_page___page',
+  contact_page___phoneNumber = 'contact_page___phoneNumber',
+  contact_page___email = 'contact_page___email',
+  contact_page___address___id = 'contact_page___address___id',
+  contact_page___address___parent___id = 'contact_page___address___parent___id',
+  contact_page___address___parent___children = 'contact_page___address___parent___children',
+  contact_page___address___children = 'contact_page___address___children',
+  contact_page___address___children___id = 'contact_page___address___children___id',
+  contact_page___address___children___children = 'contact_page___address___children___children',
+  contact_page___address___internal___content = 'contact_page___address___internal___content',
+  contact_page___address___internal___contentDigest = 'contact_page___address___internal___contentDigest',
+  contact_page___address___internal___description = 'contact_page___address___internal___description',
+  contact_page___address___internal___fieldOwners = 'contact_page___address___internal___fieldOwners',
+  contact_page___address___internal___ignoreType = 'contact_page___address___internal___ignoreType',
+  contact_page___address___internal___mediaType = 'contact_page___address___internal___mediaType',
+  contact_page___address___internal___owner = 'contact_page___address___internal___owner',
+  contact_page___address___internal___type = 'contact_page___address___internal___type',
+  contact_page___address___street = 'contact_page___address___street',
+  contact_page___address___city = 'contact_page___address___city',
+  contact_page___address___postCode = 'contact_page___address___postCode',
+  contact_page___address___contact_page = 'contact_page___address___contact_page',
+  contact_page___address___contact_page___id = 'contact_page___address___contact_page___id',
+  contact_page___address___contact_page___children = 'contact_page___address___contact_page___children',
+  contact_page___address___contact_page___page = 'contact_page___address___contact_page___page',
+  contact_page___address___contact_page___phoneNumber = 'contact_page___address___contact_page___phoneNumber',
+  contact_page___address___contact_page___email = 'contact_page___address___contact_page___email',
+  contact_page___address___contact_page___spaceId = 'contact_page___address___contact_page___spaceId',
+  contact_page___address___contact_page___contentful_id = 'contact_page___address___contact_page___contentful_id',
+  contact_page___address___contact_page___createdAt = 'contact_page___address___contact_page___createdAt',
+  contact_page___address___contact_page___updatedAt = 'contact_page___address___contact_page___updatedAt',
+  contact_page___address___contact_page___node_locale = 'contact_page___address___contact_page___node_locale',
+  contact_page___address___spaceId = 'contact_page___address___spaceId',
+  contact_page___address___contentful_id = 'contact_page___address___contentful_id',
+  contact_page___address___createdAt = 'contact_page___address___createdAt',
+  contact_page___address___updatedAt = 'contact_page___address___updatedAt',
+  contact_page___address___node_locale = 'contact_page___address___node_locale',
+  contact_page___socialMedia___id = 'contact_page___socialMedia___id',
+  contact_page___socialMedia___parent___id = 'contact_page___socialMedia___parent___id',
+  contact_page___socialMedia___parent___children = 'contact_page___socialMedia___parent___children',
+  contact_page___socialMedia___children = 'contact_page___socialMedia___children',
+  contact_page___socialMedia___children___id = 'contact_page___socialMedia___children___id',
+  contact_page___socialMedia___children___children = 'contact_page___socialMedia___children___children',
+  contact_page___socialMedia___internal___content = 'contact_page___socialMedia___internal___content',
+  contact_page___socialMedia___internal___contentDigest = 'contact_page___socialMedia___internal___contentDigest',
+  contact_page___socialMedia___internal___description = 'contact_page___socialMedia___internal___description',
+  contact_page___socialMedia___internal___fieldOwners = 'contact_page___socialMedia___internal___fieldOwners',
+  contact_page___socialMedia___internal___ignoreType = 'contact_page___socialMedia___internal___ignoreType',
+  contact_page___socialMedia___internal___mediaType = 'contact_page___socialMedia___internal___mediaType',
+  contact_page___socialMedia___internal___owner = 'contact_page___socialMedia___internal___owner',
+  contact_page___socialMedia___internal___type = 'contact_page___socialMedia___internal___type',
+  contact_page___socialMedia___facebook = 'contact_page___socialMedia___facebook',
+  contact_page___socialMedia___contact_page = 'contact_page___socialMedia___contact_page',
+  contact_page___socialMedia___contact_page___id = 'contact_page___socialMedia___contact_page___id',
+  contact_page___socialMedia___contact_page___children = 'contact_page___socialMedia___contact_page___children',
+  contact_page___socialMedia___contact_page___page = 'contact_page___socialMedia___contact_page___page',
+  contact_page___socialMedia___contact_page___phoneNumber = 'contact_page___socialMedia___contact_page___phoneNumber',
+  contact_page___socialMedia___contact_page___email = 'contact_page___socialMedia___contact_page___email',
+  contact_page___socialMedia___contact_page___spaceId = 'contact_page___socialMedia___contact_page___spaceId',
+  contact_page___socialMedia___contact_page___contentful_id = 'contact_page___socialMedia___contact_page___contentful_id',
+  contact_page___socialMedia___contact_page___createdAt = 'contact_page___socialMedia___contact_page___createdAt',
+  contact_page___socialMedia___contact_page___updatedAt = 'contact_page___socialMedia___contact_page___updatedAt',
+  contact_page___socialMedia___contact_page___node_locale = 'contact_page___socialMedia___contact_page___node_locale',
+  contact_page___socialMedia___spaceId = 'contact_page___socialMedia___spaceId',
+  contact_page___socialMedia___contentful_id = 'contact_page___socialMedia___contentful_id',
+  contact_page___socialMedia___createdAt = 'contact_page___socialMedia___createdAt',
+  contact_page___socialMedia___updatedAt = 'contact_page___socialMedia___updatedAt',
+  contact_page___socialMedia___node_locale = 'contact_page___socialMedia___node_locale',
+  contact_page___spaceId = 'contact_page___spaceId',
+  contact_page___contentful_id = 'contact_page___contentful_id',
+  contact_page___createdAt = 'contact_page___createdAt',
+  contact_page___updatedAt = 'contact_page___updatedAt',
+  contact_page___node_locale = 'contact_page___node_locale',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  node_locale = 'node_locale',
+}
+
+export type ContentfulAddressFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  street?: Maybe<StringQueryOperatorInput>;
+  city?: Maybe<StringQueryOperatorInput>;
+  postCode?: Maybe<StringQueryOperatorInput>;
+  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulAddressGroupConnection = {
+  __typename?: 'ContentfulAddressGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulAddressEdge>;
+  nodes: Array<ContentfulAddress>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAddressSortInput = {
+  fields?: Maybe<Array<Maybe<ContentfulAddressFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type ContentfulArticle = Node & {
   __typename?: 'ContentfulArticle';
   id: Scalars['ID'];
@@ -2156,6 +2453,374 @@ export type ContentfulCategoryGroupConnection = {
 
 export type ContentfulCategorySortInput = {
   fields?: Maybe<Array<Maybe<ContentfulCategoryFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulContactPage = Node & {
+  __typename?: 'ContentfulContactPage';
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  page?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  address?: Maybe<ContentfulAddress>;
+  socialMedia?: Maybe<ContentfulSocialMedia>;
+  spaceId?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  node_locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContactPageCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContactPageUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContactPageConnection = {
+  __typename?: 'ContentfulContactPageConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulContactPageEdge>;
+  nodes: Array<ContentfulContactPage>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContentfulContactPageGroupConnection>;
+};
+
+export type ContentfulContactPageConnectionDistinctArgs = {
+  field: ContentfulContactPageFieldsEnum;
+};
+
+export type ContentfulContactPageConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: ContentfulContactPageFieldsEnum;
+};
+
+export type ContentfulContactPageEdge = {
+  __typename?: 'ContentfulContactPageEdge';
+  next?: Maybe<ContentfulContactPage>;
+  node: ContentfulContactPage;
+  previous?: Maybe<ContentfulContactPage>;
+};
+
+export enum ContentfulContactPageFieldsEnum {
+  id = 'id',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type',
+  page = 'page',
+  phoneNumber = 'phoneNumber',
+  email = 'email',
+  address___id = 'address___id',
+  address___parent___id = 'address___parent___id',
+  address___parent___parent___id = 'address___parent___parent___id',
+  address___parent___parent___children = 'address___parent___parent___children',
+  address___parent___children = 'address___parent___children',
+  address___parent___children___id = 'address___parent___children___id',
+  address___parent___children___children = 'address___parent___children___children',
+  address___parent___internal___content = 'address___parent___internal___content',
+  address___parent___internal___contentDigest = 'address___parent___internal___contentDigest',
+  address___parent___internal___description = 'address___parent___internal___description',
+  address___parent___internal___fieldOwners = 'address___parent___internal___fieldOwners',
+  address___parent___internal___ignoreType = 'address___parent___internal___ignoreType',
+  address___parent___internal___mediaType = 'address___parent___internal___mediaType',
+  address___parent___internal___owner = 'address___parent___internal___owner',
+  address___parent___internal___type = 'address___parent___internal___type',
+  address___children = 'address___children',
+  address___children___id = 'address___children___id',
+  address___children___parent___id = 'address___children___parent___id',
+  address___children___parent___children = 'address___children___parent___children',
+  address___children___children = 'address___children___children',
+  address___children___children___id = 'address___children___children___id',
+  address___children___children___children = 'address___children___children___children',
+  address___children___internal___content = 'address___children___internal___content',
+  address___children___internal___contentDigest = 'address___children___internal___contentDigest',
+  address___children___internal___description = 'address___children___internal___description',
+  address___children___internal___fieldOwners = 'address___children___internal___fieldOwners',
+  address___children___internal___ignoreType = 'address___children___internal___ignoreType',
+  address___children___internal___mediaType = 'address___children___internal___mediaType',
+  address___children___internal___owner = 'address___children___internal___owner',
+  address___children___internal___type = 'address___children___internal___type',
+  address___internal___content = 'address___internal___content',
+  address___internal___contentDigest = 'address___internal___contentDigest',
+  address___internal___description = 'address___internal___description',
+  address___internal___fieldOwners = 'address___internal___fieldOwners',
+  address___internal___ignoreType = 'address___internal___ignoreType',
+  address___internal___mediaType = 'address___internal___mediaType',
+  address___internal___owner = 'address___internal___owner',
+  address___internal___type = 'address___internal___type',
+  address___street = 'address___street',
+  address___city = 'address___city',
+  address___postCode = 'address___postCode',
+  address___contact_page = 'address___contact_page',
+  address___contact_page___id = 'address___contact_page___id',
+  address___contact_page___parent___id = 'address___contact_page___parent___id',
+  address___contact_page___parent___children = 'address___contact_page___parent___children',
+  address___contact_page___children = 'address___contact_page___children',
+  address___contact_page___children___id = 'address___contact_page___children___id',
+  address___contact_page___children___children = 'address___contact_page___children___children',
+  address___contact_page___internal___content = 'address___contact_page___internal___content',
+  address___contact_page___internal___contentDigest = 'address___contact_page___internal___contentDigest',
+  address___contact_page___internal___description = 'address___contact_page___internal___description',
+  address___contact_page___internal___fieldOwners = 'address___contact_page___internal___fieldOwners',
+  address___contact_page___internal___ignoreType = 'address___contact_page___internal___ignoreType',
+  address___contact_page___internal___mediaType = 'address___contact_page___internal___mediaType',
+  address___contact_page___internal___owner = 'address___contact_page___internal___owner',
+  address___contact_page___internal___type = 'address___contact_page___internal___type',
+  address___contact_page___page = 'address___contact_page___page',
+  address___contact_page___phoneNumber = 'address___contact_page___phoneNumber',
+  address___contact_page___email = 'address___contact_page___email',
+  address___contact_page___address___id = 'address___contact_page___address___id',
+  address___contact_page___address___children = 'address___contact_page___address___children',
+  address___contact_page___address___street = 'address___contact_page___address___street',
+  address___contact_page___address___city = 'address___contact_page___address___city',
+  address___contact_page___address___postCode = 'address___contact_page___address___postCode',
+  address___contact_page___address___contact_page = 'address___contact_page___address___contact_page',
+  address___contact_page___address___spaceId = 'address___contact_page___address___spaceId',
+  address___contact_page___address___contentful_id = 'address___contact_page___address___contentful_id',
+  address___contact_page___address___createdAt = 'address___contact_page___address___createdAt',
+  address___contact_page___address___updatedAt = 'address___contact_page___address___updatedAt',
+  address___contact_page___address___node_locale = 'address___contact_page___address___node_locale',
+  address___contact_page___socialMedia___id = 'address___contact_page___socialMedia___id',
+  address___contact_page___socialMedia___children = 'address___contact_page___socialMedia___children',
+  address___contact_page___socialMedia___facebook = 'address___contact_page___socialMedia___facebook',
+  address___contact_page___socialMedia___contact_page = 'address___contact_page___socialMedia___contact_page',
+  address___contact_page___socialMedia___spaceId = 'address___contact_page___socialMedia___spaceId',
+  address___contact_page___socialMedia___contentful_id = 'address___contact_page___socialMedia___contentful_id',
+  address___contact_page___socialMedia___createdAt = 'address___contact_page___socialMedia___createdAt',
+  address___contact_page___socialMedia___updatedAt = 'address___contact_page___socialMedia___updatedAt',
+  address___contact_page___socialMedia___node_locale = 'address___contact_page___socialMedia___node_locale',
+  address___contact_page___spaceId = 'address___contact_page___spaceId',
+  address___contact_page___contentful_id = 'address___contact_page___contentful_id',
+  address___contact_page___createdAt = 'address___contact_page___createdAt',
+  address___contact_page___updatedAt = 'address___contact_page___updatedAt',
+  address___contact_page___node_locale = 'address___contact_page___node_locale',
+  address___spaceId = 'address___spaceId',
+  address___contentful_id = 'address___contentful_id',
+  address___createdAt = 'address___createdAt',
+  address___updatedAt = 'address___updatedAt',
+  address___node_locale = 'address___node_locale',
+  socialMedia___id = 'socialMedia___id',
+  socialMedia___parent___id = 'socialMedia___parent___id',
+  socialMedia___parent___parent___id = 'socialMedia___parent___parent___id',
+  socialMedia___parent___parent___children = 'socialMedia___parent___parent___children',
+  socialMedia___parent___children = 'socialMedia___parent___children',
+  socialMedia___parent___children___id = 'socialMedia___parent___children___id',
+  socialMedia___parent___children___children = 'socialMedia___parent___children___children',
+  socialMedia___parent___internal___content = 'socialMedia___parent___internal___content',
+  socialMedia___parent___internal___contentDigest = 'socialMedia___parent___internal___contentDigest',
+  socialMedia___parent___internal___description = 'socialMedia___parent___internal___description',
+  socialMedia___parent___internal___fieldOwners = 'socialMedia___parent___internal___fieldOwners',
+  socialMedia___parent___internal___ignoreType = 'socialMedia___parent___internal___ignoreType',
+  socialMedia___parent___internal___mediaType = 'socialMedia___parent___internal___mediaType',
+  socialMedia___parent___internal___owner = 'socialMedia___parent___internal___owner',
+  socialMedia___parent___internal___type = 'socialMedia___parent___internal___type',
+  socialMedia___children = 'socialMedia___children',
+  socialMedia___children___id = 'socialMedia___children___id',
+  socialMedia___children___parent___id = 'socialMedia___children___parent___id',
+  socialMedia___children___parent___children = 'socialMedia___children___parent___children',
+  socialMedia___children___children = 'socialMedia___children___children',
+  socialMedia___children___children___id = 'socialMedia___children___children___id',
+  socialMedia___children___children___children = 'socialMedia___children___children___children',
+  socialMedia___children___internal___content = 'socialMedia___children___internal___content',
+  socialMedia___children___internal___contentDigest = 'socialMedia___children___internal___contentDigest',
+  socialMedia___children___internal___description = 'socialMedia___children___internal___description',
+  socialMedia___children___internal___fieldOwners = 'socialMedia___children___internal___fieldOwners',
+  socialMedia___children___internal___ignoreType = 'socialMedia___children___internal___ignoreType',
+  socialMedia___children___internal___mediaType = 'socialMedia___children___internal___mediaType',
+  socialMedia___children___internal___owner = 'socialMedia___children___internal___owner',
+  socialMedia___children___internal___type = 'socialMedia___children___internal___type',
+  socialMedia___internal___content = 'socialMedia___internal___content',
+  socialMedia___internal___contentDigest = 'socialMedia___internal___contentDigest',
+  socialMedia___internal___description = 'socialMedia___internal___description',
+  socialMedia___internal___fieldOwners = 'socialMedia___internal___fieldOwners',
+  socialMedia___internal___ignoreType = 'socialMedia___internal___ignoreType',
+  socialMedia___internal___mediaType = 'socialMedia___internal___mediaType',
+  socialMedia___internal___owner = 'socialMedia___internal___owner',
+  socialMedia___internal___type = 'socialMedia___internal___type',
+  socialMedia___facebook = 'socialMedia___facebook',
+  socialMedia___contact_page = 'socialMedia___contact_page',
+  socialMedia___contact_page___id = 'socialMedia___contact_page___id',
+  socialMedia___contact_page___parent___id = 'socialMedia___contact_page___parent___id',
+  socialMedia___contact_page___parent___children = 'socialMedia___contact_page___parent___children',
+  socialMedia___contact_page___children = 'socialMedia___contact_page___children',
+  socialMedia___contact_page___children___id = 'socialMedia___contact_page___children___id',
+  socialMedia___contact_page___children___children = 'socialMedia___contact_page___children___children',
+  socialMedia___contact_page___internal___content = 'socialMedia___contact_page___internal___content',
+  socialMedia___contact_page___internal___contentDigest = 'socialMedia___contact_page___internal___contentDigest',
+  socialMedia___contact_page___internal___description = 'socialMedia___contact_page___internal___description',
+  socialMedia___contact_page___internal___fieldOwners = 'socialMedia___contact_page___internal___fieldOwners',
+  socialMedia___contact_page___internal___ignoreType = 'socialMedia___contact_page___internal___ignoreType',
+  socialMedia___contact_page___internal___mediaType = 'socialMedia___contact_page___internal___mediaType',
+  socialMedia___contact_page___internal___owner = 'socialMedia___contact_page___internal___owner',
+  socialMedia___contact_page___internal___type = 'socialMedia___contact_page___internal___type',
+  socialMedia___contact_page___page = 'socialMedia___contact_page___page',
+  socialMedia___contact_page___phoneNumber = 'socialMedia___contact_page___phoneNumber',
+  socialMedia___contact_page___email = 'socialMedia___contact_page___email',
+  socialMedia___contact_page___address___id = 'socialMedia___contact_page___address___id',
+  socialMedia___contact_page___address___children = 'socialMedia___contact_page___address___children',
+  socialMedia___contact_page___address___street = 'socialMedia___contact_page___address___street',
+  socialMedia___contact_page___address___city = 'socialMedia___contact_page___address___city',
+  socialMedia___contact_page___address___postCode = 'socialMedia___contact_page___address___postCode',
+  socialMedia___contact_page___address___contact_page = 'socialMedia___contact_page___address___contact_page',
+  socialMedia___contact_page___address___spaceId = 'socialMedia___contact_page___address___spaceId',
+  socialMedia___contact_page___address___contentful_id = 'socialMedia___contact_page___address___contentful_id',
+  socialMedia___contact_page___address___createdAt = 'socialMedia___contact_page___address___createdAt',
+  socialMedia___contact_page___address___updatedAt = 'socialMedia___contact_page___address___updatedAt',
+  socialMedia___contact_page___address___node_locale = 'socialMedia___contact_page___address___node_locale',
+  socialMedia___contact_page___socialMedia___id = 'socialMedia___contact_page___socialMedia___id',
+  socialMedia___contact_page___socialMedia___children = 'socialMedia___contact_page___socialMedia___children',
+  socialMedia___contact_page___socialMedia___facebook = 'socialMedia___contact_page___socialMedia___facebook',
+  socialMedia___contact_page___socialMedia___contact_page = 'socialMedia___contact_page___socialMedia___contact_page',
+  socialMedia___contact_page___socialMedia___spaceId = 'socialMedia___contact_page___socialMedia___spaceId',
+  socialMedia___contact_page___socialMedia___contentful_id = 'socialMedia___contact_page___socialMedia___contentful_id',
+  socialMedia___contact_page___socialMedia___createdAt = 'socialMedia___contact_page___socialMedia___createdAt',
+  socialMedia___contact_page___socialMedia___updatedAt = 'socialMedia___contact_page___socialMedia___updatedAt',
+  socialMedia___contact_page___socialMedia___node_locale = 'socialMedia___contact_page___socialMedia___node_locale',
+  socialMedia___contact_page___spaceId = 'socialMedia___contact_page___spaceId',
+  socialMedia___contact_page___contentful_id = 'socialMedia___contact_page___contentful_id',
+  socialMedia___contact_page___createdAt = 'socialMedia___contact_page___createdAt',
+  socialMedia___contact_page___updatedAt = 'socialMedia___contact_page___updatedAt',
+  socialMedia___contact_page___node_locale = 'socialMedia___contact_page___node_locale',
+  socialMedia___spaceId = 'socialMedia___spaceId',
+  socialMedia___contentful_id = 'socialMedia___contentful_id',
+  socialMedia___createdAt = 'socialMedia___createdAt',
+  socialMedia___updatedAt = 'socialMedia___updatedAt',
+  socialMedia___node_locale = 'socialMedia___node_locale',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  node_locale = 'node_locale',
+}
+
+export type ContentfulContactPageFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  page?: Maybe<StringQueryOperatorInput>;
+  phoneNumber?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  address?: Maybe<ContentfulAddressFilterInput>;
+  socialMedia?: Maybe<ContentfulSocialMediaFilterInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulContactPageFilterListInput = {
+  elemMatch?: Maybe<ContentfulContactPageFilterInput>;
+};
+
+export type ContentfulContactPageGroupConnection = {
+  __typename?: 'ContentfulContactPageGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulContactPageEdge>;
+  nodes: Array<ContentfulContactPage>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContactPageSortInput = {
+  fields?: Maybe<Array<Maybe<ContentfulContactPageFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
@@ -4640,6 +5305,297 @@ export type ContentfulSizesFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
+export type ContentfulSocialMedia = Node & {
+  __typename?: 'ContentfulSocialMedia';
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  facebook?: Maybe<Scalars['String']>;
+  contact_page?: Maybe<Array<Maybe<ContentfulContactPage>>>;
+  spaceId?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  node_locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulSocialMediaCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulSocialMediaUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulSocialMediaConnection = {
+  __typename?: 'ContentfulSocialMediaConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulSocialMediaEdge>;
+  nodes: Array<ContentfulSocialMedia>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContentfulSocialMediaGroupConnection>;
+};
+
+export type ContentfulSocialMediaConnectionDistinctArgs = {
+  field: ContentfulSocialMediaFieldsEnum;
+};
+
+export type ContentfulSocialMediaConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: ContentfulSocialMediaFieldsEnum;
+};
+
+export type ContentfulSocialMediaEdge = {
+  __typename?: 'ContentfulSocialMediaEdge';
+  next?: Maybe<ContentfulSocialMedia>;
+  node: ContentfulSocialMedia;
+  previous?: Maybe<ContentfulSocialMedia>;
+};
+
+export enum ContentfulSocialMediaFieldsEnum {
+  id = 'id',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type',
+  facebook = 'facebook',
+  contact_page = 'contact_page',
+  contact_page___id = 'contact_page___id',
+  contact_page___parent___id = 'contact_page___parent___id',
+  contact_page___parent___parent___id = 'contact_page___parent___parent___id',
+  contact_page___parent___parent___children = 'contact_page___parent___parent___children',
+  contact_page___parent___children = 'contact_page___parent___children',
+  contact_page___parent___children___id = 'contact_page___parent___children___id',
+  contact_page___parent___children___children = 'contact_page___parent___children___children',
+  contact_page___parent___internal___content = 'contact_page___parent___internal___content',
+  contact_page___parent___internal___contentDigest = 'contact_page___parent___internal___contentDigest',
+  contact_page___parent___internal___description = 'contact_page___parent___internal___description',
+  contact_page___parent___internal___fieldOwners = 'contact_page___parent___internal___fieldOwners',
+  contact_page___parent___internal___ignoreType = 'contact_page___parent___internal___ignoreType',
+  contact_page___parent___internal___mediaType = 'contact_page___parent___internal___mediaType',
+  contact_page___parent___internal___owner = 'contact_page___parent___internal___owner',
+  contact_page___parent___internal___type = 'contact_page___parent___internal___type',
+  contact_page___children = 'contact_page___children',
+  contact_page___children___id = 'contact_page___children___id',
+  contact_page___children___parent___id = 'contact_page___children___parent___id',
+  contact_page___children___parent___children = 'contact_page___children___parent___children',
+  contact_page___children___children = 'contact_page___children___children',
+  contact_page___children___children___id = 'contact_page___children___children___id',
+  contact_page___children___children___children = 'contact_page___children___children___children',
+  contact_page___children___internal___content = 'contact_page___children___internal___content',
+  contact_page___children___internal___contentDigest = 'contact_page___children___internal___contentDigest',
+  contact_page___children___internal___description = 'contact_page___children___internal___description',
+  contact_page___children___internal___fieldOwners = 'contact_page___children___internal___fieldOwners',
+  contact_page___children___internal___ignoreType = 'contact_page___children___internal___ignoreType',
+  contact_page___children___internal___mediaType = 'contact_page___children___internal___mediaType',
+  contact_page___children___internal___owner = 'contact_page___children___internal___owner',
+  contact_page___children___internal___type = 'contact_page___children___internal___type',
+  contact_page___internal___content = 'contact_page___internal___content',
+  contact_page___internal___contentDigest = 'contact_page___internal___contentDigest',
+  contact_page___internal___description = 'contact_page___internal___description',
+  contact_page___internal___fieldOwners = 'contact_page___internal___fieldOwners',
+  contact_page___internal___ignoreType = 'contact_page___internal___ignoreType',
+  contact_page___internal___mediaType = 'contact_page___internal___mediaType',
+  contact_page___internal___owner = 'contact_page___internal___owner',
+  contact_page___internal___type = 'contact_page___internal___type',
+  contact_page___page = 'contact_page___page',
+  contact_page___phoneNumber = 'contact_page___phoneNumber',
+  contact_page___email = 'contact_page___email',
+  contact_page___address___id = 'contact_page___address___id',
+  contact_page___address___parent___id = 'contact_page___address___parent___id',
+  contact_page___address___parent___children = 'contact_page___address___parent___children',
+  contact_page___address___children = 'contact_page___address___children',
+  contact_page___address___children___id = 'contact_page___address___children___id',
+  contact_page___address___children___children = 'contact_page___address___children___children',
+  contact_page___address___internal___content = 'contact_page___address___internal___content',
+  contact_page___address___internal___contentDigest = 'contact_page___address___internal___contentDigest',
+  contact_page___address___internal___description = 'contact_page___address___internal___description',
+  contact_page___address___internal___fieldOwners = 'contact_page___address___internal___fieldOwners',
+  contact_page___address___internal___ignoreType = 'contact_page___address___internal___ignoreType',
+  contact_page___address___internal___mediaType = 'contact_page___address___internal___mediaType',
+  contact_page___address___internal___owner = 'contact_page___address___internal___owner',
+  contact_page___address___internal___type = 'contact_page___address___internal___type',
+  contact_page___address___street = 'contact_page___address___street',
+  contact_page___address___city = 'contact_page___address___city',
+  contact_page___address___postCode = 'contact_page___address___postCode',
+  contact_page___address___contact_page = 'contact_page___address___contact_page',
+  contact_page___address___contact_page___id = 'contact_page___address___contact_page___id',
+  contact_page___address___contact_page___children = 'contact_page___address___contact_page___children',
+  contact_page___address___contact_page___page = 'contact_page___address___contact_page___page',
+  contact_page___address___contact_page___phoneNumber = 'contact_page___address___contact_page___phoneNumber',
+  contact_page___address___contact_page___email = 'contact_page___address___contact_page___email',
+  contact_page___address___contact_page___spaceId = 'contact_page___address___contact_page___spaceId',
+  contact_page___address___contact_page___contentful_id = 'contact_page___address___contact_page___contentful_id',
+  contact_page___address___contact_page___createdAt = 'contact_page___address___contact_page___createdAt',
+  contact_page___address___contact_page___updatedAt = 'contact_page___address___contact_page___updatedAt',
+  contact_page___address___contact_page___node_locale = 'contact_page___address___contact_page___node_locale',
+  contact_page___address___spaceId = 'contact_page___address___spaceId',
+  contact_page___address___contentful_id = 'contact_page___address___contentful_id',
+  contact_page___address___createdAt = 'contact_page___address___createdAt',
+  contact_page___address___updatedAt = 'contact_page___address___updatedAt',
+  contact_page___address___node_locale = 'contact_page___address___node_locale',
+  contact_page___socialMedia___id = 'contact_page___socialMedia___id',
+  contact_page___socialMedia___parent___id = 'contact_page___socialMedia___parent___id',
+  contact_page___socialMedia___parent___children = 'contact_page___socialMedia___parent___children',
+  contact_page___socialMedia___children = 'contact_page___socialMedia___children',
+  contact_page___socialMedia___children___id = 'contact_page___socialMedia___children___id',
+  contact_page___socialMedia___children___children = 'contact_page___socialMedia___children___children',
+  contact_page___socialMedia___internal___content = 'contact_page___socialMedia___internal___content',
+  contact_page___socialMedia___internal___contentDigest = 'contact_page___socialMedia___internal___contentDigest',
+  contact_page___socialMedia___internal___description = 'contact_page___socialMedia___internal___description',
+  contact_page___socialMedia___internal___fieldOwners = 'contact_page___socialMedia___internal___fieldOwners',
+  contact_page___socialMedia___internal___ignoreType = 'contact_page___socialMedia___internal___ignoreType',
+  contact_page___socialMedia___internal___mediaType = 'contact_page___socialMedia___internal___mediaType',
+  contact_page___socialMedia___internal___owner = 'contact_page___socialMedia___internal___owner',
+  contact_page___socialMedia___internal___type = 'contact_page___socialMedia___internal___type',
+  contact_page___socialMedia___facebook = 'contact_page___socialMedia___facebook',
+  contact_page___socialMedia___contact_page = 'contact_page___socialMedia___contact_page',
+  contact_page___socialMedia___contact_page___id = 'contact_page___socialMedia___contact_page___id',
+  contact_page___socialMedia___contact_page___children = 'contact_page___socialMedia___contact_page___children',
+  contact_page___socialMedia___contact_page___page = 'contact_page___socialMedia___contact_page___page',
+  contact_page___socialMedia___contact_page___phoneNumber = 'contact_page___socialMedia___contact_page___phoneNumber',
+  contact_page___socialMedia___contact_page___email = 'contact_page___socialMedia___contact_page___email',
+  contact_page___socialMedia___contact_page___spaceId = 'contact_page___socialMedia___contact_page___spaceId',
+  contact_page___socialMedia___contact_page___contentful_id = 'contact_page___socialMedia___contact_page___contentful_id',
+  contact_page___socialMedia___contact_page___createdAt = 'contact_page___socialMedia___contact_page___createdAt',
+  contact_page___socialMedia___contact_page___updatedAt = 'contact_page___socialMedia___contact_page___updatedAt',
+  contact_page___socialMedia___contact_page___node_locale = 'contact_page___socialMedia___contact_page___node_locale',
+  contact_page___socialMedia___spaceId = 'contact_page___socialMedia___spaceId',
+  contact_page___socialMedia___contentful_id = 'contact_page___socialMedia___contentful_id',
+  contact_page___socialMedia___createdAt = 'contact_page___socialMedia___createdAt',
+  contact_page___socialMedia___updatedAt = 'contact_page___socialMedia___updatedAt',
+  contact_page___socialMedia___node_locale = 'contact_page___socialMedia___node_locale',
+  contact_page___spaceId = 'contact_page___spaceId',
+  contact_page___contentful_id = 'contact_page___contentful_id',
+  contact_page___createdAt = 'contact_page___createdAt',
+  contact_page___updatedAt = 'contact_page___updatedAt',
+  contact_page___node_locale = 'contact_page___node_locale',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  node_locale = 'node_locale',
+}
+
+export type ContentfulSocialMediaFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  facebook?: Maybe<StringQueryOperatorInput>;
+  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulSocialMediaGroupConnection = {
+  __typename?: 'ContentfulSocialMediaGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulSocialMediaEdge>;
+  nodes: Array<ContentfulSocialMedia>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulSocialMediaSortInput = {
+  fields?: Maybe<Array<Maybe<ContentfulSocialMediaFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
   ne?: Maybe<Scalars['Date']>;
@@ -6250,6 +7206,12 @@ export type Query = {
   allContentfulServicesPage: ContentfulServicesPageConnection;
   contentfulCategory?: Maybe<ContentfulCategory>;
   allContentfulCategory: ContentfulCategoryConnection;
+  contentfulContactPage?: Maybe<ContentfulContactPage>;
+  allContentfulContactPage: ContentfulContactPageConnection;
+  contentfulAddress?: Maybe<ContentfulAddress>;
+  allContentfulAddress: ContentfulAddressConnection;
+  contentfulSocialMedia?: Maybe<ContentfulSocialMedia>;
+  allContentfulSocialMedia: ContentfulSocialMediaConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
 };
@@ -6695,6 +7657,74 @@ export type QueryAllContentfulCategoryArgs = {
   limit?: Maybe<Scalars['Int']>;
 };
 
+export type QueryContentfulContactPageArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  page?: Maybe<StringQueryOperatorInput>;
+  phoneNumber?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  address?: Maybe<ContentfulAddressFilterInput>;
+  socialMedia?: Maybe<ContentfulSocialMediaFilterInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type QueryAllContentfulContactPageArgs = {
+  filter?: Maybe<ContentfulContactPageFilterInput>;
+  sort?: Maybe<ContentfulContactPageSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+export type QueryContentfulAddressArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  street?: Maybe<StringQueryOperatorInput>;
+  city?: Maybe<StringQueryOperatorInput>;
+  postCode?: Maybe<StringQueryOperatorInput>;
+  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type QueryAllContentfulAddressArgs = {
+  filter?: Maybe<ContentfulAddressFilterInput>;
+  sort?: Maybe<ContentfulAddressSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+export type QueryContentfulSocialMediaArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  facebook?: Maybe<StringQueryOperatorInput>;
+  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+};
+
+export type QueryAllContentfulSocialMediaArgs = {
+  filter?: Maybe<ContentfulSocialMediaFilterInput>;
+  sort?: Maybe<ContentfulSocialMediaSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
 export type QueryContentfulAssetArgs = {
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
@@ -7105,6 +8135,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___theme_color = 'pluginCreator___pluginOptions___theme_color',
   pluginCreator___pluginOptions___display = 'pluginCreator___pluginOptions___display',
   pluginCreator___pluginOptions___icon = 'pluginCreator___pluginOptions___icon',
+  pluginCreator___pluginOptions___icon_options___purpose = 'pluginCreator___pluginOptions___icon_options___purpose',
   pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
   pluginCreator___pluginOptions___spaceId = 'pluginCreator___pluginOptions___spaceId',
   pluginCreator___pluginOptions___accessToken = 'pluginCreator___pluginOptions___accessToken',
@@ -7305,6 +8336,7 @@ export enum SitePluginFieldsEnum {
   pluginOptions___theme_color = 'pluginOptions___theme_color',
   pluginOptions___display = 'pluginOptions___display',
   pluginOptions___icon = 'pluginOptions___icon',
+  pluginOptions___icon_options___purpose = 'pluginOptions___icon_options___purpose',
   pluginOptions___path = 'pluginOptions___path',
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
@@ -7438,6 +8470,7 @@ export type SitePluginPluginOptions = {
   theme_color?: Maybe<Scalars['String']>;
   display?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
+  icon_options?: Maybe<SitePluginPluginOptionsIcon_Options>;
   path?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
@@ -7453,11 +8486,21 @@ export type SitePluginPluginOptionsFilterInput = {
   theme_color?: Maybe<StringQueryOperatorInput>;
   display?: Maybe<StringQueryOperatorInput>;
   icon?: Maybe<StringQueryOperatorInput>;
+  icon_options?: Maybe<SitePluginPluginOptionsIcon_OptionsFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
   includePaths?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsIcon_Options = {
+  __typename?: 'SitePluginPluginOptionsIcon_options';
+  purpose?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsIcon_OptionsFilterInput = {
+  purpose?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
@@ -7860,6 +8903,24 @@ export type SiteMetadataQuery = { __typename?: 'Query' } & {
           }
       >;
     }
+  >;
+};
+
+export type ContactPageQueryVariables = {};
+
+export type ContactPageQuery = { __typename?: 'Query' } & {
+  contentfulContactPage: Maybe<
+    { __typename?: 'ContentfulContactPage' } & Pick<
+      ContentfulContactPage,
+      'phoneNumber' | 'email'
+    > & {
+        address: Maybe<
+          { __typename?: 'ContentfulAddress' } & Pick<
+            ContentfulAddress,
+            'street' | 'city' | 'postCode'
+          >
+        >;
+      }
   >;
 };
 

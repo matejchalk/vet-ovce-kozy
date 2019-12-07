@@ -10,7 +10,8 @@
   "headings": {
     "goals": "Co je naším cílem?",
     "articles": "Nejnovější články",
-    "services": "Veterinární služby, které Vám nabízíme"
+    "services": "Veterinární služby, které Vám nabízíme",
+    "contact": "Kontaktujte nás"
   },
   "buttons": {
     "articles": "Naše články",
@@ -19,6 +20,12 @@
     "previous": "Předchozí",
     "next": "Další",
     "backToHome": "Zpět na hlavní stránku"
+  },
+  "contact": {
+    "postCode": "PSČ",
+    "address": "Adresa",
+    "phoneNumber": "Telefonní číslo",
+    "email": "Emailová adresa"
   },
   "other": {
     "continued": "pokr.",

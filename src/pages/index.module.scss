@@ -1,8 +1,5 @@
 @import 'variables';
 
-$goals-padding: 85px;
-$goals-gap: 75px;
-
 .intro {
   @include section-content-padding;
   padding-top: 25vh;
@@ -42,20 +39,13 @@ $goals-gap: 75px;
 .goals {
   @include section-content-padding;
   @include brown-gradient-background;
-  padding-top: $goals-padding;
-  padding-bottom: $goals-padding;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .goals-title {
-  font-family: $vok-font-serif;
-  color: $vok-white;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.3;
-  margin-bottom: $goals-gap;
+  @extend %vok-section-title;
 }
 
 .goals-cards {
@@ -79,5 +69,5 @@ $goals-gap: 75px;
 }
 
 .goals-button {
-  margin-top: $goals-gap;
+  margin-top: $vok-section-margin-v;
 }

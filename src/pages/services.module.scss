@@ -8,17 +8,10 @@ $line-height: 1.3;
   @include section-content-padding;
   @include brown-gradient-background;
   @include stretch-section-to-viewport-height;
-  padding-top: 85px;
-  padding-bottom: 85px;
 }
 
 .title {
-  font-family: $vok-font-serif;
-  color: $vok-white;
-  text-align: center;
-  font-size: 28px;
-  line-height: 1.3;
-  margin-bottom: 75px;
+  @extend %vok-section-title;
 }
 
 .services {
