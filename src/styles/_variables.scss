@@ -44,17 +44,21 @@ $vok-header-height: 90px;
 /* section */
 
 $vok-section-padding-v: 85px;
-$vok-section-margin-v: 75px;
+$vok-section-padding-h: 10%;
+$vok-section-padding-h-gt-sm: calc((100% - 750px) / 2);
+$vok-section-padding-h-gt-lg: calc((100% - 1050px) / 2);
 
 @mixin section-content-padding {
-  padding: $vok-section-padding-v 10%;
+  padding: $vok-section-padding-v $vok-section-padding-h;
 
   @include screen-gt-sm {
-    padding: $vok-section-padding-v calc((100% - 750px) / 2);
+    padding-left: $vok-section-padding-h-gt-sm;
+    padding-right: $vok-section-padding-h-gt-sm;
   }
 
   @include screen-gt-lg {
-    padding: $vok-section-padding-v calc((100% - 1050px) / 2);
+    padding-left: $vok-section-padding-h-gt-lg;
+    padding-right: $vok-section-padding-h-gt-lg;
   }
 
   @content;
@@ -75,6 +79,8 @@ $vok-section-margin-v: 75px;
 
   @content;
 }
+
+$vok-section-margin-v: 75px;
 
 %vok-section-title {
   font-family: $vok-font-serif;
