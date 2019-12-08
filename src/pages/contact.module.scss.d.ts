@@ -7,6 +7,7 @@ export interface Styles {
   address: string;
   links: string;
   linkIcon: string;
+  link: string;
   facebookButton: string;
   facebookIcon: string;
 }

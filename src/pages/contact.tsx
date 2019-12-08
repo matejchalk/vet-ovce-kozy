@@ -73,11 +73,15 @@ const ContactPage = ({ location: { pathname } }: Props) => {
             <div className={styles.links}>
               <span title={phoneNumber}>
                 <MdPhone className={styles.linkIcon} />
-                <a href={`tel:${contact.phoneNumber}`}>{contact.phoneNumber}</a>
+                <a href={`tel:${contact.phoneNumber}`} className={styles.link}>
+                  {contact.phoneNumber}
+                </a>
               </span>
               <span title={email}>
                 <MdEmail className={styles.linkIcon} />
-                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                <a href={`mailto:${contact.email}`} className={styles.link}>
+                  {contact.email}
+                </a>
               </span>
               <a
                 href={FACEBOOK_URL}
