@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import { FaFacebook } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
-import { GOOGLE_MAPS_URL } from '../constants';
+import { FACEBOOK_URL, GOOGLE_MAPS_URL } from '../constants';
 import { ContactPageQuery } from '../types/graphql';
 import i18n from '../i18n.json';
 import styles from './contact.module.scss';
@@ -39,6 +40,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
       contact: { title },
     },
     contact: { postCode, address, phoneNumber, email },
+    buttons: { facebook },
   } = i18n;
 
   const fullAddress = [
@@ -77,6 +79,15 @@ const ContactPage = ({ location: { pathname } }: Props) => {
                 <MdEmail className={styles.linkIcon} />
                 <a href={`mailto:${contact.email}`}>{contact.email}</a>
               </span>
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.facebookButton}
+              >
+                <FaFacebook className={styles.facebookIcon} />
+                <span>{facebook}</span>
+              </a>
             </div>
           </div>
         </main>

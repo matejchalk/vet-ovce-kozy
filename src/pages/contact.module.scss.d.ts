@@ -7,6 +7,8 @@ export interface Styles {
   address: string;
   links: string;
   linkIcon: string;
+  facebookButton: string;
+  facebookIcon: string;
 }
 
 export type ClassNames = keyof Styles;

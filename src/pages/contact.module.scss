@@ -16,15 +16,19 @@ $padding-h: 1em;
 .contact {
   @extend %vok-card;
   padding-top: 0;
+
+  @include screen-gt-sm {
+    padding-bottom: 32px;
+  }
 }
 
 .map {
   background: $vok-light-grey;
   height: 350px;
   width: 100%;
-  margin-bottom: $vok-card-offset;
 
   @include screen-gt-sm {
+    margin-bottom: 24px;
     height: 450px;
   }
 }
@@ -59,6 +63,7 @@ $padding-h: 1em;
 .links {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: $padding-h $padding-v;
 
   @include screen-gt-sm {
@@ -71,4 +76,28 @@ $padding-h: 1em;
   vertical-align: middle;
   margin-right: 0.5em;
   color: $vok-blue;
+}
+
+.facebook-button {
+  margin-top: 30px;
+  color: $vok-white;
+  background-color: $vok-fb-blue;
+  padding: 10px 15px;
+  border-radius: 2px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $vok-fb-blue-shade;
+  }
+
+  &:active {
+    background-color: $vok-fb-blue-tint;
+  }
+}
+
+.facebook-icon {
+  margin-right: 0.5em;
 }
