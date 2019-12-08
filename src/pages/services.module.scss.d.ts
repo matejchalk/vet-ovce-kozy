@@ -1,7 +1,7 @@
 export interface Styles {
+  title: string;
   services: string;
   section: string;
-  title: string;
   serviceCheck: string;
   service: string;
   examples: string;

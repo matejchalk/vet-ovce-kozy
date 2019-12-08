@@ -730,37 +730,6 @@ export enum ContentfulAddressFieldsEnum {
   contact_page___address___createdAt = 'contact_page___address___createdAt',
   contact_page___address___updatedAt = 'contact_page___address___updatedAt',
   contact_page___address___node_locale = 'contact_page___address___node_locale',
-  contact_page___socialMedia___id = 'contact_page___socialMedia___id',
-  contact_page___socialMedia___parent___id = 'contact_page___socialMedia___parent___id',
-  contact_page___socialMedia___parent___children = 'contact_page___socialMedia___parent___children',
-  contact_page___socialMedia___children = 'contact_page___socialMedia___children',
-  contact_page___socialMedia___children___id = 'contact_page___socialMedia___children___id',
-  contact_page___socialMedia___children___children = 'contact_page___socialMedia___children___children',
-  contact_page___socialMedia___internal___content = 'contact_page___socialMedia___internal___content',
-  contact_page___socialMedia___internal___contentDigest = 'contact_page___socialMedia___internal___contentDigest',
-  contact_page___socialMedia___internal___description = 'contact_page___socialMedia___internal___description',
-  contact_page___socialMedia___internal___fieldOwners = 'contact_page___socialMedia___internal___fieldOwners',
-  contact_page___socialMedia___internal___ignoreType = 'contact_page___socialMedia___internal___ignoreType',
-  contact_page___socialMedia___internal___mediaType = 'contact_page___socialMedia___internal___mediaType',
-  contact_page___socialMedia___internal___owner = 'contact_page___socialMedia___internal___owner',
-  contact_page___socialMedia___internal___type = 'contact_page___socialMedia___internal___type',
-  contact_page___socialMedia___facebook = 'contact_page___socialMedia___facebook',
-  contact_page___socialMedia___contact_page = 'contact_page___socialMedia___contact_page',
-  contact_page___socialMedia___contact_page___id = 'contact_page___socialMedia___contact_page___id',
-  contact_page___socialMedia___contact_page___children = 'contact_page___socialMedia___contact_page___children',
-  contact_page___socialMedia___contact_page___page = 'contact_page___socialMedia___contact_page___page',
-  contact_page___socialMedia___contact_page___phoneNumber = 'contact_page___socialMedia___contact_page___phoneNumber',
-  contact_page___socialMedia___contact_page___email = 'contact_page___socialMedia___contact_page___email',
-  contact_page___socialMedia___contact_page___spaceId = 'contact_page___socialMedia___contact_page___spaceId',
-  contact_page___socialMedia___contact_page___contentful_id = 'contact_page___socialMedia___contact_page___contentful_id',
-  contact_page___socialMedia___contact_page___createdAt = 'contact_page___socialMedia___contact_page___createdAt',
-  contact_page___socialMedia___contact_page___updatedAt = 'contact_page___socialMedia___contact_page___updatedAt',
-  contact_page___socialMedia___contact_page___node_locale = 'contact_page___socialMedia___contact_page___node_locale',
-  contact_page___socialMedia___spaceId = 'contact_page___socialMedia___spaceId',
-  contact_page___socialMedia___contentful_id = 'contact_page___socialMedia___contentful_id',
-  contact_page___socialMedia___createdAt = 'contact_page___socialMedia___createdAt',
-  contact_page___socialMedia___updatedAt = 'contact_page___socialMedia___updatedAt',
-  contact_page___socialMedia___node_locale = 'contact_page___socialMedia___node_locale',
   contact_page___spaceId = 'contact_page___spaceId',
   contact_page___contentful_id = 'contact_page___contentful_id',
   contact_page___createdAt = 'contact_page___createdAt',
@@ -2466,7 +2435,6 @@ export type ContentfulContactPage = Node & {
   phoneNumber?: Maybe<Scalars['String']>;
   email?: Maybe<Scalars['String']>;
   address?: Maybe<ContentfulAddress>;
-  socialMedia?: Maybe<ContentfulSocialMedia>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
@@ -2675,15 +2643,6 @@ export enum ContentfulContactPageFieldsEnum {
   address___contact_page___address___createdAt = 'address___contact_page___address___createdAt',
   address___contact_page___address___updatedAt = 'address___contact_page___address___updatedAt',
   address___contact_page___address___node_locale = 'address___contact_page___address___node_locale',
-  address___contact_page___socialMedia___id = 'address___contact_page___socialMedia___id',
-  address___contact_page___socialMedia___children = 'address___contact_page___socialMedia___children',
-  address___contact_page___socialMedia___facebook = 'address___contact_page___socialMedia___facebook',
-  address___contact_page___socialMedia___contact_page = 'address___contact_page___socialMedia___contact_page',
-  address___contact_page___socialMedia___spaceId = 'address___contact_page___socialMedia___spaceId',
-  address___contact_page___socialMedia___contentful_id = 'address___contact_page___socialMedia___contentful_id',
-  address___contact_page___socialMedia___createdAt = 'address___contact_page___socialMedia___createdAt',
-  address___contact_page___socialMedia___updatedAt = 'address___contact_page___socialMedia___updatedAt',
-  address___contact_page___socialMedia___node_locale = 'address___contact_page___socialMedia___node_locale',
   address___contact_page___spaceId = 'address___contact_page___spaceId',
   address___contact_page___contentful_id = 'address___contact_page___contentful_id',
   address___contact_page___createdAt = 'address___contact_page___createdAt',
@@ -2694,93 +2653,6 @@ export enum ContentfulContactPageFieldsEnum {
   address___createdAt = 'address___createdAt',
   address___updatedAt = 'address___updatedAt',
   address___node_locale = 'address___node_locale',
-  socialMedia___id = 'socialMedia___id',
-  socialMedia___parent___id = 'socialMedia___parent___id',
-  socialMedia___parent___parent___id = 'socialMedia___parent___parent___id',
-  socialMedia___parent___parent___children = 'socialMedia___parent___parent___children',
-  socialMedia___parent___children = 'socialMedia___parent___children',
-  socialMedia___parent___children___id = 'socialMedia___parent___children___id',
-  socialMedia___parent___children___children = 'socialMedia___parent___children___children',
-  socialMedia___parent___internal___content = 'socialMedia___parent___internal___content',
-  socialMedia___parent___internal___contentDigest = 'socialMedia___parent___internal___contentDigest',
-  socialMedia___parent___internal___description = 'socialMedia___parent___internal___description',
-  socialMedia___parent___internal___fieldOwners = 'socialMedia___parent___internal___fieldOwners',
-  socialMedia___parent___internal___ignoreType = 'socialMedia___parent___internal___ignoreType',
-  socialMedia___parent___internal___mediaType = 'socialMedia___parent___internal___mediaType',
-  socialMedia___parent___internal___owner = 'socialMedia___parent___internal___owner',
-  socialMedia___parent___internal___type = 'socialMedia___parent___internal___type',
-  socialMedia___children = 'socialMedia___children',
-  socialMedia___children___id = 'socialMedia___children___id',
-  socialMedia___children___parent___id = 'socialMedia___children___parent___id',
-  socialMedia___children___parent___children = 'socialMedia___children___parent___children',
-  socialMedia___children___children = 'socialMedia___children___children',
-  socialMedia___children___children___id = 'socialMedia___children___children___id',
-  socialMedia___children___children___children = 'socialMedia___children___children___children',
-  socialMedia___children___internal___content = 'socialMedia___children___internal___content',
-  socialMedia___children___internal___contentDigest = 'socialMedia___children___internal___contentDigest',
-  socialMedia___children___internal___description = 'socialMedia___children___internal___description',
-  socialMedia___children___internal___fieldOwners = 'socialMedia___children___internal___fieldOwners',
-  socialMedia___children___internal___ignoreType = 'socialMedia___children___internal___ignoreType',
-  socialMedia___children___internal___mediaType = 'socialMedia___children___internal___mediaType',
-  socialMedia___children___internal___owner = 'socialMedia___children___internal___owner',
-  socialMedia___children___internal___type = 'socialMedia___children___internal___type',
-  socialMedia___internal___content = 'socialMedia___internal___content',
-  socialMedia___internal___contentDigest = 'socialMedia___internal___contentDigest',
-  socialMedia___internal___description = 'socialMedia___internal___description',
-  socialMedia___internal___fieldOwners = 'socialMedia___internal___fieldOwners',
-  socialMedia___internal___ignoreType = 'socialMedia___internal___ignoreType',
-  socialMedia___internal___mediaType = 'socialMedia___internal___mediaType',
-  socialMedia___internal___owner = 'socialMedia___internal___owner',
-  socialMedia___internal___type = 'socialMedia___internal___type',
-  socialMedia___facebook = 'socialMedia___facebook',
-  socialMedia___contact_page = 'socialMedia___contact_page',
-  socialMedia___contact_page___id = 'socialMedia___contact_page___id',
-  socialMedia___contact_page___parent___id = 'socialMedia___contact_page___parent___id',
-  socialMedia___contact_page___parent___children = 'socialMedia___contact_page___parent___children',
-  socialMedia___contact_page___children = 'socialMedia___contact_page___children',
-  socialMedia___contact_page___children___id = 'socialMedia___contact_page___children___id',
-  socialMedia___contact_page___children___children = 'socialMedia___contact_page___children___children',
-  socialMedia___contact_page___internal___content = 'socialMedia___contact_page___internal___content',
-  socialMedia___contact_page___internal___contentDigest = 'socialMedia___contact_page___internal___contentDigest',
-  socialMedia___contact_page___internal___description = 'socialMedia___contact_page___internal___description',
-  socialMedia___contact_page___internal___fieldOwners = 'socialMedia___contact_page___internal___fieldOwners',
-  socialMedia___contact_page___internal___ignoreType = 'socialMedia___contact_page___internal___ignoreType',
-  socialMedia___contact_page___internal___mediaType = 'socialMedia___contact_page___internal___mediaType',
-  socialMedia___contact_page___internal___owner = 'socialMedia___contact_page___internal___owner',
-  socialMedia___contact_page___internal___type = 'socialMedia___contact_page___internal___type',
-  socialMedia___contact_page___page = 'socialMedia___contact_page___page',
-  socialMedia___contact_page___phoneNumber = 'socialMedia___contact_page___phoneNumber',
-  socialMedia___contact_page___email = 'socialMedia___contact_page___email',
-  socialMedia___contact_page___address___id = 'socialMedia___contact_page___address___id',
-  socialMedia___contact_page___address___children = 'socialMedia___contact_page___address___children',
-  socialMedia___contact_page___address___street = 'socialMedia___contact_page___address___street',
-  socialMedia___contact_page___address___city = 'socialMedia___contact_page___address___city',
-  socialMedia___contact_page___address___postCode = 'socialMedia___contact_page___address___postCode',
-  socialMedia___contact_page___address___contact_page = 'socialMedia___contact_page___address___contact_page',
-  socialMedia___contact_page___address___spaceId = 'socialMedia___contact_page___address___spaceId',
-  socialMedia___contact_page___address___contentful_id = 'socialMedia___contact_page___address___contentful_id',
-  socialMedia___contact_page___address___createdAt = 'socialMedia___contact_page___address___createdAt',
-  socialMedia___contact_page___address___updatedAt = 'socialMedia___contact_page___address___updatedAt',
-  socialMedia___contact_page___address___node_locale = 'socialMedia___contact_page___address___node_locale',
-  socialMedia___contact_page___socialMedia___id = 'socialMedia___contact_page___socialMedia___id',
-  socialMedia___contact_page___socialMedia___children = 'socialMedia___contact_page___socialMedia___children',
-  socialMedia___contact_page___socialMedia___facebook = 'socialMedia___contact_page___socialMedia___facebook',
-  socialMedia___contact_page___socialMedia___contact_page = 'socialMedia___contact_page___socialMedia___contact_page',
-  socialMedia___contact_page___socialMedia___spaceId = 'socialMedia___contact_page___socialMedia___spaceId',
-  socialMedia___contact_page___socialMedia___contentful_id = 'socialMedia___contact_page___socialMedia___contentful_id',
-  socialMedia___contact_page___socialMedia___createdAt = 'socialMedia___contact_page___socialMedia___createdAt',
-  socialMedia___contact_page___socialMedia___updatedAt = 'socialMedia___contact_page___socialMedia___updatedAt',
-  socialMedia___contact_page___socialMedia___node_locale = 'socialMedia___contact_page___socialMedia___node_locale',
-  socialMedia___contact_page___spaceId = 'socialMedia___contact_page___spaceId',
-  socialMedia___contact_page___contentful_id = 'socialMedia___contact_page___contentful_id',
-  socialMedia___contact_page___createdAt = 'socialMedia___contact_page___createdAt',
-  socialMedia___contact_page___updatedAt = 'socialMedia___contact_page___updatedAt',
-  socialMedia___contact_page___node_locale = 'socialMedia___contact_page___node_locale',
-  socialMedia___spaceId = 'socialMedia___spaceId',
-  socialMedia___contentful_id = 'socialMedia___contentful_id',
-  socialMedia___createdAt = 'socialMedia___createdAt',
-  socialMedia___updatedAt = 'socialMedia___updatedAt',
-  socialMedia___node_locale = 'socialMedia___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
@@ -2797,7 +2669,6 @@ export type ContentfulContactPageFilterInput = {
   phoneNumber?: Maybe<StringQueryOperatorInput>;
   email?: Maybe<StringQueryOperatorInput>;
   address?: Maybe<ContentfulAddressFilterInput>;
-  socialMedia?: Maybe<ContentfulSocialMediaFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -5305,297 +5176,6 @@ export type ContentfulSizesFilterInput = {
   sizes?: Maybe<StringQueryOperatorInput>;
 };
 
-export type ContentfulSocialMedia = Node & {
-  __typename?: 'ContentfulSocialMedia';
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
-  facebook?: Maybe<Scalars['String']>;
-  contact_page?: Maybe<Array<Maybe<ContentfulContactPage>>>;
-  spaceId?: Maybe<Scalars['String']>;
-  contentful_id?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['Date']>;
-  updatedAt?: Maybe<Scalars['Date']>;
-  node_locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulSocialMediaCreatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulSocialMediaUpdatedAtArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulSocialMediaConnection = {
-  __typename?: 'ContentfulSocialMediaConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulSocialMediaEdge>;
-  nodes: Array<ContentfulSocialMedia>;
-  pageInfo: PageInfo;
-  distinct: Array<Scalars['String']>;
-  group: Array<ContentfulSocialMediaGroupConnection>;
-};
-
-export type ContentfulSocialMediaConnectionDistinctArgs = {
-  field: ContentfulSocialMediaFieldsEnum;
-};
-
-export type ContentfulSocialMediaConnectionGroupArgs = {
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-  field: ContentfulSocialMediaFieldsEnum;
-};
-
-export type ContentfulSocialMediaEdge = {
-  __typename?: 'ContentfulSocialMediaEdge';
-  next?: Maybe<ContentfulSocialMedia>;
-  node: ContentfulSocialMedia;
-  previous?: Maybe<ContentfulSocialMedia>;
-};
-
-export enum ContentfulSocialMediaFieldsEnum {
-  id = 'id',
-  parent___id = 'parent___id',
-  parent___parent___id = 'parent___parent___id',
-  parent___parent___parent___id = 'parent___parent___parent___id',
-  parent___parent___parent___children = 'parent___parent___parent___children',
-  parent___parent___children = 'parent___parent___children',
-  parent___parent___children___id = 'parent___parent___children___id',
-  parent___parent___children___children = 'parent___parent___children___children',
-  parent___parent___internal___content = 'parent___parent___internal___content',
-  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
-  parent___parent___internal___description = 'parent___parent___internal___description',
-  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
-  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
-  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
-  parent___parent___internal___owner = 'parent___parent___internal___owner',
-  parent___parent___internal___type = 'parent___parent___internal___type',
-  parent___children = 'parent___children',
-  parent___children___id = 'parent___children___id',
-  parent___children___parent___id = 'parent___children___parent___id',
-  parent___children___parent___children = 'parent___children___parent___children',
-  parent___children___children = 'parent___children___children',
-  parent___children___children___id = 'parent___children___children___id',
-  parent___children___children___children = 'parent___children___children___children',
-  parent___children___internal___content = 'parent___children___internal___content',
-  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
-  parent___children___internal___description = 'parent___children___internal___description',
-  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
-  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
-  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
-  parent___children___internal___owner = 'parent___children___internal___owner',
-  parent___children___internal___type = 'parent___children___internal___type',
-  parent___internal___content = 'parent___internal___content',
-  parent___internal___contentDigest = 'parent___internal___contentDigest',
-  parent___internal___description = 'parent___internal___description',
-  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
-  parent___internal___ignoreType = 'parent___internal___ignoreType',
-  parent___internal___mediaType = 'parent___internal___mediaType',
-  parent___internal___owner = 'parent___internal___owner',
-  parent___internal___type = 'parent___internal___type',
-  children = 'children',
-  children___id = 'children___id',
-  children___parent___id = 'children___parent___id',
-  children___parent___parent___id = 'children___parent___parent___id',
-  children___parent___parent___children = 'children___parent___parent___children',
-  children___parent___children = 'children___parent___children',
-  children___parent___children___id = 'children___parent___children___id',
-  children___parent___children___children = 'children___parent___children___children',
-  children___parent___internal___content = 'children___parent___internal___content',
-  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
-  children___parent___internal___description = 'children___parent___internal___description',
-  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
-  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
-  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
-  children___parent___internal___owner = 'children___parent___internal___owner',
-  children___parent___internal___type = 'children___parent___internal___type',
-  children___children = 'children___children',
-  children___children___id = 'children___children___id',
-  children___children___parent___id = 'children___children___parent___id',
-  children___children___parent___children = 'children___children___parent___children',
-  children___children___children = 'children___children___children',
-  children___children___children___id = 'children___children___children___id',
-  children___children___children___children = 'children___children___children___children',
-  children___children___internal___content = 'children___children___internal___content',
-  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
-  children___children___internal___description = 'children___children___internal___description',
-  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
-  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
-  children___children___internal___mediaType = 'children___children___internal___mediaType',
-  children___children___internal___owner = 'children___children___internal___owner',
-  children___children___internal___type = 'children___children___internal___type',
-  children___internal___content = 'children___internal___content',
-  children___internal___contentDigest = 'children___internal___contentDigest',
-  children___internal___description = 'children___internal___description',
-  children___internal___fieldOwners = 'children___internal___fieldOwners',
-  children___internal___ignoreType = 'children___internal___ignoreType',
-  children___internal___mediaType = 'children___internal___mediaType',
-  children___internal___owner = 'children___internal___owner',
-  children___internal___type = 'children___internal___type',
-  internal___content = 'internal___content',
-  internal___contentDigest = 'internal___contentDigest',
-  internal___description = 'internal___description',
-  internal___fieldOwners = 'internal___fieldOwners',
-  internal___ignoreType = 'internal___ignoreType',
-  internal___mediaType = 'internal___mediaType',
-  internal___owner = 'internal___owner',
-  internal___type = 'internal___type',
-  facebook = 'facebook',
-  contact_page = 'contact_page',
-  contact_page___id = 'contact_page___id',
-  contact_page___parent___id = 'contact_page___parent___id',
-  contact_page___parent___parent___id = 'contact_page___parent___parent___id',
-  contact_page___parent___parent___children = 'contact_page___parent___parent___children',
-  contact_page___parent___children = 'contact_page___parent___children',
-  contact_page___parent___children___id = 'contact_page___parent___children___id',
-  contact_page___parent___children___children = 'contact_page___parent___children___children',
-  contact_page___parent___internal___content = 'contact_page___parent___internal___content',
-  contact_page___parent___internal___contentDigest = 'contact_page___parent___internal___contentDigest',
-  contact_page___parent___internal___description = 'contact_page___parent___internal___description',
-  contact_page___parent___internal___fieldOwners = 'contact_page___parent___internal___fieldOwners',
-  contact_page___parent___internal___ignoreType = 'contact_page___parent___internal___ignoreType',
-  contact_page___parent___internal___mediaType = 'contact_page___parent___internal___mediaType',
-  contact_page___parent___internal___owner = 'contact_page___parent___internal___owner',
-  contact_page___parent___internal___type = 'contact_page___parent___internal___type',
-  contact_page___children = 'contact_page___children',
-  contact_page___children___id = 'contact_page___children___id',
-  contact_page___children___parent___id = 'contact_page___children___parent___id',
-  contact_page___children___parent___children = 'contact_page___children___parent___children',
-  contact_page___children___children = 'contact_page___children___children',
-  contact_page___children___children___id = 'contact_page___children___children___id',
-  contact_page___children___children___children = 'contact_page___children___children___children',
-  contact_page___children___internal___content = 'contact_page___children___internal___content',
-  contact_page___children___internal___contentDigest = 'contact_page___children___internal___contentDigest',
-  contact_page___children___internal___description = 'contact_page___children___internal___description',
-  contact_page___children___internal___fieldOwners = 'contact_page___children___internal___fieldOwners',
-  contact_page___children___internal___ignoreType = 'contact_page___children___internal___ignoreType',
-  contact_page___children___internal___mediaType = 'contact_page___children___internal___mediaType',
-  contact_page___children___internal___owner = 'contact_page___children___internal___owner',
-  contact_page___children___internal___type = 'contact_page___children___internal___type',
-  contact_page___internal___content = 'contact_page___internal___content',
-  contact_page___internal___contentDigest = 'contact_page___internal___contentDigest',
-  contact_page___internal___description = 'contact_page___internal___description',
-  contact_page___internal___fieldOwners = 'contact_page___internal___fieldOwners',
-  contact_page___internal___ignoreType = 'contact_page___internal___ignoreType',
-  contact_page___internal___mediaType = 'contact_page___internal___mediaType',
-  contact_page___internal___owner = 'contact_page___internal___owner',
-  contact_page___internal___type = 'contact_page___internal___type',
-  contact_page___page = 'contact_page___page',
-  contact_page___phoneNumber = 'contact_page___phoneNumber',
-  contact_page___email = 'contact_page___email',
-  contact_page___address___id = 'contact_page___address___id',
-  contact_page___address___parent___id = 'contact_page___address___parent___id',
-  contact_page___address___parent___children = 'contact_page___address___parent___children',
-  contact_page___address___children = 'contact_page___address___children',
-  contact_page___address___children___id = 'contact_page___address___children___id',
-  contact_page___address___children___children = 'contact_page___address___children___children',
-  contact_page___address___internal___content = 'contact_page___address___internal___content',
-  contact_page___address___internal___contentDigest = 'contact_page___address___internal___contentDigest',
-  contact_page___address___internal___description = 'contact_page___address___internal___description',
-  contact_page___address___internal___fieldOwners = 'contact_page___address___internal___fieldOwners',
-  contact_page___address___internal___ignoreType = 'contact_page___address___internal___ignoreType',
-  contact_page___address___internal___mediaType = 'contact_page___address___internal___mediaType',
-  contact_page___address___internal___owner = 'contact_page___address___internal___owner',
-  contact_page___address___internal___type = 'contact_page___address___internal___type',
-  contact_page___address___street = 'contact_page___address___street',
-  contact_page___address___city = 'contact_page___address___city',
-  contact_page___address___postCode = 'contact_page___address___postCode',
-  contact_page___address___contact_page = 'contact_page___address___contact_page',
-  contact_page___address___contact_page___id = 'contact_page___address___contact_page___id',
-  contact_page___address___contact_page___children = 'contact_page___address___contact_page___children',
-  contact_page___address___contact_page___page = 'contact_page___address___contact_page___page',
-  contact_page___address___contact_page___phoneNumber = 'contact_page___address___contact_page___phoneNumber',
-  contact_page___address___contact_page___email = 'contact_page___address___contact_page___email',
-  contact_page___address___contact_page___spaceId = 'contact_page___address___contact_page___spaceId',
-  contact_page___address___contact_page___contentful_id = 'contact_page___address___contact_page___contentful_id',
-  contact_page___address___contact_page___createdAt = 'contact_page___address___contact_page___createdAt',
-  contact_page___address___contact_page___updatedAt = 'contact_page___address___contact_page___updatedAt',
-  contact_page___address___contact_page___node_locale = 'contact_page___address___contact_page___node_locale',
-  contact_page___address___spaceId = 'contact_page___address___spaceId',
-  contact_page___address___contentful_id = 'contact_page___address___contentful_id',
-  contact_page___address___createdAt = 'contact_page___address___createdAt',
-  contact_page___address___updatedAt = 'contact_page___address___updatedAt',
-  contact_page___address___node_locale = 'contact_page___address___node_locale',
-  contact_page___socialMedia___id = 'contact_page___socialMedia___id',
-  contact_page___socialMedia___parent___id = 'contact_page___socialMedia___parent___id',
-  contact_page___socialMedia___parent___children = 'contact_page___socialMedia___parent___children',
-  contact_page___socialMedia___children = 'contact_page___socialMedia___children',
-  contact_page___socialMedia___children___id = 'contact_page___socialMedia___children___id',
-  contact_page___socialMedia___children___children = 'contact_page___socialMedia___children___children',
-  contact_page___socialMedia___internal___content = 'contact_page___socialMedia___internal___content',
-  contact_page___socialMedia___internal___contentDigest = 'contact_page___socialMedia___internal___contentDigest',
-  contact_page___socialMedia___internal___description = 'contact_page___socialMedia___internal___description',
-  contact_page___socialMedia___internal___fieldOwners = 'contact_page___socialMedia___internal___fieldOwners',
-  contact_page___socialMedia___internal___ignoreType = 'contact_page___socialMedia___internal___ignoreType',
-  contact_page___socialMedia___internal___mediaType = 'contact_page___socialMedia___internal___mediaType',
-  contact_page___socialMedia___internal___owner = 'contact_page___socialMedia___internal___owner',
-  contact_page___socialMedia___internal___type = 'contact_page___socialMedia___internal___type',
-  contact_page___socialMedia___facebook = 'contact_page___socialMedia___facebook',
-  contact_page___socialMedia___contact_page = 'contact_page___socialMedia___contact_page',
-  contact_page___socialMedia___contact_page___id = 'contact_page___socialMedia___contact_page___id',
-  contact_page___socialMedia___contact_page___children = 'contact_page___socialMedia___contact_page___children',
-  contact_page___socialMedia___contact_page___page = 'contact_page___socialMedia___contact_page___page',
-  contact_page___socialMedia___contact_page___phoneNumber = 'contact_page___socialMedia___contact_page___phoneNumber',
-  contact_page___socialMedia___contact_page___email = 'contact_page___socialMedia___contact_page___email',
-  contact_page___socialMedia___contact_page___spaceId = 'contact_page___socialMedia___contact_page___spaceId',
-  contact_page___socialMedia___contact_page___contentful_id = 'contact_page___socialMedia___contact_page___contentful_id',
-  contact_page___socialMedia___contact_page___createdAt = 'contact_page___socialMedia___contact_page___createdAt',
-  contact_page___socialMedia___contact_page___updatedAt = 'contact_page___socialMedia___contact_page___updatedAt',
-  contact_page___socialMedia___contact_page___node_locale = 'contact_page___socialMedia___contact_page___node_locale',
-  contact_page___socialMedia___spaceId = 'contact_page___socialMedia___spaceId',
-  contact_page___socialMedia___contentful_id = 'contact_page___socialMedia___contentful_id',
-  contact_page___socialMedia___createdAt = 'contact_page___socialMedia___createdAt',
-  contact_page___socialMedia___updatedAt = 'contact_page___socialMedia___updatedAt',
-  contact_page___socialMedia___node_locale = 'contact_page___socialMedia___node_locale',
-  contact_page___spaceId = 'contact_page___spaceId',
-  contact_page___contentful_id = 'contact_page___contentful_id',
-  contact_page___createdAt = 'contact_page___createdAt',
-  contact_page___updatedAt = 'contact_page___updatedAt',
-  contact_page___node_locale = 'contact_page___node_locale',
-  spaceId = 'spaceId',
-  contentful_id = 'contentful_id',
-  createdAt = 'createdAt',
-  updatedAt = 'updatedAt',
-  node_locale = 'node_locale',
-}
-
-export type ContentfulSocialMediaFilterInput = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  facebook?: Maybe<StringQueryOperatorInput>;
-  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-export type ContentfulSocialMediaGroupConnection = {
-  __typename?: 'ContentfulSocialMediaGroupConnection';
-  totalCount: Scalars['Int'];
-  edges: Array<ContentfulSocialMediaEdge>;
-  nodes: Array<ContentfulSocialMedia>;
-  pageInfo: PageInfo;
-  field: Scalars['String'];
-  fieldValue?: Maybe<Scalars['String']>;
-};
-
-export type ContentfulSocialMediaSortInput = {
-  fields?: Maybe<Array<Maybe<ContentfulSocialMediaFieldsEnum>>>;
-  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
-};
-
 export type DateQueryOperatorInput = {
   eq?: Maybe<Scalars['Date']>;
   ne?: Maybe<Scalars['Date']>;
@@ -7210,8 +6790,6 @@ export type Query = {
   allContentfulContactPage: ContentfulContactPageConnection;
   contentfulAddress?: Maybe<ContentfulAddress>;
   allContentfulAddress: ContentfulAddressConnection;
-  contentfulSocialMedia?: Maybe<ContentfulSocialMedia>;
-  allContentfulSocialMedia: ContentfulSocialMediaConnection;
   contentfulAsset?: Maybe<ContentfulAsset>;
   allContentfulAsset: ContentfulAssetConnection;
 };
@@ -7666,7 +7244,6 @@ export type QueryContentfulContactPageArgs = {
   phoneNumber?: Maybe<StringQueryOperatorInput>;
   email?: Maybe<StringQueryOperatorInput>;
   address?: Maybe<ContentfulAddressFilterInput>;
-  socialMedia?: Maybe<ContentfulSocialMediaFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -7700,27 +7277,6 @@ export type QueryContentfulAddressArgs = {
 export type QueryAllContentfulAddressArgs = {
   filter?: Maybe<ContentfulAddressFilterInput>;
   sort?: Maybe<ContentfulAddressSortInput>;
-  skip?: Maybe<Scalars['Int']>;
-  limit?: Maybe<Scalars['Int']>;
-};
-
-export type QueryContentfulSocialMediaArgs = {
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
-  facebook?: Maybe<StringQueryOperatorInput>;
-  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
-  spaceId?: Maybe<StringQueryOperatorInput>;
-  contentful_id?: Maybe<StringQueryOperatorInput>;
-  createdAt?: Maybe<DateQueryOperatorInput>;
-  updatedAt?: Maybe<DateQueryOperatorInput>;
-  node_locale?: Maybe<StringQueryOperatorInput>;
-};
-
-export type QueryAllContentfulSocialMediaArgs = {
-  filter?: Maybe<ContentfulSocialMediaFilterInput>;
-  sort?: Maybe<ContentfulSocialMediaSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };

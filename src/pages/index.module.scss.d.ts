@@ -1,9 +1,9 @@
 export interface Styles {
+  goalsTitle: string;
   intro: string;
   introText: string;
   introButton: string;
   goals: string;
-  goalsTitle: string;
   goalsCards: string;
   goalsButton: string;
 }

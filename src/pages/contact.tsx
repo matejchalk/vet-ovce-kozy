@@ -3,6 +3,7 @@ import React from 'react';
 import { MdPhone, MdEmail } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
+import { GOOGLE_MAPS_URL } from '../constants';
 import { ContactPageQuery } from '../types/graphql';
 import i18n from '../i18n.json';
 import styles from './contact.module.scss';
@@ -53,20 +54,30 @@ const ContactPage = ({ location: { pathname } }: Props) => {
       <section className={styles.section}>
         <h1 className={styles.title}>{heading}</h1>
         <main className={styles.contact}>
-          <div title={address} className={styles.address}>
-            <span>{contact.address.street}</span>
-            <span>{contact.address.city}</span>
-            <span>{`${postCode}: ${contact.address.postCode}`}</span>
-          </div>
-          <div className={styles.links}>
-            <span title={phoneNumber}>
-              <MdPhone className={styles.linkIcon} />
-              <a href={`tel:${contact.phoneNumber}`}>{contact.phoneNumber}</a>
-            </span>
-            <span title={email}>
-              <MdEmail className={styles.linkIcon} />
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            </span>
+          <iframe
+            src={GOOGLE_MAPS_URL}
+            frameBorder={0}
+            scrolling="no"
+            marginHeight={0}
+            marginWidth={0}
+            className={styles.map}
+          />
+          <div className={styles.texts}>
+            <div title={address} className={styles.address}>
+              <span>{contact.address.street}</span>
+              <span>{contact.address.city}</span>
+              <span>{`${postCode}: ${contact.address.postCode}`}</span>
+            </div>
+            <div className={styles.links}>
+              <span title={phoneNumber}>
+                <MdPhone className={styles.linkIcon} />
+                <a href={`tel:${contact.phoneNumber}`}>{contact.phoneNumber}</a>
+              </span>
+              <span title={email}>
+                <MdEmail className={styles.linkIcon} />
+                <a href={`mailto:${contact.email}`}>{contact.email}</a>
+              </span>
+            </div>
           </div>
         </main>
       </section>

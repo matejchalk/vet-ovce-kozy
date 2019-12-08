@@ -1,6 +1,6 @@
 export interface Styles {
-  section: string;
   title: string;
+  section: string;
   previews: string;
   preview: string;
   card: string;

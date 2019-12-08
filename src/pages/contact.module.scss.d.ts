@@ -1,7 +1,9 @@
 export interface Styles {
+  title: string;
   contact: string;
   section: string;
-  title: string;
+  map: string;
+  texts: string;
   address: string;
   links: string;
   linkIcon: string;

@@ -15,6 +15,21 @@ $padding-h: 1em;
 
 .contact {
   @extend %vok-card;
+  padding-top: 0;
+}
+
+.map {
+  background: $vok-light-grey;
+  height: 350px;
+  width: 100%;
+  margin-bottom: $vok-card-offset;
+
+  @include screen-gt-sm {
+    height: 450px;
+  }
+}
+
+.texts {
   display: flex;
   flex-direction: column;
   width: 100%;
