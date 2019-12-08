@@ -54,13 +54,12 @@ $vok-footer-height-gt-xs: $vok-footer-padding-v * 2 + $vok-footer-line-height *
 
 /* section */
 
-$vok-section-padding-v: 85px;
 $vok-section-padding-h: 10%;
 $vok-section-padding-h-gt-sm: calc((100% - 750px) / 2);
 $vok-section-padding-h-gt-lg: calc((100% - 1050px) / 2);
 
 @mixin section-content-padding {
-  padding: $vok-section-padding-v $vok-section-padding-h;
+  padding: 85px $vok-section-padding-h 170px;
 
   @include screen-gt-sm {
     padding-left: $vok-section-padding-h-gt-sm;

@@ -1,6 +1,5 @@
 @import 'variables';
 
-$section-padding-v: 70px;
 $margin-v: 30px;
 $margin-v-gt-sm: 48px;
 $card-content-padding-gt-sm: 48px;
@@ -17,8 +16,6 @@ $card-offset-gt-sm: 48px;
   @include section-content-padding;
   @include brown-gradient-background;
   @include stretch-section-to-viewport-height;
-  padding-top: $section-padding-v;
-  padding-bottom: $section-padding-v;
 }
 
 .article {
