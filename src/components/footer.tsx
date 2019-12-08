@@ -39,7 +39,7 @@ const Footer = () => {
         </span>
       </div>
       <div className={styles.socialLinks}>
-        <a href={FACEBOOK_URL}>
+        <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
           <FaFacebookSquare className={styles.facebookButton} />
         </a>
       </div>
