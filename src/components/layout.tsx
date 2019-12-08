@@ -1,11 +1,8 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { oc } from 'ts-optchain';
-import Footer from './footer';
-import SEO from './seo';
 import '../styles/global.scss';
-import { SiteTitleQuery } from '../types/graphql';
+import Footer from './footer';
 import Header from './header';
+import SEO from './seo';
 
 type Props = {
   children: React.ReactNode;
@@ -13,19 +10,10 @@ type Props = {
 };
 
 const Layout = ({ children, seo }: Props) => {
-  const { site } = useStaticQuery<SiteTitleQuery>(graphql`
-    query SiteTitle {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
   return (
     <>
       <SEO {...seo} />
-      <Header siteTitle={oc(site).siteMetadata.title('')} />
+      <Header />
       {children}
       <Footer />
     </>

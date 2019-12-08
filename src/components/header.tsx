@@ -4,17 +4,13 @@ import React from 'react';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import i18n from '../i18n.json';
-import { LogoQuery } from '../types/graphql';
+import { HeaderQuery } from '../types/graphql';
 import { getFixedImage } from '../utils';
 import styles from './header.module.scss';
 
-type Props = {
-  siteTitle: string;
-};
-
-const Header = ({ siteTitle }: Props) => {
-  const { file } = useStaticQuery<LogoQuery>(graphql`
-    query Logo {
+const Header = () => {
+  const { site, file } = useStaticQuery<HeaderQuery>(graphql`
+    query Header {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fixed(height: 80) {
@@ -26,8 +22,15 @@ const Header = ({ siteTitle }: Props) => {
           }
         }
       }
+      site {
+        siteMetadata {
+          title
+        }
+      }
     }
   `);
+
+  const siteTitle = oc(site).siteMetadata.title('');
 
   const { about, services, articles, contact } = i18n.pages;
   const pages = [about, services, articles, contact];

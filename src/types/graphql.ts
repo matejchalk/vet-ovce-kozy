@@ -8428,9 +8428,9 @@ export type FooterQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type LogoQueryVariables = {};
+export type HeaderQueryVariables = {};
 
-export type LogoQuery = { __typename?: 'Query' } & {
+export type HeaderQuery = { __typename?: 'Query' } & {
   file: Maybe<
     { __typename?: 'File' } & {
       childImageSharp: Maybe<
@@ -8442,6 +8442,13 @@ export type LogoQuery = { __typename?: 'Query' } & {
             >
           >;
         }
+      >;
+    }
+  >;
+  site: Maybe<
+    { __typename?: 'Site' } & {
+      siteMetadata: Maybe<
+        { __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>
       >;
     }
   >;
