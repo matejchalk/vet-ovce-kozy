@@ -41,6 +41,17 @@ $vok-header-height: 90px;
   }
 }
 
+/* footer */
+
+$vok-footer-padding-v: 32px;
+$vok-footer-line-height: 22px;
+$vok-footer-gap: 24px;
+$vok-footer-button-height: 32px;
+$vok-footer-height: $vok-footer-padding-v * 2 + $vok-footer-line-height * 5 +
+  $vok-footer-button-height + $vok-footer-gap * 2;
+$vok-footer-height-gt-xs: $vok-footer-padding-v * 2 + $vok-footer-line-height *
+  3;
+
 /* section */
 
 $vok-section-padding-v: 85px;
@@ -75,7 +86,13 @@ $vok-section-padding-h-gt-lg: calc((100% - 1050px) / 2);
 }
 
 @mixin stretch-section-to-viewport-height {
-  min-height: calc(100vh - #{$vok-header-height});
+  min-height: calc(100vh - #{$vok-header-height} - #{$vok-footer-height});
+
+  @include screen-gt-xs {
+    min-height: calc(
+      100vh - #{$vok-header-height} - #{$vok-footer-height-gt-xs}
+    );
+  }
 
   @content;
 }

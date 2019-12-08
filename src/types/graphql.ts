@@ -8410,6 +8410,24 @@ export type GatsbyImageSharpSizes_WithWebp_NoBase64Fragment = {
   'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'
 >;
 
+export type FooterQueryVariables = {};
+
+export type FooterQuery = { __typename?: 'Query' } & {
+  contentfulContactPage: Maybe<
+    { __typename?: 'ContentfulContactPage' } & Pick<
+      ContentfulContactPage,
+      'phoneNumber' | 'email'
+    > & {
+        address: Maybe<
+          { __typename?: 'ContentfulAddress' } & Pick<
+            ContentfulAddress,
+            'street' | 'city' | 'postCode'
+          >
+        >;
+      }
+  >;
+};
+
 export type LogoQueryVariables = {};
 
 export type LogoQuery = { __typename?: 'Query' } & {

@@ -1,0 +1,63 @@
+@import 'variables';
+
+$text-color: $vok-light-grey;
+
+.footer {
+  @include section-content-padding;
+  padding-top: $vok-footer-padding-v;
+  padding-bottom: $vok-footer-padding-v;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $vok-dark-grey;
+  color: $text-color;
+  font-size: 16px;
+  line-height: $vok-footer-line-height;
+
+  & > *:not(:last-child) {
+    margin-bottom: $vok-footer-gap;
+
+    @include screen-gt-xs {
+      margin-bottom: 0;
+    }
+  }
+
+  @include screen-gt-xs {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+
+  & a {
+    color: $text-color;
+  }
+}
+
+.link-icon {
+  margin-right: 0.5em;
+}
+
+.social-links {
+  display: flex;
+}
+
+.facebook-button {
+  color: $text-color;
+  font-size: $vok-footer-button-height;
+  vertical-align: top;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
