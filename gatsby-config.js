@@ -66,6 +66,12 @@ module.exports = {
         includePaths: ['src/styles'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        openAnalyzer: false,
+      },
+    },
     'gatsby-plugin-extract-schema',
   ],
 };
