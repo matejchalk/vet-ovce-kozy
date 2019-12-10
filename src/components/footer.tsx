@@ -1,9 +1,9 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { FaFacebookSquare } from 'react-icons/fa';
+import { FaFacebookSquare, FaLocationArrow } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { oc } from 'ts-optchain';
-import { FACEBOOK_URL } from '../constants';
+import { FACEBOOK_URL, GOOGLE_MAPS_URL } from '../constants';
 import { FooterQuery } from '../types/graphql';
 import styles from './footer.module.scss';
 
@@ -43,11 +43,19 @@ const Footer = () => {
           <FaFacebookSquare className={styles.facebookButton} />
         </a>
       </div>
-      <div className={styles.address}>
-        <span>{address.street}</span>
-        <span>{address.city}</span>
-        <span>{address.postCode}</span>
-      </div>
+      <a
+        href={GOOGLE_MAPS_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.location}
+      >
+        <FaLocationArrow className={styles.mapsButton} />
+        <div className={styles.address}>
+          <span>{address.street}</span>
+          <span>{address.city}</span>
+          <span>{address.postCode}</span>
+        </div>
+      </a>
     </footer>
   );
 };

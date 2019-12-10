@@ -5,7 +5,9 @@ export interface Styles {
   linkIcon: string;
   socialLinks: string;
   facebookButton: string;
+  location: string;
   address: string;
+  mapsButton: string;
 }
 
 export type ClassNames = keyof Styles;

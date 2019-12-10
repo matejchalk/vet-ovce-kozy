@@ -4,7 +4,7 @@ import { FaFacebook } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
-import { FACEBOOK_URL, GOOGLE_MAPS_URL } from '../constants';
+import { FACEBOOK_URL, GOOGLE_MAPS_EMBED_SRC } from '../constants';
 import { ContactPageQuery } from '../types/graphql';
 import i18n from '../i18n.json';
 import styles from './contact.module.scss';
@@ -57,7 +57,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
         <h1 className={styles.title}>{heading}</h1>
         <main className={styles.contact}>
           <iframe
-            src={GOOGLE_MAPS_URL}
+            src={GOOGLE_MAPS_EMBED_SRC}
             frameBorder={0}
             scrolling="no"
             marginHeight={0}
