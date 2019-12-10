@@ -104,7 +104,6 @@ const SEO = (props: SEOProps) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageSrc} />
       <meta name="twitter:image:alt" content={imageAlt} />
-      <link rel="canonical" href={url} />
       <script type="application/ld+json">{JSON.stringify(schema)}</script>
     </Helmet>
   );

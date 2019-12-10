@@ -24,6 +24,12 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: process.env.URL,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: APP_NAME,
