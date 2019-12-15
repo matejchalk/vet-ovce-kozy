@@ -10,7 +10,11 @@ import { AboutPageQuery } from '../types/graphql';
 import { exists, getFluidImage } from '../utils';
 import styles from './about.module.scss';
 
-const AboutPage = () => {
+type Props = {
+  location: Location;
+};
+
+const AboutPage = ({ location: { pathname } }: Props) => {
   const { file, contentfulAboutPage } = useStaticQuery<AboutPageQuery>(graphql`
     query AboutPage {
       file(relativePath: { eq: "team.jpg" }) {
@@ -50,12 +54,22 @@ const AboutPage = () => {
   `);
 
   const {
+    pages: {
+      about: { title },
+    },
     aboutUs,
     headings: { team },
   } = i18n;
 
   return (
-    <Layout>
+    <Layout
+      seo={{
+        title,
+        description: aboutUs,
+        path: pathname,
+        keywords: [title.toLowerCase()],
+      }}
+    >
       <BackgroundImage
         fluid={getFluidImage(oc(file).childImageSharp())}
         backgroundColor="#bacdba"
