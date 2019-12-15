@@ -1,6 +1,8 @@
 export interface Styles {
   card: string;
+  stretch: string;
   title: string;
+  children: string;
   buttonWrapper: string;
 }
 

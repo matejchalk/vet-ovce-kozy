@@ -62,7 +62,6 @@ const ArticlesPage = ({
                       }
                     }
                     link={{ text: read, path: `/${slug}` }}
-                    className={styles.card}
                   />
                 </li>
               );

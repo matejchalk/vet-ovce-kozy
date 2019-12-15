@@ -6,12 +6,14 @@
     "contact": { "title": "Kontakt", "path": "kontakt" }
   },
   "description": "Veterinární péče pro ovce a kozy",
+  "aboutUs": "Stručný text - popis kdo jsme, čím se zabýváme a kde působíme",
   "keywords": ["veterinární péče", "ovce", "kozy"],
   "headings": {
     "goals": "Co je naším cílem?",
     "articles": "Nejnovější články",
     "services": "Veterinární služby, které Vám nabízíme",
-    "contact": "Kontaktujte nás"
+    "contact": "Kontaktujte nás",
+    "team": "Náš tým"
   },
   "buttons": {
     "articles": "Naše články",

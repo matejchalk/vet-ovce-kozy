@@ -1,0 +1,130 @@
+@import 'variables';
+
+$card-gap: 60px;
+
+.intro {
+  @include section-content-padding;
+  padding-top: 50vh;
+  padding-bottom: 0;
+  min-height: calc(100vh - #{$vok-header-height});
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @include screen-gt-sm {
+    align-items: flex-start;
+  }
+}
+
+.intro-text {
+  font-family: $vok-font-serif;
+  color: $vok-white;
+  text-shadow: 0 4px 4px rgba($vok-black, 0.25);
+  text-align: center;
+  line-height: 1.3;
+  margin: 0 auto;
+  font-size: 28px;
+
+  @include screen-gt-xs {
+    font-size: 40px;
+    max-width: 550px;
+  }
+}
+
+@include screen-gt-sm {
+  .intro-button {
+    align-self: flex-end;
+  }
+}
+
+.team {
+  @include section-content-padding;
+  @include brown-gradient-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-title {
+  @extend %vok-section-title;
+}
+
+.team-cards {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  & > *:not(:last-child) {
+    margin-bottom: 65px;
+  }
+
+  @include screen-gt-sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & > * {
+      width: calc((100% - #{$card-gap}) / 2);
+      margin-bottom: 0 !important;
+
+      &:not(:nth-child(2n)) {
+        margin-right: $card-gap;
+
+        @include screen-gt-lg {
+          margin-right: 0;
+        }
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: $card-gap;
+
+        @include screen-gt-lg {
+          margin-top: 0;
+        }
+      }
+
+      @include screen-gt-lg {
+        width: calc((100% - #{2 * $card-gap}) / 3);
+
+        &:not(:nth-child(3n)) {
+          margin-right: $card-gap;
+        }
+
+        &:nth-child(n + 4) {
+          margin-top: $card-gap;
+        }
+      }
+    }
+  }
+}
+
+.name {
+  font-size: 24px;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 0.6em;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.3;
+  width: 100%;
+}
+
+.links {
+  margin-top: 0.7em;
+  font-size: 18px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-icon {
+  vertical-align: middle;
+  margin-right: 0.5em;
+  color: $vok-blue;
+}
+
+.link {
+  color: $vok-blue;
+}

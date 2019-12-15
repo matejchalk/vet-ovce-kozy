@@ -206,6 +206,8 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___internal___owner = 'teamMembers___internal___owner',
   teamMembers___internal___type = 'teamMembers___internal___type',
   teamMembers___name = 'teamMembers___name',
+  teamMembers___email = 'teamMembers___email',
+  teamMembers___phoneNumber = 'teamMembers___phoneNumber',
   teamMembers___photo___id = 'teamMembers___photo___id',
   teamMembers___photo___parent___id = 'teamMembers___photo___parent___id',
   teamMembers___photo___parent___children = 'teamMembers___photo___parent___children',
@@ -297,6 +299,8 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___article___author___id = 'teamMembers___article___author___id',
   teamMembers___article___author___children = 'teamMembers___article___author___children',
   teamMembers___article___author___name = 'teamMembers___article___author___name',
+  teamMembers___article___author___email = 'teamMembers___article___author___email',
+  teamMembers___article___author___phoneNumber = 'teamMembers___article___author___phoneNumber',
   teamMembers___article___author___article = 'teamMembers___article___author___article',
   teamMembers___article___author___about_page = 'teamMembers___article___author___about_page',
   teamMembers___article___author___spaceId = 'teamMembers___article___author___spaceId',
@@ -339,6 +343,8 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___about_page___teamMembers___id = 'teamMembers___about_page___teamMembers___id',
   teamMembers___about_page___teamMembers___children = 'teamMembers___about_page___teamMembers___children',
   teamMembers___about_page___teamMembers___name = 'teamMembers___about_page___teamMembers___name',
+  teamMembers___about_page___teamMembers___email = 'teamMembers___about_page___teamMembers___email',
+  teamMembers___about_page___teamMembers___phoneNumber = 'teamMembers___about_page___teamMembers___phoneNumber',
   teamMembers___about_page___teamMembers___article = 'teamMembers___about_page___teamMembers___article',
   teamMembers___about_page___teamMembers___about_page = 'teamMembers___about_page___teamMembers___about_page',
   teamMembers___about_page___teamMembers___spaceId = 'teamMembers___about_page___teamMembers___spaceId',
@@ -1218,6 +1224,8 @@ export enum ContentfulArticleFieldsEnum {
   category___article___author___id = 'category___article___author___id',
   category___article___author___children = 'category___article___author___children',
   category___article___author___name = 'category___article___author___name',
+  category___article___author___email = 'category___article___author___email',
+  category___article___author___phoneNumber = 'category___article___author___phoneNumber',
   category___article___author___article = 'category___article___author___article',
   category___article___author___about_page = 'category___article___author___about_page',
   category___article___author___spaceId = 'category___article___author___spaceId',
@@ -1284,6 +1292,8 @@ export enum ContentfulArticleFieldsEnum {
   author___internal___owner = 'author___internal___owner',
   author___internal___type = 'author___internal___type',
   author___name = 'author___name',
+  author___email = 'author___email',
+  author___phoneNumber = 'author___phoneNumber',
   author___photo___id = 'author___photo___id',
   author___photo___parent___id = 'author___photo___parent___id',
   author___photo___parent___children = 'author___photo___parent___children',
@@ -1375,6 +1385,8 @@ export enum ContentfulArticleFieldsEnum {
   author___article___author___id = 'author___article___author___id',
   author___article___author___children = 'author___article___author___children',
   author___article___author___name = 'author___article___author___name',
+  author___article___author___email = 'author___article___author___email',
+  author___article___author___phoneNumber = 'author___article___author___phoneNumber',
   author___article___author___article = 'author___article___author___article',
   author___article___author___about_page = 'author___article___author___about_page',
   author___article___author___spaceId = 'author___article___author___spaceId',
@@ -1417,6 +1429,8 @@ export enum ContentfulArticleFieldsEnum {
   author___about_page___teamMembers___id = 'author___about_page___teamMembers___id',
   author___about_page___teamMembers___children = 'author___about_page___teamMembers___children',
   author___about_page___teamMembers___name = 'author___about_page___teamMembers___name',
+  author___about_page___teamMembers___email = 'author___about_page___teamMembers___email',
+  author___about_page___teamMembers___phoneNumber = 'author___about_page___teamMembers___phoneNumber',
   author___about_page___teamMembers___article = 'author___about_page___teamMembers___article',
   author___about_page___teamMembers___about_page = 'author___about_page___teamMembers___about_page',
   author___about_page___teamMembers___spaceId = 'author___about_page___teamMembers___spaceId',
@@ -2305,6 +2319,8 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___internal___owner = 'article___author___internal___owner',
   article___author___internal___type = 'article___author___internal___type',
   article___author___name = 'article___author___name',
+  article___author___email = 'article___author___email',
+  article___author___phoneNumber = 'article___author___phoneNumber',
   article___author___photo___id = 'article___author___photo___id',
   article___author___photo___children = 'article___author___photo___children',
   article___author___photo___contentful_id = 'article___author___photo___contentful_id',
@@ -3601,6 +3617,8 @@ export type ContentfulMember = Node & {
   children: Array<Node>;
   internal: Internal;
   name?: Maybe<Scalars['String']>;
+  email?: Maybe<Scalars['String']>;
+  phoneNumber?: Maybe<Scalars['String']>;
   photo?: Maybe<ContentfulAsset>;
   article?: Maybe<Array<Maybe<ContentfulArticle>>>;
   about_page?: Maybe<Array<Maybe<ContentfulAboutPage>>>;
@@ -3948,6 +3966,8 @@ export enum ContentfulMemberFieldsEnum {
   internal___owner = 'internal___owner',
   internal___type = 'internal___type',
   name = 'name',
+  email = 'email',
+  phoneNumber = 'phoneNumber',
   photo___id = 'photo___id',
   photo___parent___id = 'photo___parent___id',
   photo___parent___parent___id = 'photo___parent___parent___id',
@@ -4128,6 +4148,8 @@ export enum ContentfulMemberFieldsEnum {
   article___author___internal___owner = 'article___author___internal___owner',
   article___author___internal___type = 'article___author___internal___type',
   article___author___name = 'article___author___name',
+  article___author___email = 'article___author___email',
+  article___author___phoneNumber = 'article___author___phoneNumber',
   article___author___photo___id = 'article___author___photo___id',
   article___author___photo___children = 'article___author___photo___children',
   article___author___photo___contentful_id = 'article___author___photo___contentful_id',
@@ -4267,6 +4289,8 @@ export enum ContentfulMemberFieldsEnum {
   about_page___teamMembers___internal___owner = 'about_page___teamMembers___internal___owner',
   about_page___teamMembers___internal___type = 'about_page___teamMembers___internal___type',
   about_page___teamMembers___name = 'about_page___teamMembers___name',
+  about_page___teamMembers___email = 'about_page___teamMembers___email',
+  about_page___teamMembers___phoneNumber = 'about_page___teamMembers___phoneNumber',
   about_page___teamMembers___photo___id = 'about_page___teamMembers___photo___id',
   about_page___teamMembers___photo___children = 'about_page___teamMembers___photo___children',
   about_page___teamMembers___photo___contentful_id = 'about_page___teamMembers___photo___contentful_id',
@@ -4549,6 +4573,8 @@ export type ContentfulMemberFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   name?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  phoneNumber?: Maybe<StringQueryOperatorInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
   article?: Maybe<ContentfulArticleFilterListInput>;
   about_page?: Maybe<ContentfulAboutPageFilterListInput>;
@@ -7068,6 +7094,8 @@ export type QueryContentfulMemberArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   name?: Maybe<StringQueryOperatorInput>;
+  email?: Maybe<StringQueryOperatorInput>;
+  phoneNumber?: Maybe<StringQueryOperatorInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
   article?: Maybe<ContentfulArticleFilterListInput>;
   about_page?: Maybe<ContentfulAboutPageFilterListInput>;
@@ -7684,6 +7712,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___resolve = 'pluginCreator___resolve',
   pluginCreator___name = 'pluginCreator___name',
   pluginCreator___version = 'pluginCreator___version',
+  pluginCreator___pluginOptions___siteUrl = 'pluginCreator___pluginOptions___siteUrl',
   pluginCreator___pluginOptions___name = 'pluginCreator___pluginOptions___name',
   pluginCreator___pluginOptions___short_name = 'pluginCreator___pluginOptions___short_name',
   pluginCreator___pluginOptions___start_url = 'pluginCreator___pluginOptions___start_url',
@@ -7696,6 +7725,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___spaceId = 'pluginCreator___pluginOptions___spaceId',
   pluginCreator___pluginOptions___accessToken = 'pluginCreator___pluginOptions___accessToken',
   pluginCreator___pluginOptions___includePaths = 'pluginCreator___pluginOptions___includePaths',
+  pluginCreator___pluginOptions___openAnalyzer = 'pluginCreator___pluginOptions___openAnalyzer',
   pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
   pluginCreator___nodeAPIs = 'pluginCreator___nodeAPIs',
   pluginCreator___browserAPIs = 'pluginCreator___browserAPIs',
@@ -7885,6 +7915,7 @@ export enum SitePluginFieldsEnum {
   resolve = 'resolve',
   name = 'name',
   version = 'version',
+  pluginOptions___siteUrl = 'pluginOptions___siteUrl',
   pluginOptions___name = 'pluginOptions___name',
   pluginOptions___short_name = 'pluginOptions___short_name',
   pluginOptions___start_url = 'pluginOptions___start_url',
@@ -7897,6 +7928,7 @@ export enum SitePluginFieldsEnum {
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
   pluginOptions___includePaths = 'pluginOptions___includePaths',
+  pluginOptions___openAnalyzer = 'pluginOptions___openAnalyzer',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
   nodeAPIs = 'nodeAPIs',
   browserAPIs = 'browserAPIs',
@@ -8019,6 +8051,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: 'SitePluginPluginOptions';
+  siteUrl?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
@@ -8031,10 +8064,12 @@ export type SitePluginPluginOptions = {
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
   includePaths?: Maybe<Array<Maybe<Scalars['String']>>>;
+  openAnalyzer?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  siteUrl?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
@@ -8047,6 +8082,7 @@ export type SitePluginPluginOptionsFilterInput = {
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
   includePaths?: Maybe<StringQueryOperatorInput>;
+  openAnalyzer?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -8454,18 +8490,6 @@ export type HeaderQuery = { __typename?: 'Query' } & {
   >;
 };
 
-export type SiteTitleQueryVariables = {};
-
-export type SiteTitleQuery = { __typename?: 'Query' } & {
-  site: Maybe<
-    { __typename?: 'Site' } & {
-      siteMetadata: Maybe<
-        { __typename?: 'SiteSiteMetadata' } & Pick<SiteSiteMetadata, 'title'>
-      >;
-    }
-  >;
-};
-
 export type SiteMetadataQueryVariables = {};
 
 export type SiteMetadataQuery = { __typename?: 'Query' } & {
@@ -8482,6 +8506,63 @@ export type SiteMetadataQuery = { __typename?: 'Query' } & {
             siteUrl: SiteSiteMetadata['url'];
             defaultImage: SiteSiteMetadata['image'];
           }
+      >;
+    }
+  >;
+};
+
+export type AboutPageQueryVariables = {};
+
+export type AboutPageQuery = { __typename?: 'Query' } & {
+  file: Maybe<
+    { __typename?: 'File' } & {
+      childImageSharp: Maybe<
+        { __typename?: 'ImageSharp' } & {
+          fluid: Maybe<
+            { __typename?: 'ImageSharpFluid' } & Pick<
+              ImageSharpFluid,
+              'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+            >
+          >;
+        }
+      >;
+    }
+  >;
+  contentfulAboutPage: Maybe<
+    { __typename?: 'ContentfulAboutPage' } & {
+      teamMembers: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ContentfulMember' } & Pick<
+              ContentfulMember,
+              'name' | 'email' | 'phoneNumber'
+            > & {
+                description: Maybe<
+                  { __typename?: 'contentfulMemberDescriptionTextNode' } & {
+                    childMarkdownRemark: Maybe<
+                      { __typename?: 'MarkdownRemark' } & Pick<
+                        MarkdownRemark,
+                        'html'
+                      >
+                    >;
+                  }
+                >;
+                photo: Maybe<
+                  { __typename?: 'ContentfulAsset' } & Pick<
+                    ContentfulAsset,
+                    'description'
+                  > & {
+                      fluid: Maybe<
+                        { __typename?: 'ContentfulFluid' } & Pick<
+                          ContentfulFluid,
+                          'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+                        >
+                      >;
+                    }
+                >;
+              }
+          >
+        >
       >;
     }
   >;

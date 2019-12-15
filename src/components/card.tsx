@@ -8,18 +8,31 @@ type Props = {
     fluid: FluidObject;
     alt?: string;
   };
-  title: string;
+  title?: string;
+  children?: React.ReactNode;
   link?: {
     text: string;
     path: string;
   };
   className?: string;
+  align?: 'top' | 'stretch';
 };
 
-const Card = ({ image, title, link, className }: Props) => (
-  <div className={`${styles.card} ${className}`}>
+const Card = ({
+  image,
+  title,
+  children,
+  link,
+  className,
+  align = 'stretch',
+}: Props) => (
+  <div
+    className={`${styles.card} ${className} ${align === 'stretch' &&
+      styles.stretch}`}
+  >
     {image && <Img fluid={image.fluid} alt={image.alt || title} />}
-    <span className={styles.title}>{title}</span>
+    {title && <span className={styles.title}>{title}</span>}
+    {children && <div className={styles.children}>{children}</div>}
     {link && (
       <div className={styles.buttonWrapper}>
         <Button text={link.text} path={link.path} ripple="tint" />

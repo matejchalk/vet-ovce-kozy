@@ -3,7 +3,6 @@ export interface Styles {
   section: string;
   previews: string;
   preview: string;
-  card: string;
   nav: string;
   button: string;
 }

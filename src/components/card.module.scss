@@ -5,7 +5,11 @@
   padding-top: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+
+  &.stretch {
+    justify-content: space-between;
+  }
 }
 
 .title {
@@ -16,6 +20,14 @@
   margin-top: $vok-card-offset;
   text-align: center;
   @include card-content-padding;
+}
+
+.children {
+  @include card-content-padding;
+  margin-top: $vok-card-offset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button-wrapper {
