@@ -34,6 +34,7 @@ export type ContentfulAboutPage = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulAboutPageSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -269,124 +270,6 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___photo___resize___width = 'teamMembers___photo___resize___width',
   teamMembers___photo___resize___height = 'teamMembers___photo___resize___height',
   teamMembers___photo___resize___aspectRatio = 'teamMembers___photo___resize___aspectRatio',
-  teamMembers___article = 'teamMembers___article',
-  teamMembers___article___id = 'teamMembers___article___id',
-  teamMembers___article___parent___id = 'teamMembers___article___parent___id',
-  teamMembers___article___parent___children = 'teamMembers___article___parent___children',
-  teamMembers___article___children = 'teamMembers___article___children',
-  teamMembers___article___children___id = 'teamMembers___article___children___id',
-  teamMembers___article___children___children = 'teamMembers___article___children___children',
-  teamMembers___article___internal___content = 'teamMembers___article___internal___content',
-  teamMembers___article___internal___contentDigest = 'teamMembers___article___internal___contentDigest',
-  teamMembers___article___internal___description = 'teamMembers___article___internal___description',
-  teamMembers___article___internal___fieldOwners = 'teamMembers___article___internal___fieldOwners',
-  teamMembers___article___internal___ignoreType = 'teamMembers___article___internal___ignoreType',
-  teamMembers___article___internal___mediaType = 'teamMembers___article___internal___mediaType',
-  teamMembers___article___internal___owner = 'teamMembers___article___internal___owner',
-  teamMembers___article___internal___type = 'teamMembers___article___internal___type',
-  teamMembers___article___title = 'teamMembers___article___title',
-  teamMembers___article___slug = 'teamMembers___article___slug',
-  teamMembers___article___date = 'teamMembers___article___date',
-  teamMembers___article___category___id = 'teamMembers___article___category___id',
-  teamMembers___article___category___children = 'teamMembers___article___category___children',
-  teamMembers___article___category___title = 'teamMembers___article___category___title',
-  teamMembers___article___category___article = 'teamMembers___article___category___article',
-  teamMembers___article___category___spaceId = 'teamMembers___article___category___spaceId',
-  teamMembers___article___category___contentful_id = 'teamMembers___article___category___contentful_id',
-  teamMembers___article___category___createdAt = 'teamMembers___article___category___createdAt',
-  teamMembers___article___category___updatedAt = 'teamMembers___article___category___updatedAt',
-  teamMembers___article___category___node_locale = 'teamMembers___article___category___node_locale',
-  teamMembers___article___author___id = 'teamMembers___article___author___id',
-  teamMembers___article___author___children = 'teamMembers___article___author___children',
-  teamMembers___article___author___name = 'teamMembers___article___author___name',
-  teamMembers___article___author___email = 'teamMembers___article___author___email',
-  teamMembers___article___author___phoneNumber = 'teamMembers___article___author___phoneNumber',
-  teamMembers___article___author___article = 'teamMembers___article___author___article',
-  teamMembers___article___author___about_page = 'teamMembers___article___author___about_page',
-  teamMembers___article___author___spaceId = 'teamMembers___article___author___spaceId',
-  teamMembers___article___author___contentful_id = 'teamMembers___article___author___contentful_id',
-  teamMembers___article___author___createdAt = 'teamMembers___article___author___createdAt',
-  teamMembers___article___author___updatedAt = 'teamMembers___article___author___updatedAt',
-  teamMembers___article___author___node_locale = 'teamMembers___article___author___node_locale',
-  teamMembers___article___content___id = 'teamMembers___article___content___id',
-  teamMembers___article___content___children = 'teamMembers___article___content___children',
-  teamMembers___article___content___content = 'teamMembers___article___content___content',
-  teamMembers___article___content___nodeType = 'teamMembers___article___content___nodeType',
-  teamMembers___article___content___json = 'teamMembers___article___content___json',
-  teamMembers___article___spaceId = 'teamMembers___article___spaceId',
-  teamMembers___article___contentful_id = 'teamMembers___article___contentful_id',
-  teamMembers___article___createdAt = 'teamMembers___article___createdAt',
-  teamMembers___article___updatedAt = 'teamMembers___article___updatedAt',
-  teamMembers___article___node_locale = 'teamMembers___article___node_locale',
-  teamMembers___article___childContentfulArticleContentRichTextNode___id = 'teamMembers___article___childContentfulArticleContentRichTextNode___id',
-  teamMembers___article___childContentfulArticleContentRichTextNode___children = 'teamMembers___article___childContentfulArticleContentRichTextNode___children',
-  teamMembers___article___childContentfulArticleContentRichTextNode___content = 'teamMembers___article___childContentfulArticleContentRichTextNode___content',
-  teamMembers___article___childContentfulArticleContentRichTextNode___nodeType = 'teamMembers___article___childContentfulArticleContentRichTextNode___nodeType',
-  teamMembers___article___childContentfulArticleContentRichTextNode___json = 'teamMembers___article___childContentfulArticleContentRichTextNode___json',
-  teamMembers___about_page = 'teamMembers___about_page',
-  teamMembers___about_page___id = 'teamMembers___about_page___id',
-  teamMembers___about_page___parent___id = 'teamMembers___about_page___parent___id',
-  teamMembers___about_page___parent___children = 'teamMembers___about_page___parent___children',
-  teamMembers___about_page___children = 'teamMembers___about_page___children',
-  teamMembers___about_page___children___id = 'teamMembers___about_page___children___id',
-  teamMembers___about_page___children___children = 'teamMembers___about_page___children___children',
-  teamMembers___about_page___internal___content = 'teamMembers___about_page___internal___content',
-  teamMembers___about_page___internal___contentDigest = 'teamMembers___about_page___internal___contentDigest',
-  teamMembers___about_page___internal___description = 'teamMembers___about_page___internal___description',
-  teamMembers___about_page___internal___fieldOwners = 'teamMembers___about_page___internal___fieldOwners',
-  teamMembers___about_page___internal___ignoreType = 'teamMembers___about_page___internal___ignoreType',
-  teamMembers___about_page___internal___mediaType = 'teamMembers___about_page___internal___mediaType',
-  teamMembers___about_page___internal___owner = 'teamMembers___about_page___internal___owner',
-  teamMembers___about_page___internal___type = 'teamMembers___about_page___internal___type',
-  teamMembers___about_page___page = 'teamMembers___about_page___page',
-  teamMembers___about_page___teamMembers = 'teamMembers___about_page___teamMembers',
-  teamMembers___about_page___teamMembers___id = 'teamMembers___about_page___teamMembers___id',
-  teamMembers___about_page___teamMembers___children = 'teamMembers___about_page___teamMembers___children',
-  teamMembers___about_page___teamMembers___name = 'teamMembers___about_page___teamMembers___name',
-  teamMembers___about_page___teamMembers___email = 'teamMembers___about_page___teamMembers___email',
-  teamMembers___about_page___teamMembers___phoneNumber = 'teamMembers___about_page___teamMembers___phoneNumber',
-  teamMembers___about_page___teamMembers___article = 'teamMembers___about_page___teamMembers___article',
-  teamMembers___about_page___teamMembers___about_page = 'teamMembers___about_page___teamMembers___about_page',
-  teamMembers___about_page___teamMembers___spaceId = 'teamMembers___about_page___teamMembers___spaceId',
-  teamMembers___about_page___teamMembers___contentful_id = 'teamMembers___about_page___teamMembers___contentful_id',
-  teamMembers___about_page___teamMembers___createdAt = 'teamMembers___about_page___teamMembers___createdAt',
-  teamMembers___about_page___teamMembers___updatedAt = 'teamMembers___about_page___teamMembers___updatedAt',
-  teamMembers___about_page___teamMembers___node_locale = 'teamMembers___about_page___teamMembers___node_locale',
-  teamMembers___about_page___spaceId = 'teamMembers___about_page___spaceId',
-  teamMembers___about_page___contentful_id = 'teamMembers___about_page___contentful_id',
-  teamMembers___about_page___createdAt = 'teamMembers___about_page___createdAt',
-  teamMembers___about_page___updatedAt = 'teamMembers___about_page___updatedAt',
-  teamMembers___about_page___node_locale = 'teamMembers___about_page___node_locale',
-  teamMembers___description___id = 'teamMembers___description___id',
-  teamMembers___description___parent___id = 'teamMembers___description___parent___id',
-  teamMembers___description___parent___children = 'teamMembers___description___parent___children',
-  teamMembers___description___children = 'teamMembers___description___children',
-  teamMembers___description___children___id = 'teamMembers___description___children___id',
-  teamMembers___description___children___children = 'teamMembers___description___children___children',
-  teamMembers___description___internal___content = 'teamMembers___description___internal___content',
-  teamMembers___description___internal___contentDigest = 'teamMembers___description___internal___contentDigest',
-  teamMembers___description___internal___description = 'teamMembers___description___internal___description',
-  teamMembers___description___internal___fieldOwners = 'teamMembers___description___internal___fieldOwners',
-  teamMembers___description___internal___ignoreType = 'teamMembers___description___internal___ignoreType',
-  teamMembers___description___internal___mediaType = 'teamMembers___description___internal___mediaType',
-  teamMembers___description___internal___owner = 'teamMembers___description___internal___owner',
-  teamMembers___description___internal___type = 'teamMembers___description___internal___type',
-  teamMembers___description___description = 'teamMembers___description___description',
-  teamMembers___description___childMarkdownRemark___id = 'teamMembers___description___childMarkdownRemark___id',
-  teamMembers___description___childMarkdownRemark___excerpt = 'teamMembers___description___childMarkdownRemark___excerpt',
-  teamMembers___description___childMarkdownRemark___rawMarkdownBody = 'teamMembers___description___childMarkdownRemark___rawMarkdownBody',
-  teamMembers___description___childMarkdownRemark___html = 'teamMembers___description___childMarkdownRemark___html',
-  teamMembers___description___childMarkdownRemark___htmlAst = 'teamMembers___description___childMarkdownRemark___htmlAst',
-  teamMembers___description___childMarkdownRemark___excerptAst = 'teamMembers___description___childMarkdownRemark___excerptAst',
-  teamMembers___description___childMarkdownRemark___headings = 'teamMembers___description___childMarkdownRemark___headings',
-  teamMembers___description___childMarkdownRemark___timeToRead = 'teamMembers___description___childMarkdownRemark___timeToRead',
-  teamMembers___description___childMarkdownRemark___tableOfContents = 'teamMembers___description___childMarkdownRemark___tableOfContents',
-  teamMembers___description___childMarkdownRemark___children = 'teamMembers___description___childMarkdownRemark___children',
-  teamMembers___spaceId = 'teamMembers___spaceId',
-  teamMembers___contentful_id = 'teamMembers___contentful_id',
-  teamMembers___createdAt = 'teamMembers___createdAt',
-  teamMembers___updatedAt = 'teamMembers___updatedAt',
-  teamMembers___node_locale = 'teamMembers___node_locale',
   teamMembers___avatar___id = 'teamMembers___avatar___id',
   teamMembers___avatar___parent___id = 'teamMembers___avatar___parent___id',
   teamMembers___avatar___parent___children = 'teamMembers___avatar___parent___children',
@@ -448,6 +331,127 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___avatar___resize___width = 'teamMembers___avatar___resize___width',
   teamMembers___avatar___resize___height = 'teamMembers___avatar___resize___height',
   teamMembers___avatar___resize___aspectRatio = 'teamMembers___avatar___resize___aspectRatio',
+  teamMembers___article = 'teamMembers___article',
+  teamMembers___article___id = 'teamMembers___article___id',
+  teamMembers___article___parent___id = 'teamMembers___article___parent___id',
+  teamMembers___article___parent___children = 'teamMembers___article___parent___children',
+  teamMembers___article___children = 'teamMembers___article___children',
+  teamMembers___article___children___id = 'teamMembers___article___children___id',
+  teamMembers___article___children___children = 'teamMembers___article___children___children',
+  teamMembers___article___internal___content = 'teamMembers___article___internal___content',
+  teamMembers___article___internal___contentDigest = 'teamMembers___article___internal___contentDigest',
+  teamMembers___article___internal___description = 'teamMembers___article___internal___description',
+  teamMembers___article___internal___fieldOwners = 'teamMembers___article___internal___fieldOwners',
+  teamMembers___article___internal___ignoreType = 'teamMembers___article___internal___ignoreType',
+  teamMembers___article___internal___mediaType = 'teamMembers___article___internal___mediaType',
+  teamMembers___article___internal___owner = 'teamMembers___article___internal___owner',
+  teamMembers___article___internal___type = 'teamMembers___article___internal___type',
+  teamMembers___article___title = 'teamMembers___article___title',
+  teamMembers___article___slug = 'teamMembers___article___slug',
+  teamMembers___article___date = 'teamMembers___article___date',
+  teamMembers___article___category___id = 'teamMembers___article___category___id',
+  teamMembers___article___category___children = 'teamMembers___article___category___children',
+  teamMembers___article___category___title = 'teamMembers___article___category___title',
+  teamMembers___article___category___article = 'teamMembers___article___category___article',
+  teamMembers___article___category___spaceId = 'teamMembers___article___category___spaceId',
+  teamMembers___article___category___contentful_id = 'teamMembers___article___category___contentful_id',
+  teamMembers___article___category___createdAt = 'teamMembers___article___category___createdAt',
+  teamMembers___article___category___updatedAt = 'teamMembers___article___category___updatedAt',
+  teamMembers___article___category___node_locale = 'teamMembers___article___category___node_locale',
+  teamMembers___article___author___id = 'teamMembers___article___author___id',
+  teamMembers___article___author___children = 'teamMembers___article___author___children',
+  teamMembers___article___author___name = 'teamMembers___article___author___name',
+  teamMembers___article___author___email = 'teamMembers___article___author___email',
+  teamMembers___article___author___phoneNumber = 'teamMembers___article___author___phoneNumber',
+  teamMembers___article___author___article = 'teamMembers___article___author___article',
+  teamMembers___article___author___aboutpage = 'teamMembers___article___author___aboutpage',
+  teamMembers___article___author___spaceId = 'teamMembers___article___author___spaceId',
+  teamMembers___article___author___contentful_id = 'teamMembers___article___author___contentful_id',
+  teamMembers___article___author___createdAt = 'teamMembers___article___author___createdAt',
+  teamMembers___article___author___updatedAt = 'teamMembers___article___author___updatedAt',
+  teamMembers___article___author___node_locale = 'teamMembers___article___author___node_locale',
+  teamMembers___article___content___id = 'teamMembers___article___content___id',
+  teamMembers___article___content___children = 'teamMembers___article___content___children',
+  teamMembers___article___content___content = 'teamMembers___article___content___content',
+  teamMembers___article___content___nodeType = 'teamMembers___article___content___nodeType',
+  teamMembers___article___content___json = 'teamMembers___article___content___json',
+  teamMembers___article___spaceId = 'teamMembers___article___spaceId',
+  teamMembers___article___contentful_id = 'teamMembers___article___contentful_id',
+  teamMembers___article___createdAt = 'teamMembers___article___createdAt',
+  teamMembers___article___updatedAt = 'teamMembers___article___updatedAt',
+  teamMembers___article___sys___revision = 'teamMembers___article___sys___revision',
+  teamMembers___article___node_locale = 'teamMembers___article___node_locale',
+  teamMembers___article___childContentfulArticleContentRichTextNode___id = 'teamMembers___article___childContentfulArticleContentRichTextNode___id',
+  teamMembers___article___childContentfulArticleContentRichTextNode___children = 'teamMembers___article___childContentfulArticleContentRichTextNode___children',
+  teamMembers___article___childContentfulArticleContentRichTextNode___content = 'teamMembers___article___childContentfulArticleContentRichTextNode___content',
+  teamMembers___article___childContentfulArticleContentRichTextNode___nodeType = 'teamMembers___article___childContentfulArticleContentRichTextNode___nodeType',
+  teamMembers___article___childContentfulArticleContentRichTextNode___json = 'teamMembers___article___childContentfulArticleContentRichTextNode___json',
+  teamMembers___aboutpage = 'teamMembers___aboutpage',
+  teamMembers___aboutpage___id = 'teamMembers___aboutpage___id',
+  teamMembers___aboutpage___parent___id = 'teamMembers___aboutpage___parent___id',
+  teamMembers___aboutpage___parent___children = 'teamMembers___aboutpage___parent___children',
+  teamMembers___aboutpage___children = 'teamMembers___aboutpage___children',
+  teamMembers___aboutpage___children___id = 'teamMembers___aboutpage___children___id',
+  teamMembers___aboutpage___children___children = 'teamMembers___aboutpage___children___children',
+  teamMembers___aboutpage___internal___content = 'teamMembers___aboutpage___internal___content',
+  teamMembers___aboutpage___internal___contentDigest = 'teamMembers___aboutpage___internal___contentDigest',
+  teamMembers___aboutpage___internal___description = 'teamMembers___aboutpage___internal___description',
+  teamMembers___aboutpage___internal___fieldOwners = 'teamMembers___aboutpage___internal___fieldOwners',
+  teamMembers___aboutpage___internal___ignoreType = 'teamMembers___aboutpage___internal___ignoreType',
+  teamMembers___aboutpage___internal___mediaType = 'teamMembers___aboutpage___internal___mediaType',
+  teamMembers___aboutpage___internal___owner = 'teamMembers___aboutpage___internal___owner',
+  teamMembers___aboutpage___internal___type = 'teamMembers___aboutpage___internal___type',
+  teamMembers___aboutpage___page = 'teamMembers___aboutpage___page',
+  teamMembers___aboutpage___teamMembers = 'teamMembers___aboutpage___teamMembers',
+  teamMembers___aboutpage___teamMembers___id = 'teamMembers___aboutpage___teamMembers___id',
+  teamMembers___aboutpage___teamMembers___children = 'teamMembers___aboutpage___teamMembers___children',
+  teamMembers___aboutpage___teamMembers___name = 'teamMembers___aboutpage___teamMembers___name',
+  teamMembers___aboutpage___teamMembers___email = 'teamMembers___aboutpage___teamMembers___email',
+  teamMembers___aboutpage___teamMembers___phoneNumber = 'teamMembers___aboutpage___teamMembers___phoneNumber',
+  teamMembers___aboutpage___teamMembers___article = 'teamMembers___aboutpage___teamMembers___article',
+  teamMembers___aboutpage___teamMembers___aboutpage = 'teamMembers___aboutpage___teamMembers___aboutpage',
+  teamMembers___aboutpage___teamMembers___spaceId = 'teamMembers___aboutpage___teamMembers___spaceId',
+  teamMembers___aboutpage___teamMembers___contentful_id = 'teamMembers___aboutpage___teamMembers___contentful_id',
+  teamMembers___aboutpage___teamMembers___createdAt = 'teamMembers___aboutpage___teamMembers___createdAt',
+  teamMembers___aboutpage___teamMembers___updatedAt = 'teamMembers___aboutpage___teamMembers___updatedAt',
+  teamMembers___aboutpage___teamMembers___node_locale = 'teamMembers___aboutpage___teamMembers___node_locale',
+  teamMembers___aboutpage___spaceId = 'teamMembers___aboutpage___spaceId',
+  teamMembers___aboutpage___contentful_id = 'teamMembers___aboutpage___contentful_id',
+  teamMembers___aboutpage___createdAt = 'teamMembers___aboutpage___createdAt',
+  teamMembers___aboutpage___updatedAt = 'teamMembers___aboutpage___updatedAt',
+  teamMembers___aboutpage___sys___revision = 'teamMembers___aboutpage___sys___revision',
+  teamMembers___aboutpage___node_locale = 'teamMembers___aboutpage___node_locale',
+  teamMembers___description___id = 'teamMembers___description___id',
+  teamMembers___description___parent___id = 'teamMembers___description___parent___id',
+  teamMembers___description___parent___children = 'teamMembers___description___parent___children',
+  teamMembers___description___children = 'teamMembers___description___children',
+  teamMembers___description___children___id = 'teamMembers___description___children___id',
+  teamMembers___description___children___children = 'teamMembers___description___children___children',
+  teamMembers___description___internal___content = 'teamMembers___description___internal___content',
+  teamMembers___description___internal___contentDigest = 'teamMembers___description___internal___contentDigest',
+  teamMembers___description___internal___description = 'teamMembers___description___internal___description',
+  teamMembers___description___internal___fieldOwners = 'teamMembers___description___internal___fieldOwners',
+  teamMembers___description___internal___ignoreType = 'teamMembers___description___internal___ignoreType',
+  teamMembers___description___internal___mediaType = 'teamMembers___description___internal___mediaType',
+  teamMembers___description___internal___owner = 'teamMembers___description___internal___owner',
+  teamMembers___description___internal___type = 'teamMembers___description___internal___type',
+  teamMembers___description___description = 'teamMembers___description___description',
+  teamMembers___description___childMarkdownRemark___id = 'teamMembers___description___childMarkdownRemark___id',
+  teamMembers___description___childMarkdownRemark___excerpt = 'teamMembers___description___childMarkdownRemark___excerpt',
+  teamMembers___description___childMarkdownRemark___rawMarkdownBody = 'teamMembers___description___childMarkdownRemark___rawMarkdownBody',
+  teamMembers___description___childMarkdownRemark___html = 'teamMembers___description___childMarkdownRemark___html',
+  teamMembers___description___childMarkdownRemark___htmlAst = 'teamMembers___description___childMarkdownRemark___htmlAst',
+  teamMembers___description___childMarkdownRemark___excerptAst = 'teamMembers___description___childMarkdownRemark___excerptAst',
+  teamMembers___description___childMarkdownRemark___headings = 'teamMembers___description___childMarkdownRemark___headings',
+  teamMembers___description___childMarkdownRemark___timeToRead = 'teamMembers___description___childMarkdownRemark___timeToRead',
+  teamMembers___description___childMarkdownRemark___tableOfContents = 'teamMembers___description___childMarkdownRemark___tableOfContents',
+  teamMembers___description___childMarkdownRemark___children = 'teamMembers___description___childMarkdownRemark___children',
+  teamMembers___spaceId = 'teamMembers___spaceId',
+  teamMembers___contentful_id = 'teamMembers___contentful_id',
+  teamMembers___createdAt = 'teamMembers___createdAt',
+  teamMembers___updatedAt = 'teamMembers___updatedAt',
+  teamMembers___sys___revision = 'teamMembers___sys___revision',
+  teamMembers___node_locale = 'teamMembers___node_locale',
   teamMembers___childContentfulMemberDescriptionTextNode___id = 'teamMembers___childContentfulMemberDescriptionTextNode___id',
   teamMembers___childContentfulMemberDescriptionTextNode___parent___id = 'teamMembers___childContentfulMemberDescriptionTextNode___parent___id',
   teamMembers___childContentfulMemberDescriptionTextNode___parent___children = 'teamMembers___childContentfulMemberDescriptionTextNode___parent___children',
@@ -477,6 +481,11 @@ export enum ContentfulAboutPageFieldsEnum {
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -491,6 +500,7 @@ export type ContentfulAboutPageFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulAboutPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -513,6 +523,41 @@ export type ContentfulAboutPageSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulAboutPageSys = {
+  __typename?: 'ContentfulAboutPageSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulAboutPageSysContentType>;
+};
+
+export type ContentfulAboutPageSysContentType = {
+  __typename?: 'ContentfulAboutPageSysContentType';
+  sys?: Maybe<ContentfulAboutPageSysContentTypeSys>;
+};
+
+export type ContentfulAboutPageSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulAboutPageSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulAboutPageSysContentTypeSys = {
+  __typename?: 'ContentfulAboutPageSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAboutPageSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulAboutPageSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulAboutPageSysContentTypeFilterInput>;
+};
+
 export type ContentfulAddress = Node & {
   __typename?: 'ContentfulAddress';
   id: Scalars['ID'];
@@ -522,11 +567,12 @@ export type ContentfulAddress = Node & {
   street?: Maybe<Scalars['String']>;
   city?: Maybe<Scalars['String']>;
   postCode?: Maybe<Scalars['String']>;
-  contact_page?: Maybe<Array<Maybe<ContentfulContactPage>>>;
+  contactpage?: Maybe<Array<Maybe<ContentfulContactPage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulAddressSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -661,90 +707,97 @@ export enum ContentfulAddressFieldsEnum {
   street = 'street',
   city = 'city',
   postCode = 'postCode',
-  contact_page = 'contact_page',
-  contact_page___id = 'contact_page___id',
-  contact_page___parent___id = 'contact_page___parent___id',
-  contact_page___parent___parent___id = 'contact_page___parent___parent___id',
-  contact_page___parent___parent___children = 'contact_page___parent___parent___children',
-  contact_page___parent___children = 'contact_page___parent___children',
-  contact_page___parent___children___id = 'contact_page___parent___children___id',
-  contact_page___parent___children___children = 'contact_page___parent___children___children',
-  contact_page___parent___internal___content = 'contact_page___parent___internal___content',
-  contact_page___parent___internal___contentDigest = 'contact_page___parent___internal___contentDigest',
-  contact_page___parent___internal___description = 'contact_page___parent___internal___description',
-  contact_page___parent___internal___fieldOwners = 'contact_page___parent___internal___fieldOwners',
-  contact_page___parent___internal___ignoreType = 'contact_page___parent___internal___ignoreType',
-  contact_page___parent___internal___mediaType = 'contact_page___parent___internal___mediaType',
-  contact_page___parent___internal___owner = 'contact_page___parent___internal___owner',
-  contact_page___parent___internal___type = 'contact_page___parent___internal___type',
-  contact_page___children = 'contact_page___children',
-  contact_page___children___id = 'contact_page___children___id',
-  contact_page___children___parent___id = 'contact_page___children___parent___id',
-  contact_page___children___parent___children = 'contact_page___children___parent___children',
-  contact_page___children___children = 'contact_page___children___children',
-  contact_page___children___children___id = 'contact_page___children___children___id',
-  contact_page___children___children___children = 'contact_page___children___children___children',
-  contact_page___children___internal___content = 'contact_page___children___internal___content',
-  contact_page___children___internal___contentDigest = 'contact_page___children___internal___contentDigest',
-  contact_page___children___internal___description = 'contact_page___children___internal___description',
-  contact_page___children___internal___fieldOwners = 'contact_page___children___internal___fieldOwners',
-  contact_page___children___internal___ignoreType = 'contact_page___children___internal___ignoreType',
-  contact_page___children___internal___mediaType = 'contact_page___children___internal___mediaType',
-  contact_page___children___internal___owner = 'contact_page___children___internal___owner',
-  contact_page___children___internal___type = 'contact_page___children___internal___type',
-  contact_page___internal___content = 'contact_page___internal___content',
-  contact_page___internal___contentDigest = 'contact_page___internal___contentDigest',
-  contact_page___internal___description = 'contact_page___internal___description',
-  contact_page___internal___fieldOwners = 'contact_page___internal___fieldOwners',
-  contact_page___internal___ignoreType = 'contact_page___internal___ignoreType',
-  contact_page___internal___mediaType = 'contact_page___internal___mediaType',
-  contact_page___internal___owner = 'contact_page___internal___owner',
-  contact_page___internal___type = 'contact_page___internal___type',
-  contact_page___page = 'contact_page___page',
-  contact_page___phoneNumber = 'contact_page___phoneNumber',
-  contact_page___email = 'contact_page___email',
-  contact_page___address___id = 'contact_page___address___id',
-  contact_page___address___parent___id = 'contact_page___address___parent___id',
-  contact_page___address___parent___children = 'contact_page___address___parent___children',
-  contact_page___address___children = 'contact_page___address___children',
-  contact_page___address___children___id = 'contact_page___address___children___id',
-  contact_page___address___children___children = 'contact_page___address___children___children',
-  contact_page___address___internal___content = 'contact_page___address___internal___content',
-  contact_page___address___internal___contentDigest = 'contact_page___address___internal___contentDigest',
-  contact_page___address___internal___description = 'contact_page___address___internal___description',
-  contact_page___address___internal___fieldOwners = 'contact_page___address___internal___fieldOwners',
-  contact_page___address___internal___ignoreType = 'contact_page___address___internal___ignoreType',
-  contact_page___address___internal___mediaType = 'contact_page___address___internal___mediaType',
-  contact_page___address___internal___owner = 'contact_page___address___internal___owner',
-  contact_page___address___internal___type = 'contact_page___address___internal___type',
-  contact_page___address___street = 'contact_page___address___street',
-  contact_page___address___city = 'contact_page___address___city',
-  contact_page___address___postCode = 'contact_page___address___postCode',
-  contact_page___address___contact_page = 'contact_page___address___contact_page',
-  contact_page___address___contact_page___id = 'contact_page___address___contact_page___id',
-  contact_page___address___contact_page___children = 'contact_page___address___contact_page___children',
-  contact_page___address___contact_page___page = 'contact_page___address___contact_page___page',
-  contact_page___address___contact_page___phoneNumber = 'contact_page___address___contact_page___phoneNumber',
-  contact_page___address___contact_page___email = 'contact_page___address___contact_page___email',
-  contact_page___address___contact_page___spaceId = 'contact_page___address___contact_page___spaceId',
-  contact_page___address___contact_page___contentful_id = 'contact_page___address___contact_page___contentful_id',
-  contact_page___address___contact_page___createdAt = 'contact_page___address___contact_page___createdAt',
-  contact_page___address___contact_page___updatedAt = 'contact_page___address___contact_page___updatedAt',
-  contact_page___address___contact_page___node_locale = 'contact_page___address___contact_page___node_locale',
-  contact_page___address___spaceId = 'contact_page___address___spaceId',
-  contact_page___address___contentful_id = 'contact_page___address___contentful_id',
-  contact_page___address___createdAt = 'contact_page___address___createdAt',
-  contact_page___address___updatedAt = 'contact_page___address___updatedAt',
-  contact_page___address___node_locale = 'contact_page___address___node_locale',
-  contact_page___spaceId = 'contact_page___spaceId',
-  contact_page___contentful_id = 'contact_page___contentful_id',
-  contact_page___createdAt = 'contact_page___createdAt',
-  contact_page___updatedAt = 'contact_page___updatedAt',
-  contact_page___node_locale = 'contact_page___node_locale',
+  contactpage = 'contactpage',
+  contactpage___id = 'contactpage___id',
+  contactpage___parent___id = 'contactpage___parent___id',
+  contactpage___parent___parent___id = 'contactpage___parent___parent___id',
+  contactpage___parent___parent___children = 'contactpage___parent___parent___children',
+  contactpage___parent___children = 'contactpage___parent___children',
+  contactpage___parent___children___id = 'contactpage___parent___children___id',
+  contactpage___parent___children___children = 'contactpage___parent___children___children',
+  contactpage___parent___internal___content = 'contactpage___parent___internal___content',
+  contactpage___parent___internal___contentDigest = 'contactpage___parent___internal___contentDigest',
+  contactpage___parent___internal___description = 'contactpage___parent___internal___description',
+  contactpage___parent___internal___fieldOwners = 'contactpage___parent___internal___fieldOwners',
+  contactpage___parent___internal___ignoreType = 'contactpage___parent___internal___ignoreType',
+  contactpage___parent___internal___mediaType = 'contactpage___parent___internal___mediaType',
+  contactpage___parent___internal___owner = 'contactpage___parent___internal___owner',
+  contactpage___parent___internal___type = 'contactpage___parent___internal___type',
+  contactpage___children = 'contactpage___children',
+  contactpage___children___id = 'contactpage___children___id',
+  contactpage___children___parent___id = 'contactpage___children___parent___id',
+  contactpage___children___parent___children = 'contactpage___children___parent___children',
+  contactpage___children___children = 'contactpage___children___children',
+  contactpage___children___children___id = 'contactpage___children___children___id',
+  contactpage___children___children___children = 'contactpage___children___children___children',
+  contactpage___children___internal___content = 'contactpage___children___internal___content',
+  contactpage___children___internal___contentDigest = 'contactpage___children___internal___contentDigest',
+  contactpage___children___internal___description = 'contactpage___children___internal___description',
+  contactpage___children___internal___fieldOwners = 'contactpage___children___internal___fieldOwners',
+  contactpage___children___internal___ignoreType = 'contactpage___children___internal___ignoreType',
+  contactpage___children___internal___mediaType = 'contactpage___children___internal___mediaType',
+  contactpage___children___internal___owner = 'contactpage___children___internal___owner',
+  contactpage___children___internal___type = 'contactpage___children___internal___type',
+  contactpage___internal___content = 'contactpage___internal___content',
+  contactpage___internal___contentDigest = 'contactpage___internal___contentDigest',
+  contactpage___internal___description = 'contactpage___internal___description',
+  contactpage___internal___fieldOwners = 'contactpage___internal___fieldOwners',
+  contactpage___internal___ignoreType = 'contactpage___internal___ignoreType',
+  contactpage___internal___mediaType = 'contactpage___internal___mediaType',
+  contactpage___internal___owner = 'contactpage___internal___owner',
+  contactpage___internal___type = 'contactpage___internal___type',
+  contactpage___page = 'contactpage___page',
+  contactpage___phoneNumber = 'contactpage___phoneNumber',
+  contactpage___email = 'contactpage___email',
+  contactpage___address___id = 'contactpage___address___id',
+  contactpage___address___parent___id = 'contactpage___address___parent___id',
+  contactpage___address___parent___children = 'contactpage___address___parent___children',
+  contactpage___address___children = 'contactpage___address___children',
+  contactpage___address___children___id = 'contactpage___address___children___id',
+  contactpage___address___children___children = 'contactpage___address___children___children',
+  contactpage___address___internal___content = 'contactpage___address___internal___content',
+  contactpage___address___internal___contentDigest = 'contactpage___address___internal___contentDigest',
+  contactpage___address___internal___description = 'contactpage___address___internal___description',
+  contactpage___address___internal___fieldOwners = 'contactpage___address___internal___fieldOwners',
+  contactpage___address___internal___ignoreType = 'contactpage___address___internal___ignoreType',
+  contactpage___address___internal___mediaType = 'contactpage___address___internal___mediaType',
+  contactpage___address___internal___owner = 'contactpage___address___internal___owner',
+  contactpage___address___internal___type = 'contactpage___address___internal___type',
+  contactpage___address___street = 'contactpage___address___street',
+  contactpage___address___city = 'contactpage___address___city',
+  contactpage___address___postCode = 'contactpage___address___postCode',
+  contactpage___address___contactpage = 'contactpage___address___contactpage',
+  contactpage___address___contactpage___id = 'contactpage___address___contactpage___id',
+  contactpage___address___contactpage___children = 'contactpage___address___contactpage___children',
+  contactpage___address___contactpage___page = 'contactpage___address___contactpage___page',
+  contactpage___address___contactpage___phoneNumber = 'contactpage___address___contactpage___phoneNumber',
+  contactpage___address___contactpage___email = 'contactpage___address___contactpage___email',
+  contactpage___address___contactpage___spaceId = 'contactpage___address___contactpage___spaceId',
+  contactpage___address___contactpage___contentful_id = 'contactpage___address___contactpage___contentful_id',
+  contactpage___address___contactpage___createdAt = 'contactpage___address___contactpage___createdAt',
+  contactpage___address___contactpage___updatedAt = 'contactpage___address___contactpage___updatedAt',
+  contactpage___address___contactpage___node_locale = 'contactpage___address___contactpage___node_locale',
+  contactpage___address___spaceId = 'contactpage___address___spaceId',
+  contactpage___address___contentful_id = 'contactpage___address___contentful_id',
+  contactpage___address___createdAt = 'contactpage___address___createdAt',
+  contactpage___address___updatedAt = 'contactpage___address___updatedAt',
+  contactpage___address___sys___revision = 'contactpage___address___sys___revision',
+  contactpage___address___node_locale = 'contactpage___address___node_locale',
+  contactpage___spaceId = 'contactpage___spaceId',
+  contactpage___contentful_id = 'contactpage___contentful_id',
+  contactpage___createdAt = 'contactpage___createdAt',
+  contactpage___updatedAt = 'contactpage___updatedAt',
+  contactpage___sys___revision = 'contactpage___sys___revision',
+  contactpage___node_locale = 'contactpage___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -756,11 +809,12 @@ export type ContentfulAddressFilterInput = {
   street?: Maybe<StringQueryOperatorInput>;
   city?: Maybe<StringQueryOperatorInput>;
   postCode?: Maybe<StringQueryOperatorInput>;
-  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  contactpage?: Maybe<ContentfulContactPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulAddressSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -779,6 +833,41 @@ export type ContentfulAddressSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulAddressSys = {
+  __typename?: 'ContentfulAddressSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulAddressSysContentType>;
+};
+
+export type ContentfulAddressSysContentType = {
+  __typename?: 'ContentfulAddressSysContentType';
+  sys?: Maybe<ContentfulAddressSysContentTypeSys>;
+};
+
+export type ContentfulAddressSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulAddressSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulAddressSysContentTypeSys = {
+  __typename?: 'ContentfulAddressSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulAddressSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulAddressSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulAddressSysContentTypeFilterInput>;
+};
+
 export type ContentfulArticle = Node & {
   __typename?: 'ContentfulArticle';
   id: Scalars['ID'];
@@ -795,6 +884,7 @@ export type ContentfulArticle = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulArticleSys>;
   node_locale?: Maybe<Scalars['String']>;
   childContentfulArticleContentRichTextNode?: Maybe<
     ContentfulArticleContentRichTextNode
@@ -1227,7 +1317,7 @@ export enum ContentfulArticleFieldsEnum {
   category___article___author___email = 'category___article___author___email',
   category___article___author___phoneNumber = 'category___article___author___phoneNumber',
   category___article___author___article = 'category___article___author___article',
-  category___article___author___about_page = 'category___article___author___about_page',
+  category___article___author___aboutpage = 'category___article___author___aboutpage',
   category___article___author___spaceId = 'category___article___author___spaceId',
   category___article___author___contentful_id = 'category___article___author___contentful_id',
   category___article___author___createdAt = 'category___article___author___createdAt',
@@ -1242,6 +1332,7 @@ export enum ContentfulArticleFieldsEnum {
   category___article___contentful_id = 'category___article___contentful_id',
   category___article___createdAt = 'category___article___createdAt',
   category___article___updatedAt = 'category___article___updatedAt',
+  category___article___sys___revision = 'category___article___sys___revision',
   category___article___node_locale = 'category___article___node_locale',
   category___article___childContentfulArticleContentRichTextNode___id = 'category___article___childContentfulArticleContentRichTextNode___id',
   category___article___childContentfulArticleContentRichTextNode___children = 'category___article___childContentfulArticleContentRichTextNode___children',
@@ -1252,6 +1343,7 @@ export enum ContentfulArticleFieldsEnum {
   category___contentful_id = 'category___contentful_id',
   category___createdAt = 'category___createdAt',
   category___updatedAt = 'category___updatedAt',
+  category___sys___revision = 'category___sys___revision',
   category___node_locale = 'category___node_locale',
   author___id = 'author___id',
   author___parent___id = 'author___parent___id',
@@ -1355,124 +1447,6 @@ export enum ContentfulArticleFieldsEnum {
   author___photo___resize___width = 'author___photo___resize___width',
   author___photo___resize___height = 'author___photo___resize___height',
   author___photo___resize___aspectRatio = 'author___photo___resize___aspectRatio',
-  author___article = 'author___article',
-  author___article___id = 'author___article___id',
-  author___article___parent___id = 'author___article___parent___id',
-  author___article___parent___children = 'author___article___parent___children',
-  author___article___children = 'author___article___children',
-  author___article___children___id = 'author___article___children___id',
-  author___article___children___children = 'author___article___children___children',
-  author___article___internal___content = 'author___article___internal___content',
-  author___article___internal___contentDigest = 'author___article___internal___contentDigest',
-  author___article___internal___description = 'author___article___internal___description',
-  author___article___internal___fieldOwners = 'author___article___internal___fieldOwners',
-  author___article___internal___ignoreType = 'author___article___internal___ignoreType',
-  author___article___internal___mediaType = 'author___article___internal___mediaType',
-  author___article___internal___owner = 'author___article___internal___owner',
-  author___article___internal___type = 'author___article___internal___type',
-  author___article___title = 'author___article___title',
-  author___article___slug = 'author___article___slug',
-  author___article___date = 'author___article___date',
-  author___article___category___id = 'author___article___category___id',
-  author___article___category___children = 'author___article___category___children',
-  author___article___category___title = 'author___article___category___title',
-  author___article___category___article = 'author___article___category___article',
-  author___article___category___spaceId = 'author___article___category___spaceId',
-  author___article___category___contentful_id = 'author___article___category___contentful_id',
-  author___article___category___createdAt = 'author___article___category___createdAt',
-  author___article___category___updatedAt = 'author___article___category___updatedAt',
-  author___article___category___node_locale = 'author___article___category___node_locale',
-  author___article___author___id = 'author___article___author___id',
-  author___article___author___children = 'author___article___author___children',
-  author___article___author___name = 'author___article___author___name',
-  author___article___author___email = 'author___article___author___email',
-  author___article___author___phoneNumber = 'author___article___author___phoneNumber',
-  author___article___author___article = 'author___article___author___article',
-  author___article___author___about_page = 'author___article___author___about_page',
-  author___article___author___spaceId = 'author___article___author___spaceId',
-  author___article___author___contentful_id = 'author___article___author___contentful_id',
-  author___article___author___createdAt = 'author___article___author___createdAt',
-  author___article___author___updatedAt = 'author___article___author___updatedAt',
-  author___article___author___node_locale = 'author___article___author___node_locale',
-  author___article___content___id = 'author___article___content___id',
-  author___article___content___children = 'author___article___content___children',
-  author___article___content___content = 'author___article___content___content',
-  author___article___content___nodeType = 'author___article___content___nodeType',
-  author___article___content___json = 'author___article___content___json',
-  author___article___spaceId = 'author___article___spaceId',
-  author___article___contentful_id = 'author___article___contentful_id',
-  author___article___createdAt = 'author___article___createdAt',
-  author___article___updatedAt = 'author___article___updatedAt',
-  author___article___node_locale = 'author___article___node_locale',
-  author___article___childContentfulArticleContentRichTextNode___id = 'author___article___childContentfulArticleContentRichTextNode___id',
-  author___article___childContentfulArticleContentRichTextNode___children = 'author___article___childContentfulArticleContentRichTextNode___children',
-  author___article___childContentfulArticleContentRichTextNode___content = 'author___article___childContentfulArticleContentRichTextNode___content',
-  author___article___childContentfulArticleContentRichTextNode___nodeType = 'author___article___childContentfulArticleContentRichTextNode___nodeType',
-  author___article___childContentfulArticleContentRichTextNode___json = 'author___article___childContentfulArticleContentRichTextNode___json',
-  author___about_page = 'author___about_page',
-  author___about_page___id = 'author___about_page___id',
-  author___about_page___parent___id = 'author___about_page___parent___id',
-  author___about_page___parent___children = 'author___about_page___parent___children',
-  author___about_page___children = 'author___about_page___children',
-  author___about_page___children___id = 'author___about_page___children___id',
-  author___about_page___children___children = 'author___about_page___children___children',
-  author___about_page___internal___content = 'author___about_page___internal___content',
-  author___about_page___internal___contentDigest = 'author___about_page___internal___contentDigest',
-  author___about_page___internal___description = 'author___about_page___internal___description',
-  author___about_page___internal___fieldOwners = 'author___about_page___internal___fieldOwners',
-  author___about_page___internal___ignoreType = 'author___about_page___internal___ignoreType',
-  author___about_page___internal___mediaType = 'author___about_page___internal___mediaType',
-  author___about_page___internal___owner = 'author___about_page___internal___owner',
-  author___about_page___internal___type = 'author___about_page___internal___type',
-  author___about_page___page = 'author___about_page___page',
-  author___about_page___teamMembers = 'author___about_page___teamMembers',
-  author___about_page___teamMembers___id = 'author___about_page___teamMembers___id',
-  author___about_page___teamMembers___children = 'author___about_page___teamMembers___children',
-  author___about_page___teamMembers___name = 'author___about_page___teamMembers___name',
-  author___about_page___teamMembers___email = 'author___about_page___teamMembers___email',
-  author___about_page___teamMembers___phoneNumber = 'author___about_page___teamMembers___phoneNumber',
-  author___about_page___teamMembers___article = 'author___about_page___teamMembers___article',
-  author___about_page___teamMembers___about_page = 'author___about_page___teamMembers___about_page',
-  author___about_page___teamMembers___spaceId = 'author___about_page___teamMembers___spaceId',
-  author___about_page___teamMembers___contentful_id = 'author___about_page___teamMembers___contentful_id',
-  author___about_page___teamMembers___createdAt = 'author___about_page___teamMembers___createdAt',
-  author___about_page___teamMembers___updatedAt = 'author___about_page___teamMembers___updatedAt',
-  author___about_page___teamMembers___node_locale = 'author___about_page___teamMembers___node_locale',
-  author___about_page___spaceId = 'author___about_page___spaceId',
-  author___about_page___contentful_id = 'author___about_page___contentful_id',
-  author___about_page___createdAt = 'author___about_page___createdAt',
-  author___about_page___updatedAt = 'author___about_page___updatedAt',
-  author___about_page___node_locale = 'author___about_page___node_locale',
-  author___description___id = 'author___description___id',
-  author___description___parent___id = 'author___description___parent___id',
-  author___description___parent___children = 'author___description___parent___children',
-  author___description___children = 'author___description___children',
-  author___description___children___id = 'author___description___children___id',
-  author___description___children___children = 'author___description___children___children',
-  author___description___internal___content = 'author___description___internal___content',
-  author___description___internal___contentDigest = 'author___description___internal___contentDigest',
-  author___description___internal___description = 'author___description___internal___description',
-  author___description___internal___fieldOwners = 'author___description___internal___fieldOwners',
-  author___description___internal___ignoreType = 'author___description___internal___ignoreType',
-  author___description___internal___mediaType = 'author___description___internal___mediaType',
-  author___description___internal___owner = 'author___description___internal___owner',
-  author___description___internal___type = 'author___description___internal___type',
-  author___description___description = 'author___description___description',
-  author___description___childMarkdownRemark___id = 'author___description___childMarkdownRemark___id',
-  author___description___childMarkdownRemark___excerpt = 'author___description___childMarkdownRemark___excerpt',
-  author___description___childMarkdownRemark___rawMarkdownBody = 'author___description___childMarkdownRemark___rawMarkdownBody',
-  author___description___childMarkdownRemark___html = 'author___description___childMarkdownRemark___html',
-  author___description___childMarkdownRemark___htmlAst = 'author___description___childMarkdownRemark___htmlAst',
-  author___description___childMarkdownRemark___excerptAst = 'author___description___childMarkdownRemark___excerptAst',
-  author___description___childMarkdownRemark___headings = 'author___description___childMarkdownRemark___headings',
-  author___description___childMarkdownRemark___timeToRead = 'author___description___childMarkdownRemark___timeToRead',
-  author___description___childMarkdownRemark___tableOfContents = 'author___description___childMarkdownRemark___tableOfContents',
-  author___description___childMarkdownRemark___children = 'author___description___childMarkdownRemark___children',
-  author___spaceId = 'author___spaceId',
-  author___contentful_id = 'author___contentful_id',
-  author___createdAt = 'author___createdAt',
-  author___updatedAt = 'author___updatedAt',
-  author___node_locale = 'author___node_locale',
   author___avatar___id = 'author___avatar___id',
   author___avatar___parent___id = 'author___avatar___parent___id',
   author___avatar___parent___children = 'author___avatar___parent___children',
@@ -1534,6 +1508,127 @@ export enum ContentfulArticleFieldsEnum {
   author___avatar___resize___width = 'author___avatar___resize___width',
   author___avatar___resize___height = 'author___avatar___resize___height',
   author___avatar___resize___aspectRatio = 'author___avatar___resize___aspectRatio',
+  author___article = 'author___article',
+  author___article___id = 'author___article___id',
+  author___article___parent___id = 'author___article___parent___id',
+  author___article___parent___children = 'author___article___parent___children',
+  author___article___children = 'author___article___children',
+  author___article___children___id = 'author___article___children___id',
+  author___article___children___children = 'author___article___children___children',
+  author___article___internal___content = 'author___article___internal___content',
+  author___article___internal___contentDigest = 'author___article___internal___contentDigest',
+  author___article___internal___description = 'author___article___internal___description',
+  author___article___internal___fieldOwners = 'author___article___internal___fieldOwners',
+  author___article___internal___ignoreType = 'author___article___internal___ignoreType',
+  author___article___internal___mediaType = 'author___article___internal___mediaType',
+  author___article___internal___owner = 'author___article___internal___owner',
+  author___article___internal___type = 'author___article___internal___type',
+  author___article___title = 'author___article___title',
+  author___article___slug = 'author___article___slug',
+  author___article___date = 'author___article___date',
+  author___article___category___id = 'author___article___category___id',
+  author___article___category___children = 'author___article___category___children',
+  author___article___category___title = 'author___article___category___title',
+  author___article___category___article = 'author___article___category___article',
+  author___article___category___spaceId = 'author___article___category___spaceId',
+  author___article___category___contentful_id = 'author___article___category___contentful_id',
+  author___article___category___createdAt = 'author___article___category___createdAt',
+  author___article___category___updatedAt = 'author___article___category___updatedAt',
+  author___article___category___node_locale = 'author___article___category___node_locale',
+  author___article___author___id = 'author___article___author___id',
+  author___article___author___children = 'author___article___author___children',
+  author___article___author___name = 'author___article___author___name',
+  author___article___author___email = 'author___article___author___email',
+  author___article___author___phoneNumber = 'author___article___author___phoneNumber',
+  author___article___author___article = 'author___article___author___article',
+  author___article___author___aboutpage = 'author___article___author___aboutpage',
+  author___article___author___spaceId = 'author___article___author___spaceId',
+  author___article___author___contentful_id = 'author___article___author___contentful_id',
+  author___article___author___createdAt = 'author___article___author___createdAt',
+  author___article___author___updatedAt = 'author___article___author___updatedAt',
+  author___article___author___node_locale = 'author___article___author___node_locale',
+  author___article___content___id = 'author___article___content___id',
+  author___article___content___children = 'author___article___content___children',
+  author___article___content___content = 'author___article___content___content',
+  author___article___content___nodeType = 'author___article___content___nodeType',
+  author___article___content___json = 'author___article___content___json',
+  author___article___spaceId = 'author___article___spaceId',
+  author___article___contentful_id = 'author___article___contentful_id',
+  author___article___createdAt = 'author___article___createdAt',
+  author___article___updatedAt = 'author___article___updatedAt',
+  author___article___sys___revision = 'author___article___sys___revision',
+  author___article___node_locale = 'author___article___node_locale',
+  author___article___childContentfulArticleContentRichTextNode___id = 'author___article___childContentfulArticleContentRichTextNode___id',
+  author___article___childContentfulArticleContentRichTextNode___children = 'author___article___childContentfulArticleContentRichTextNode___children',
+  author___article___childContentfulArticleContentRichTextNode___content = 'author___article___childContentfulArticleContentRichTextNode___content',
+  author___article___childContentfulArticleContentRichTextNode___nodeType = 'author___article___childContentfulArticleContentRichTextNode___nodeType',
+  author___article___childContentfulArticleContentRichTextNode___json = 'author___article___childContentfulArticleContentRichTextNode___json',
+  author___aboutpage = 'author___aboutpage',
+  author___aboutpage___id = 'author___aboutpage___id',
+  author___aboutpage___parent___id = 'author___aboutpage___parent___id',
+  author___aboutpage___parent___children = 'author___aboutpage___parent___children',
+  author___aboutpage___children = 'author___aboutpage___children',
+  author___aboutpage___children___id = 'author___aboutpage___children___id',
+  author___aboutpage___children___children = 'author___aboutpage___children___children',
+  author___aboutpage___internal___content = 'author___aboutpage___internal___content',
+  author___aboutpage___internal___contentDigest = 'author___aboutpage___internal___contentDigest',
+  author___aboutpage___internal___description = 'author___aboutpage___internal___description',
+  author___aboutpage___internal___fieldOwners = 'author___aboutpage___internal___fieldOwners',
+  author___aboutpage___internal___ignoreType = 'author___aboutpage___internal___ignoreType',
+  author___aboutpage___internal___mediaType = 'author___aboutpage___internal___mediaType',
+  author___aboutpage___internal___owner = 'author___aboutpage___internal___owner',
+  author___aboutpage___internal___type = 'author___aboutpage___internal___type',
+  author___aboutpage___page = 'author___aboutpage___page',
+  author___aboutpage___teamMembers = 'author___aboutpage___teamMembers',
+  author___aboutpage___teamMembers___id = 'author___aboutpage___teamMembers___id',
+  author___aboutpage___teamMembers___children = 'author___aboutpage___teamMembers___children',
+  author___aboutpage___teamMembers___name = 'author___aboutpage___teamMembers___name',
+  author___aboutpage___teamMembers___email = 'author___aboutpage___teamMembers___email',
+  author___aboutpage___teamMembers___phoneNumber = 'author___aboutpage___teamMembers___phoneNumber',
+  author___aboutpage___teamMembers___article = 'author___aboutpage___teamMembers___article',
+  author___aboutpage___teamMembers___aboutpage = 'author___aboutpage___teamMembers___aboutpage',
+  author___aboutpage___teamMembers___spaceId = 'author___aboutpage___teamMembers___spaceId',
+  author___aboutpage___teamMembers___contentful_id = 'author___aboutpage___teamMembers___contentful_id',
+  author___aboutpage___teamMembers___createdAt = 'author___aboutpage___teamMembers___createdAt',
+  author___aboutpage___teamMembers___updatedAt = 'author___aboutpage___teamMembers___updatedAt',
+  author___aboutpage___teamMembers___node_locale = 'author___aboutpage___teamMembers___node_locale',
+  author___aboutpage___spaceId = 'author___aboutpage___spaceId',
+  author___aboutpage___contentful_id = 'author___aboutpage___contentful_id',
+  author___aboutpage___createdAt = 'author___aboutpage___createdAt',
+  author___aboutpage___updatedAt = 'author___aboutpage___updatedAt',
+  author___aboutpage___sys___revision = 'author___aboutpage___sys___revision',
+  author___aboutpage___node_locale = 'author___aboutpage___node_locale',
+  author___description___id = 'author___description___id',
+  author___description___parent___id = 'author___description___parent___id',
+  author___description___parent___children = 'author___description___parent___children',
+  author___description___children = 'author___description___children',
+  author___description___children___id = 'author___description___children___id',
+  author___description___children___children = 'author___description___children___children',
+  author___description___internal___content = 'author___description___internal___content',
+  author___description___internal___contentDigest = 'author___description___internal___contentDigest',
+  author___description___internal___description = 'author___description___internal___description',
+  author___description___internal___fieldOwners = 'author___description___internal___fieldOwners',
+  author___description___internal___ignoreType = 'author___description___internal___ignoreType',
+  author___description___internal___mediaType = 'author___description___internal___mediaType',
+  author___description___internal___owner = 'author___description___internal___owner',
+  author___description___internal___type = 'author___description___internal___type',
+  author___description___description = 'author___description___description',
+  author___description___childMarkdownRemark___id = 'author___description___childMarkdownRemark___id',
+  author___description___childMarkdownRemark___excerpt = 'author___description___childMarkdownRemark___excerpt',
+  author___description___childMarkdownRemark___rawMarkdownBody = 'author___description___childMarkdownRemark___rawMarkdownBody',
+  author___description___childMarkdownRemark___html = 'author___description___childMarkdownRemark___html',
+  author___description___childMarkdownRemark___htmlAst = 'author___description___childMarkdownRemark___htmlAst',
+  author___description___childMarkdownRemark___excerptAst = 'author___description___childMarkdownRemark___excerptAst',
+  author___description___childMarkdownRemark___headings = 'author___description___childMarkdownRemark___headings',
+  author___description___childMarkdownRemark___timeToRead = 'author___description___childMarkdownRemark___timeToRead',
+  author___description___childMarkdownRemark___tableOfContents = 'author___description___childMarkdownRemark___tableOfContents',
+  author___description___childMarkdownRemark___children = 'author___description___childMarkdownRemark___children',
+  author___spaceId = 'author___spaceId',
+  author___contentful_id = 'author___contentful_id',
+  author___createdAt = 'author___createdAt',
+  author___updatedAt = 'author___updatedAt',
+  author___sys___revision = 'author___sys___revision',
+  author___node_locale = 'author___node_locale',
   author___childContentfulMemberDescriptionTextNode___id = 'author___childContentfulMemberDescriptionTextNode___id',
   author___childContentfulMemberDescriptionTextNode___parent___id = 'author___childContentfulMemberDescriptionTextNode___parent___id',
   author___childContentfulMemberDescriptionTextNode___parent___children = 'author___childContentfulMemberDescriptionTextNode___parent___children',
@@ -1604,6 +1699,11 @@ export enum ContentfulArticleFieldsEnum {
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
   childContentfulArticleContentRichTextNode___id = 'childContentfulArticleContentRichTextNode___id',
   childContentfulArticleContentRichTextNode___parent___id = 'childContentfulArticleContentRichTextNode___parent___id',
@@ -1663,6 +1763,7 @@ export type ContentfulArticleFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulArticleSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   childContentfulArticleContentRichTextNode?: Maybe<
     ContentfulArticleContentRichTextNodeFilterInput
@@ -1686,6 +1787,41 @@ export type ContentfulArticleGroupConnection = {
 export type ContentfulArticleSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulArticleFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulArticleSys = {
+  __typename?: 'ContentfulArticleSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulArticleSysContentType>;
+};
+
+export type ContentfulArticleSysContentType = {
+  __typename?: 'ContentfulArticleSysContentType';
+  sys?: Maybe<ContentfulArticleSysContentTypeSys>;
+};
+
+export type ContentfulArticleSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulArticleSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulArticleSysContentTypeSys = {
+  __typename?: 'ContentfulArticleSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulArticleSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulArticleSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulArticleSysContentTypeFilterInput>;
 };
 
 export type ContentfulAsset = Node & {
@@ -2007,6 +2143,7 @@ export type ContentfulCategory = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulCategorySys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -2303,6 +2440,7 @@ export enum ContentfulCategoryFieldsEnum {
   article___category___contentful_id = 'article___category___contentful_id',
   article___category___createdAt = 'article___category___createdAt',
   article___category___updatedAt = 'article___category___updatedAt',
+  article___category___sys___revision = 'article___category___sys___revision',
   article___category___node_locale = 'article___category___node_locale',
   article___author___id = 'article___author___id',
   article___author___parent___id = 'article___author___parent___id',
@@ -2327,6 +2465,12 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___photo___title = 'article___author___photo___title',
   article___author___photo___description = 'article___author___photo___description',
   article___author___photo___node_locale = 'article___author___photo___node_locale',
+  article___author___avatar___id = 'article___author___avatar___id',
+  article___author___avatar___children = 'article___author___avatar___children',
+  article___author___avatar___contentful_id = 'article___author___avatar___contentful_id',
+  article___author___avatar___title = 'article___author___avatar___title',
+  article___author___avatar___description = 'article___author___avatar___description',
+  article___author___avatar___node_locale = 'article___author___avatar___node_locale',
   article___author___article = 'article___author___article',
   article___author___article___id = 'article___author___article___id',
   article___author___article___children = 'article___author___article___children',
@@ -2338,16 +2482,16 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___article___createdAt = 'article___author___article___createdAt',
   article___author___article___updatedAt = 'article___author___article___updatedAt',
   article___author___article___node_locale = 'article___author___article___node_locale',
-  article___author___about_page = 'article___author___about_page',
-  article___author___about_page___id = 'article___author___about_page___id',
-  article___author___about_page___children = 'article___author___about_page___children',
-  article___author___about_page___page = 'article___author___about_page___page',
-  article___author___about_page___teamMembers = 'article___author___about_page___teamMembers',
-  article___author___about_page___spaceId = 'article___author___about_page___spaceId',
-  article___author___about_page___contentful_id = 'article___author___about_page___contentful_id',
-  article___author___about_page___createdAt = 'article___author___about_page___createdAt',
-  article___author___about_page___updatedAt = 'article___author___about_page___updatedAt',
-  article___author___about_page___node_locale = 'article___author___about_page___node_locale',
+  article___author___aboutpage = 'article___author___aboutpage',
+  article___author___aboutpage___id = 'article___author___aboutpage___id',
+  article___author___aboutpage___children = 'article___author___aboutpage___children',
+  article___author___aboutpage___page = 'article___author___aboutpage___page',
+  article___author___aboutpage___teamMembers = 'article___author___aboutpage___teamMembers',
+  article___author___aboutpage___spaceId = 'article___author___aboutpage___spaceId',
+  article___author___aboutpage___contentful_id = 'article___author___aboutpage___contentful_id',
+  article___author___aboutpage___createdAt = 'article___author___aboutpage___createdAt',
+  article___author___aboutpage___updatedAt = 'article___author___aboutpage___updatedAt',
+  article___author___aboutpage___node_locale = 'article___author___aboutpage___node_locale',
   article___author___description___id = 'article___author___description___id',
   article___author___description___children = 'article___author___description___children',
   article___author___description___description = 'article___author___description___description',
@@ -2355,13 +2499,8 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___contentful_id = 'article___author___contentful_id',
   article___author___createdAt = 'article___author___createdAt',
   article___author___updatedAt = 'article___author___updatedAt',
+  article___author___sys___revision = 'article___author___sys___revision',
   article___author___node_locale = 'article___author___node_locale',
-  article___author___avatar___id = 'article___author___avatar___id',
-  article___author___avatar___children = 'article___author___avatar___children',
-  article___author___avatar___contentful_id = 'article___author___avatar___contentful_id',
-  article___author___avatar___title = 'article___author___avatar___title',
-  article___author___avatar___description = 'article___author___avatar___description',
-  article___author___avatar___node_locale = 'article___author___avatar___node_locale',
   article___author___childContentfulMemberDescriptionTextNode___id = 'article___author___childContentfulMemberDescriptionTextNode___id',
   article___author___childContentfulMemberDescriptionTextNode___children = 'article___author___childContentfulMemberDescriptionTextNode___children',
   article___author___childContentfulMemberDescriptionTextNode___description = 'article___author___childContentfulMemberDescriptionTextNode___description',
@@ -2386,6 +2525,7 @@ export enum ContentfulCategoryFieldsEnum {
   article___contentful_id = 'article___contentful_id',
   article___createdAt = 'article___createdAt',
   article___updatedAt = 'article___updatedAt',
+  article___sys___revision = 'article___sys___revision',
   article___node_locale = 'article___node_locale',
   article___childContentfulArticleContentRichTextNode___id = 'article___childContentfulArticleContentRichTextNode___id',
   article___childContentfulArticleContentRichTextNode___parent___id = 'article___childContentfulArticleContentRichTextNode___parent___id',
@@ -2408,6 +2548,11 @@ export enum ContentfulCategoryFieldsEnum {
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -2423,6 +2568,7 @@ export type ContentfulCategoryFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulCategorySysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2441,6 +2587,41 @@ export type ContentfulCategorySortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulCategorySys = {
+  __typename?: 'ContentfulCategorySys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulCategorySysContentType>;
+};
+
+export type ContentfulCategorySysContentType = {
+  __typename?: 'ContentfulCategorySysContentType';
+  sys?: Maybe<ContentfulCategorySysContentTypeSys>;
+};
+
+export type ContentfulCategorySysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulCategorySysContentTypeSysFilterInput>;
+};
+
+export type ContentfulCategorySysContentTypeSys = {
+  __typename?: 'ContentfulCategorySysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulCategorySysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulCategorySysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulCategorySysContentTypeFilterInput>;
+};
+
 export type ContentfulContactPage = Node & {
   __typename?: 'ContentfulContactPage';
   id: Scalars['ID'];
@@ -2455,6 +2636,7 @@ export type ContentfulContactPage = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulContactPageSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -2630,49 +2812,56 @@ export enum ContentfulContactPageFieldsEnum {
   address___street = 'address___street',
   address___city = 'address___city',
   address___postCode = 'address___postCode',
-  address___contact_page = 'address___contact_page',
-  address___contact_page___id = 'address___contact_page___id',
-  address___contact_page___parent___id = 'address___contact_page___parent___id',
-  address___contact_page___parent___children = 'address___contact_page___parent___children',
-  address___contact_page___children = 'address___contact_page___children',
-  address___contact_page___children___id = 'address___contact_page___children___id',
-  address___contact_page___children___children = 'address___contact_page___children___children',
-  address___contact_page___internal___content = 'address___contact_page___internal___content',
-  address___contact_page___internal___contentDigest = 'address___contact_page___internal___contentDigest',
-  address___contact_page___internal___description = 'address___contact_page___internal___description',
-  address___contact_page___internal___fieldOwners = 'address___contact_page___internal___fieldOwners',
-  address___contact_page___internal___ignoreType = 'address___contact_page___internal___ignoreType',
-  address___contact_page___internal___mediaType = 'address___contact_page___internal___mediaType',
-  address___contact_page___internal___owner = 'address___contact_page___internal___owner',
-  address___contact_page___internal___type = 'address___contact_page___internal___type',
-  address___contact_page___page = 'address___contact_page___page',
-  address___contact_page___phoneNumber = 'address___contact_page___phoneNumber',
-  address___contact_page___email = 'address___contact_page___email',
-  address___contact_page___address___id = 'address___contact_page___address___id',
-  address___contact_page___address___children = 'address___contact_page___address___children',
-  address___contact_page___address___street = 'address___contact_page___address___street',
-  address___contact_page___address___city = 'address___contact_page___address___city',
-  address___contact_page___address___postCode = 'address___contact_page___address___postCode',
-  address___contact_page___address___contact_page = 'address___contact_page___address___contact_page',
-  address___contact_page___address___spaceId = 'address___contact_page___address___spaceId',
-  address___contact_page___address___contentful_id = 'address___contact_page___address___contentful_id',
-  address___contact_page___address___createdAt = 'address___contact_page___address___createdAt',
-  address___contact_page___address___updatedAt = 'address___contact_page___address___updatedAt',
-  address___contact_page___address___node_locale = 'address___contact_page___address___node_locale',
-  address___contact_page___spaceId = 'address___contact_page___spaceId',
-  address___contact_page___contentful_id = 'address___contact_page___contentful_id',
-  address___contact_page___createdAt = 'address___contact_page___createdAt',
-  address___contact_page___updatedAt = 'address___contact_page___updatedAt',
-  address___contact_page___node_locale = 'address___contact_page___node_locale',
+  address___contactpage = 'address___contactpage',
+  address___contactpage___id = 'address___contactpage___id',
+  address___contactpage___parent___id = 'address___contactpage___parent___id',
+  address___contactpage___parent___children = 'address___contactpage___parent___children',
+  address___contactpage___children = 'address___contactpage___children',
+  address___contactpage___children___id = 'address___contactpage___children___id',
+  address___contactpage___children___children = 'address___contactpage___children___children',
+  address___contactpage___internal___content = 'address___contactpage___internal___content',
+  address___contactpage___internal___contentDigest = 'address___contactpage___internal___contentDigest',
+  address___contactpage___internal___description = 'address___contactpage___internal___description',
+  address___contactpage___internal___fieldOwners = 'address___contactpage___internal___fieldOwners',
+  address___contactpage___internal___ignoreType = 'address___contactpage___internal___ignoreType',
+  address___contactpage___internal___mediaType = 'address___contactpage___internal___mediaType',
+  address___contactpage___internal___owner = 'address___contactpage___internal___owner',
+  address___contactpage___internal___type = 'address___contactpage___internal___type',
+  address___contactpage___page = 'address___contactpage___page',
+  address___contactpage___phoneNumber = 'address___contactpage___phoneNumber',
+  address___contactpage___email = 'address___contactpage___email',
+  address___contactpage___address___id = 'address___contactpage___address___id',
+  address___contactpage___address___children = 'address___contactpage___address___children',
+  address___contactpage___address___street = 'address___contactpage___address___street',
+  address___contactpage___address___city = 'address___contactpage___address___city',
+  address___contactpage___address___postCode = 'address___contactpage___address___postCode',
+  address___contactpage___address___contactpage = 'address___contactpage___address___contactpage',
+  address___contactpage___address___spaceId = 'address___contactpage___address___spaceId',
+  address___contactpage___address___contentful_id = 'address___contactpage___address___contentful_id',
+  address___contactpage___address___createdAt = 'address___contactpage___address___createdAt',
+  address___contactpage___address___updatedAt = 'address___contactpage___address___updatedAt',
+  address___contactpage___address___node_locale = 'address___contactpage___address___node_locale',
+  address___contactpage___spaceId = 'address___contactpage___spaceId',
+  address___contactpage___contentful_id = 'address___contactpage___contentful_id',
+  address___contactpage___createdAt = 'address___contactpage___createdAt',
+  address___contactpage___updatedAt = 'address___contactpage___updatedAt',
+  address___contactpage___sys___revision = 'address___contactpage___sys___revision',
+  address___contactpage___node_locale = 'address___contactpage___node_locale',
   address___spaceId = 'address___spaceId',
   address___contentful_id = 'address___contentful_id',
   address___createdAt = 'address___createdAt',
   address___updatedAt = 'address___updatedAt',
+  address___sys___revision = 'address___sys___revision',
   address___node_locale = 'address___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -2689,6 +2878,7 @@ export type ContentfulContactPageFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulContactPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2709,6 +2899,41 @@ export type ContentfulContactPageGroupConnection = {
 export type ContentfulContactPageSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulContactPageFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulContactPageSys = {
+  __typename?: 'ContentfulContactPageSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulContactPageSysContentType>;
+};
+
+export type ContentfulContactPageSysContentType = {
+  __typename?: 'ContentfulContactPageSysContentType';
+  sys?: Maybe<ContentfulContactPageSysContentTypeSys>;
+};
+
+export type ContentfulContactPageSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulContactPageSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulContactPageSysContentTypeSys = {
+  __typename?: 'ContentfulContactPageSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulContactPageSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulContactPageSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulContactPageSysContentTypeFilterInput>;
 };
 
 export type ContentfulContentType = Node & {
@@ -2871,10 +3096,10 @@ export type ContentfulFixed = {
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
   aspectRatio?: Maybe<Scalars['Float']>;
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  src?: Maybe<Scalars['String']>;
-  srcSet?: Maybe<Scalars['String']>;
+  width: Scalars['Float'];
+  height: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
   srcWebp?: Maybe<Scalars['String']>;
   srcSetWebp?: Maybe<Scalars['String']>;
 };
@@ -2895,12 +3120,12 @@ export type ContentfulFluid = {
   __typename?: 'ContentfulFluid';
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
-  aspectRatio?: Maybe<Scalars['Float']>;
-  src?: Maybe<Scalars['String']>;
-  srcSet?: Maybe<Scalars['String']>;
+  aspectRatio: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
   srcWebp?: Maybe<Scalars['String']>;
   srcSetWebp?: Maybe<Scalars['String']>;
-  sizes?: Maybe<Scalars['String']>;
+  sizes: Scalars['String'];
 };
 
 export type ContentfulFluidFilterInput = {
@@ -2922,11 +3147,12 @@ export type ContentfulGoal = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   image?: Maybe<ContentfulAsset>;
-  home_page?: Maybe<Array<Maybe<ContentfulHomePage>>>;
+  homepage?: Maybe<Array<Maybe<ContentfulHomePage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulGoalSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -3145,92 +3371,99 @@ export enum ContentfulGoalFieldsEnum {
   image___resize___width = 'image___resize___width',
   image___resize___height = 'image___resize___height',
   image___resize___aspectRatio = 'image___resize___aspectRatio',
-  home_page = 'home_page',
-  home_page___id = 'home_page___id',
-  home_page___parent___id = 'home_page___parent___id',
-  home_page___parent___parent___id = 'home_page___parent___parent___id',
-  home_page___parent___parent___children = 'home_page___parent___parent___children',
-  home_page___parent___children = 'home_page___parent___children',
-  home_page___parent___children___id = 'home_page___parent___children___id',
-  home_page___parent___children___children = 'home_page___parent___children___children',
-  home_page___parent___internal___content = 'home_page___parent___internal___content',
-  home_page___parent___internal___contentDigest = 'home_page___parent___internal___contentDigest',
-  home_page___parent___internal___description = 'home_page___parent___internal___description',
-  home_page___parent___internal___fieldOwners = 'home_page___parent___internal___fieldOwners',
-  home_page___parent___internal___ignoreType = 'home_page___parent___internal___ignoreType',
-  home_page___parent___internal___mediaType = 'home_page___parent___internal___mediaType',
-  home_page___parent___internal___owner = 'home_page___parent___internal___owner',
-  home_page___parent___internal___type = 'home_page___parent___internal___type',
-  home_page___children = 'home_page___children',
-  home_page___children___id = 'home_page___children___id',
-  home_page___children___parent___id = 'home_page___children___parent___id',
-  home_page___children___parent___children = 'home_page___children___parent___children',
-  home_page___children___children = 'home_page___children___children',
-  home_page___children___children___id = 'home_page___children___children___id',
-  home_page___children___children___children = 'home_page___children___children___children',
-  home_page___children___internal___content = 'home_page___children___internal___content',
-  home_page___children___internal___contentDigest = 'home_page___children___internal___contentDigest',
-  home_page___children___internal___description = 'home_page___children___internal___description',
-  home_page___children___internal___fieldOwners = 'home_page___children___internal___fieldOwners',
-  home_page___children___internal___ignoreType = 'home_page___children___internal___ignoreType',
-  home_page___children___internal___mediaType = 'home_page___children___internal___mediaType',
-  home_page___children___internal___owner = 'home_page___children___internal___owner',
-  home_page___children___internal___type = 'home_page___children___internal___type',
-  home_page___internal___content = 'home_page___internal___content',
-  home_page___internal___contentDigest = 'home_page___internal___contentDigest',
-  home_page___internal___description = 'home_page___internal___description',
-  home_page___internal___fieldOwners = 'home_page___internal___fieldOwners',
-  home_page___internal___ignoreType = 'home_page___internal___ignoreType',
-  home_page___internal___mediaType = 'home_page___internal___mediaType',
-  home_page___internal___owner = 'home_page___internal___owner',
-  home_page___internal___type = 'home_page___internal___type',
-  home_page___page = 'home_page___page',
-  home_page___goals = 'home_page___goals',
-  home_page___goals___id = 'home_page___goals___id',
-  home_page___goals___parent___id = 'home_page___goals___parent___id',
-  home_page___goals___parent___children = 'home_page___goals___parent___children',
-  home_page___goals___children = 'home_page___goals___children',
-  home_page___goals___children___id = 'home_page___goals___children___id',
-  home_page___goals___children___children = 'home_page___goals___children___children',
-  home_page___goals___internal___content = 'home_page___goals___internal___content',
-  home_page___goals___internal___contentDigest = 'home_page___goals___internal___contentDigest',
-  home_page___goals___internal___description = 'home_page___goals___internal___description',
-  home_page___goals___internal___fieldOwners = 'home_page___goals___internal___fieldOwners',
-  home_page___goals___internal___ignoreType = 'home_page___goals___internal___ignoreType',
-  home_page___goals___internal___mediaType = 'home_page___goals___internal___mediaType',
-  home_page___goals___internal___owner = 'home_page___goals___internal___owner',
-  home_page___goals___internal___type = 'home_page___goals___internal___type',
-  home_page___goals___title = 'home_page___goals___title',
-  home_page___goals___image___id = 'home_page___goals___image___id',
-  home_page___goals___image___children = 'home_page___goals___image___children',
-  home_page___goals___image___contentful_id = 'home_page___goals___image___contentful_id',
-  home_page___goals___image___title = 'home_page___goals___image___title',
-  home_page___goals___image___description = 'home_page___goals___image___description',
-  home_page___goals___image___node_locale = 'home_page___goals___image___node_locale',
-  home_page___goals___home_page = 'home_page___goals___home_page',
-  home_page___goals___home_page___id = 'home_page___goals___home_page___id',
-  home_page___goals___home_page___children = 'home_page___goals___home_page___children',
-  home_page___goals___home_page___page = 'home_page___goals___home_page___page',
-  home_page___goals___home_page___goals = 'home_page___goals___home_page___goals',
-  home_page___goals___home_page___spaceId = 'home_page___goals___home_page___spaceId',
-  home_page___goals___home_page___contentful_id = 'home_page___goals___home_page___contentful_id',
-  home_page___goals___home_page___createdAt = 'home_page___goals___home_page___createdAt',
-  home_page___goals___home_page___updatedAt = 'home_page___goals___home_page___updatedAt',
-  home_page___goals___home_page___node_locale = 'home_page___goals___home_page___node_locale',
-  home_page___goals___spaceId = 'home_page___goals___spaceId',
-  home_page___goals___contentful_id = 'home_page___goals___contentful_id',
-  home_page___goals___createdAt = 'home_page___goals___createdAt',
-  home_page___goals___updatedAt = 'home_page___goals___updatedAt',
-  home_page___goals___node_locale = 'home_page___goals___node_locale',
-  home_page___spaceId = 'home_page___spaceId',
-  home_page___contentful_id = 'home_page___contentful_id',
-  home_page___createdAt = 'home_page___createdAt',
-  home_page___updatedAt = 'home_page___updatedAt',
-  home_page___node_locale = 'home_page___node_locale',
+  homepage = 'homepage',
+  homepage___id = 'homepage___id',
+  homepage___parent___id = 'homepage___parent___id',
+  homepage___parent___parent___id = 'homepage___parent___parent___id',
+  homepage___parent___parent___children = 'homepage___parent___parent___children',
+  homepage___parent___children = 'homepage___parent___children',
+  homepage___parent___children___id = 'homepage___parent___children___id',
+  homepage___parent___children___children = 'homepage___parent___children___children',
+  homepage___parent___internal___content = 'homepage___parent___internal___content',
+  homepage___parent___internal___contentDigest = 'homepage___parent___internal___contentDigest',
+  homepage___parent___internal___description = 'homepage___parent___internal___description',
+  homepage___parent___internal___fieldOwners = 'homepage___parent___internal___fieldOwners',
+  homepage___parent___internal___ignoreType = 'homepage___parent___internal___ignoreType',
+  homepage___parent___internal___mediaType = 'homepage___parent___internal___mediaType',
+  homepage___parent___internal___owner = 'homepage___parent___internal___owner',
+  homepage___parent___internal___type = 'homepage___parent___internal___type',
+  homepage___children = 'homepage___children',
+  homepage___children___id = 'homepage___children___id',
+  homepage___children___parent___id = 'homepage___children___parent___id',
+  homepage___children___parent___children = 'homepage___children___parent___children',
+  homepage___children___children = 'homepage___children___children',
+  homepage___children___children___id = 'homepage___children___children___id',
+  homepage___children___children___children = 'homepage___children___children___children',
+  homepage___children___internal___content = 'homepage___children___internal___content',
+  homepage___children___internal___contentDigest = 'homepage___children___internal___contentDigest',
+  homepage___children___internal___description = 'homepage___children___internal___description',
+  homepage___children___internal___fieldOwners = 'homepage___children___internal___fieldOwners',
+  homepage___children___internal___ignoreType = 'homepage___children___internal___ignoreType',
+  homepage___children___internal___mediaType = 'homepage___children___internal___mediaType',
+  homepage___children___internal___owner = 'homepage___children___internal___owner',
+  homepage___children___internal___type = 'homepage___children___internal___type',
+  homepage___internal___content = 'homepage___internal___content',
+  homepage___internal___contentDigest = 'homepage___internal___contentDigest',
+  homepage___internal___description = 'homepage___internal___description',
+  homepage___internal___fieldOwners = 'homepage___internal___fieldOwners',
+  homepage___internal___ignoreType = 'homepage___internal___ignoreType',
+  homepage___internal___mediaType = 'homepage___internal___mediaType',
+  homepage___internal___owner = 'homepage___internal___owner',
+  homepage___internal___type = 'homepage___internal___type',
+  homepage___page = 'homepage___page',
+  homepage___goals = 'homepage___goals',
+  homepage___goals___id = 'homepage___goals___id',
+  homepage___goals___parent___id = 'homepage___goals___parent___id',
+  homepage___goals___parent___children = 'homepage___goals___parent___children',
+  homepage___goals___children = 'homepage___goals___children',
+  homepage___goals___children___id = 'homepage___goals___children___id',
+  homepage___goals___children___children = 'homepage___goals___children___children',
+  homepage___goals___internal___content = 'homepage___goals___internal___content',
+  homepage___goals___internal___contentDigest = 'homepage___goals___internal___contentDigest',
+  homepage___goals___internal___description = 'homepage___goals___internal___description',
+  homepage___goals___internal___fieldOwners = 'homepage___goals___internal___fieldOwners',
+  homepage___goals___internal___ignoreType = 'homepage___goals___internal___ignoreType',
+  homepage___goals___internal___mediaType = 'homepage___goals___internal___mediaType',
+  homepage___goals___internal___owner = 'homepage___goals___internal___owner',
+  homepage___goals___internal___type = 'homepage___goals___internal___type',
+  homepage___goals___title = 'homepage___goals___title',
+  homepage___goals___image___id = 'homepage___goals___image___id',
+  homepage___goals___image___children = 'homepage___goals___image___children',
+  homepage___goals___image___contentful_id = 'homepage___goals___image___contentful_id',
+  homepage___goals___image___title = 'homepage___goals___image___title',
+  homepage___goals___image___description = 'homepage___goals___image___description',
+  homepage___goals___image___node_locale = 'homepage___goals___image___node_locale',
+  homepage___goals___homepage = 'homepage___goals___homepage',
+  homepage___goals___homepage___id = 'homepage___goals___homepage___id',
+  homepage___goals___homepage___children = 'homepage___goals___homepage___children',
+  homepage___goals___homepage___page = 'homepage___goals___homepage___page',
+  homepage___goals___homepage___goals = 'homepage___goals___homepage___goals',
+  homepage___goals___homepage___spaceId = 'homepage___goals___homepage___spaceId',
+  homepage___goals___homepage___contentful_id = 'homepage___goals___homepage___contentful_id',
+  homepage___goals___homepage___createdAt = 'homepage___goals___homepage___createdAt',
+  homepage___goals___homepage___updatedAt = 'homepage___goals___homepage___updatedAt',
+  homepage___goals___homepage___node_locale = 'homepage___goals___homepage___node_locale',
+  homepage___goals___spaceId = 'homepage___goals___spaceId',
+  homepage___goals___contentful_id = 'homepage___goals___contentful_id',
+  homepage___goals___createdAt = 'homepage___goals___createdAt',
+  homepage___goals___updatedAt = 'homepage___goals___updatedAt',
+  homepage___goals___sys___revision = 'homepage___goals___sys___revision',
+  homepage___goals___node_locale = 'homepage___goals___node_locale',
+  homepage___spaceId = 'homepage___spaceId',
+  homepage___contentful_id = 'homepage___contentful_id',
+  homepage___createdAt = 'homepage___createdAt',
+  homepage___updatedAt = 'homepage___updatedAt',
+  homepage___sys___revision = 'homepage___sys___revision',
+  homepage___node_locale = 'homepage___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -3241,11 +3474,12 @@ export type ContentfulGoalFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
-  home_page?: Maybe<ContentfulHomePageFilterListInput>;
+  homepage?: Maybe<ContentfulHomePageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulGoalSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3268,6 +3502,41 @@ export type ContentfulGoalSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulGoalSys = {
+  __typename?: 'ContentfulGoalSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulGoalSysContentType>;
+};
+
+export type ContentfulGoalSysContentType = {
+  __typename?: 'ContentfulGoalSysContentType';
+  sys?: Maybe<ContentfulGoalSysContentTypeSys>;
+};
+
+export type ContentfulGoalSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulGoalSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulGoalSysContentTypeSys = {
+  __typename?: 'ContentfulGoalSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulGoalSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulGoalSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulGoalSysContentTypeFilterInput>;
+};
+
 export type ContentfulHomePage = Node & {
   __typename?: 'ContentfulHomePage';
   id: Scalars['ID'];
@@ -3280,6 +3549,7 @@ export type ContentfulHomePage = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulHomePageSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -3513,46 +3783,53 @@ export enum ContentfulHomePageFieldsEnum {
   goals___image___resize___width = 'goals___image___resize___width',
   goals___image___resize___height = 'goals___image___resize___height',
   goals___image___resize___aspectRatio = 'goals___image___resize___aspectRatio',
-  goals___home_page = 'goals___home_page',
-  goals___home_page___id = 'goals___home_page___id',
-  goals___home_page___parent___id = 'goals___home_page___parent___id',
-  goals___home_page___parent___children = 'goals___home_page___parent___children',
-  goals___home_page___children = 'goals___home_page___children',
-  goals___home_page___children___id = 'goals___home_page___children___id',
-  goals___home_page___children___children = 'goals___home_page___children___children',
-  goals___home_page___internal___content = 'goals___home_page___internal___content',
-  goals___home_page___internal___contentDigest = 'goals___home_page___internal___contentDigest',
-  goals___home_page___internal___description = 'goals___home_page___internal___description',
-  goals___home_page___internal___fieldOwners = 'goals___home_page___internal___fieldOwners',
-  goals___home_page___internal___ignoreType = 'goals___home_page___internal___ignoreType',
-  goals___home_page___internal___mediaType = 'goals___home_page___internal___mediaType',
-  goals___home_page___internal___owner = 'goals___home_page___internal___owner',
-  goals___home_page___internal___type = 'goals___home_page___internal___type',
-  goals___home_page___page = 'goals___home_page___page',
-  goals___home_page___goals = 'goals___home_page___goals',
-  goals___home_page___goals___id = 'goals___home_page___goals___id',
-  goals___home_page___goals___children = 'goals___home_page___goals___children',
-  goals___home_page___goals___title = 'goals___home_page___goals___title',
-  goals___home_page___goals___home_page = 'goals___home_page___goals___home_page',
-  goals___home_page___goals___spaceId = 'goals___home_page___goals___spaceId',
-  goals___home_page___goals___contentful_id = 'goals___home_page___goals___contentful_id',
-  goals___home_page___goals___createdAt = 'goals___home_page___goals___createdAt',
-  goals___home_page___goals___updatedAt = 'goals___home_page___goals___updatedAt',
-  goals___home_page___goals___node_locale = 'goals___home_page___goals___node_locale',
-  goals___home_page___spaceId = 'goals___home_page___spaceId',
-  goals___home_page___contentful_id = 'goals___home_page___contentful_id',
-  goals___home_page___createdAt = 'goals___home_page___createdAt',
-  goals___home_page___updatedAt = 'goals___home_page___updatedAt',
-  goals___home_page___node_locale = 'goals___home_page___node_locale',
+  goals___homepage = 'goals___homepage',
+  goals___homepage___id = 'goals___homepage___id',
+  goals___homepage___parent___id = 'goals___homepage___parent___id',
+  goals___homepage___parent___children = 'goals___homepage___parent___children',
+  goals___homepage___children = 'goals___homepage___children',
+  goals___homepage___children___id = 'goals___homepage___children___id',
+  goals___homepage___children___children = 'goals___homepage___children___children',
+  goals___homepage___internal___content = 'goals___homepage___internal___content',
+  goals___homepage___internal___contentDigest = 'goals___homepage___internal___contentDigest',
+  goals___homepage___internal___description = 'goals___homepage___internal___description',
+  goals___homepage___internal___fieldOwners = 'goals___homepage___internal___fieldOwners',
+  goals___homepage___internal___ignoreType = 'goals___homepage___internal___ignoreType',
+  goals___homepage___internal___mediaType = 'goals___homepage___internal___mediaType',
+  goals___homepage___internal___owner = 'goals___homepage___internal___owner',
+  goals___homepage___internal___type = 'goals___homepage___internal___type',
+  goals___homepage___page = 'goals___homepage___page',
+  goals___homepage___goals = 'goals___homepage___goals',
+  goals___homepage___goals___id = 'goals___homepage___goals___id',
+  goals___homepage___goals___children = 'goals___homepage___goals___children',
+  goals___homepage___goals___title = 'goals___homepage___goals___title',
+  goals___homepage___goals___homepage = 'goals___homepage___goals___homepage',
+  goals___homepage___goals___spaceId = 'goals___homepage___goals___spaceId',
+  goals___homepage___goals___contentful_id = 'goals___homepage___goals___contentful_id',
+  goals___homepage___goals___createdAt = 'goals___homepage___goals___createdAt',
+  goals___homepage___goals___updatedAt = 'goals___homepage___goals___updatedAt',
+  goals___homepage___goals___node_locale = 'goals___homepage___goals___node_locale',
+  goals___homepage___spaceId = 'goals___homepage___spaceId',
+  goals___homepage___contentful_id = 'goals___homepage___contentful_id',
+  goals___homepage___createdAt = 'goals___homepage___createdAt',
+  goals___homepage___updatedAt = 'goals___homepage___updatedAt',
+  goals___homepage___sys___revision = 'goals___homepage___sys___revision',
+  goals___homepage___node_locale = 'goals___homepage___node_locale',
   goals___spaceId = 'goals___spaceId',
   goals___contentful_id = 'goals___contentful_id',
   goals___createdAt = 'goals___createdAt',
   goals___updatedAt = 'goals___updatedAt',
+  goals___sys___revision = 'goals___sys___revision',
   goals___node_locale = 'goals___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -3567,6 +3844,7 @@ export type ContentfulHomePageFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulHomePageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3587,6 +3865,41 @@ export type ContentfulHomePageGroupConnection = {
 export type ContentfulHomePageSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulHomePageFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulHomePageSys = {
+  __typename?: 'ContentfulHomePageSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulHomePageSysContentType>;
+};
+
+export type ContentfulHomePageSysContentType = {
+  __typename?: 'ContentfulHomePageSysContentType';
+  sys?: Maybe<ContentfulHomePageSysContentTypeSys>;
+};
+
+export type ContentfulHomePageSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulHomePageSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulHomePageSysContentTypeSys = {
+  __typename?: 'ContentfulHomePageSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulHomePageSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulHomePageSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulHomePageSysContentTypeFilterInput>;
 };
 
 export enum ContentfulImageCropFocus {
@@ -3620,15 +3933,16 @@ export type ContentfulMember = Node & {
   email?: Maybe<Scalars['String']>;
   phoneNumber?: Maybe<Scalars['String']>;
   photo?: Maybe<ContentfulAsset>;
+  avatar?: Maybe<ContentfulAsset>;
   article?: Maybe<Array<Maybe<ContentfulArticle>>>;
-  about_page?: Maybe<Array<Maybe<ContentfulAboutPage>>>;
+  aboutpage?: Maybe<Array<Maybe<ContentfulAboutPage>>>;
   description?: Maybe<ContentfulMemberDescriptionTextNode>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulMemberSys>;
   node_locale?: Maybe<Scalars['String']>;
-  avatar?: Maybe<ContentfulAsset>;
   childContentfulMemberDescriptionTextNode?: Maybe<
     ContentfulMemberDescriptionTextNode
   >;
@@ -4054,364 +4368,6 @@ export enum ContentfulMemberFieldsEnum {
   photo___resize___width = 'photo___resize___width',
   photo___resize___height = 'photo___resize___height',
   photo___resize___aspectRatio = 'photo___resize___aspectRatio',
-  article = 'article',
-  article___id = 'article___id',
-  article___parent___id = 'article___parent___id',
-  article___parent___parent___id = 'article___parent___parent___id',
-  article___parent___parent___children = 'article___parent___parent___children',
-  article___parent___children = 'article___parent___children',
-  article___parent___children___id = 'article___parent___children___id',
-  article___parent___children___children = 'article___parent___children___children',
-  article___parent___internal___content = 'article___parent___internal___content',
-  article___parent___internal___contentDigest = 'article___parent___internal___contentDigest',
-  article___parent___internal___description = 'article___parent___internal___description',
-  article___parent___internal___fieldOwners = 'article___parent___internal___fieldOwners',
-  article___parent___internal___ignoreType = 'article___parent___internal___ignoreType',
-  article___parent___internal___mediaType = 'article___parent___internal___mediaType',
-  article___parent___internal___owner = 'article___parent___internal___owner',
-  article___parent___internal___type = 'article___parent___internal___type',
-  article___children = 'article___children',
-  article___children___id = 'article___children___id',
-  article___children___parent___id = 'article___children___parent___id',
-  article___children___parent___children = 'article___children___parent___children',
-  article___children___children = 'article___children___children',
-  article___children___children___id = 'article___children___children___id',
-  article___children___children___children = 'article___children___children___children',
-  article___children___internal___content = 'article___children___internal___content',
-  article___children___internal___contentDigest = 'article___children___internal___contentDigest',
-  article___children___internal___description = 'article___children___internal___description',
-  article___children___internal___fieldOwners = 'article___children___internal___fieldOwners',
-  article___children___internal___ignoreType = 'article___children___internal___ignoreType',
-  article___children___internal___mediaType = 'article___children___internal___mediaType',
-  article___children___internal___owner = 'article___children___internal___owner',
-  article___children___internal___type = 'article___children___internal___type',
-  article___internal___content = 'article___internal___content',
-  article___internal___contentDigest = 'article___internal___contentDigest',
-  article___internal___description = 'article___internal___description',
-  article___internal___fieldOwners = 'article___internal___fieldOwners',
-  article___internal___ignoreType = 'article___internal___ignoreType',
-  article___internal___mediaType = 'article___internal___mediaType',
-  article___internal___owner = 'article___internal___owner',
-  article___internal___type = 'article___internal___type',
-  article___title = 'article___title',
-  article___slug = 'article___slug',
-  article___date = 'article___date',
-  article___category___id = 'article___category___id',
-  article___category___parent___id = 'article___category___parent___id',
-  article___category___parent___children = 'article___category___parent___children',
-  article___category___children = 'article___category___children',
-  article___category___children___id = 'article___category___children___id',
-  article___category___children___children = 'article___category___children___children',
-  article___category___internal___content = 'article___category___internal___content',
-  article___category___internal___contentDigest = 'article___category___internal___contentDigest',
-  article___category___internal___description = 'article___category___internal___description',
-  article___category___internal___fieldOwners = 'article___category___internal___fieldOwners',
-  article___category___internal___ignoreType = 'article___category___internal___ignoreType',
-  article___category___internal___mediaType = 'article___category___internal___mediaType',
-  article___category___internal___owner = 'article___category___internal___owner',
-  article___category___internal___type = 'article___category___internal___type',
-  article___category___title = 'article___category___title',
-  article___category___image___id = 'article___category___image___id',
-  article___category___image___children = 'article___category___image___children',
-  article___category___image___contentful_id = 'article___category___image___contentful_id',
-  article___category___image___title = 'article___category___image___title',
-  article___category___image___description = 'article___category___image___description',
-  article___category___image___node_locale = 'article___category___image___node_locale',
-  article___category___article = 'article___category___article',
-  article___category___article___id = 'article___category___article___id',
-  article___category___article___children = 'article___category___article___children',
-  article___category___article___title = 'article___category___article___title',
-  article___category___article___slug = 'article___category___article___slug',
-  article___category___article___date = 'article___category___article___date',
-  article___category___article___spaceId = 'article___category___article___spaceId',
-  article___category___article___contentful_id = 'article___category___article___contentful_id',
-  article___category___article___createdAt = 'article___category___article___createdAt',
-  article___category___article___updatedAt = 'article___category___article___updatedAt',
-  article___category___article___node_locale = 'article___category___article___node_locale',
-  article___category___spaceId = 'article___category___spaceId',
-  article___category___contentful_id = 'article___category___contentful_id',
-  article___category___createdAt = 'article___category___createdAt',
-  article___category___updatedAt = 'article___category___updatedAt',
-  article___category___node_locale = 'article___category___node_locale',
-  article___author___id = 'article___author___id',
-  article___author___parent___id = 'article___author___parent___id',
-  article___author___parent___children = 'article___author___parent___children',
-  article___author___children = 'article___author___children',
-  article___author___children___id = 'article___author___children___id',
-  article___author___children___children = 'article___author___children___children',
-  article___author___internal___content = 'article___author___internal___content',
-  article___author___internal___contentDigest = 'article___author___internal___contentDigest',
-  article___author___internal___description = 'article___author___internal___description',
-  article___author___internal___fieldOwners = 'article___author___internal___fieldOwners',
-  article___author___internal___ignoreType = 'article___author___internal___ignoreType',
-  article___author___internal___mediaType = 'article___author___internal___mediaType',
-  article___author___internal___owner = 'article___author___internal___owner',
-  article___author___internal___type = 'article___author___internal___type',
-  article___author___name = 'article___author___name',
-  article___author___email = 'article___author___email',
-  article___author___phoneNumber = 'article___author___phoneNumber',
-  article___author___photo___id = 'article___author___photo___id',
-  article___author___photo___children = 'article___author___photo___children',
-  article___author___photo___contentful_id = 'article___author___photo___contentful_id',
-  article___author___photo___title = 'article___author___photo___title',
-  article___author___photo___description = 'article___author___photo___description',
-  article___author___photo___node_locale = 'article___author___photo___node_locale',
-  article___author___article = 'article___author___article',
-  article___author___article___id = 'article___author___article___id',
-  article___author___article___children = 'article___author___article___children',
-  article___author___article___title = 'article___author___article___title',
-  article___author___article___slug = 'article___author___article___slug',
-  article___author___article___date = 'article___author___article___date',
-  article___author___article___spaceId = 'article___author___article___spaceId',
-  article___author___article___contentful_id = 'article___author___article___contentful_id',
-  article___author___article___createdAt = 'article___author___article___createdAt',
-  article___author___article___updatedAt = 'article___author___article___updatedAt',
-  article___author___article___node_locale = 'article___author___article___node_locale',
-  article___author___about_page = 'article___author___about_page',
-  article___author___about_page___id = 'article___author___about_page___id',
-  article___author___about_page___children = 'article___author___about_page___children',
-  article___author___about_page___page = 'article___author___about_page___page',
-  article___author___about_page___teamMembers = 'article___author___about_page___teamMembers',
-  article___author___about_page___spaceId = 'article___author___about_page___spaceId',
-  article___author___about_page___contentful_id = 'article___author___about_page___contentful_id',
-  article___author___about_page___createdAt = 'article___author___about_page___createdAt',
-  article___author___about_page___updatedAt = 'article___author___about_page___updatedAt',
-  article___author___about_page___node_locale = 'article___author___about_page___node_locale',
-  article___author___description___id = 'article___author___description___id',
-  article___author___description___children = 'article___author___description___children',
-  article___author___description___description = 'article___author___description___description',
-  article___author___spaceId = 'article___author___spaceId',
-  article___author___contentful_id = 'article___author___contentful_id',
-  article___author___createdAt = 'article___author___createdAt',
-  article___author___updatedAt = 'article___author___updatedAt',
-  article___author___node_locale = 'article___author___node_locale',
-  article___author___avatar___id = 'article___author___avatar___id',
-  article___author___avatar___children = 'article___author___avatar___children',
-  article___author___avatar___contentful_id = 'article___author___avatar___contentful_id',
-  article___author___avatar___title = 'article___author___avatar___title',
-  article___author___avatar___description = 'article___author___avatar___description',
-  article___author___avatar___node_locale = 'article___author___avatar___node_locale',
-  article___author___childContentfulMemberDescriptionTextNode___id = 'article___author___childContentfulMemberDescriptionTextNode___id',
-  article___author___childContentfulMemberDescriptionTextNode___children = 'article___author___childContentfulMemberDescriptionTextNode___children',
-  article___author___childContentfulMemberDescriptionTextNode___description = 'article___author___childContentfulMemberDescriptionTextNode___description',
-  article___content___id = 'article___content___id',
-  article___content___parent___id = 'article___content___parent___id',
-  article___content___parent___children = 'article___content___parent___children',
-  article___content___children = 'article___content___children',
-  article___content___children___id = 'article___content___children___id',
-  article___content___children___children = 'article___content___children___children',
-  article___content___internal___content = 'article___content___internal___content',
-  article___content___internal___contentDigest = 'article___content___internal___contentDigest',
-  article___content___internal___description = 'article___content___internal___description',
-  article___content___internal___fieldOwners = 'article___content___internal___fieldOwners',
-  article___content___internal___ignoreType = 'article___content___internal___ignoreType',
-  article___content___internal___mediaType = 'article___content___internal___mediaType',
-  article___content___internal___owner = 'article___content___internal___owner',
-  article___content___internal___type = 'article___content___internal___type',
-  article___content___content = 'article___content___content',
-  article___content___nodeType = 'article___content___nodeType',
-  article___content___json = 'article___content___json',
-  article___spaceId = 'article___spaceId',
-  article___contentful_id = 'article___contentful_id',
-  article___createdAt = 'article___createdAt',
-  article___updatedAt = 'article___updatedAt',
-  article___node_locale = 'article___node_locale',
-  article___childContentfulArticleContentRichTextNode___id = 'article___childContentfulArticleContentRichTextNode___id',
-  article___childContentfulArticleContentRichTextNode___parent___id = 'article___childContentfulArticleContentRichTextNode___parent___id',
-  article___childContentfulArticleContentRichTextNode___parent___children = 'article___childContentfulArticleContentRichTextNode___parent___children',
-  article___childContentfulArticleContentRichTextNode___children = 'article___childContentfulArticleContentRichTextNode___children',
-  article___childContentfulArticleContentRichTextNode___children___id = 'article___childContentfulArticleContentRichTextNode___children___id',
-  article___childContentfulArticleContentRichTextNode___children___children = 'article___childContentfulArticleContentRichTextNode___children___children',
-  article___childContentfulArticleContentRichTextNode___internal___content = 'article___childContentfulArticleContentRichTextNode___internal___content',
-  article___childContentfulArticleContentRichTextNode___internal___contentDigest = 'article___childContentfulArticleContentRichTextNode___internal___contentDigest',
-  article___childContentfulArticleContentRichTextNode___internal___description = 'article___childContentfulArticleContentRichTextNode___internal___description',
-  article___childContentfulArticleContentRichTextNode___internal___fieldOwners = 'article___childContentfulArticleContentRichTextNode___internal___fieldOwners',
-  article___childContentfulArticleContentRichTextNode___internal___ignoreType = 'article___childContentfulArticleContentRichTextNode___internal___ignoreType',
-  article___childContentfulArticleContentRichTextNode___internal___mediaType = 'article___childContentfulArticleContentRichTextNode___internal___mediaType',
-  article___childContentfulArticleContentRichTextNode___internal___owner = 'article___childContentfulArticleContentRichTextNode___internal___owner',
-  article___childContentfulArticleContentRichTextNode___internal___type = 'article___childContentfulArticleContentRichTextNode___internal___type',
-  article___childContentfulArticleContentRichTextNode___content = 'article___childContentfulArticleContentRichTextNode___content',
-  article___childContentfulArticleContentRichTextNode___nodeType = 'article___childContentfulArticleContentRichTextNode___nodeType',
-  article___childContentfulArticleContentRichTextNode___json = 'article___childContentfulArticleContentRichTextNode___json',
-  about_page = 'about_page',
-  about_page___id = 'about_page___id',
-  about_page___parent___id = 'about_page___parent___id',
-  about_page___parent___parent___id = 'about_page___parent___parent___id',
-  about_page___parent___parent___children = 'about_page___parent___parent___children',
-  about_page___parent___children = 'about_page___parent___children',
-  about_page___parent___children___id = 'about_page___parent___children___id',
-  about_page___parent___children___children = 'about_page___parent___children___children',
-  about_page___parent___internal___content = 'about_page___parent___internal___content',
-  about_page___parent___internal___contentDigest = 'about_page___parent___internal___contentDigest',
-  about_page___parent___internal___description = 'about_page___parent___internal___description',
-  about_page___parent___internal___fieldOwners = 'about_page___parent___internal___fieldOwners',
-  about_page___parent___internal___ignoreType = 'about_page___parent___internal___ignoreType',
-  about_page___parent___internal___mediaType = 'about_page___parent___internal___mediaType',
-  about_page___parent___internal___owner = 'about_page___parent___internal___owner',
-  about_page___parent___internal___type = 'about_page___parent___internal___type',
-  about_page___children = 'about_page___children',
-  about_page___children___id = 'about_page___children___id',
-  about_page___children___parent___id = 'about_page___children___parent___id',
-  about_page___children___parent___children = 'about_page___children___parent___children',
-  about_page___children___children = 'about_page___children___children',
-  about_page___children___children___id = 'about_page___children___children___id',
-  about_page___children___children___children = 'about_page___children___children___children',
-  about_page___children___internal___content = 'about_page___children___internal___content',
-  about_page___children___internal___contentDigest = 'about_page___children___internal___contentDigest',
-  about_page___children___internal___description = 'about_page___children___internal___description',
-  about_page___children___internal___fieldOwners = 'about_page___children___internal___fieldOwners',
-  about_page___children___internal___ignoreType = 'about_page___children___internal___ignoreType',
-  about_page___children___internal___mediaType = 'about_page___children___internal___mediaType',
-  about_page___children___internal___owner = 'about_page___children___internal___owner',
-  about_page___children___internal___type = 'about_page___children___internal___type',
-  about_page___internal___content = 'about_page___internal___content',
-  about_page___internal___contentDigest = 'about_page___internal___contentDigest',
-  about_page___internal___description = 'about_page___internal___description',
-  about_page___internal___fieldOwners = 'about_page___internal___fieldOwners',
-  about_page___internal___ignoreType = 'about_page___internal___ignoreType',
-  about_page___internal___mediaType = 'about_page___internal___mediaType',
-  about_page___internal___owner = 'about_page___internal___owner',
-  about_page___internal___type = 'about_page___internal___type',
-  about_page___page = 'about_page___page',
-  about_page___teamMembers = 'about_page___teamMembers',
-  about_page___teamMembers___id = 'about_page___teamMembers___id',
-  about_page___teamMembers___parent___id = 'about_page___teamMembers___parent___id',
-  about_page___teamMembers___parent___children = 'about_page___teamMembers___parent___children',
-  about_page___teamMembers___children = 'about_page___teamMembers___children',
-  about_page___teamMembers___children___id = 'about_page___teamMembers___children___id',
-  about_page___teamMembers___children___children = 'about_page___teamMembers___children___children',
-  about_page___teamMembers___internal___content = 'about_page___teamMembers___internal___content',
-  about_page___teamMembers___internal___contentDigest = 'about_page___teamMembers___internal___contentDigest',
-  about_page___teamMembers___internal___description = 'about_page___teamMembers___internal___description',
-  about_page___teamMembers___internal___fieldOwners = 'about_page___teamMembers___internal___fieldOwners',
-  about_page___teamMembers___internal___ignoreType = 'about_page___teamMembers___internal___ignoreType',
-  about_page___teamMembers___internal___mediaType = 'about_page___teamMembers___internal___mediaType',
-  about_page___teamMembers___internal___owner = 'about_page___teamMembers___internal___owner',
-  about_page___teamMembers___internal___type = 'about_page___teamMembers___internal___type',
-  about_page___teamMembers___name = 'about_page___teamMembers___name',
-  about_page___teamMembers___email = 'about_page___teamMembers___email',
-  about_page___teamMembers___phoneNumber = 'about_page___teamMembers___phoneNumber',
-  about_page___teamMembers___photo___id = 'about_page___teamMembers___photo___id',
-  about_page___teamMembers___photo___children = 'about_page___teamMembers___photo___children',
-  about_page___teamMembers___photo___contentful_id = 'about_page___teamMembers___photo___contentful_id',
-  about_page___teamMembers___photo___title = 'about_page___teamMembers___photo___title',
-  about_page___teamMembers___photo___description = 'about_page___teamMembers___photo___description',
-  about_page___teamMembers___photo___node_locale = 'about_page___teamMembers___photo___node_locale',
-  about_page___teamMembers___article = 'about_page___teamMembers___article',
-  about_page___teamMembers___article___id = 'about_page___teamMembers___article___id',
-  about_page___teamMembers___article___children = 'about_page___teamMembers___article___children',
-  about_page___teamMembers___article___title = 'about_page___teamMembers___article___title',
-  about_page___teamMembers___article___slug = 'about_page___teamMembers___article___slug',
-  about_page___teamMembers___article___date = 'about_page___teamMembers___article___date',
-  about_page___teamMembers___article___spaceId = 'about_page___teamMembers___article___spaceId',
-  about_page___teamMembers___article___contentful_id = 'about_page___teamMembers___article___contentful_id',
-  about_page___teamMembers___article___createdAt = 'about_page___teamMembers___article___createdAt',
-  about_page___teamMembers___article___updatedAt = 'about_page___teamMembers___article___updatedAt',
-  about_page___teamMembers___article___node_locale = 'about_page___teamMembers___article___node_locale',
-  about_page___teamMembers___about_page = 'about_page___teamMembers___about_page',
-  about_page___teamMembers___about_page___id = 'about_page___teamMembers___about_page___id',
-  about_page___teamMembers___about_page___children = 'about_page___teamMembers___about_page___children',
-  about_page___teamMembers___about_page___page = 'about_page___teamMembers___about_page___page',
-  about_page___teamMembers___about_page___teamMembers = 'about_page___teamMembers___about_page___teamMembers',
-  about_page___teamMembers___about_page___spaceId = 'about_page___teamMembers___about_page___spaceId',
-  about_page___teamMembers___about_page___contentful_id = 'about_page___teamMembers___about_page___contentful_id',
-  about_page___teamMembers___about_page___createdAt = 'about_page___teamMembers___about_page___createdAt',
-  about_page___teamMembers___about_page___updatedAt = 'about_page___teamMembers___about_page___updatedAt',
-  about_page___teamMembers___about_page___node_locale = 'about_page___teamMembers___about_page___node_locale',
-  about_page___teamMembers___description___id = 'about_page___teamMembers___description___id',
-  about_page___teamMembers___description___children = 'about_page___teamMembers___description___children',
-  about_page___teamMembers___description___description = 'about_page___teamMembers___description___description',
-  about_page___teamMembers___spaceId = 'about_page___teamMembers___spaceId',
-  about_page___teamMembers___contentful_id = 'about_page___teamMembers___contentful_id',
-  about_page___teamMembers___createdAt = 'about_page___teamMembers___createdAt',
-  about_page___teamMembers___updatedAt = 'about_page___teamMembers___updatedAt',
-  about_page___teamMembers___node_locale = 'about_page___teamMembers___node_locale',
-  about_page___teamMembers___avatar___id = 'about_page___teamMembers___avatar___id',
-  about_page___teamMembers___avatar___children = 'about_page___teamMembers___avatar___children',
-  about_page___teamMembers___avatar___contentful_id = 'about_page___teamMembers___avatar___contentful_id',
-  about_page___teamMembers___avatar___title = 'about_page___teamMembers___avatar___title',
-  about_page___teamMembers___avatar___description = 'about_page___teamMembers___avatar___description',
-  about_page___teamMembers___avatar___node_locale = 'about_page___teamMembers___avatar___node_locale',
-  about_page___teamMembers___childContentfulMemberDescriptionTextNode___id = 'about_page___teamMembers___childContentfulMemberDescriptionTextNode___id',
-  about_page___teamMembers___childContentfulMemberDescriptionTextNode___children = 'about_page___teamMembers___childContentfulMemberDescriptionTextNode___children',
-  about_page___teamMembers___childContentfulMemberDescriptionTextNode___description = 'about_page___teamMembers___childContentfulMemberDescriptionTextNode___description',
-  about_page___spaceId = 'about_page___spaceId',
-  about_page___contentful_id = 'about_page___contentful_id',
-  about_page___createdAt = 'about_page___createdAt',
-  about_page___updatedAt = 'about_page___updatedAt',
-  about_page___node_locale = 'about_page___node_locale',
-  description___id = 'description___id',
-  description___parent___id = 'description___parent___id',
-  description___parent___parent___id = 'description___parent___parent___id',
-  description___parent___parent___children = 'description___parent___parent___children',
-  description___parent___children = 'description___parent___children',
-  description___parent___children___id = 'description___parent___children___id',
-  description___parent___children___children = 'description___parent___children___children',
-  description___parent___internal___content = 'description___parent___internal___content',
-  description___parent___internal___contentDigest = 'description___parent___internal___contentDigest',
-  description___parent___internal___description = 'description___parent___internal___description',
-  description___parent___internal___fieldOwners = 'description___parent___internal___fieldOwners',
-  description___parent___internal___ignoreType = 'description___parent___internal___ignoreType',
-  description___parent___internal___mediaType = 'description___parent___internal___mediaType',
-  description___parent___internal___owner = 'description___parent___internal___owner',
-  description___parent___internal___type = 'description___parent___internal___type',
-  description___children = 'description___children',
-  description___children___id = 'description___children___id',
-  description___children___parent___id = 'description___children___parent___id',
-  description___children___parent___children = 'description___children___parent___children',
-  description___children___children = 'description___children___children',
-  description___children___children___id = 'description___children___children___id',
-  description___children___children___children = 'description___children___children___children',
-  description___children___internal___content = 'description___children___internal___content',
-  description___children___internal___contentDigest = 'description___children___internal___contentDigest',
-  description___children___internal___description = 'description___children___internal___description',
-  description___children___internal___fieldOwners = 'description___children___internal___fieldOwners',
-  description___children___internal___ignoreType = 'description___children___internal___ignoreType',
-  description___children___internal___mediaType = 'description___children___internal___mediaType',
-  description___children___internal___owner = 'description___children___internal___owner',
-  description___children___internal___type = 'description___children___internal___type',
-  description___internal___content = 'description___internal___content',
-  description___internal___contentDigest = 'description___internal___contentDigest',
-  description___internal___description = 'description___internal___description',
-  description___internal___fieldOwners = 'description___internal___fieldOwners',
-  description___internal___ignoreType = 'description___internal___ignoreType',
-  description___internal___mediaType = 'description___internal___mediaType',
-  description___internal___owner = 'description___internal___owner',
-  description___internal___type = 'description___internal___type',
-  description___description = 'description___description',
-  description___childMarkdownRemark___id = 'description___childMarkdownRemark___id',
-  description___childMarkdownRemark___frontmatter___title = 'description___childMarkdownRemark___frontmatter___title',
-  description___childMarkdownRemark___excerpt = 'description___childMarkdownRemark___excerpt',
-  description___childMarkdownRemark___rawMarkdownBody = 'description___childMarkdownRemark___rawMarkdownBody',
-  description___childMarkdownRemark___html = 'description___childMarkdownRemark___html',
-  description___childMarkdownRemark___htmlAst = 'description___childMarkdownRemark___htmlAst',
-  description___childMarkdownRemark___excerptAst = 'description___childMarkdownRemark___excerptAst',
-  description___childMarkdownRemark___headings = 'description___childMarkdownRemark___headings',
-  description___childMarkdownRemark___headings___value = 'description___childMarkdownRemark___headings___value',
-  description___childMarkdownRemark___headings___depth = 'description___childMarkdownRemark___headings___depth',
-  description___childMarkdownRemark___timeToRead = 'description___childMarkdownRemark___timeToRead',
-  description___childMarkdownRemark___tableOfContents = 'description___childMarkdownRemark___tableOfContents',
-  description___childMarkdownRemark___wordCount___paragraphs = 'description___childMarkdownRemark___wordCount___paragraphs',
-  description___childMarkdownRemark___wordCount___sentences = 'description___childMarkdownRemark___wordCount___sentences',
-  description___childMarkdownRemark___wordCount___words = 'description___childMarkdownRemark___wordCount___words',
-  description___childMarkdownRemark___parent___id = 'description___childMarkdownRemark___parent___id',
-  description___childMarkdownRemark___parent___children = 'description___childMarkdownRemark___parent___children',
-  description___childMarkdownRemark___children = 'description___childMarkdownRemark___children',
-  description___childMarkdownRemark___children___id = 'description___childMarkdownRemark___children___id',
-  description___childMarkdownRemark___children___children = 'description___childMarkdownRemark___children___children',
-  description___childMarkdownRemark___internal___content = 'description___childMarkdownRemark___internal___content',
-  description___childMarkdownRemark___internal___contentDigest = 'description___childMarkdownRemark___internal___contentDigest',
-  description___childMarkdownRemark___internal___description = 'description___childMarkdownRemark___internal___description',
-  description___childMarkdownRemark___internal___fieldOwners = 'description___childMarkdownRemark___internal___fieldOwners',
-  description___childMarkdownRemark___internal___ignoreType = 'description___childMarkdownRemark___internal___ignoreType',
-  description___childMarkdownRemark___internal___mediaType = 'description___childMarkdownRemark___internal___mediaType',
-  description___childMarkdownRemark___internal___owner = 'description___childMarkdownRemark___internal___owner',
-  description___childMarkdownRemark___internal___type = 'description___childMarkdownRemark___internal___type',
-  spaceId = 'spaceId',
-  contentful_id = 'contentful_id',
-  createdAt = 'createdAt',
-  updatedAt = 'updatedAt',
-  node_locale = 'node_locale',
   avatar___id = 'avatar___id',
   avatar___parent___id = 'avatar___parent___id',
   avatar___parent___parent___id = 'avatar___parent___parent___id',
@@ -4498,6 +4454,374 @@ export enum ContentfulMemberFieldsEnum {
   avatar___resize___width = 'avatar___resize___width',
   avatar___resize___height = 'avatar___resize___height',
   avatar___resize___aspectRatio = 'avatar___resize___aspectRatio',
+  article = 'article',
+  article___id = 'article___id',
+  article___parent___id = 'article___parent___id',
+  article___parent___parent___id = 'article___parent___parent___id',
+  article___parent___parent___children = 'article___parent___parent___children',
+  article___parent___children = 'article___parent___children',
+  article___parent___children___id = 'article___parent___children___id',
+  article___parent___children___children = 'article___parent___children___children',
+  article___parent___internal___content = 'article___parent___internal___content',
+  article___parent___internal___contentDigest = 'article___parent___internal___contentDigest',
+  article___parent___internal___description = 'article___parent___internal___description',
+  article___parent___internal___fieldOwners = 'article___parent___internal___fieldOwners',
+  article___parent___internal___ignoreType = 'article___parent___internal___ignoreType',
+  article___parent___internal___mediaType = 'article___parent___internal___mediaType',
+  article___parent___internal___owner = 'article___parent___internal___owner',
+  article___parent___internal___type = 'article___parent___internal___type',
+  article___children = 'article___children',
+  article___children___id = 'article___children___id',
+  article___children___parent___id = 'article___children___parent___id',
+  article___children___parent___children = 'article___children___parent___children',
+  article___children___children = 'article___children___children',
+  article___children___children___id = 'article___children___children___id',
+  article___children___children___children = 'article___children___children___children',
+  article___children___internal___content = 'article___children___internal___content',
+  article___children___internal___contentDigest = 'article___children___internal___contentDigest',
+  article___children___internal___description = 'article___children___internal___description',
+  article___children___internal___fieldOwners = 'article___children___internal___fieldOwners',
+  article___children___internal___ignoreType = 'article___children___internal___ignoreType',
+  article___children___internal___mediaType = 'article___children___internal___mediaType',
+  article___children___internal___owner = 'article___children___internal___owner',
+  article___children___internal___type = 'article___children___internal___type',
+  article___internal___content = 'article___internal___content',
+  article___internal___contentDigest = 'article___internal___contentDigest',
+  article___internal___description = 'article___internal___description',
+  article___internal___fieldOwners = 'article___internal___fieldOwners',
+  article___internal___ignoreType = 'article___internal___ignoreType',
+  article___internal___mediaType = 'article___internal___mediaType',
+  article___internal___owner = 'article___internal___owner',
+  article___internal___type = 'article___internal___type',
+  article___title = 'article___title',
+  article___slug = 'article___slug',
+  article___date = 'article___date',
+  article___category___id = 'article___category___id',
+  article___category___parent___id = 'article___category___parent___id',
+  article___category___parent___children = 'article___category___parent___children',
+  article___category___children = 'article___category___children',
+  article___category___children___id = 'article___category___children___id',
+  article___category___children___children = 'article___category___children___children',
+  article___category___internal___content = 'article___category___internal___content',
+  article___category___internal___contentDigest = 'article___category___internal___contentDigest',
+  article___category___internal___description = 'article___category___internal___description',
+  article___category___internal___fieldOwners = 'article___category___internal___fieldOwners',
+  article___category___internal___ignoreType = 'article___category___internal___ignoreType',
+  article___category___internal___mediaType = 'article___category___internal___mediaType',
+  article___category___internal___owner = 'article___category___internal___owner',
+  article___category___internal___type = 'article___category___internal___type',
+  article___category___title = 'article___category___title',
+  article___category___image___id = 'article___category___image___id',
+  article___category___image___children = 'article___category___image___children',
+  article___category___image___contentful_id = 'article___category___image___contentful_id',
+  article___category___image___title = 'article___category___image___title',
+  article___category___image___description = 'article___category___image___description',
+  article___category___image___node_locale = 'article___category___image___node_locale',
+  article___category___article = 'article___category___article',
+  article___category___article___id = 'article___category___article___id',
+  article___category___article___children = 'article___category___article___children',
+  article___category___article___title = 'article___category___article___title',
+  article___category___article___slug = 'article___category___article___slug',
+  article___category___article___date = 'article___category___article___date',
+  article___category___article___spaceId = 'article___category___article___spaceId',
+  article___category___article___contentful_id = 'article___category___article___contentful_id',
+  article___category___article___createdAt = 'article___category___article___createdAt',
+  article___category___article___updatedAt = 'article___category___article___updatedAt',
+  article___category___article___node_locale = 'article___category___article___node_locale',
+  article___category___spaceId = 'article___category___spaceId',
+  article___category___contentful_id = 'article___category___contentful_id',
+  article___category___createdAt = 'article___category___createdAt',
+  article___category___updatedAt = 'article___category___updatedAt',
+  article___category___sys___revision = 'article___category___sys___revision',
+  article___category___node_locale = 'article___category___node_locale',
+  article___author___id = 'article___author___id',
+  article___author___parent___id = 'article___author___parent___id',
+  article___author___parent___children = 'article___author___parent___children',
+  article___author___children = 'article___author___children',
+  article___author___children___id = 'article___author___children___id',
+  article___author___children___children = 'article___author___children___children',
+  article___author___internal___content = 'article___author___internal___content',
+  article___author___internal___contentDigest = 'article___author___internal___contentDigest',
+  article___author___internal___description = 'article___author___internal___description',
+  article___author___internal___fieldOwners = 'article___author___internal___fieldOwners',
+  article___author___internal___ignoreType = 'article___author___internal___ignoreType',
+  article___author___internal___mediaType = 'article___author___internal___mediaType',
+  article___author___internal___owner = 'article___author___internal___owner',
+  article___author___internal___type = 'article___author___internal___type',
+  article___author___name = 'article___author___name',
+  article___author___email = 'article___author___email',
+  article___author___phoneNumber = 'article___author___phoneNumber',
+  article___author___photo___id = 'article___author___photo___id',
+  article___author___photo___children = 'article___author___photo___children',
+  article___author___photo___contentful_id = 'article___author___photo___contentful_id',
+  article___author___photo___title = 'article___author___photo___title',
+  article___author___photo___description = 'article___author___photo___description',
+  article___author___photo___node_locale = 'article___author___photo___node_locale',
+  article___author___avatar___id = 'article___author___avatar___id',
+  article___author___avatar___children = 'article___author___avatar___children',
+  article___author___avatar___contentful_id = 'article___author___avatar___contentful_id',
+  article___author___avatar___title = 'article___author___avatar___title',
+  article___author___avatar___description = 'article___author___avatar___description',
+  article___author___avatar___node_locale = 'article___author___avatar___node_locale',
+  article___author___article = 'article___author___article',
+  article___author___article___id = 'article___author___article___id',
+  article___author___article___children = 'article___author___article___children',
+  article___author___article___title = 'article___author___article___title',
+  article___author___article___slug = 'article___author___article___slug',
+  article___author___article___date = 'article___author___article___date',
+  article___author___article___spaceId = 'article___author___article___spaceId',
+  article___author___article___contentful_id = 'article___author___article___contentful_id',
+  article___author___article___createdAt = 'article___author___article___createdAt',
+  article___author___article___updatedAt = 'article___author___article___updatedAt',
+  article___author___article___node_locale = 'article___author___article___node_locale',
+  article___author___aboutpage = 'article___author___aboutpage',
+  article___author___aboutpage___id = 'article___author___aboutpage___id',
+  article___author___aboutpage___children = 'article___author___aboutpage___children',
+  article___author___aboutpage___page = 'article___author___aboutpage___page',
+  article___author___aboutpage___teamMembers = 'article___author___aboutpage___teamMembers',
+  article___author___aboutpage___spaceId = 'article___author___aboutpage___spaceId',
+  article___author___aboutpage___contentful_id = 'article___author___aboutpage___contentful_id',
+  article___author___aboutpage___createdAt = 'article___author___aboutpage___createdAt',
+  article___author___aboutpage___updatedAt = 'article___author___aboutpage___updatedAt',
+  article___author___aboutpage___node_locale = 'article___author___aboutpage___node_locale',
+  article___author___description___id = 'article___author___description___id',
+  article___author___description___children = 'article___author___description___children',
+  article___author___description___description = 'article___author___description___description',
+  article___author___spaceId = 'article___author___spaceId',
+  article___author___contentful_id = 'article___author___contentful_id',
+  article___author___createdAt = 'article___author___createdAt',
+  article___author___updatedAt = 'article___author___updatedAt',
+  article___author___sys___revision = 'article___author___sys___revision',
+  article___author___node_locale = 'article___author___node_locale',
+  article___author___childContentfulMemberDescriptionTextNode___id = 'article___author___childContentfulMemberDescriptionTextNode___id',
+  article___author___childContentfulMemberDescriptionTextNode___children = 'article___author___childContentfulMemberDescriptionTextNode___children',
+  article___author___childContentfulMemberDescriptionTextNode___description = 'article___author___childContentfulMemberDescriptionTextNode___description',
+  article___content___id = 'article___content___id',
+  article___content___parent___id = 'article___content___parent___id',
+  article___content___parent___children = 'article___content___parent___children',
+  article___content___children = 'article___content___children',
+  article___content___children___id = 'article___content___children___id',
+  article___content___children___children = 'article___content___children___children',
+  article___content___internal___content = 'article___content___internal___content',
+  article___content___internal___contentDigest = 'article___content___internal___contentDigest',
+  article___content___internal___description = 'article___content___internal___description',
+  article___content___internal___fieldOwners = 'article___content___internal___fieldOwners',
+  article___content___internal___ignoreType = 'article___content___internal___ignoreType',
+  article___content___internal___mediaType = 'article___content___internal___mediaType',
+  article___content___internal___owner = 'article___content___internal___owner',
+  article___content___internal___type = 'article___content___internal___type',
+  article___content___content = 'article___content___content',
+  article___content___nodeType = 'article___content___nodeType',
+  article___content___json = 'article___content___json',
+  article___spaceId = 'article___spaceId',
+  article___contentful_id = 'article___contentful_id',
+  article___createdAt = 'article___createdAt',
+  article___updatedAt = 'article___updatedAt',
+  article___sys___revision = 'article___sys___revision',
+  article___node_locale = 'article___node_locale',
+  article___childContentfulArticleContentRichTextNode___id = 'article___childContentfulArticleContentRichTextNode___id',
+  article___childContentfulArticleContentRichTextNode___parent___id = 'article___childContentfulArticleContentRichTextNode___parent___id',
+  article___childContentfulArticleContentRichTextNode___parent___children = 'article___childContentfulArticleContentRichTextNode___parent___children',
+  article___childContentfulArticleContentRichTextNode___children = 'article___childContentfulArticleContentRichTextNode___children',
+  article___childContentfulArticleContentRichTextNode___children___id = 'article___childContentfulArticleContentRichTextNode___children___id',
+  article___childContentfulArticleContentRichTextNode___children___children = 'article___childContentfulArticleContentRichTextNode___children___children',
+  article___childContentfulArticleContentRichTextNode___internal___content = 'article___childContentfulArticleContentRichTextNode___internal___content',
+  article___childContentfulArticleContentRichTextNode___internal___contentDigest = 'article___childContentfulArticleContentRichTextNode___internal___contentDigest',
+  article___childContentfulArticleContentRichTextNode___internal___description = 'article___childContentfulArticleContentRichTextNode___internal___description',
+  article___childContentfulArticleContentRichTextNode___internal___fieldOwners = 'article___childContentfulArticleContentRichTextNode___internal___fieldOwners',
+  article___childContentfulArticleContentRichTextNode___internal___ignoreType = 'article___childContentfulArticleContentRichTextNode___internal___ignoreType',
+  article___childContentfulArticleContentRichTextNode___internal___mediaType = 'article___childContentfulArticleContentRichTextNode___internal___mediaType',
+  article___childContentfulArticleContentRichTextNode___internal___owner = 'article___childContentfulArticleContentRichTextNode___internal___owner',
+  article___childContentfulArticleContentRichTextNode___internal___type = 'article___childContentfulArticleContentRichTextNode___internal___type',
+  article___childContentfulArticleContentRichTextNode___content = 'article___childContentfulArticleContentRichTextNode___content',
+  article___childContentfulArticleContentRichTextNode___nodeType = 'article___childContentfulArticleContentRichTextNode___nodeType',
+  article___childContentfulArticleContentRichTextNode___json = 'article___childContentfulArticleContentRichTextNode___json',
+  aboutpage = 'aboutpage',
+  aboutpage___id = 'aboutpage___id',
+  aboutpage___parent___id = 'aboutpage___parent___id',
+  aboutpage___parent___parent___id = 'aboutpage___parent___parent___id',
+  aboutpage___parent___parent___children = 'aboutpage___parent___parent___children',
+  aboutpage___parent___children = 'aboutpage___parent___children',
+  aboutpage___parent___children___id = 'aboutpage___parent___children___id',
+  aboutpage___parent___children___children = 'aboutpage___parent___children___children',
+  aboutpage___parent___internal___content = 'aboutpage___parent___internal___content',
+  aboutpage___parent___internal___contentDigest = 'aboutpage___parent___internal___contentDigest',
+  aboutpage___parent___internal___description = 'aboutpage___parent___internal___description',
+  aboutpage___parent___internal___fieldOwners = 'aboutpage___parent___internal___fieldOwners',
+  aboutpage___parent___internal___ignoreType = 'aboutpage___parent___internal___ignoreType',
+  aboutpage___parent___internal___mediaType = 'aboutpage___parent___internal___mediaType',
+  aboutpage___parent___internal___owner = 'aboutpage___parent___internal___owner',
+  aboutpage___parent___internal___type = 'aboutpage___parent___internal___type',
+  aboutpage___children = 'aboutpage___children',
+  aboutpage___children___id = 'aboutpage___children___id',
+  aboutpage___children___parent___id = 'aboutpage___children___parent___id',
+  aboutpage___children___parent___children = 'aboutpage___children___parent___children',
+  aboutpage___children___children = 'aboutpage___children___children',
+  aboutpage___children___children___id = 'aboutpage___children___children___id',
+  aboutpage___children___children___children = 'aboutpage___children___children___children',
+  aboutpage___children___internal___content = 'aboutpage___children___internal___content',
+  aboutpage___children___internal___contentDigest = 'aboutpage___children___internal___contentDigest',
+  aboutpage___children___internal___description = 'aboutpage___children___internal___description',
+  aboutpage___children___internal___fieldOwners = 'aboutpage___children___internal___fieldOwners',
+  aboutpage___children___internal___ignoreType = 'aboutpage___children___internal___ignoreType',
+  aboutpage___children___internal___mediaType = 'aboutpage___children___internal___mediaType',
+  aboutpage___children___internal___owner = 'aboutpage___children___internal___owner',
+  aboutpage___children___internal___type = 'aboutpage___children___internal___type',
+  aboutpage___internal___content = 'aboutpage___internal___content',
+  aboutpage___internal___contentDigest = 'aboutpage___internal___contentDigest',
+  aboutpage___internal___description = 'aboutpage___internal___description',
+  aboutpage___internal___fieldOwners = 'aboutpage___internal___fieldOwners',
+  aboutpage___internal___ignoreType = 'aboutpage___internal___ignoreType',
+  aboutpage___internal___mediaType = 'aboutpage___internal___mediaType',
+  aboutpage___internal___owner = 'aboutpage___internal___owner',
+  aboutpage___internal___type = 'aboutpage___internal___type',
+  aboutpage___page = 'aboutpage___page',
+  aboutpage___teamMembers = 'aboutpage___teamMembers',
+  aboutpage___teamMembers___id = 'aboutpage___teamMembers___id',
+  aboutpage___teamMembers___parent___id = 'aboutpage___teamMembers___parent___id',
+  aboutpage___teamMembers___parent___children = 'aboutpage___teamMembers___parent___children',
+  aboutpage___teamMembers___children = 'aboutpage___teamMembers___children',
+  aboutpage___teamMembers___children___id = 'aboutpage___teamMembers___children___id',
+  aboutpage___teamMembers___children___children = 'aboutpage___teamMembers___children___children',
+  aboutpage___teamMembers___internal___content = 'aboutpage___teamMembers___internal___content',
+  aboutpage___teamMembers___internal___contentDigest = 'aboutpage___teamMembers___internal___contentDigest',
+  aboutpage___teamMembers___internal___description = 'aboutpage___teamMembers___internal___description',
+  aboutpage___teamMembers___internal___fieldOwners = 'aboutpage___teamMembers___internal___fieldOwners',
+  aboutpage___teamMembers___internal___ignoreType = 'aboutpage___teamMembers___internal___ignoreType',
+  aboutpage___teamMembers___internal___mediaType = 'aboutpage___teamMembers___internal___mediaType',
+  aboutpage___teamMembers___internal___owner = 'aboutpage___teamMembers___internal___owner',
+  aboutpage___teamMembers___internal___type = 'aboutpage___teamMembers___internal___type',
+  aboutpage___teamMembers___name = 'aboutpage___teamMembers___name',
+  aboutpage___teamMembers___email = 'aboutpage___teamMembers___email',
+  aboutpage___teamMembers___phoneNumber = 'aboutpage___teamMembers___phoneNumber',
+  aboutpage___teamMembers___photo___id = 'aboutpage___teamMembers___photo___id',
+  aboutpage___teamMembers___photo___children = 'aboutpage___teamMembers___photo___children',
+  aboutpage___teamMembers___photo___contentful_id = 'aboutpage___teamMembers___photo___contentful_id',
+  aboutpage___teamMembers___photo___title = 'aboutpage___teamMembers___photo___title',
+  aboutpage___teamMembers___photo___description = 'aboutpage___teamMembers___photo___description',
+  aboutpage___teamMembers___photo___node_locale = 'aboutpage___teamMembers___photo___node_locale',
+  aboutpage___teamMembers___avatar___id = 'aboutpage___teamMembers___avatar___id',
+  aboutpage___teamMembers___avatar___children = 'aboutpage___teamMembers___avatar___children',
+  aboutpage___teamMembers___avatar___contentful_id = 'aboutpage___teamMembers___avatar___contentful_id',
+  aboutpage___teamMembers___avatar___title = 'aboutpage___teamMembers___avatar___title',
+  aboutpage___teamMembers___avatar___description = 'aboutpage___teamMembers___avatar___description',
+  aboutpage___teamMembers___avatar___node_locale = 'aboutpage___teamMembers___avatar___node_locale',
+  aboutpage___teamMembers___article = 'aboutpage___teamMembers___article',
+  aboutpage___teamMembers___article___id = 'aboutpage___teamMembers___article___id',
+  aboutpage___teamMembers___article___children = 'aboutpage___teamMembers___article___children',
+  aboutpage___teamMembers___article___title = 'aboutpage___teamMembers___article___title',
+  aboutpage___teamMembers___article___slug = 'aboutpage___teamMembers___article___slug',
+  aboutpage___teamMembers___article___date = 'aboutpage___teamMembers___article___date',
+  aboutpage___teamMembers___article___spaceId = 'aboutpage___teamMembers___article___spaceId',
+  aboutpage___teamMembers___article___contentful_id = 'aboutpage___teamMembers___article___contentful_id',
+  aboutpage___teamMembers___article___createdAt = 'aboutpage___teamMembers___article___createdAt',
+  aboutpage___teamMembers___article___updatedAt = 'aboutpage___teamMembers___article___updatedAt',
+  aboutpage___teamMembers___article___node_locale = 'aboutpage___teamMembers___article___node_locale',
+  aboutpage___teamMembers___aboutpage = 'aboutpage___teamMembers___aboutpage',
+  aboutpage___teamMembers___aboutpage___id = 'aboutpage___teamMembers___aboutpage___id',
+  aboutpage___teamMembers___aboutpage___children = 'aboutpage___teamMembers___aboutpage___children',
+  aboutpage___teamMembers___aboutpage___page = 'aboutpage___teamMembers___aboutpage___page',
+  aboutpage___teamMembers___aboutpage___teamMembers = 'aboutpage___teamMembers___aboutpage___teamMembers',
+  aboutpage___teamMembers___aboutpage___spaceId = 'aboutpage___teamMembers___aboutpage___spaceId',
+  aboutpage___teamMembers___aboutpage___contentful_id = 'aboutpage___teamMembers___aboutpage___contentful_id',
+  aboutpage___teamMembers___aboutpage___createdAt = 'aboutpage___teamMembers___aboutpage___createdAt',
+  aboutpage___teamMembers___aboutpage___updatedAt = 'aboutpage___teamMembers___aboutpage___updatedAt',
+  aboutpage___teamMembers___aboutpage___node_locale = 'aboutpage___teamMembers___aboutpage___node_locale',
+  aboutpage___teamMembers___description___id = 'aboutpage___teamMembers___description___id',
+  aboutpage___teamMembers___description___children = 'aboutpage___teamMembers___description___children',
+  aboutpage___teamMembers___description___description = 'aboutpage___teamMembers___description___description',
+  aboutpage___teamMembers___spaceId = 'aboutpage___teamMembers___spaceId',
+  aboutpage___teamMembers___contentful_id = 'aboutpage___teamMembers___contentful_id',
+  aboutpage___teamMembers___createdAt = 'aboutpage___teamMembers___createdAt',
+  aboutpage___teamMembers___updatedAt = 'aboutpage___teamMembers___updatedAt',
+  aboutpage___teamMembers___sys___revision = 'aboutpage___teamMembers___sys___revision',
+  aboutpage___teamMembers___node_locale = 'aboutpage___teamMembers___node_locale',
+  aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___id = 'aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___id',
+  aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___children = 'aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___children',
+  aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___description = 'aboutpage___teamMembers___childContentfulMemberDescriptionTextNode___description',
+  aboutpage___spaceId = 'aboutpage___spaceId',
+  aboutpage___contentful_id = 'aboutpage___contentful_id',
+  aboutpage___createdAt = 'aboutpage___createdAt',
+  aboutpage___updatedAt = 'aboutpage___updatedAt',
+  aboutpage___sys___revision = 'aboutpage___sys___revision',
+  aboutpage___node_locale = 'aboutpage___node_locale',
+  description___id = 'description___id',
+  description___parent___id = 'description___parent___id',
+  description___parent___parent___id = 'description___parent___parent___id',
+  description___parent___parent___children = 'description___parent___parent___children',
+  description___parent___children = 'description___parent___children',
+  description___parent___children___id = 'description___parent___children___id',
+  description___parent___children___children = 'description___parent___children___children',
+  description___parent___internal___content = 'description___parent___internal___content',
+  description___parent___internal___contentDigest = 'description___parent___internal___contentDigest',
+  description___parent___internal___description = 'description___parent___internal___description',
+  description___parent___internal___fieldOwners = 'description___parent___internal___fieldOwners',
+  description___parent___internal___ignoreType = 'description___parent___internal___ignoreType',
+  description___parent___internal___mediaType = 'description___parent___internal___mediaType',
+  description___parent___internal___owner = 'description___parent___internal___owner',
+  description___parent___internal___type = 'description___parent___internal___type',
+  description___children = 'description___children',
+  description___children___id = 'description___children___id',
+  description___children___parent___id = 'description___children___parent___id',
+  description___children___parent___children = 'description___children___parent___children',
+  description___children___children = 'description___children___children',
+  description___children___children___id = 'description___children___children___id',
+  description___children___children___children = 'description___children___children___children',
+  description___children___internal___content = 'description___children___internal___content',
+  description___children___internal___contentDigest = 'description___children___internal___contentDigest',
+  description___children___internal___description = 'description___children___internal___description',
+  description___children___internal___fieldOwners = 'description___children___internal___fieldOwners',
+  description___children___internal___ignoreType = 'description___children___internal___ignoreType',
+  description___children___internal___mediaType = 'description___children___internal___mediaType',
+  description___children___internal___owner = 'description___children___internal___owner',
+  description___children___internal___type = 'description___children___internal___type',
+  description___internal___content = 'description___internal___content',
+  description___internal___contentDigest = 'description___internal___contentDigest',
+  description___internal___description = 'description___internal___description',
+  description___internal___fieldOwners = 'description___internal___fieldOwners',
+  description___internal___ignoreType = 'description___internal___ignoreType',
+  description___internal___mediaType = 'description___internal___mediaType',
+  description___internal___owner = 'description___internal___owner',
+  description___internal___type = 'description___internal___type',
+  description___description = 'description___description',
+  description___childMarkdownRemark___id = 'description___childMarkdownRemark___id',
+  description___childMarkdownRemark___frontmatter___title = 'description___childMarkdownRemark___frontmatter___title',
+  description___childMarkdownRemark___excerpt = 'description___childMarkdownRemark___excerpt',
+  description___childMarkdownRemark___rawMarkdownBody = 'description___childMarkdownRemark___rawMarkdownBody',
+  description___childMarkdownRemark___html = 'description___childMarkdownRemark___html',
+  description___childMarkdownRemark___htmlAst = 'description___childMarkdownRemark___htmlAst',
+  description___childMarkdownRemark___excerptAst = 'description___childMarkdownRemark___excerptAst',
+  description___childMarkdownRemark___headings = 'description___childMarkdownRemark___headings',
+  description___childMarkdownRemark___headings___value = 'description___childMarkdownRemark___headings___value',
+  description___childMarkdownRemark___headings___depth = 'description___childMarkdownRemark___headings___depth',
+  description___childMarkdownRemark___timeToRead = 'description___childMarkdownRemark___timeToRead',
+  description___childMarkdownRemark___tableOfContents = 'description___childMarkdownRemark___tableOfContents',
+  description___childMarkdownRemark___wordCount___paragraphs = 'description___childMarkdownRemark___wordCount___paragraphs',
+  description___childMarkdownRemark___wordCount___sentences = 'description___childMarkdownRemark___wordCount___sentences',
+  description___childMarkdownRemark___wordCount___words = 'description___childMarkdownRemark___wordCount___words',
+  description___childMarkdownRemark___parent___id = 'description___childMarkdownRemark___parent___id',
+  description___childMarkdownRemark___parent___children = 'description___childMarkdownRemark___parent___children',
+  description___childMarkdownRemark___children = 'description___childMarkdownRemark___children',
+  description___childMarkdownRemark___children___id = 'description___childMarkdownRemark___children___id',
+  description___childMarkdownRemark___children___children = 'description___childMarkdownRemark___children___children',
+  description___childMarkdownRemark___internal___content = 'description___childMarkdownRemark___internal___content',
+  description___childMarkdownRemark___internal___contentDigest = 'description___childMarkdownRemark___internal___contentDigest',
+  description___childMarkdownRemark___internal___description = 'description___childMarkdownRemark___internal___description',
+  description___childMarkdownRemark___internal___fieldOwners = 'description___childMarkdownRemark___internal___fieldOwners',
+  description___childMarkdownRemark___internal___ignoreType = 'description___childMarkdownRemark___internal___ignoreType',
+  description___childMarkdownRemark___internal___mediaType = 'description___childMarkdownRemark___internal___mediaType',
+  description___childMarkdownRemark___internal___owner = 'description___childMarkdownRemark___internal___owner',
+  description___childMarkdownRemark___internal___type = 'description___childMarkdownRemark___internal___type',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
+  node_locale = 'node_locale',
   childContentfulMemberDescriptionTextNode___id = 'childContentfulMemberDescriptionTextNode___id',
   childContentfulMemberDescriptionTextNode___parent___id = 'childContentfulMemberDescriptionTextNode___parent___id',
   childContentfulMemberDescriptionTextNode___parent___parent___id = 'childContentfulMemberDescriptionTextNode___parent___parent___id',
@@ -4576,15 +4900,16 @@ export type ContentfulMemberFilterInput = {
   email?: Maybe<StringQueryOperatorInput>;
   phoneNumber?: Maybe<StringQueryOperatorInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
+  avatar?: Maybe<ContentfulAssetFilterInput>;
   article?: Maybe<ContentfulArticleFilterListInput>;
-  about_page?: Maybe<ContentfulAboutPageFilterListInput>;
+  aboutpage?: Maybe<ContentfulAboutPageFilterListInput>;
   description?: Maybe<ContentfulMemberDescriptionTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulMemberSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  avatar?: Maybe<ContentfulAssetFilterInput>;
   childContentfulMemberDescriptionTextNode?: Maybe<
     ContentfulMemberDescriptionTextNodeFilterInput
   >;
@@ -4607,6 +4932,41 @@ export type ContentfulMemberGroupConnection = {
 export type ContentfulMemberSortInput = {
   fields?: Maybe<Array<Maybe<ContentfulMemberFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulMemberSys = {
+  __typename?: 'ContentfulMemberSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulMemberSysContentType>;
+};
+
+export type ContentfulMemberSysContentType = {
+  __typename?: 'ContentfulMemberSysContentType';
+  sys?: Maybe<ContentfulMemberSysContentTypeSys>;
+};
+
+export type ContentfulMemberSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulMemberSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulMemberSysContentTypeSys = {
+  __typename?: 'ContentfulMemberSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulMemberSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulMemberSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulMemberSysContentTypeFilterInput>;
 };
 
 export type ContentfulResize = {
@@ -4633,10 +4993,10 @@ export type ContentfulResolutions = {
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
   aspectRatio?: Maybe<Scalars['Float']>;
-  width?: Maybe<Scalars['Float']>;
-  height?: Maybe<Scalars['Float']>;
-  src?: Maybe<Scalars['String']>;
-  srcSet?: Maybe<Scalars['String']>;
+  width: Scalars['Float'];
+  height: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
   srcWebp?: Maybe<Scalars['String']>;
   srcSetWebp?: Maybe<Scalars['String']>;
 };
@@ -4661,11 +5021,12 @@ export type ContentfulService = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   examples?: Maybe<Array<Maybe<Scalars['String']>>>;
-  services_page?: Maybe<Array<Maybe<ContentfulServicesPage>>>;
+  servicespage?: Maybe<Array<Maybe<ContentfulServicesPage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulServiceSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -4799,87 +5160,94 @@ export enum ContentfulServiceFieldsEnum {
   internal___type = 'internal___type',
   title = 'title',
   examples = 'examples',
-  services_page = 'services_page',
-  services_page___id = 'services_page___id',
-  services_page___parent___id = 'services_page___parent___id',
-  services_page___parent___parent___id = 'services_page___parent___parent___id',
-  services_page___parent___parent___children = 'services_page___parent___parent___children',
-  services_page___parent___children = 'services_page___parent___children',
-  services_page___parent___children___id = 'services_page___parent___children___id',
-  services_page___parent___children___children = 'services_page___parent___children___children',
-  services_page___parent___internal___content = 'services_page___parent___internal___content',
-  services_page___parent___internal___contentDigest = 'services_page___parent___internal___contentDigest',
-  services_page___parent___internal___description = 'services_page___parent___internal___description',
-  services_page___parent___internal___fieldOwners = 'services_page___parent___internal___fieldOwners',
-  services_page___parent___internal___ignoreType = 'services_page___parent___internal___ignoreType',
-  services_page___parent___internal___mediaType = 'services_page___parent___internal___mediaType',
-  services_page___parent___internal___owner = 'services_page___parent___internal___owner',
-  services_page___parent___internal___type = 'services_page___parent___internal___type',
-  services_page___children = 'services_page___children',
-  services_page___children___id = 'services_page___children___id',
-  services_page___children___parent___id = 'services_page___children___parent___id',
-  services_page___children___parent___children = 'services_page___children___parent___children',
-  services_page___children___children = 'services_page___children___children',
-  services_page___children___children___id = 'services_page___children___children___id',
-  services_page___children___children___children = 'services_page___children___children___children',
-  services_page___children___internal___content = 'services_page___children___internal___content',
-  services_page___children___internal___contentDigest = 'services_page___children___internal___contentDigest',
-  services_page___children___internal___description = 'services_page___children___internal___description',
-  services_page___children___internal___fieldOwners = 'services_page___children___internal___fieldOwners',
-  services_page___children___internal___ignoreType = 'services_page___children___internal___ignoreType',
-  services_page___children___internal___mediaType = 'services_page___children___internal___mediaType',
-  services_page___children___internal___owner = 'services_page___children___internal___owner',
-  services_page___children___internal___type = 'services_page___children___internal___type',
-  services_page___internal___content = 'services_page___internal___content',
-  services_page___internal___contentDigest = 'services_page___internal___contentDigest',
-  services_page___internal___description = 'services_page___internal___description',
-  services_page___internal___fieldOwners = 'services_page___internal___fieldOwners',
-  services_page___internal___ignoreType = 'services_page___internal___ignoreType',
-  services_page___internal___mediaType = 'services_page___internal___mediaType',
-  services_page___internal___owner = 'services_page___internal___owner',
-  services_page___internal___type = 'services_page___internal___type',
-  services_page___page = 'services_page___page',
-  services_page___services = 'services_page___services',
-  services_page___services___id = 'services_page___services___id',
-  services_page___services___parent___id = 'services_page___services___parent___id',
-  services_page___services___parent___children = 'services_page___services___parent___children',
-  services_page___services___children = 'services_page___services___children',
-  services_page___services___children___id = 'services_page___services___children___id',
-  services_page___services___children___children = 'services_page___services___children___children',
-  services_page___services___internal___content = 'services_page___services___internal___content',
-  services_page___services___internal___contentDigest = 'services_page___services___internal___contentDigest',
-  services_page___services___internal___description = 'services_page___services___internal___description',
-  services_page___services___internal___fieldOwners = 'services_page___services___internal___fieldOwners',
-  services_page___services___internal___ignoreType = 'services_page___services___internal___ignoreType',
-  services_page___services___internal___mediaType = 'services_page___services___internal___mediaType',
-  services_page___services___internal___owner = 'services_page___services___internal___owner',
-  services_page___services___internal___type = 'services_page___services___internal___type',
-  services_page___services___title = 'services_page___services___title',
-  services_page___services___examples = 'services_page___services___examples',
-  services_page___services___services_page = 'services_page___services___services_page',
-  services_page___services___services_page___id = 'services_page___services___services_page___id',
-  services_page___services___services_page___children = 'services_page___services___services_page___children',
-  services_page___services___services_page___page = 'services_page___services___services_page___page',
-  services_page___services___services_page___services = 'services_page___services___services_page___services',
-  services_page___services___services_page___spaceId = 'services_page___services___services_page___spaceId',
-  services_page___services___services_page___contentful_id = 'services_page___services___services_page___contentful_id',
-  services_page___services___services_page___createdAt = 'services_page___services___services_page___createdAt',
-  services_page___services___services_page___updatedAt = 'services_page___services___services_page___updatedAt',
-  services_page___services___services_page___node_locale = 'services_page___services___services_page___node_locale',
-  services_page___services___spaceId = 'services_page___services___spaceId',
-  services_page___services___contentful_id = 'services_page___services___contentful_id',
-  services_page___services___createdAt = 'services_page___services___createdAt',
-  services_page___services___updatedAt = 'services_page___services___updatedAt',
-  services_page___services___node_locale = 'services_page___services___node_locale',
-  services_page___spaceId = 'services_page___spaceId',
-  services_page___contentful_id = 'services_page___contentful_id',
-  services_page___createdAt = 'services_page___createdAt',
-  services_page___updatedAt = 'services_page___updatedAt',
-  services_page___node_locale = 'services_page___node_locale',
+  servicespage = 'servicespage',
+  servicespage___id = 'servicespage___id',
+  servicespage___parent___id = 'servicespage___parent___id',
+  servicespage___parent___parent___id = 'servicespage___parent___parent___id',
+  servicespage___parent___parent___children = 'servicespage___parent___parent___children',
+  servicespage___parent___children = 'servicespage___parent___children',
+  servicespage___parent___children___id = 'servicespage___parent___children___id',
+  servicespage___parent___children___children = 'servicespage___parent___children___children',
+  servicespage___parent___internal___content = 'servicespage___parent___internal___content',
+  servicespage___parent___internal___contentDigest = 'servicespage___parent___internal___contentDigest',
+  servicespage___parent___internal___description = 'servicespage___parent___internal___description',
+  servicespage___parent___internal___fieldOwners = 'servicespage___parent___internal___fieldOwners',
+  servicespage___parent___internal___ignoreType = 'servicespage___parent___internal___ignoreType',
+  servicespage___parent___internal___mediaType = 'servicespage___parent___internal___mediaType',
+  servicespage___parent___internal___owner = 'servicespage___parent___internal___owner',
+  servicespage___parent___internal___type = 'servicespage___parent___internal___type',
+  servicespage___children = 'servicespage___children',
+  servicespage___children___id = 'servicespage___children___id',
+  servicespage___children___parent___id = 'servicespage___children___parent___id',
+  servicespage___children___parent___children = 'servicespage___children___parent___children',
+  servicespage___children___children = 'servicespage___children___children',
+  servicespage___children___children___id = 'servicespage___children___children___id',
+  servicespage___children___children___children = 'servicespage___children___children___children',
+  servicespage___children___internal___content = 'servicespage___children___internal___content',
+  servicespage___children___internal___contentDigest = 'servicespage___children___internal___contentDigest',
+  servicespage___children___internal___description = 'servicespage___children___internal___description',
+  servicespage___children___internal___fieldOwners = 'servicespage___children___internal___fieldOwners',
+  servicespage___children___internal___ignoreType = 'servicespage___children___internal___ignoreType',
+  servicespage___children___internal___mediaType = 'servicespage___children___internal___mediaType',
+  servicespage___children___internal___owner = 'servicespage___children___internal___owner',
+  servicespage___children___internal___type = 'servicespage___children___internal___type',
+  servicespage___internal___content = 'servicespage___internal___content',
+  servicespage___internal___contentDigest = 'servicespage___internal___contentDigest',
+  servicespage___internal___description = 'servicespage___internal___description',
+  servicespage___internal___fieldOwners = 'servicespage___internal___fieldOwners',
+  servicespage___internal___ignoreType = 'servicespage___internal___ignoreType',
+  servicespage___internal___mediaType = 'servicespage___internal___mediaType',
+  servicespage___internal___owner = 'servicespage___internal___owner',
+  servicespage___internal___type = 'servicespage___internal___type',
+  servicespage___page = 'servicespage___page',
+  servicespage___services = 'servicespage___services',
+  servicespage___services___id = 'servicespage___services___id',
+  servicespage___services___parent___id = 'servicespage___services___parent___id',
+  servicespage___services___parent___children = 'servicespage___services___parent___children',
+  servicespage___services___children = 'servicespage___services___children',
+  servicespage___services___children___id = 'servicespage___services___children___id',
+  servicespage___services___children___children = 'servicespage___services___children___children',
+  servicespage___services___internal___content = 'servicespage___services___internal___content',
+  servicespage___services___internal___contentDigest = 'servicespage___services___internal___contentDigest',
+  servicespage___services___internal___description = 'servicespage___services___internal___description',
+  servicespage___services___internal___fieldOwners = 'servicespage___services___internal___fieldOwners',
+  servicespage___services___internal___ignoreType = 'servicespage___services___internal___ignoreType',
+  servicespage___services___internal___mediaType = 'servicespage___services___internal___mediaType',
+  servicespage___services___internal___owner = 'servicespage___services___internal___owner',
+  servicespage___services___internal___type = 'servicespage___services___internal___type',
+  servicespage___services___title = 'servicespage___services___title',
+  servicespage___services___examples = 'servicespage___services___examples',
+  servicespage___services___servicespage = 'servicespage___services___servicespage',
+  servicespage___services___servicespage___id = 'servicespage___services___servicespage___id',
+  servicespage___services___servicespage___children = 'servicespage___services___servicespage___children',
+  servicespage___services___servicespage___page = 'servicespage___services___servicespage___page',
+  servicespage___services___servicespage___services = 'servicespage___services___servicespage___services',
+  servicespage___services___servicespage___spaceId = 'servicespage___services___servicespage___spaceId',
+  servicespage___services___servicespage___contentful_id = 'servicespage___services___servicespage___contentful_id',
+  servicespage___services___servicespage___createdAt = 'servicespage___services___servicespage___createdAt',
+  servicespage___services___servicespage___updatedAt = 'servicespage___services___servicespage___updatedAt',
+  servicespage___services___servicespage___node_locale = 'servicespage___services___servicespage___node_locale',
+  servicespage___services___spaceId = 'servicespage___services___spaceId',
+  servicespage___services___contentful_id = 'servicespage___services___contentful_id',
+  servicespage___services___createdAt = 'servicespage___services___createdAt',
+  servicespage___services___updatedAt = 'servicespage___services___updatedAt',
+  servicespage___services___sys___revision = 'servicespage___services___sys___revision',
+  servicespage___services___node_locale = 'servicespage___services___node_locale',
+  servicespage___spaceId = 'servicespage___spaceId',
+  servicespage___contentful_id = 'servicespage___contentful_id',
+  servicespage___createdAt = 'servicespage___createdAt',
+  servicespage___updatedAt = 'servicespage___updatedAt',
+  servicespage___sys___revision = 'servicespage___sys___revision',
+  servicespage___node_locale = 'servicespage___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -4890,11 +5258,12 @@ export type ContentfulServiceFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   examples?: Maybe<StringQueryOperatorInput>;
-  services_page?: Maybe<ContentfulServicesPageFilterListInput>;
+  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulServiceSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -4929,6 +5298,7 @@ export type ContentfulServicesPage = Node & {
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulServicesPageSys>;
   node_locale?: Maybe<Scalars['String']>;
 };
 
@@ -5102,47 +5472,54 @@ export enum ContentfulServicesPageFieldsEnum {
   services___internal___type = 'services___internal___type',
   services___title = 'services___title',
   services___examples = 'services___examples',
-  services___services_page = 'services___services_page',
-  services___services_page___id = 'services___services_page___id',
-  services___services_page___parent___id = 'services___services_page___parent___id',
-  services___services_page___parent___children = 'services___services_page___parent___children',
-  services___services_page___children = 'services___services_page___children',
-  services___services_page___children___id = 'services___services_page___children___id',
-  services___services_page___children___children = 'services___services_page___children___children',
-  services___services_page___internal___content = 'services___services_page___internal___content',
-  services___services_page___internal___contentDigest = 'services___services_page___internal___contentDigest',
-  services___services_page___internal___description = 'services___services_page___internal___description',
-  services___services_page___internal___fieldOwners = 'services___services_page___internal___fieldOwners',
-  services___services_page___internal___ignoreType = 'services___services_page___internal___ignoreType',
-  services___services_page___internal___mediaType = 'services___services_page___internal___mediaType',
-  services___services_page___internal___owner = 'services___services_page___internal___owner',
-  services___services_page___internal___type = 'services___services_page___internal___type',
-  services___services_page___page = 'services___services_page___page',
-  services___services_page___services = 'services___services_page___services',
-  services___services_page___services___id = 'services___services_page___services___id',
-  services___services_page___services___children = 'services___services_page___services___children',
-  services___services_page___services___title = 'services___services_page___services___title',
-  services___services_page___services___examples = 'services___services_page___services___examples',
-  services___services_page___services___services_page = 'services___services_page___services___services_page',
-  services___services_page___services___spaceId = 'services___services_page___services___spaceId',
-  services___services_page___services___contentful_id = 'services___services_page___services___contentful_id',
-  services___services_page___services___createdAt = 'services___services_page___services___createdAt',
-  services___services_page___services___updatedAt = 'services___services_page___services___updatedAt',
-  services___services_page___services___node_locale = 'services___services_page___services___node_locale',
-  services___services_page___spaceId = 'services___services_page___spaceId',
-  services___services_page___contentful_id = 'services___services_page___contentful_id',
-  services___services_page___createdAt = 'services___services_page___createdAt',
-  services___services_page___updatedAt = 'services___services_page___updatedAt',
-  services___services_page___node_locale = 'services___services_page___node_locale',
+  services___servicespage = 'services___servicespage',
+  services___servicespage___id = 'services___servicespage___id',
+  services___servicespage___parent___id = 'services___servicespage___parent___id',
+  services___servicespage___parent___children = 'services___servicespage___parent___children',
+  services___servicespage___children = 'services___servicespage___children',
+  services___servicespage___children___id = 'services___servicespage___children___id',
+  services___servicespage___children___children = 'services___servicespage___children___children',
+  services___servicespage___internal___content = 'services___servicespage___internal___content',
+  services___servicespage___internal___contentDigest = 'services___servicespage___internal___contentDigest',
+  services___servicespage___internal___description = 'services___servicespage___internal___description',
+  services___servicespage___internal___fieldOwners = 'services___servicespage___internal___fieldOwners',
+  services___servicespage___internal___ignoreType = 'services___servicespage___internal___ignoreType',
+  services___servicespage___internal___mediaType = 'services___servicespage___internal___mediaType',
+  services___servicespage___internal___owner = 'services___servicespage___internal___owner',
+  services___servicespage___internal___type = 'services___servicespage___internal___type',
+  services___servicespage___page = 'services___servicespage___page',
+  services___servicespage___services = 'services___servicespage___services',
+  services___servicespage___services___id = 'services___servicespage___services___id',
+  services___servicespage___services___children = 'services___servicespage___services___children',
+  services___servicespage___services___title = 'services___servicespage___services___title',
+  services___servicespage___services___examples = 'services___servicespage___services___examples',
+  services___servicespage___services___servicespage = 'services___servicespage___services___servicespage',
+  services___servicespage___services___spaceId = 'services___servicespage___services___spaceId',
+  services___servicespage___services___contentful_id = 'services___servicespage___services___contentful_id',
+  services___servicespage___services___createdAt = 'services___servicespage___services___createdAt',
+  services___servicespage___services___updatedAt = 'services___servicespage___services___updatedAt',
+  services___servicespage___services___node_locale = 'services___servicespage___services___node_locale',
+  services___servicespage___spaceId = 'services___servicespage___spaceId',
+  services___servicespage___contentful_id = 'services___servicespage___contentful_id',
+  services___servicespage___createdAt = 'services___servicespage___createdAt',
+  services___servicespage___updatedAt = 'services___servicespage___updatedAt',
+  services___servicespage___sys___revision = 'services___servicespage___sys___revision',
+  services___servicespage___node_locale = 'services___servicespage___node_locale',
   services___spaceId = 'services___spaceId',
   services___contentful_id = 'services___contentful_id',
   services___createdAt = 'services___createdAt',
   services___updatedAt = 'services___updatedAt',
+  services___sys___revision = 'services___sys___revision',
   services___node_locale = 'services___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
   node_locale = 'node_locale',
 }
 
@@ -5157,6 +5534,7 @@ export type ContentfulServicesPageFilterInput = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulServicesPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -5179,16 +5557,86 @@ export type ContentfulServicesPageSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
+export type ContentfulServicesPageSys = {
+  __typename?: 'ContentfulServicesPageSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulServicesPageSysContentType>;
+};
+
+export type ContentfulServicesPageSysContentType = {
+  __typename?: 'ContentfulServicesPageSysContentType';
+  sys?: Maybe<ContentfulServicesPageSysContentTypeSys>;
+};
+
+export type ContentfulServicesPageSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulServicesPageSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulServicesPageSysContentTypeSys = {
+  __typename?: 'ContentfulServicesPageSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulServicesPageSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulServicesPageSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulServicesPageSysContentTypeFilterInput>;
+};
+
+export type ContentfulServiceSys = {
+  __typename?: 'ContentfulServiceSys';
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulServiceSysContentType>;
+};
+
+export type ContentfulServiceSysContentType = {
+  __typename?: 'ContentfulServiceSysContentType';
+  sys?: Maybe<ContentfulServiceSysContentTypeSys>;
+};
+
+export type ContentfulServiceSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulServiceSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulServiceSysContentTypeSys = {
+  __typename?: 'ContentfulServiceSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  contentful_id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulServiceSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulServiceSysFilterInput = {
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulServiceSysContentTypeFilterInput>;
+};
+
 export type ContentfulSizes = {
   __typename?: 'ContentfulSizes';
   base64?: Maybe<Scalars['String']>;
   tracedSVG?: Maybe<Scalars['String']>;
-  aspectRatio?: Maybe<Scalars['Float']>;
-  src?: Maybe<Scalars['String']>;
-  srcSet?: Maybe<Scalars['String']>;
+  aspectRatio: Scalars['Float'];
+  src: Scalars['String'];
+  srcSet: Scalars['String'];
   srcWebp?: Maybe<Scalars['String']>;
   srcSetWebp?: Maybe<Scalars['String']>;
-  sizes?: Maybe<Scalars['String']>;
+  sizes: Scalars['String'];
 };
 
 export type ContentfulSizesFilterInput = {
@@ -7058,6 +7506,7 @@ export type QueryContentfulArticleArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulArticleSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
   childContentfulArticleContentRichTextNode?: Maybe<
     ContentfulArticleContentRichTextNodeFilterInput
@@ -7097,15 +7546,16 @@ export type QueryContentfulMemberArgs = {
   email?: Maybe<StringQueryOperatorInput>;
   phoneNumber?: Maybe<StringQueryOperatorInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
+  avatar?: Maybe<ContentfulAssetFilterInput>;
   article?: Maybe<ContentfulArticleFilterListInput>;
-  about_page?: Maybe<ContentfulAboutPageFilterListInput>;
+  aboutpage?: Maybe<ContentfulAboutPageFilterListInput>;
   description?: Maybe<ContentfulMemberDescriptionTextNodeFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulMemberSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  avatar?: Maybe<ContentfulAssetFilterInput>;
   childContentfulMemberDescriptionTextNode?: Maybe<
     ContentfulMemberDescriptionTextNodeFilterInput
   >;
@@ -7141,11 +7591,12 @@ export type QueryContentfulGoalArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
-  home_page?: Maybe<ContentfulHomePageFilterListInput>;
+  homepage?: Maybe<ContentfulHomePageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulGoalSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7167,6 +7618,7 @@ export type QueryContentfulHomePageArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulHomePageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7188,6 +7640,7 @@ export type QueryContentfulAboutPageArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulAboutPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7205,11 +7658,12 @@ export type QueryContentfulServiceArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   examples?: Maybe<StringQueryOperatorInput>;
-  services_page?: Maybe<ContentfulServicesPageFilterListInput>;
+  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulServiceSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7231,6 +7685,7 @@ export type QueryContentfulServicesPageArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulServicesPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7253,6 +7708,7 @@ export type QueryContentfulCategoryArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulCategorySysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7276,6 +7732,7 @@ export type QueryContentfulContactPageArgs = {
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulContactPageSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7294,11 +7751,12 @@ export type QueryContentfulAddressArgs = {
   street?: Maybe<StringQueryOperatorInput>;
   city?: Maybe<StringQueryOperatorInput>;
   postCode?: Maybe<StringQueryOperatorInput>;
-  contact_page?: Maybe<ContentfulContactPageFilterListInput>;
+  contactpage?: Maybe<ContentfulContactPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulAddressSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -7724,6 +8182,7 @@ export enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___path = 'pluginCreator___pluginOptions___path',
   pluginCreator___pluginOptions___spaceId = 'pluginCreator___pluginOptions___spaceId',
   pluginCreator___pluginOptions___accessToken = 'pluginCreator___pluginOptions___accessToken',
+  pluginCreator___pluginOptions___useNameForId = 'pluginCreator___pluginOptions___useNameForId',
   pluginCreator___pluginOptions___includePaths = 'pluginCreator___pluginOptions___includePaths',
   pluginCreator___pluginOptions___openAnalyzer = 'pluginCreator___pluginOptions___openAnalyzer',
   pluginCreator___pluginOptions___pathCheck = 'pluginCreator___pluginOptions___pathCheck',
@@ -7927,6 +8386,7 @@ export enum SitePluginFieldsEnum {
   pluginOptions___path = 'pluginOptions___path',
   pluginOptions___spaceId = 'pluginOptions___spaceId',
   pluginOptions___accessToken = 'pluginOptions___accessToken',
+  pluginOptions___useNameForId = 'pluginOptions___useNameForId',
   pluginOptions___includePaths = 'pluginOptions___includePaths',
   pluginOptions___openAnalyzer = 'pluginOptions___openAnalyzer',
   pluginOptions___pathCheck = 'pluginOptions___pathCheck',
@@ -8063,6 +8523,7 @@ export type SitePluginPluginOptions = {
   path?: Maybe<Scalars['String']>;
   spaceId?: Maybe<Scalars['String']>;
   accessToken?: Maybe<Scalars['String']>;
+  useNameForId?: Maybe<Scalars['Boolean']>;
   includePaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   openAnalyzer?: Maybe<Scalars['Boolean']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
@@ -8081,6 +8542,7 @@ export type SitePluginPluginOptionsFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   accessToken?: Maybe<StringQueryOperatorInput>;
+  useNameForId?: Maybe<BooleanQueryOperatorInput>;
   includePaths?: Maybe<StringQueryOperatorInput>;
   openAnalyzer?: Maybe<BooleanQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;

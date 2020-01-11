@@ -7,11 +7,6 @@ const i18n = require('./src/i18n.json');
 const APP_NAME = 'VetOvceKozy';
 const APP_COLOR = '#64af5f';
 
-const contentfulConfig = {
-  spaceId: process.env.SPACE_ID,
-  accessToken: process.env.ACCESS_TOKEN,
-};
-
 module.exports = {
   siteMetadata: {
     title: APP_NAME,
@@ -58,7 +53,11 @@ module.exports = {
     },
     {
       resolve: 'gatsby-source-contentful',
-      options: contentfulConfig,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.ACCESS_TOKEN,
+        useNameForId: false,
+      },
     },
     {
       resolve: 'gatsby-plugin-sass',
