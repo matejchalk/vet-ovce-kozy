@@ -71,7 +71,7 @@ const ArticleTemplate = ({
         return (
           <Img
             fluid={getFluidImage(asset.node)}
-            alt={asset.node.description || ''}
+            alt={asset.node.title || ''}
             className={styles.embeddedAsset}
           />
         );
@@ -128,7 +128,7 @@ const ArticleTemplate = ({
         keywords,
         image: {
           src: `https:${oc(image).fluid.src()}`,
-          alt: oc(image).description() || categoryTitle,
+          alt: oc(image).title() || categoryTitle,
         },
         path: pathname,
         isArticle: true,
@@ -142,10 +142,7 @@ const ArticleTemplate = ({
           <div className={styles.author}>
             <Img
               fixed={getFixedImage(avatar || photo)}
-              alt={
-                (avatar ? avatar.description : oc(photo).description()) ||
-                author
-              }
+              alt={(avatar ? avatar.title : oc(photo).title()) || author}
               className={styles.authorAvatar}
             />
             <div>
@@ -155,7 +152,7 @@ const ArticleTemplate = ({
           </div>
           <Img
             fluid={getFluidImage(image)}
-            alt={oc(image).description() || categoryTitle}
+            alt={oc(image).title() || categoryTitle}
           />
           <main className={styles.content}>{content}</main>
         </article>
@@ -174,7 +171,7 @@ export const pageQuery = graphql`
       category {
         title
         image {
-          description
+          title
           fluid(maxWidth: 1050, quality: 100) {
             src
             srcSet
@@ -203,7 +200,7 @@ export const pageQuery = graphql`
       edges {
         node {
           contentful_id
-          description
+          title
           fluid(maxWidth: 650, quality: 100) {
             src
             srcSet
@@ -217,7 +214,7 @@ export const pageQuery = graphql`
   }
 
   fragment AuthorAvatar on ContentfulAsset {
-    description
+    title
     fixed(width: 55, height: 55) {
       width
       height

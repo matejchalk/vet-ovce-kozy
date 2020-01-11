@@ -28,7 +28,7 @@ const IndexPage = () => {
         goals {
           title
           image {
-            description
+            title
             fluid(maxWidth: 315, maxHeight: 236, quality: 100) {
               src
               srcSet
@@ -82,7 +82,7 @@ const IndexPage = () => {
                     image={
                       fluid && {
                         fluid,
-                        alt: (image && image.description) || undefined,
+                        alt: (image && image.title) || undefined,
                       }
                     }
                   />

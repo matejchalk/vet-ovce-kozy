@@ -57,8 +57,7 @@ const ArticlesPage = ({
                       fluid && {
                         fluid,
                         alt:
-                          oc(category).image.description() ||
-                          oc(category).title(''),
+                          oc(category).image.title() || oc(category).title(''),
                       }
                     }
                     link={{ text: read, path: `/${slug}` }}
@@ -100,7 +99,7 @@ export const pageQuery = graphql`
           category {
             title
             image {
-              description
+              title
               fluid(maxWidth: 750, maxHeight: 422, quality: 100) {
                 src
                 srcSet

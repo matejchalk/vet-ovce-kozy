@@ -37,7 +37,7 @@ const AboutPage = ({ location: { pathname } }: Props) => {
             }
           }
           photo {
-            description
+            title
             fluid(maxWidth: 345, maxHeight: 345, quality: 100) {
               src
               srcSet
@@ -92,7 +92,7 @@ const AboutPage = ({ location: { pathname } }: Props) => {
                     image={
                       fluid && {
                         fluid,
-                        alt: (photo && photo.description) || undefined,
+                        alt: (photo && photo.title) || undefined,
                       }
                     }
                     align="top"
