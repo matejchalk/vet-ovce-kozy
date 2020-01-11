@@ -1,13 +1,19 @@
 export interface Styles {
   title: string;
   contact: string;
+  avatar: string;
   section: string;
   map: string;
   texts: string;
+  groupContact: string;
   address: string;
-  links: string;
-  linkIcon: string;
+  individualContacts: string;
+  individualContact: string;
+  member: string;
+  memberName: string;
   link: string;
+  linkIcon: string;
+  linkText: string;
   facebookButton: string;
   facebookIcon: string;
 }

@@ -7,6 +7,8 @@ import Layout from '../components/layout';
 import { FACEBOOK_URL, GOOGLE_MAPS_EMBED_SRC } from '../constants';
 import { ContactPageQuery } from '../types/graphql';
 import i18n from '../i18n.json';
+import { exists, getFixedImage } from '../utils';
+import Img from 'gatsby-image';
 import styles from './contact.module.scss';
 
 type Props = {
@@ -22,16 +24,36 @@ const ContactPage = ({ location: { pathname } }: Props) => {
           city
           postCode
         }
-        phoneNumber
-        email
+        members {
+          id
+          name
+          phoneNumber
+          email
+          avatar {
+            ...MemberAvatar
+          }
+          photo {
+            ...MemberAvatar
+          }
+        }
+      }
+    }
+
+    fragment MemberAvatar on ContentfulAsset {
+      title
+      fixed(width: 40, height: 40) {
+        width
+        height
+        src
+        srcSet
+        base64
       }
     }
   `);
 
   const contact = {
     address: oc(contentfulContactPage).address({}),
-    phoneNumber: oc(contentfulContactPage).phoneNumber(),
-    email: oc(contentfulContactPage).email(),
+    members: oc(contentfulContactPage).members([]),
   };
 
   const {
@@ -39,7 +61,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
     pages: {
       contact: { title },
     },
-    contact: { postCode, address, phoneNumber, email },
+    contact: { postCode, address, phoneNumber, email, memberContacts },
     buttons: { facebook },
   } = i18n;
 
@@ -48,7 +70,16 @@ const ContactPage = ({ location: { pathname } }: Props) => {
     contact.address.city,
     contact.address.postCode,
   ].join(', ');
-  const description = `${heading}. ${address}: ${fullAddress}. ${phoneNumber}: ${contact.phoneNumber}. ${email}: ${contact.email}`;
+  const contacts = contact.members
+    .filter(exists)
+    .map(
+      member =>
+        `${member.name} (${phoneNumber.toLowerCase()}: ${
+          member.phoneNumber
+        }, ${email.toLowerCase()}: ${member.email})`
+    )
+    .join(', ');
+  const description = `${heading}. ${address}: ${fullAddress}. ${memberContacts}: ${contacts}.`;
   const keywords = [title.toLowerCase()];
 
   return (
@@ -65,24 +96,12 @@ const ContactPage = ({ location: { pathname } }: Props) => {
             className={styles.map}
           />
           <div className={styles.texts}>
-            <div title={address} className={styles.address}>
-              <span>{contact.address.street}</span>
-              <span>{contact.address.city}</span>
-              <span>{`${postCode}: ${contact.address.postCode}`}</span>
-            </div>
-            <div className={styles.links}>
-              <span title={phoneNumber}>
-                <MdPhone className={styles.linkIcon} />
-                <a href={`tel:${contact.phoneNumber}`} className={styles.link}>
-                  {contact.phoneNumber}
-                </a>
-              </span>
-              <span title={email}>
-                <MdEmail className={styles.linkIcon} />
-                <a href={`mailto:${contact.email}`} className={styles.link}>
-                  {contact.email}
-                </a>
-              </span>
+            <div className={styles.groupContact}>
+              <div title={address} className={styles.address}>
+                <span>{contact.address.street}</span>
+                <span>{contact.address.city}</span>
+                <span>{`${postCode}: ${contact.address.postCode}`}</span>
+              </div>
               <a
                 href={FACEBOOK_URL}
                 target="_blank"
@@ -92,6 +111,43 @@ const ContactPage = ({ location: { pathname } }: Props) => {
                 <FaFacebook className={styles.facebookIcon} />
                 <span>{facebook}</span>
               </a>
+            </div>
+            <div className={styles.individualContacts}>
+              {contact.members.filter(exists).map(member => (
+                <div key={member.id} className={styles.individualContact}>
+                  <div className={styles.member}>
+                    <Img
+                      fixed={getFixedImage(member.avatar || member.photo)}
+                      alt={
+                        oc(member).avatar.title() ||
+                        oc(member).photo.title() ||
+                        member.name ||
+                        undefined
+                      }
+                      className={styles.avatar}
+                    />
+                    <span>{member.name}</span>
+                  </div>
+                  <span title={phoneNumber} className={styles.link}>
+                    <MdPhone className={styles.linkIcon} />
+                    <a
+                      href={`tel:${member.phoneNumber}`}
+                      className={styles.linkText}
+                    >
+                      {member.phoneNumber}
+                    </a>
+                  </span>
+                  <span title={email} className={styles.link}>
+                    <MdEmail className={styles.linkIcon} />
+                    <a
+                      href={`mailto:${member.email}`}
+                      className={styles.linkText}
+                    >
+                      {member.email}
+                    </a>
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </main>

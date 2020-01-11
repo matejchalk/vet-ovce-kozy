@@ -1,11 +1,11 @@
 export interface Styles {
   article: string;
+  authorAvatar: string;
   authorName: string;
   date: string;
   section: string;
   title: string;
   author: string;
-  authorAvatar: string;
   content: string;
   bold: string;
   italic: string;

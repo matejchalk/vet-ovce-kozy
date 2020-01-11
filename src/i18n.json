@@ -28,7 +28,8 @@
     "postCode": "PSČ",
     "address": "Adresa",
     "phoneNumber": "Telefonní číslo",
-    "email": "Emailová adresa"
+    "email": "Emailová adresa",
+    "memberContacts": "Kontaktní osoby"
   },
   "other": {
     "continued": "pokr.",
