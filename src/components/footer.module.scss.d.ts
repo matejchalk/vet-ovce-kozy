@@ -1,6 +1,7 @@
 export interface Styles {
   footer: string;
   contactLinks: string;
+  contactName: string;
   contactLink: string;
   linkIcon: string;
   socialLinks: string;

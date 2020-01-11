@@ -34,6 +34,10 @@ $text-color: $vok-light-grey;
   flex-direction: column;
 }
 
+.contact-name {
+  margin-bottom: 0.3em;
+}
+
 .contact-link {
   display: flex;
   align-items: center;
@@ -44,7 +48,7 @@ $text-color: $vok-light-grey;
 }
 
 .link-icon {
-  margin-right: 0.5em;
+  margin: 0 0.5em;
 }
 
 .social-links {

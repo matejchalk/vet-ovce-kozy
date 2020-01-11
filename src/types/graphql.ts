@@ -439,8 +439,6 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___contactpage___internal___owner = 'teamMembers___contactpage___internal___owner',
   teamMembers___contactpage___internal___type = 'teamMembers___contactpage___internal___type',
   teamMembers___contactpage___page = 'teamMembers___contactpage___page',
-  teamMembers___contactpage___phoneNumber = 'teamMembers___contactpage___phoneNumber',
-  teamMembers___contactpage___email = 'teamMembers___contactpage___email',
   teamMembers___contactpage___address___id = 'teamMembers___contactpage___address___id',
   teamMembers___contactpage___address___children = 'teamMembers___contactpage___address___children',
   teamMembers___contactpage___address___street = 'teamMembers___contactpage___address___street',
@@ -798,8 +796,6 @@ export enum ContentfulAddressFieldsEnum {
   contactpage___internal___owner = 'contactpage___internal___owner',
   contactpage___internal___type = 'contactpage___internal___type',
   contactpage___page = 'contactpage___page',
-  contactpage___phoneNumber = 'contactpage___phoneNumber',
-  contactpage___email = 'contactpage___email',
   contactpage___address___id = 'contactpage___address___id',
   contactpage___address___parent___id = 'contactpage___address___parent___id',
   contactpage___address___parent___children = 'contactpage___address___parent___children',
@@ -821,8 +817,6 @@ export enum ContentfulAddressFieldsEnum {
   contactpage___address___contactpage___id = 'contactpage___address___contactpage___id',
   contactpage___address___contactpage___children = 'contactpage___address___contactpage___children',
   contactpage___address___contactpage___page = 'contactpage___address___contactpage___page',
-  contactpage___address___contactpage___phoneNumber = 'contactpage___address___contactpage___phoneNumber',
-  contactpage___address___contactpage___email = 'contactpage___address___contactpage___email',
   contactpage___address___contactpage___members = 'contactpage___address___contactpage___members',
   contactpage___address___contactpage___spaceId = 'contactpage___address___contactpage___spaceId',
   contactpage___address___contactpage___contentful_id = 'contactpage___address___contactpage___contentful_id',
@@ -890,8 +884,6 @@ export enum ContentfulAddressFieldsEnum {
   contactpage___members___contactpage___id = 'contactpage___members___contactpage___id',
   contactpage___members___contactpage___children = 'contactpage___members___contactpage___children',
   contactpage___members___contactpage___page = 'contactpage___members___contactpage___page',
-  contactpage___members___contactpage___phoneNumber = 'contactpage___members___contactpage___phoneNumber',
-  contactpage___members___contactpage___email = 'contactpage___members___contactpage___email',
   contactpage___members___contactpage___members = 'contactpage___members___contactpage___members',
   contactpage___members___contactpage___spaceId = 'contactpage___members___contactpage___spaceId',
   contactpage___members___contactpage___contentful_id = 'contactpage___members___contactpage___contentful_id',
@@ -1744,8 +1736,6 @@ export enum ContentfulArticleFieldsEnum {
   author___contactpage___internal___owner = 'author___contactpage___internal___owner',
   author___contactpage___internal___type = 'author___contactpage___internal___type',
   author___contactpage___page = 'author___contactpage___page',
-  author___contactpage___phoneNumber = 'author___contactpage___phoneNumber',
-  author___contactpage___email = 'author___contactpage___email',
   author___contactpage___address___id = 'author___contactpage___address___id',
   author___contactpage___address___children = 'author___contactpage___address___children',
   author___contactpage___address___street = 'author___contactpage___address___street',
@@ -2675,8 +2665,6 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___contactpage___id = 'article___author___contactpage___id',
   article___author___contactpage___children = 'article___author___contactpage___children',
   article___author___contactpage___page = 'article___author___contactpage___page',
-  article___author___contactpage___phoneNumber = 'article___author___contactpage___phoneNumber',
-  article___author___contactpage___email = 'article___author___contactpage___email',
   article___author___contactpage___members = 'article___author___contactpage___members',
   article___author___contactpage___spaceId = 'article___author___contactpage___spaceId',
   article___author___contactpage___contentful_id = 'article___author___contactpage___contentful_id',
@@ -2820,8 +2808,6 @@ export type ContentfulContactPage = Node & {
   children: Array<Node>;
   internal: Internal;
   page?: Maybe<Scalars['String']>;
-  phoneNumber?: Maybe<Scalars['String']>;
-  email?: Maybe<Scalars['String']>;
   address?: Maybe<ContentfulAddress>;
   members?: Maybe<Array<Maybe<ContentfulMember>>>;
   spaceId?: Maybe<Scalars['String']>;
@@ -2961,8 +2947,6 @@ export enum ContentfulContactPageFieldsEnum {
   internal___owner = 'internal___owner',
   internal___type = 'internal___type',
   page = 'page',
-  phoneNumber = 'phoneNumber',
-  email = 'email',
   address___id = 'address___id',
   address___parent___id = 'address___parent___id',
   address___parent___parent___id = 'address___parent___parent___id',
@@ -3020,8 +3004,6 @@ export enum ContentfulContactPageFieldsEnum {
   address___contactpage___internal___owner = 'address___contactpage___internal___owner',
   address___contactpage___internal___type = 'address___contactpage___internal___type',
   address___contactpage___page = 'address___contactpage___page',
-  address___contactpage___phoneNumber = 'address___contactpage___phoneNumber',
-  address___contactpage___email = 'address___contactpage___email',
   address___contactpage___address___id = 'address___contactpage___address___id',
   address___contactpage___address___children = 'address___contactpage___address___children',
   address___contactpage___address___street = 'address___contactpage___address___street',
@@ -3331,8 +3313,6 @@ export enum ContentfulContactPageFieldsEnum {
   members___contactpage___internal___owner = 'members___contactpage___internal___owner',
   members___contactpage___internal___type = 'members___contactpage___internal___type',
   members___contactpage___page = 'members___contactpage___page',
-  members___contactpage___phoneNumber = 'members___contactpage___phoneNumber',
-  members___contactpage___email = 'members___contactpage___email',
   members___contactpage___address___id = 'members___contactpage___address___id',
   members___contactpage___address___children = 'members___contactpage___address___children',
   members___contactpage___address___street = 'members___contactpage___address___street',
@@ -3438,8 +3418,6 @@ export type ContentfulContactPageFilterInput = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   page?: Maybe<StringQueryOperatorInput>;
-  phoneNumber?: Maybe<StringQueryOperatorInput>;
-  email?: Maybe<StringQueryOperatorInput>;
   address?: Maybe<ContentfulAddressFilterInput>;
   members?: Maybe<ContentfulMemberFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
@@ -5157,8 +5135,6 @@ export enum ContentfulMemberFieldsEnum {
   article___author___contactpage___id = 'article___author___contactpage___id',
   article___author___contactpage___children = 'article___author___contactpage___children',
   article___author___contactpage___page = 'article___author___contactpage___page',
-  article___author___contactpage___phoneNumber = 'article___author___contactpage___phoneNumber',
-  article___author___contactpage___email = 'article___author___contactpage___email',
   article___author___contactpage___members = 'article___author___contactpage___members',
   article___author___contactpage___spaceId = 'article___author___contactpage___spaceId',
   article___author___contactpage___contentful_id = 'article___author___contactpage___contentful_id',
@@ -5312,8 +5288,6 @@ export enum ContentfulMemberFieldsEnum {
   aboutpage___teamMembers___contactpage___id = 'aboutpage___teamMembers___contactpage___id',
   aboutpage___teamMembers___contactpage___children = 'aboutpage___teamMembers___contactpage___children',
   aboutpage___teamMembers___contactpage___page = 'aboutpage___teamMembers___contactpage___page',
-  aboutpage___teamMembers___contactpage___phoneNumber = 'aboutpage___teamMembers___contactpage___phoneNumber',
-  aboutpage___teamMembers___contactpage___email = 'aboutpage___teamMembers___contactpage___email',
   aboutpage___teamMembers___contactpage___members = 'aboutpage___teamMembers___contactpage___members',
   aboutpage___teamMembers___contactpage___spaceId = 'aboutpage___teamMembers___contactpage___spaceId',
   aboutpage___teamMembers___contactpage___contentful_id = 'aboutpage___teamMembers___contactpage___contentful_id',
@@ -5378,8 +5352,6 @@ export enum ContentfulMemberFieldsEnum {
   contactpage___internal___owner = 'contactpage___internal___owner',
   contactpage___internal___type = 'contactpage___internal___type',
   contactpage___page = 'contactpage___page',
-  contactpage___phoneNumber = 'contactpage___phoneNumber',
-  contactpage___email = 'contactpage___email',
   contactpage___address___id = 'contactpage___address___id',
   contactpage___address___parent___id = 'contactpage___address___parent___id',
   contactpage___address___parent___children = 'contactpage___address___parent___children',
@@ -5401,8 +5373,6 @@ export enum ContentfulMemberFieldsEnum {
   contactpage___address___contactpage___id = 'contactpage___address___contactpage___id',
   contactpage___address___contactpage___children = 'contactpage___address___contactpage___children',
   contactpage___address___contactpage___page = 'contactpage___address___contactpage___page',
-  contactpage___address___contactpage___phoneNumber = 'contactpage___address___contactpage___phoneNumber',
-  contactpage___address___contactpage___email = 'contactpage___address___contactpage___email',
   contactpage___address___contactpage___members = 'contactpage___address___contactpage___members',
   contactpage___address___contactpage___spaceId = 'contactpage___address___contactpage___spaceId',
   contactpage___address___contactpage___contentful_id = 'contactpage___address___contactpage___contentful_id',
@@ -5470,8 +5440,6 @@ export enum ContentfulMemberFieldsEnum {
   contactpage___members___contactpage___id = 'contactpage___members___contactpage___id',
   contactpage___members___contactpage___children = 'contactpage___members___contactpage___children',
   contactpage___members___contactpage___page = 'contactpage___members___contactpage___page',
-  contactpage___members___contactpage___phoneNumber = 'contactpage___members___contactpage___phoneNumber',
-  contactpage___members___contactpage___email = 'contactpage___members___contactpage___email',
   contactpage___members___contactpage___members = 'contactpage___members___contactpage___members',
   contactpage___members___contactpage___spaceId = 'contactpage___members___contactpage___spaceId',
   contactpage___members___contactpage___contentful_id = 'contactpage___members___contactpage___contentful_id',
@@ -8478,8 +8446,6 @@ export type QueryContentfulContactPageArgs = {
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
   page?: Maybe<StringQueryOperatorInput>;
-  phoneNumber?: Maybe<StringQueryOperatorInput>;
-  email?: Maybe<StringQueryOperatorInput>;
   address?: Maybe<ContentfulAddressFilterInput>;
   members?: Maybe<ContentfulMemberFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
@@ -9666,17 +9632,24 @@ export type FooterQueryVariables = {};
 
 export type FooterQuery = { __typename?: 'Query' } & {
   contentfulContactPage: Maybe<
-    { __typename?: 'ContentfulContactPage' } & Pick<
-      ContentfulContactPage,
-      'phoneNumber' | 'email'
-    > & {
-        address: Maybe<
-          { __typename?: 'ContentfulAddress' } & Pick<
-            ContentfulAddress,
-            'street' | 'city' | 'postCode'
+    { __typename?: 'ContentfulContactPage' } & {
+      address: Maybe<
+        { __typename?: 'ContentfulAddress' } & Pick<
+          ContentfulAddress,
+          'street' | 'city' | 'postCode'
+        >
+      >;
+      members: Maybe<
+        Array<
+          Maybe<
+            { __typename?: 'ContentfulMember' } & Pick<
+              ContentfulMember,
+              'name' | 'phoneNumber' | 'email'
+            >
           >
-        >;
-      }
+        >
+      >;
+    }
   >;
 };
 

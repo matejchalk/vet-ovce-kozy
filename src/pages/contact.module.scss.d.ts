@@ -10,7 +10,6 @@ export interface Styles {
   individualContacts: string;
   individualContact: string;
   member: string;
-  memberName: string;
   link: string;
   linkIcon: string;
   linkText: string;

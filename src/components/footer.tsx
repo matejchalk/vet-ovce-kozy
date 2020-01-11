@@ -16,19 +16,24 @@ const Footer = () => {
           city
           postCode
         }
-        phoneNumber
-        email
+        members {
+          name
+          phoneNumber
+          email
+        }
       }
     }
   `);
 
   const address = oc(contentfulContactPage).address({});
-  const phoneNumber = oc(contentfulContactPage).phoneNumber();
-  const email = oc(contentfulContactPage).email();
+  const name = oc(contentfulContactPage).members[0].name();
+  const phoneNumber = oc(contentfulContactPage).members[0].phoneNumber();
+  const email = oc(contentfulContactPage).members[0].email();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.contactLinks}>
+        <span className={styles.contactName}>{name}:</span>
         <span className={styles.contactLink}>
           <MdPhone className={styles.linkIcon} />
           <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
