@@ -201,9 +201,11 @@ $card-offset-gt-sm: 48px;
 
 .hyperlink,
 .entry-hyperlink {
-  color: $vok-light-blue;
+  color: $vok-blue;
+  border-bottom: 1px solid $vok-blue;
 
   &:hover {
-    text-decoration: underline;
+    color: $vok-blue-tint;
+    border-bottom-color: $vok-blue-tint;
   }
 }

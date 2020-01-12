@@ -61,7 +61,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
     pages: {
       contact: { title },
     },
-    contact: { postCode, address, phoneNumber, email, memberContacts },
+    contact: { postCode, address, phoneNumber, email, map, memberContacts },
     buttons: { facebook },
   } = i18n;
 
@@ -89,6 +89,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
         <main className={styles.contact}>
           <iframe
             src={GOOGLE_MAPS_EMBED_SRC}
+            title={map}
             frameBorder={0}
             scrolling="no"
             marginHeight={0}

@@ -5,6 +5,7 @@ import { MdEmail, MdPhone } from 'react-icons/md';
 import { oc } from 'ts-optchain';
 import { FACEBOOK_URL, GOOGLE_MAPS_URL } from '../constants';
 import { FooterQuery } from '../types/graphql';
+import i18n from '../i18n.json';
 import styles from './footer.module.scss';
 
 const Footer = () => {
@@ -30,6 +31,10 @@ const Footer = () => {
   const phoneNumber = oc(contentfulContactPage).members[0].phoneNumber();
   const email = oc(contentfulContactPage).members[0].email();
 
+  const {
+    buttons: { facebook },
+  } = i18n;
+
   return (
     <footer className={styles.footer}>
       <div className={styles.contactLinks}>
@@ -44,7 +49,12 @@ const Footer = () => {
         </span>
       </div>
       <div className={styles.socialLinks}>
-        <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">
+        <a
+          href={FACEBOOK_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={facebook}
+        >
           <FaFacebookSquare className={styles.facebookButton} />
         </a>
       </div>
