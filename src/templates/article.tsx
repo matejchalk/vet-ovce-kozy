@@ -102,8 +102,8 @@ const ArticleTemplate = ({
 
   const date =
     contentfulArticle &&
-    contentfulArticle.date &&
-    new Date(contentfulArticle.date).toLocaleDateString(LANG, {
+    contentfulArticle.createdAt &&
+    new Date(contentfulArticle.createdAt).toLocaleDateString(LANG, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
@@ -116,7 +116,8 @@ const ArticleTemplate = ({
   const categoryTitle = oc(contentfulArticle).category.title('');
   const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
   const author = oc(contentfulArticle).author.name('');
-  const datePublished = oc(contentfulArticle).date() || undefined;
+  const datePublished = oc(contentfulArticle).createdAt() || undefined;
+  const dateModified = oc(contentfulArticle).updatedAt() || undefined;
 
   const avatar = oc(contentfulArticle).author.avatar();
   const photo = oc(contentfulArticle).author.photo();
@@ -135,6 +136,7 @@ const ArticleTemplate = ({
         isArticle: true,
         author,
         datePublished,
+        dateModified,
       }}
     >
       <section className={styles.section}>
@@ -169,6 +171,8 @@ export const pageQuery = graphql`
     contentfulArticle(slug: { eq: $slug }) {
       slug
       title
+      createdAt
+      updatedAt
       image {
         ...ArticleImage
       }
@@ -187,7 +191,6 @@ export const pageQuery = graphql`
           ...AuthorAvatar
         }
       }
-      date
       content {
         json
       }

@@ -10,4 +10,5 @@ type SEOProps = {
   isArticle?: boolean;
   author?: string;
   datePublished?: string;
+  dateModified?: string;
 };

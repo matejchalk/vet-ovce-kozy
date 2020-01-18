@@ -348,7 +348,6 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___article___internal___type = 'teamMembers___article___internal___type',
   teamMembers___article___title = 'teamMembers___article___title',
   teamMembers___article___slug = 'teamMembers___article___slug',
-  teamMembers___article___date = 'teamMembers___article___date',
   teamMembers___article___image___id = 'teamMembers___article___image___id',
   teamMembers___article___image___children = 'teamMembers___article___image___children',
   teamMembers___article___image___contentful_id = 'teamMembers___article___image___contentful_id',
@@ -870,7 +869,6 @@ export enum ContentfulAddressFieldsEnum {
   contactpage___members___article___children = 'contactpage___members___article___children',
   contactpage___members___article___title = 'contactpage___members___article___title',
   contactpage___members___article___slug = 'contactpage___members___article___slug',
-  contactpage___members___article___date = 'contactpage___members___article___date',
   contactpage___members___article___spaceId = 'contactpage___members___article___spaceId',
   contactpage___members___article___contentful_id = 'contactpage___members___article___contentful_id',
   contactpage___members___article___createdAt = 'contactpage___members___article___createdAt',
@@ -1001,7 +999,6 @@ export type ContentfulArticle = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   image?: Maybe<ContentfulAsset>;
   category?: Maybe<ContentfulCategory>;
   author?: Maybe<ContentfulMember>;
@@ -1015,13 +1012,6 @@ export type ContentfulArticle = Node & {
   childContentfulArticleContentRichTextNode?: Maybe<
     ContentfulArticleContentRichTextNode
   >;
-};
-
-export type ContentfulArticleDateArgs = {
-  formatString?: Maybe<Scalars['String']>;
-  fromNow?: Maybe<Scalars['Boolean']>;
-  difference?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
 };
 
 export type ContentfulArticleCreatedAtArgs = {
@@ -1309,7 +1299,6 @@ export enum ContentfulArticleFieldsEnum {
   internal___type = 'internal___type',
   title = 'title',
   slug = 'slug',
-  date = 'date',
   image___id = 'image___id',
   image___parent___id = 'image___parent___id',
   image___parent___parent___id = 'image___parent___parent___id',
@@ -1513,7 +1502,6 @@ export enum ContentfulArticleFieldsEnum {
   category___article___internal___type = 'category___article___internal___type',
   category___article___title = 'category___article___title',
   category___article___slug = 'category___article___slug',
-  category___article___date = 'category___article___date',
   category___article___image___id = 'category___article___image___id',
   category___article___image___children = 'category___article___image___children',
   category___article___image___contentful_id = 'category___article___image___contentful_id',
@@ -1744,7 +1732,6 @@ export enum ContentfulArticleFieldsEnum {
   author___article___internal___type = 'author___article___internal___type',
   author___article___title = 'author___article___title',
   author___article___slug = 'author___article___slug',
-  author___article___date = 'author___article___date',
   author___article___image___id = 'author___article___image___id',
   author___article___image___children = 'author___article___image___children',
   author___article___image___contentful_id = 'author___article___image___contentful_id',
@@ -2029,7 +2016,6 @@ export type ContentfulArticleFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<DateQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
   category?: Maybe<ContentfulCategoryFilterInput>;
   author?: Maybe<ContentfulMemberFilterInput>;
@@ -2678,7 +2664,6 @@ export enum ContentfulCategoryFieldsEnum {
   article___internal___type = 'article___internal___type',
   article___title = 'article___title',
   article___slug = 'article___slug',
-  article___date = 'article___date',
   article___image___id = 'article___image___id',
   article___image___parent___id = 'article___image___parent___id',
   article___image___parent___children = 'article___image___parent___children',
@@ -2766,7 +2751,6 @@ export enum ContentfulCategoryFieldsEnum {
   article___category___article___children = 'article___category___article___children',
   article___category___article___title = 'article___category___article___title',
   article___category___article___slug = 'article___category___article___slug',
-  article___category___article___date = 'article___category___article___date',
   article___category___article___spaceId = 'article___category___article___spaceId',
   article___category___article___contentful_id = 'article___category___article___contentful_id',
   article___category___article___createdAt = 'article___category___article___createdAt',
@@ -2812,7 +2796,6 @@ export enum ContentfulCategoryFieldsEnum {
   article___author___article___children = 'article___author___article___children',
   article___author___article___title = 'article___author___article___title',
   article___author___article___slug = 'article___author___article___slug',
-  article___author___article___date = 'article___author___article___date',
   article___author___article___spaceId = 'article___author___article___spaceId',
   article___author___article___contentful_id = 'article___author___article___contentful_id',
   article___author___article___createdAt = 'article___author___article___createdAt',
@@ -3389,7 +3372,6 @@ export enum ContentfulContactPageFieldsEnum {
   members___article___internal___type = 'members___article___internal___type',
   members___article___title = 'members___article___title',
   members___article___slug = 'members___article___slug',
-  members___article___date = 'members___article___date',
   members___article___image___id = 'members___article___image___id',
   members___article___image___children = 'members___article___image___children',
   members___article___image___contentful_id = 'members___article___image___contentful_id',
@@ -5215,7 +5197,6 @@ export enum ContentfulMemberFieldsEnum {
   article___internal___type = 'article___internal___type',
   article___title = 'article___title',
   article___slug = 'article___slug',
-  article___date = 'article___date',
   article___image___id = 'article___image___id',
   article___image___parent___id = 'article___image___parent___id',
   article___image___parent___children = 'article___image___parent___children',
@@ -5303,7 +5284,6 @@ export enum ContentfulMemberFieldsEnum {
   article___category___article___children = 'article___category___article___children',
   article___category___article___title = 'article___category___article___title',
   article___category___article___slug = 'article___category___article___slug',
-  article___category___article___date = 'article___category___article___date',
   article___category___article___spaceId = 'article___category___article___spaceId',
   article___category___article___contentful_id = 'article___category___article___contentful_id',
   article___category___article___createdAt = 'article___category___article___createdAt',
@@ -5349,7 +5329,6 @@ export enum ContentfulMemberFieldsEnum {
   article___author___article___children = 'article___author___article___children',
   article___author___article___title = 'article___author___article___title',
   article___author___article___slug = 'article___author___article___slug',
-  article___author___article___date = 'article___author___article___date',
   article___author___article___spaceId = 'article___author___article___spaceId',
   article___author___article___contentful_id = 'article___author___article___contentful_id',
   article___author___article___createdAt = 'article___author___article___createdAt',
@@ -5502,7 +5481,6 @@ export enum ContentfulMemberFieldsEnum {
   aboutpage___teamMembers___article___children = 'aboutpage___teamMembers___article___children',
   aboutpage___teamMembers___article___title = 'aboutpage___teamMembers___article___title',
   aboutpage___teamMembers___article___slug = 'aboutpage___teamMembers___article___slug',
-  aboutpage___teamMembers___article___date = 'aboutpage___teamMembers___article___date',
   aboutpage___teamMembers___article___spaceId = 'aboutpage___teamMembers___article___spaceId',
   aboutpage___teamMembers___article___contentful_id = 'aboutpage___teamMembers___article___contentful_id',
   aboutpage___teamMembers___article___createdAt = 'aboutpage___teamMembers___article___createdAt',
@@ -5654,7 +5632,6 @@ export enum ContentfulMemberFieldsEnum {
   contactpage___members___article___children = 'contactpage___members___article___children',
   contactpage___members___article___title = 'contactpage___members___article___title',
   contactpage___members___article___slug = 'contactpage___members___article___slug',
-  contactpage___members___article___date = 'contactpage___members___article___date',
   contactpage___members___article___spaceId = 'contactpage___members___article___spaceId',
   contactpage___members___article___contentful_id = 'contactpage___members___article___contentful_id',
   contactpage___members___article___createdAt = 'contactpage___members___article___createdAt',
@@ -8452,7 +8429,6 @@ export type QueryContentfulArticleArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<DateQueryOperatorInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
   category?: Maybe<ContentfulCategoryFilterInput>;
   author?: Maybe<ContentfulMemberFilterInput>;
@@ -10110,7 +10086,7 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
   contentfulArticle: Maybe<
     { __typename?: 'ContentfulArticle' } & Pick<
       ContentfulArticle,
-      'slug' | 'title' | 'date'
+      'slug' | 'title' | 'createdAt' | 'updatedAt'
     > & {
         image: Maybe<{ __typename?: 'ContentfulAsset' } & ArticleImageFragment>;
         category: Maybe<

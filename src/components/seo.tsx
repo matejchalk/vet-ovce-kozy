@@ -67,6 +67,7 @@ const SEO = (props: SEOProps) => {
       },
     }),
     ...(props.datePublished && { datePublished: props.datePublished }),
+    ...(props.dateModified && { dateModified: props.dateModified }),
     ...(description && { description }),
     ...(title && { headline: title, name: title }),
     inLanguage: LANG,
@@ -76,6 +77,7 @@ const SEO = (props: SEOProps) => {
     },
     url,
     mainEntityOfPage: url,
+    publisher: defaultTitle,
   };
 
   const schema = props.isArticle ? articleSchema : websiteSchema;

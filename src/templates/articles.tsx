@@ -95,7 +95,7 @@ export default ArticlesPage;
 export const pageQuery = graphql`
   query ArticlePreviews($skip: Int!, $limit: Int!) {
     allContentfulArticle(
-      sort: { fields: date, order: DESC }
+      sort: { fields: createdAt, order: DESC }
       skip: $skip
       limit: $limit
     ) {
