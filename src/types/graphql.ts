@@ -9900,11 +9900,11 @@ export type SiteMetadataQuery = { __typename?: 'Query' } & {
           SiteSiteMetadata,
           'titleTemplate'
         > & {
-            defaultTitle: SiteSiteMetadata['title'];
-            defaultDescription: SiteSiteMetadata['description'];
-            defaultKeywords: SiteSiteMetadata['keywords'];
+            siteTitle: SiteSiteMetadata['title'];
+            siteDescription: SiteSiteMetadata['description'];
+            siteKeywords: SiteSiteMetadata['keywords'];
             siteUrl: SiteSiteMetadata['url'];
-            defaultImage: SiteSiteMetadata['image'];
+            siteImage: SiteSiteMetadata['image'];
           }
       >;
     }

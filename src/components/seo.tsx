@@ -12,40 +12,37 @@ const SEO = (props: SEOProps) => {
     query SiteMetadata {
       site {
         siteMetadata {
-          defaultTitle: title
+          siteTitle: title
           titleTemplate
-          defaultDescription: description
-          defaultKeywords: keywords
+          siteDescription: description
+          siteKeywords: keywords
           siteUrl: url
-          defaultImage: image
+          siteImage: image
         }
       }
     }
   `);
 
-  const defaultTitle = oc(site).siteMetadata.defaultTitle('');
+  const siteTitle = oc(site).siteMetadata.siteTitle('');
   const titleTemplate = oc(site).siteMetadata.titleTemplate('');
-  const defaultDescription = oc(site).siteMetadata.defaultDescription('');
-  const defaultKeywords = oc(site).siteMetadata.defaultKeywords([]);
+  const siteDescription = oc(site).siteMetadata.siteDescription('');
+  const siteKeywords = oc(site).siteMetadata.siteKeywords([]);
   const siteUrl = oc(site).siteMetadata.siteUrl('');
-  const defaultImage = oc(site).siteMetadata.defaultImage('');
+  const siteImage = oc(site).siteMetadata.siteImage('');
+  const siteImageSrc = `${siteUrl}${require(`../images/${siteImage}`)}`;
 
   const title = props.title;
-  const description = forceEndingPeriod(
-    props.description || defaultDescription
-  );
-  const keywords = [...(props.keywords || []), ...defaultKeywords].join(', ');
+  const description = forceEndingPeriod(props.description || siteDescription);
+  const keywords = [...(props.keywords || []), ...siteKeywords].join(', ');
   const url = `${siteUrl}${props.path || ''}`;
-  const imageSrc =
-    oc(props).image.src() ||
-    `${siteUrl}${require(`../images/${defaultImage}`)}`;
-  const imageAlt = oc(props).image.alt() || defaultTitle;
+  const imageSrc = oc(props).image.src() || siteImageSrc;
+  const imageAlt = oc(props).image.alt() || siteTitle;
   const type = props.isArticle ? 'article' : 'website';
 
   const websiteSchema: WithContext<WebPage> = {
     '@context': 'https://schema.org',
     '@type': 'WebPage', // TODO: other types?
-    name: defaultTitle,
+    name: siteTitle,
     ...(title && { headline: title }),
     inLanguage: LANG,
     url,
@@ -77,7 +74,14 @@ const SEO = (props: SEOProps) => {
     },
     url,
     mainEntityOfPage: url,
-    publisher: defaultTitle,
+    publisher: {
+      '@type': 'Organization',
+      name: siteTitle,
+      logo: {
+        '@type': 'ImageObject',
+        url: siteImageSrc,
+      },
+    },
   };
 
   const schema = props.isArticle ? articleSchema : websiteSchema;
@@ -85,24 +89,24 @@ const SEO = (props: SEOProps) => {
   return (
     <Helmet
       title={title}
-      defaultTitle={defaultTitle}
+      defaultTitle={siteTitle}
       titleTemplate={titleTemplate}
     >
       <html lang={LANG} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="robots" content="index, follow" />
-      <meta property="og:title" content={title || defaultTitle} />
+      <meta property="og:title" content={title || siteTitle} />
       <meta property="og:type" content={type} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageSrc} />
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content={defaultTitle} />
+      <meta property="og:site_name" content={siteTitle} />
       <meta property="og:locale" content={LANG} />
       <meta property="og:image:alt" content={imageAlt} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:url" content={url} />
-      <meta name="twitter:title" content={title || defaultTitle} />
+      <meta name="twitter:title" content={title || siteTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageSrc} />
       <meta name="twitter:image:alt" content={imageAlt} />
