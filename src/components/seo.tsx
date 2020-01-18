@@ -3,7 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Article, WebPage, WithContext } from 'schema-dts';
 import { oc } from 'ts-optchain';
-import { LANG } from '../constants';
+import { CONTENTFUL_IMAGE_CDN, LANG } from '../constants';
 import { SiteMetadataQuery } from '../types/graphql';
 import { forceEndingPeriod } from '../utils';
 
@@ -93,6 +93,7 @@ const SEO = (props: SEOProps) => {
       titleTemplate={titleTemplate}
     >
       <html lang={LANG} />
+      <link rel="preconnect" href={CONTENTFUL_IMAGE_CDN} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="robots" content="index, follow" />
