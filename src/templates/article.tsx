@@ -110,7 +110,8 @@ const ArticleTemplate = ({
     });
 
   const title = oc(contentfulArticle).title() || undefined;
-  const image = oc(contentfulArticle).category.image();
+  const image =
+    oc(contentfulArticle).image() || oc(contentfulArticle).category.image();
   const description = getFirstParagraphFromRichText(richTextDocument);
   const categoryTitle = oc(contentfulArticle).category.title('');
   const keywords = categoryTitle ? [categoryTitle.toLowerCase()] : [];
@@ -168,17 +169,13 @@ export const pageQuery = graphql`
     contentfulArticle(slug: { eq: $slug }) {
       slug
       title
+      image {
+        ...ArticleImage
+      }
       category {
         title
         image {
-          title
-          fluid(maxWidth: 1050, quality: 100) {
-            src
-            srcSet
-            aspectRatio
-            sizes
-            base64
-          }
+          ...ArticleImage
         }
       }
       author {
@@ -210,6 +207,17 @@ export const pageQuery = graphql`
           }
         }
       }
+    }
+  }
+
+  fragment ArticleImage on ContentfulAsset {
+    title
+    fluid(maxWidth: 1050, quality: 100) {
+      src
+      srcSet
+      aspectRatio
+      sizes
+      base64
     }
   }
 

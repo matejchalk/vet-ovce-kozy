@@ -349,6 +349,12 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___article___title = 'teamMembers___article___title',
   teamMembers___article___slug = 'teamMembers___article___slug',
   teamMembers___article___date = 'teamMembers___article___date',
+  teamMembers___article___image___id = 'teamMembers___article___image___id',
+  teamMembers___article___image___children = 'teamMembers___article___image___children',
+  teamMembers___article___image___contentful_id = 'teamMembers___article___image___contentful_id',
+  teamMembers___article___image___title = 'teamMembers___article___image___title',
+  teamMembers___article___image___description = 'teamMembers___article___image___description',
+  teamMembers___article___image___node_locale = 'teamMembers___article___image___node_locale',
   teamMembers___article___category___id = 'teamMembers___article___category___id',
   teamMembers___article___category___children = 'teamMembers___article___category___children',
   teamMembers___article___category___title = 'teamMembers___article___category___title',
@@ -444,6 +450,7 @@ export enum ContentfulAboutPageFieldsEnum {
   teamMembers___contactpage___address___street = 'teamMembers___contactpage___address___street',
   teamMembers___contactpage___address___city = 'teamMembers___contactpage___address___city',
   teamMembers___contactpage___address___postCode = 'teamMembers___contactpage___address___postCode',
+  teamMembers___contactpage___address___contactpage = 'teamMembers___contactpage___address___contactpage',
   teamMembers___contactpage___address___spaceId = 'teamMembers___contactpage___address___spaceId',
   teamMembers___contactpage___address___contentful_id = 'teamMembers___contactpage___address___contentful_id',
   teamMembers___contactpage___address___createdAt = 'teamMembers___contactpage___address___createdAt',
@@ -615,6 +622,7 @@ export type ContentfulAddress = Node & {
   street?: Maybe<Scalars['String']>;
   city?: Maybe<Scalars['String']>;
   postCode?: Maybe<Scalars['String']>;
+  contactpage?: Maybe<Array<Maybe<ContentfulContactPage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
@@ -754,6 +762,158 @@ export enum ContentfulAddressFieldsEnum {
   street = 'street',
   city = 'city',
   postCode = 'postCode',
+  contactpage = 'contactpage',
+  contactpage___id = 'contactpage___id',
+  contactpage___parent___id = 'contactpage___parent___id',
+  contactpage___parent___parent___id = 'contactpage___parent___parent___id',
+  contactpage___parent___parent___children = 'contactpage___parent___parent___children',
+  contactpage___parent___children = 'contactpage___parent___children',
+  contactpage___parent___children___id = 'contactpage___parent___children___id',
+  contactpage___parent___children___children = 'contactpage___parent___children___children',
+  contactpage___parent___internal___content = 'contactpage___parent___internal___content',
+  contactpage___parent___internal___contentDigest = 'contactpage___parent___internal___contentDigest',
+  contactpage___parent___internal___description = 'contactpage___parent___internal___description',
+  contactpage___parent___internal___fieldOwners = 'contactpage___parent___internal___fieldOwners',
+  contactpage___parent___internal___ignoreType = 'contactpage___parent___internal___ignoreType',
+  contactpage___parent___internal___mediaType = 'contactpage___parent___internal___mediaType',
+  contactpage___parent___internal___owner = 'contactpage___parent___internal___owner',
+  contactpage___parent___internal___type = 'contactpage___parent___internal___type',
+  contactpage___children = 'contactpage___children',
+  contactpage___children___id = 'contactpage___children___id',
+  contactpage___children___parent___id = 'contactpage___children___parent___id',
+  contactpage___children___parent___children = 'contactpage___children___parent___children',
+  contactpage___children___children = 'contactpage___children___children',
+  contactpage___children___children___id = 'contactpage___children___children___id',
+  contactpage___children___children___children = 'contactpage___children___children___children',
+  contactpage___children___internal___content = 'contactpage___children___internal___content',
+  contactpage___children___internal___contentDigest = 'contactpage___children___internal___contentDigest',
+  contactpage___children___internal___description = 'contactpage___children___internal___description',
+  contactpage___children___internal___fieldOwners = 'contactpage___children___internal___fieldOwners',
+  contactpage___children___internal___ignoreType = 'contactpage___children___internal___ignoreType',
+  contactpage___children___internal___mediaType = 'contactpage___children___internal___mediaType',
+  contactpage___children___internal___owner = 'contactpage___children___internal___owner',
+  contactpage___children___internal___type = 'contactpage___children___internal___type',
+  contactpage___internal___content = 'contactpage___internal___content',
+  contactpage___internal___contentDigest = 'contactpage___internal___contentDigest',
+  contactpage___internal___description = 'contactpage___internal___description',
+  contactpage___internal___fieldOwners = 'contactpage___internal___fieldOwners',
+  contactpage___internal___ignoreType = 'contactpage___internal___ignoreType',
+  contactpage___internal___mediaType = 'contactpage___internal___mediaType',
+  contactpage___internal___owner = 'contactpage___internal___owner',
+  contactpage___internal___type = 'contactpage___internal___type',
+  contactpage___page = 'contactpage___page',
+  contactpage___address___id = 'contactpage___address___id',
+  contactpage___address___parent___id = 'contactpage___address___parent___id',
+  contactpage___address___parent___children = 'contactpage___address___parent___children',
+  contactpage___address___children = 'contactpage___address___children',
+  contactpage___address___children___id = 'contactpage___address___children___id',
+  contactpage___address___children___children = 'contactpage___address___children___children',
+  contactpage___address___internal___content = 'contactpage___address___internal___content',
+  contactpage___address___internal___contentDigest = 'contactpage___address___internal___contentDigest',
+  contactpage___address___internal___description = 'contactpage___address___internal___description',
+  contactpage___address___internal___fieldOwners = 'contactpage___address___internal___fieldOwners',
+  contactpage___address___internal___ignoreType = 'contactpage___address___internal___ignoreType',
+  contactpage___address___internal___mediaType = 'contactpage___address___internal___mediaType',
+  contactpage___address___internal___owner = 'contactpage___address___internal___owner',
+  contactpage___address___internal___type = 'contactpage___address___internal___type',
+  contactpage___address___street = 'contactpage___address___street',
+  contactpage___address___city = 'contactpage___address___city',
+  contactpage___address___postCode = 'contactpage___address___postCode',
+  contactpage___address___contactpage = 'contactpage___address___contactpage',
+  contactpage___address___contactpage___id = 'contactpage___address___contactpage___id',
+  contactpage___address___contactpage___children = 'contactpage___address___contactpage___children',
+  contactpage___address___contactpage___page = 'contactpage___address___contactpage___page',
+  contactpage___address___contactpage___members = 'contactpage___address___contactpage___members',
+  contactpage___address___contactpage___spaceId = 'contactpage___address___contactpage___spaceId',
+  contactpage___address___contactpage___contentful_id = 'contactpage___address___contactpage___contentful_id',
+  contactpage___address___contactpage___createdAt = 'contactpage___address___contactpage___createdAt',
+  contactpage___address___contactpage___updatedAt = 'contactpage___address___contactpage___updatedAt',
+  contactpage___address___contactpage___node_locale = 'contactpage___address___contactpage___node_locale',
+  contactpage___address___spaceId = 'contactpage___address___spaceId',
+  contactpage___address___contentful_id = 'contactpage___address___contentful_id',
+  contactpage___address___createdAt = 'contactpage___address___createdAt',
+  contactpage___address___updatedAt = 'contactpage___address___updatedAt',
+  contactpage___address___sys___revision = 'contactpage___address___sys___revision',
+  contactpage___address___node_locale = 'contactpage___address___node_locale',
+  contactpage___members = 'contactpage___members',
+  contactpage___members___id = 'contactpage___members___id',
+  contactpage___members___parent___id = 'contactpage___members___parent___id',
+  contactpage___members___parent___children = 'contactpage___members___parent___children',
+  contactpage___members___children = 'contactpage___members___children',
+  contactpage___members___children___id = 'contactpage___members___children___id',
+  contactpage___members___children___children = 'contactpage___members___children___children',
+  contactpage___members___internal___content = 'contactpage___members___internal___content',
+  contactpage___members___internal___contentDigest = 'contactpage___members___internal___contentDigest',
+  contactpage___members___internal___description = 'contactpage___members___internal___description',
+  contactpage___members___internal___fieldOwners = 'contactpage___members___internal___fieldOwners',
+  contactpage___members___internal___ignoreType = 'contactpage___members___internal___ignoreType',
+  contactpage___members___internal___mediaType = 'contactpage___members___internal___mediaType',
+  contactpage___members___internal___owner = 'contactpage___members___internal___owner',
+  contactpage___members___internal___type = 'contactpage___members___internal___type',
+  contactpage___members___name = 'contactpage___members___name',
+  contactpage___members___email = 'contactpage___members___email',
+  contactpage___members___phoneNumber = 'contactpage___members___phoneNumber',
+  contactpage___members___photo___id = 'contactpage___members___photo___id',
+  contactpage___members___photo___children = 'contactpage___members___photo___children',
+  contactpage___members___photo___contentful_id = 'contactpage___members___photo___contentful_id',
+  contactpage___members___photo___title = 'contactpage___members___photo___title',
+  contactpage___members___photo___description = 'contactpage___members___photo___description',
+  contactpage___members___photo___node_locale = 'contactpage___members___photo___node_locale',
+  contactpage___members___avatar___id = 'contactpage___members___avatar___id',
+  contactpage___members___avatar___children = 'contactpage___members___avatar___children',
+  contactpage___members___avatar___contentful_id = 'contactpage___members___avatar___contentful_id',
+  contactpage___members___avatar___title = 'contactpage___members___avatar___title',
+  contactpage___members___avatar___description = 'contactpage___members___avatar___description',
+  contactpage___members___avatar___node_locale = 'contactpage___members___avatar___node_locale',
+  contactpage___members___article = 'contactpage___members___article',
+  contactpage___members___article___id = 'contactpage___members___article___id',
+  contactpage___members___article___children = 'contactpage___members___article___children',
+  contactpage___members___article___title = 'contactpage___members___article___title',
+  contactpage___members___article___slug = 'contactpage___members___article___slug',
+  contactpage___members___article___date = 'contactpage___members___article___date',
+  contactpage___members___article___spaceId = 'contactpage___members___article___spaceId',
+  contactpage___members___article___contentful_id = 'contactpage___members___article___contentful_id',
+  contactpage___members___article___createdAt = 'contactpage___members___article___createdAt',
+  contactpage___members___article___updatedAt = 'contactpage___members___article___updatedAt',
+  contactpage___members___article___node_locale = 'contactpage___members___article___node_locale',
+  contactpage___members___aboutpage = 'contactpage___members___aboutpage',
+  contactpage___members___aboutpage___id = 'contactpage___members___aboutpage___id',
+  contactpage___members___aboutpage___children = 'contactpage___members___aboutpage___children',
+  contactpage___members___aboutpage___page = 'contactpage___members___aboutpage___page',
+  contactpage___members___aboutpage___teamMembers = 'contactpage___members___aboutpage___teamMembers',
+  contactpage___members___aboutpage___spaceId = 'contactpage___members___aboutpage___spaceId',
+  contactpage___members___aboutpage___contentful_id = 'contactpage___members___aboutpage___contentful_id',
+  contactpage___members___aboutpage___createdAt = 'contactpage___members___aboutpage___createdAt',
+  contactpage___members___aboutpage___updatedAt = 'contactpage___members___aboutpage___updatedAt',
+  contactpage___members___aboutpage___node_locale = 'contactpage___members___aboutpage___node_locale',
+  contactpage___members___contactpage = 'contactpage___members___contactpage',
+  contactpage___members___contactpage___id = 'contactpage___members___contactpage___id',
+  contactpage___members___contactpage___children = 'contactpage___members___contactpage___children',
+  contactpage___members___contactpage___page = 'contactpage___members___contactpage___page',
+  contactpage___members___contactpage___members = 'contactpage___members___contactpage___members',
+  contactpage___members___contactpage___spaceId = 'contactpage___members___contactpage___spaceId',
+  contactpage___members___contactpage___contentful_id = 'contactpage___members___contactpage___contentful_id',
+  contactpage___members___contactpage___createdAt = 'contactpage___members___contactpage___createdAt',
+  contactpage___members___contactpage___updatedAt = 'contactpage___members___contactpage___updatedAt',
+  contactpage___members___contactpage___node_locale = 'contactpage___members___contactpage___node_locale',
+  contactpage___members___description___id = 'contactpage___members___description___id',
+  contactpage___members___description___children = 'contactpage___members___description___children',
+  contactpage___members___description___description = 'contactpage___members___description___description',
+  contactpage___members___spaceId = 'contactpage___members___spaceId',
+  contactpage___members___contentful_id = 'contactpage___members___contentful_id',
+  contactpage___members___createdAt = 'contactpage___members___createdAt',
+  contactpage___members___updatedAt = 'contactpage___members___updatedAt',
+  contactpage___members___sys___revision = 'contactpage___members___sys___revision',
+  contactpage___members___node_locale = 'contactpage___members___node_locale',
+  contactpage___members___childContentfulMemberDescriptionTextNode___id = 'contactpage___members___childContentfulMemberDescriptionTextNode___id',
+  contactpage___members___childContentfulMemberDescriptionTextNode___children = 'contactpage___members___childContentfulMemberDescriptionTextNode___children',
+  contactpage___members___childContentfulMemberDescriptionTextNode___description = 'contactpage___members___childContentfulMemberDescriptionTextNode___description',
+  contactpage___spaceId = 'contactpage___spaceId',
+  contactpage___contentful_id = 'contactpage___contentful_id',
+  contactpage___createdAt = 'contactpage___createdAt',
+  contactpage___updatedAt = 'contactpage___updatedAt',
+  contactpage___sys___revision = 'contactpage___sys___revision',
+  contactpage___node_locale = 'contactpage___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
@@ -774,6 +934,7 @@ export type ContentfulAddressFilterInput = {
   street?: Maybe<StringQueryOperatorInput>;
   city?: Maybe<StringQueryOperatorInput>;
   postCode?: Maybe<StringQueryOperatorInput>;
+  contactpage?: Maybe<ContentfulContactPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -841,6 +1002,7 @@ export type ContentfulArticle = Node & {
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
+  image?: Maybe<ContentfulAsset>;
   category?: Maybe<ContentfulCategory>;
   author?: Maybe<ContentfulMember>;
   content?: Maybe<ContentfulArticleContentRichTextNode>;
@@ -1148,6 +1310,92 @@ export enum ContentfulArticleFieldsEnum {
   title = 'title',
   slug = 'slug',
   date = 'date',
+  image___id = 'image___id',
+  image___parent___id = 'image___parent___id',
+  image___parent___parent___id = 'image___parent___parent___id',
+  image___parent___parent___children = 'image___parent___parent___children',
+  image___parent___children = 'image___parent___children',
+  image___parent___children___id = 'image___parent___children___id',
+  image___parent___children___children = 'image___parent___children___children',
+  image___parent___internal___content = 'image___parent___internal___content',
+  image___parent___internal___contentDigest = 'image___parent___internal___contentDigest',
+  image___parent___internal___description = 'image___parent___internal___description',
+  image___parent___internal___fieldOwners = 'image___parent___internal___fieldOwners',
+  image___parent___internal___ignoreType = 'image___parent___internal___ignoreType',
+  image___parent___internal___mediaType = 'image___parent___internal___mediaType',
+  image___parent___internal___owner = 'image___parent___internal___owner',
+  image___parent___internal___type = 'image___parent___internal___type',
+  image___children = 'image___children',
+  image___children___id = 'image___children___id',
+  image___children___parent___id = 'image___children___parent___id',
+  image___children___parent___children = 'image___children___parent___children',
+  image___children___children = 'image___children___children',
+  image___children___children___id = 'image___children___children___id',
+  image___children___children___children = 'image___children___children___children',
+  image___children___internal___content = 'image___children___internal___content',
+  image___children___internal___contentDigest = 'image___children___internal___contentDigest',
+  image___children___internal___description = 'image___children___internal___description',
+  image___children___internal___fieldOwners = 'image___children___internal___fieldOwners',
+  image___children___internal___ignoreType = 'image___children___internal___ignoreType',
+  image___children___internal___mediaType = 'image___children___internal___mediaType',
+  image___children___internal___owner = 'image___children___internal___owner',
+  image___children___internal___type = 'image___children___internal___type',
+  image___internal___content = 'image___internal___content',
+  image___internal___contentDigest = 'image___internal___contentDigest',
+  image___internal___description = 'image___internal___description',
+  image___internal___fieldOwners = 'image___internal___fieldOwners',
+  image___internal___ignoreType = 'image___internal___ignoreType',
+  image___internal___mediaType = 'image___internal___mediaType',
+  image___internal___owner = 'image___internal___owner',
+  image___internal___type = 'image___internal___type',
+  image___contentful_id = 'image___contentful_id',
+  image___file___url = 'image___file___url',
+  image___file___details___size = 'image___file___details___size',
+  image___file___fileName = 'image___file___fileName',
+  image___file___contentType = 'image___file___contentType',
+  image___title = 'image___title',
+  image___description = 'image___description',
+  image___node_locale = 'image___node_locale',
+  image___fixed___base64 = 'image___fixed___base64',
+  image___fixed___tracedSVG = 'image___fixed___tracedSVG',
+  image___fixed___aspectRatio = 'image___fixed___aspectRatio',
+  image___fixed___width = 'image___fixed___width',
+  image___fixed___height = 'image___fixed___height',
+  image___fixed___src = 'image___fixed___src',
+  image___fixed___srcSet = 'image___fixed___srcSet',
+  image___fixed___srcWebp = 'image___fixed___srcWebp',
+  image___fixed___srcSetWebp = 'image___fixed___srcSetWebp',
+  image___resolutions___base64 = 'image___resolutions___base64',
+  image___resolutions___tracedSVG = 'image___resolutions___tracedSVG',
+  image___resolutions___aspectRatio = 'image___resolutions___aspectRatio',
+  image___resolutions___width = 'image___resolutions___width',
+  image___resolutions___height = 'image___resolutions___height',
+  image___resolutions___src = 'image___resolutions___src',
+  image___resolutions___srcSet = 'image___resolutions___srcSet',
+  image___resolutions___srcWebp = 'image___resolutions___srcWebp',
+  image___resolutions___srcSetWebp = 'image___resolutions___srcSetWebp',
+  image___fluid___base64 = 'image___fluid___base64',
+  image___fluid___tracedSVG = 'image___fluid___tracedSVG',
+  image___fluid___aspectRatio = 'image___fluid___aspectRatio',
+  image___fluid___src = 'image___fluid___src',
+  image___fluid___srcSet = 'image___fluid___srcSet',
+  image___fluid___srcWebp = 'image___fluid___srcWebp',
+  image___fluid___srcSetWebp = 'image___fluid___srcSetWebp',
+  image___fluid___sizes = 'image___fluid___sizes',
+  image___sizes___base64 = 'image___sizes___base64',
+  image___sizes___tracedSVG = 'image___sizes___tracedSVG',
+  image___sizes___aspectRatio = 'image___sizes___aspectRatio',
+  image___sizes___src = 'image___sizes___src',
+  image___sizes___srcSet = 'image___sizes___srcSet',
+  image___sizes___srcWebp = 'image___sizes___srcWebp',
+  image___sizes___srcSetWebp = 'image___sizes___srcSetWebp',
+  image___sizes___sizes = 'image___sizes___sizes',
+  image___resize___base64 = 'image___resize___base64',
+  image___resize___tracedSVG = 'image___resize___tracedSVG',
+  image___resize___src = 'image___resize___src',
+  image___resize___width = 'image___resize___width',
+  image___resize___height = 'image___resize___height',
+  image___resize___aspectRatio = 'image___resize___aspectRatio',
   category___id = 'category___id',
   category___parent___id = 'category___parent___id',
   category___parent___parent___id = 'category___parent___parent___id',
@@ -1266,6 +1514,12 @@ export enum ContentfulArticleFieldsEnum {
   category___article___title = 'category___article___title',
   category___article___slug = 'category___article___slug',
   category___article___date = 'category___article___date',
+  category___article___image___id = 'category___article___image___id',
+  category___article___image___children = 'category___article___image___children',
+  category___article___image___contentful_id = 'category___article___image___contentful_id',
+  category___article___image___title = 'category___article___image___title',
+  category___article___image___description = 'category___article___image___description',
+  category___article___image___node_locale = 'category___article___image___node_locale',
   category___article___category___id = 'category___article___category___id',
   category___article___category___children = 'category___article___category___children',
   category___article___category___title = 'category___article___category___title',
@@ -1491,6 +1745,12 @@ export enum ContentfulArticleFieldsEnum {
   author___article___title = 'author___article___title',
   author___article___slug = 'author___article___slug',
   author___article___date = 'author___article___date',
+  author___article___image___id = 'author___article___image___id',
+  author___article___image___children = 'author___article___image___children',
+  author___article___image___contentful_id = 'author___article___image___contentful_id',
+  author___article___image___title = 'author___article___image___title',
+  author___article___image___description = 'author___article___image___description',
+  author___article___image___node_locale = 'author___article___image___node_locale',
   author___article___category___id = 'author___article___category___id',
   author___article___category___children = 'author___article___category___children',
   author___article___category___title = 'author___article___category___title',
@@ -1586,6 +1846,7 @@ export enum ContentfulArticleFieldsEnum {
   author___contactpage___address___street = 'author___contactpage___address___street',
   author___contactpage___address___city = 'author___contactpage___address___city',
   author___contactpage___address___postCode = 'author___contactpage___address___postCode',
+  author___contactpage___address___contactpage = 'author___contactpage___address___contactpage',
   author___contactpage___address___spaceId = 'author___contactpage___address___spaceId',
   author___contactpage___address___contentful_id = 'author___contactpage___address___contentful_id',
   author___contactpage___address___createdAt = 'author___contactpage___address___createdAt',
@@ -1769,6 +2030,7 @@ export type ContentfulArticleFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  image?: Maybe<ContentfulAssetFilterInput>;
   category?: Maybe<ContentfulCategoryFilterInput>;
   author?: Maybe<ContentfulMemberFilterInput>;
   content?: Maybe<ContentfulArticleContentRichTextNodeFilterInput>;
@@ -2417,6 +2679,67 @@ export enum ContentfulCategoryFieldsEnum {
   article___title = 'article___title',
   article___slug = 'article___slug',
   article___date = 'article___date',
+  article___image___id = 'article___image___id',
+  article___image___parent___id = 'article___image___parent___id',
+  article___image___parent___children = 'article___image___parent___children',
+  article___image___children = 'article___image___children',
+  article___image___children___id = 'article___image___children___id',
+  article___image___children___children = 'article___image___children___children',
+  article___image___internal___content = 'article___image___internal___content',
+  article___image___internal___contentDigest = 'article___image___internal___contentDigest',
+  article___image___internal___description = 'article___image___internal___description',
+  article___image___internal___fieldOwners = 'article___image___internal___fieldOwners',
+  article___image___internal___ignoreType = 'article___image___internal___ignoreType',
+  article___image___internal___mediaType = 'article___image___internal___mediaType',
+  article___image___internal___owner = 'article___image___internal___owner',
+  article___image___internal___type = 'article___image___internal___type',
+  article___image___contentful_id = 'article___image___contentful_id',
+  article___image___file___url = 'article___image___file___url',
+  article___image___file___fileName = 'article___image___file___fileName',
+  article___image___file___contentType = 'article___image___file___contentType',
+  article___image___title = 'article___image___title',
+  article___image___description = 'article___image___description',
+  article___image___node_locale = 'article___image___node_locale',
+  article___image___fixed___base64 = 'article___image___fixed___base64',
+  article___image___fixed___tracedSVG = 'article___image___fixed___tracedSVG',
+  article___image___fixed___aspectRatio = 'article___image___fixed___aspectRatio',
+  article___image___fixed___width = 'article___image___fixed___width',
+  article___image___fixed___height = 'article___image___fixed___height',
+  article___image___fixed___src = 'article___image___fixed___src',
+  article___image___fixed___srcSet = 'article___image___fixed___srcSet',
+  article___image___fixed___srcWebp = 'article___image___fixed___srcWebp',
+  article___image___fixed___srcSetWebp = 'article___image___fixed___srcSetWebp',
+  article___image___resolutions___base64 = 'article___image___resolutions___base64',
+  article___image___resolutions___tracedSVG = 'article___image___resolutions___tracedSVG',
+  article___image___resolutions___aspectRatio = 'article___image___resolutions___aspectRatio',
+  article___image___resolutions___width = 'article___image___resolutions___width',
+  article___image___resolutions___height = 'article___image___resolutions___height',
+  article___image___resolutions___src = 'article___image___resolutions___src',
+  article___image___resolutions___srcSet = 'article___image___resolutions___srcSet',
+  article___image___resolutions___srcWebp = 'article___image___resolutions___srcWebp',
+  article___image___resolutions___srcSetWebp = 'article___image___resolutions___srcSetWebp',
+  article___image___fluid___base64 = 'article___image___fluid___base64',
+  article___image___fluid___tracedSVG = 'article___image___fluid___tracedSVG',
+  article___image___fluid___aspectRatio = 'article___image___fluid___aspectRatio',
+  article___image___fluid___src = 'article___image___fluid___src',
+  article___image___fluid___srcSet = 'article___image___fluid___srcSet',
+  article___image___fluid___srcWebp = 'article___image___fluid___srcWebp',
+  article___image___fluid___srcSetWebp = 'article___image___fluid___srcSetWebp',
+  article___image___fluid___sizes = 'article___image___fluid___sizes',
+  article___image___sizes___base64 = 'article___image___sizes___base64',
+  article___image___sizes___tracedSVG = 'article___image___sizes___tracedSVG',
+  article___image___sizes___aspectRatio = 'article___image___sizes___aspectRatio',
+  article___image___sizes___src = 'article___image___sizes___src',
+  article___image___sizes___srcSet = 'article___image___sizes___srcSet',
+  article___image___sizes___srcWebp = 'article___image___sizes___srcWebp',
+  article___image___sizes___srcSetWebp = 'article___image___sizes___srcSetWebp',
+  article___image___sizes___sizes = 'article___image___sizes___sizes',
+  article___image___resize___base64 = 'article___image___resize___base64',
+  article___image___resize___tracedSVG = 'article___image___resize___tracedSVG',
+  article___image___resize___src = 'article___image___resize___src',
+  article___image___resize___width = 'article___image___resize___width',
+  article___image___resize___height = 'article___image___resize___height',
+  article___image___resize___aspectRatio = 'article___image___resize___aspectRatio',
   article___category___id = 'article___category___id',
   article___category___parent___id = 'article___category___parent___id',
   article___category___parent___children = 'article___category___parent___children',
@@ -2832,6 +3155,53 @@ export enum ContentfulContactPageFieldsEnum {
   address___street = 'address___street',
   address___city = 'address___city',
   address___postCode = 'address___postCode',
+  address___contactpage = 'address___contactpage',
+  address___contactpage___id = 'address___contactpage___id',
+  address___contactpage___parent___id = 'address___contactpage___parent___id',
+  address___contactpage___parent___children = 'address___contactpage___parent___children',
+  address___contactpage___children = 'address___contactpage___children',
+  address___contactpage___children___id = 'address___contactpage___children___id',
+  address___contactpage___children___children = 'address___contactpage___children___children',
+  address___contactpage___internal___content = 'address___contactpage___internal___content',
+  address___contactpage___internal___contentDigest = 'address___contactpage___internal___contentDigest',
+  address___contactpage___internal___description = 'address___contactpage___internal___description',
+  address___contactpage___internal___fieldOwners = 'address___contactpage___internal___fieldOwners',
+  address___contactpage___internal___ignoreType = 'address___contactpage___internal___ignoreType',
+  address___contactpage___internal___mediaType = 'address___contactpage___internal___mediaType',
+  address___contactpage___internal___owner = 'address___contactpage___internal___owner',
+  address___contactpage___internal___type = 'address___contactpage___internal___type',
+  address___contactpage___page = 'address___contactpage___page',
+  address___contactpage___address___id = 'address___contactpage___address___id',
+  address___contactpage___address___children = 'address___contactpage___address___children',
+  address___contactpage___address___street = 'address___contactpage___address___street',
+  address___contactpage___address___city = 'address___contactpage___address___city',
+  address___contactpage___address___postCode = 'address___contactpage___address___postCode',
+  address___contactpage___address___contactpage = 'address___contactpage___address___contactpage',
+  address___contactpage___address___spaceId = 'address___contactpage___address___spaceId',
+  address___contactpage___address___contentful_id = 'address___contactpage___address___contentful_id',
+  address___contactpage___address___createdAt = 'address___contactpage___address___createdAt',
+  address___contactpage___address___updatedAt = 'address___contactpage___address___updatedAt',
+  address___contactpage___address___node_locale = 'address___contactpage___address___node_locale',
+  address___contactpage___members = 'address___contactpage___members',
+  address___contactpage___members___id = 'address___contactpage___members___id',
+  address___contactpage___members___children = 'address___contactpage___members___children',
+  address___contactpage___members___name = 'address___contactpage___members___name',
+  address___contactpage___members___email = 'address___contactpage___members___email',
+  address___contactpage___members___phoneNumber = 'address___contactpage___members___phoneNumber',
+  address___contactpage___members___article = 'address___contactpage___members___article',
+  address___contactpage___members___aboutpage = 'address___contactpage___members___aboutpage',
+  address___contactpage___members___contactpage = 'address___contactpage___members___contactpage',
+  address___contactpage___members___spaceId = 'address___contactpage___members___spaceId',
+  address___contactpage___members___contentful_id = 'address___contactpage___members___contentful_id',
+  address___contactpage___members___createdAt = 'address___contactpage___members___createdAt',
+  address___contactpage___members___updatedAt = 'address___contactpage___members___updatedAt',
+  address___contactpage___members___node_locale = 'address___contactpage___members___node_locale',
+  address___contactpage___spaceId = 'address___contactpage___spaceId',
+  address___contactpage___contentful_id = 'address___contactpage___contentful_id',
+  address___contactpage___createdAt = 'address___contactpage___createdAt',
+  address___contactpage___updatedAt = 'address___contactpage___updatedAt',
+  address___contactpage___sys___revision = 'address___contactpage___sys___revision',
+  address___contactpage___node_locale = 'address___contactpage___node_locale',
   address___spaceId = 'address___spaceId',
   address___contentful_id = 'address___contentful_id',
   address___createdAt = 'address___createdAt',
@@ -3020,6 +3390,12 @@ export enum ContentfulContactPageFieldsEnum {
   members___article___title = 'members___article___title',
   members___article___slug = 'members___article___slug',
   members___article___date = 'members___article___date',
+  members___article___image___id = 'members___article___image___id',
+  members___article___image___children = 'members___article___image___children',
+  members___article___image___contentful_id = 'members___article___image___contentful_id',
+  members___article___image___title = 'members___article___image___title',
+  members___article___image___description = 'members___article___image___description',
+  members___article___image___node_locale = 'members___article___image___node_locale',
   members___article___category___id = 'members___article___category___id',
   members___article___category___children = 'members___article___category___children',
   members___article___category___title = 'members___article___category___title',
@@ -3115,6 +3491,7 @@ export enum ContentfulContactPageFieldsEnum {
   members___contactpage___address___street = 'members___contactpage___address___street',
   members___contactpage___address___city = 'members___contactpage___address___city',
   members___contactpage___address___postCode = 'members___contactpage___address___postCode',
+  members___contactpage___address___contactpage = 'members___contactpage___address___contactpage',
   members___contactpage___address___spaceId = 'members___contactpage___address___spaceId',
   members___contactpage___address___contentful_id = 'members___contactpage___address___contentful_id',
   members___contactpage___address___createdAt = 'members___contactpage___address___createdAt',
@@ -4839,6 +5216,67 @@ export enum ContentfulMemberFieldsEnum {
   article___title = 'article___title',
   article___slug = 'article___slug',
   article___date = 'article___date',
+  article___image___id = 'article___image___id',
+  article___image___parent___id = 'article___image___parent___id',
+  article___image___parent___children = 'article___image___parent___children',
+  article___image___children = 'article___image___children',
+  article___image___children___id = 'article___image___children___id',
+  article___image___children___children = 'article___image___children___children',
+  article___image___internal___content = 'article___image___internal___content',
+  article___image___internal___contentDigest = 'article___image___internal___contentDigest',
+  article___image___internal___description = 'article___image___internal___description',
+  article___image___internal___fieldOwners = 'article___image___internal___fieldOwners',
+  article___image___internal___ignoreType = 'article___image___internal___ignoreType',
+  article___image___internal___mediaType = 'article___image___internal___mediaType',
+  article___image___internal___owner = 'article___image___internal___owner',
+  article___image___internal___type = 'article___image___internal___type',
+  article___image___contentful_id = 'article___image___contentful_id',
+  article___image___file___url = 'article___image___file___url',
+  article___image___file___fileName = 'article___image___file___fileName',
+  article___image___file___contentType = 'article___image___file___contentType',
+  article___image___title = 'article___image___title',
+  article___image___description = 'article___image___description',
+  article___image___node_locale = 'article___image___node_locale',
+  article___image___fixed___base64 = 'article___image___fixed___base64',
+  article___image___fixed___tracedSVG = 'article___image___fixed___tracedSVG',
+  article___image___fixed___aspectRatio = 'article___image___fixed___aspectRatio',
+  article___image___fixed___width = 'article___image___fixed___width',
+  article___image___fixed___height = 'article___image___fixed___height',
+  article___image___fixed___src = 'article___image___fixed___src',
+  article___image___fixed___srcSet = 'article___image___fixed___srcSet',
+  article___image___fixed___srcWebp = 'article___image___fixed___srcWebp',
+  article___image___fixed___srcSetWebp = 'article___image___fixed___srcSetWebp',
+  article___image___resolutions___base64 = 'article___image___resolutions___base64',
+  article___image___resolutions___tracedSVG = 'article___image___resolutions___tracedSVG',
+  article___image___resolutions___aspectRatio = 'article___image___resolutions___aspectRatio',
+  article___image___resolutions___width = 'article___image___resolutions___width',
+  article___image___resolutions___height = 'article___image___resolutions___height',
+  article___image___resolutions___src = 'article___image___resolutions___src',
+  article___image___resolutions___srcSet = 'article___image___resolutions___srcSet',
+  article___image___resolutions___srcWebp = 'article___image___resolutions___srcWebp',
+  article___image___resolutions___srcSetWebp = 'article___image___resolutions___srcSetWebp',
+  article___image___fluid___base64 = 'article___image___fluid___base64',
+  article___image___fluid___tracedSVG = 'article___image___fluid___tracedSVG',
+  article___image___fluid___aspectRatio = 'article___image___fluid___aspectRatio',
+  article___image___fluid___src = 'article___image___fluid___src',
+  article___image___fluid___srcSet = 'article___image___fluid___srcSet',
+  article___image___fluid___srcWebp = 'article___image___fluid___srcWebp',
+  article___image___fluid___srcSetWebp = 'article___image___fluid___srcSetWebp',
+  article___image___fluid___sizes = 'article___image___fluid___sizes',
+  article___image___sizes___base64 = 'article___image___sizes___base64',
+  article___image___sizes___tracedSVG = 'article___image___sizes___tracedSVG',
+  article___image___sizes___aspectRatio = 'article___image___sizes___aspectRatio',
+  article___image___sizes___src = 'article___image___sizes___src',
+  article___image___sizes___srcSet = 'article___image___sizes___srcSet',
+  article___image___sizes___srcWebp = 'article___image___sizes___srcWebp',
+  article___image___sizes___srcSetWebp = 'article___image___sizes___srcSetWebp',
+  article___image___sizes___sizes = 'article___image___sizes___sizes',
+  article___image___resize___base64 = 'article___image___resize___base64',
+  article___image___resize___tracedSVG = 'article___image___resize___tracedSVG',
+  article___image___resize___src = 'article___image___resize___src',
+  article___image___resize___width = 'article___image___resize___width',
+  article___image___resize___height = 'article___image___resize___height',
+  article___image___resize___aspectRatio = 'article___image___resize___aspectRatio',
   article___category___id = 'article___category___id',
   article___category___parent___id = 'article___category___parent___id',
   article___category___parent___children = 'article___category___parent___children',
@@ -5165,6 +5603,16 @@ export enum ContentfulMemberFieldsEnum {
   contactpage___address___street = 'contactpage___address___street',
   contactpage___address___city = 'contactpage___address___city',
   contactpage___address___postCode = 'contactpage___address___postCode',
+  contactpage___address___contactpage = 'contactpage___address___contactpage',
+  contactpage___address___contactpage___id = 'contactpage___address___contactpage___id',
+  contactpage___address___contactpage___children = 'contactpage___address___contactpage___children',
+  contactpage___address___contactpage___page = 'contactpage___address___contactpage___page',
+  contactpage___address___contactpage___members = 'contactpage___address___contactpage___members',
+  contactpage___address___contactpage___spaceId = 'contactpage___address___contactpage___spaceId',
+  contactpage___address___contactpage___contentful_id = 'contactpage___address___contactpage___contentful_id',
+  contactpage___address___contactpage___createdAt = 'contactpage___address___contactpage___createdAt',
+  contactpage___address___contactpage___updatedAt = 'contactpage___address___contactpage___updatedAt',
+  contactpage___address___contactpage___node_locale = 'contactpage___address___contactpage___node_locale',
   contactpage___address___spaceId = 'contactpage___address___spaceId',
   contactpage___address___contentful_id = 'contactpage___address___contentful_id',
   contactpage___address___createdAt = 'contactpage___address___createdAt',
@@ -5527,13 +5975,13 @@ export type ContentfulService = Node & {
   internal: Internal;
   title?: Maybe<Scalars['String']>;
   examples?: Maybe<Array<Maybe<Scalars['String']>>>;
+  servicespage?: Maybe<Array<Maybe<ContentfulServicesPage>>>;
   spaceId?: Maybe<Scalars['String']>;
   contentful_id?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulServiceSys>;
   node_locale?: Maybe<Scalars['String']>;
-  servicespage?: Maybe<Array<Maybe<ContentfulServicesPage>>>;
 };
 
 export type ContentfulServiceCreatedAtArgs = {
@@ -5666,16 +6114,6 @@ export enum ContentfulServiceFieldsEnum {
   internal___type = 'internal___type',
   title = 'title',
   examples = 'examples',
-  spaceId = 'spaceId',
-  contentful_id = 'contentful_id',
-  createdAt = 'createdAt',
-  updatedAt = 'updatedAt',
-  sys___revision = 'sys___revision',
-  sys___contentType___sys___type = 'sys___contentType___sys___type',
-  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
-  sys___contentType___sys___id = 'sys___contentType___sys___id',
-  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
-  node_locale = 'node_locale',
   servicespage = 'servicespage',
   servicespage___id = 'servicespage___id',
   servicespage___parent___id = 'servicespage___parent___id',
@@ -5733,12 +6171,6 @@ export enum ContentfulServiceFieldsEnum {
   servicespage___services___internal___type = 'servicespage___services___internal___type',
   servicespage___services___title = 'servicespage___services___title',
   servicespage___services___examples = 'servicespage___services___examples',
-  servicespage___services___spaceId = 'servicespage___services___spaceId',
-  servicespage___services___contentful_id = 'servicespage___services___contentful_id',
-  servicespage___services___createdAt = 'servicespage___services___createdAt',
-  servicespage___services___updatedAt = 'servicespage___services___updatedAt',
-  servicespage___services___sys___revision = 'servicespage___services___sys___revision',
-  servicespage___services___node_locale = 'servicespage___services___node_locale',
   servicespage___services___servicespage = 'servicespage___services___servicespage',
   servicespage___services___servicespage___id = 'servicespage___services___servicespage___id',
   servicespage___services___servicespage___children = 'servicespage___services___servicespage___children',
@@ -5749,12 +6181,28 @@ export enum ContentfulServiceFieldsEnum {
   servicespage___services___servicespage___createdAt = 'servicespage___services___servicespage___createdAt',
   servicespage___services___servicespage___updatedAt = 'servicespage___services___servicespage___updatedAt',
   servicespage___services___servicespage___node_locale = 'servicespage___services___servicespage___node_locale',
+  servicespage___services___spaceId = 'servicespage___services___spaceId',
+  servicespage___services___contentful_id = 'servicespage___services___contentful_id',
+  servicespage___services___createdAt = 'servicespage___services___createdAt',
+  servicespage___services___updatedAt = 'servicespage___services___updatedAt',
+  servicespage___services___sys___revision = 'servicespage___services___sys___revision',
+  servicespage___services___node_locale = 'servicespage___services___node_locale',
   servicespage___spaceId = 'servicespage___spaceId',
   servicespage___contentful_id = 'servicespage___contentful_id',
   servicespage___createdAt = 'servicespage___createdAt',
   servicespage___updatedAt = 'servicespage___updatedAt',
   servicespage___sys___revision = 'servicespage___sys___revision',
   servicespage___node_locale = 'servicespage___node_locale',
+  spaceId = 'spaceId',
+  contentful_id = 'contentful_id',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  sys___contentType___sys___contentful_id = 'sys___contentType___sys___contentful_id',
+  node_locale = 'node_locale',
 }
 
 export type ContentfulServiceFilterInput = {
@@ -5764,13 +6212,13 @@ export type ContentfulServiceFilterInput = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   examples?: Maybe<StringQueryOperatorInput>;
+  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulServiceSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
 };
 
 export type ContentfulServiceFilterListInput = {
@@ -5978,12 +6426,6 @@ export enum ContentfulServicesPageFieldsEnum {
   services___internal___type = 'services___internal___type',
   services___title = 'services___title',
   services___examples = 'services___examples',
-  services___spaceId = 'services___spaceId',
-  services___contentful_id = 'services___contentful_id',
-  services___createdAt = 'services___createdAt',
-  services___updatedAt = 'services___updatedAt',
-  services___sys___revision = 'services___sys___revision',
-  services___node_locale = 'services___node_locale',
   services___servicespage = 'services___servicespage',
   services___servicespage___id = 'services___servicespage___id',
   services___servicespage___parent___id = 'services___servicespage___parent___id',
@@ -6005,18 +6447,24 @@ export enum ContentfulServicesPageFieldsEnum {
   services___servicespage___services___children = 'services___servicespage___services___children',
   services___servicespage___services___title = 'services___servicespage___services___title',
   services___servicespage___services___examples = 'services___servicespage___services___examples',
+  services___servicespage___services___servicespage = 'services___servicespage___services___servicespage',
   services___servicespage___services___spaceId = 'services___servicespage___services___spaceId',
   services___servicespage___services___contentful_id = 'services___servicespage___services___contentful_id',
   services___servicespage___services___createdAt = 'services___servicespage___services___createdAt',
   services___servicespage___services___updatedAt = 'services___servicespage___services___updatedAt',
   services___servicespage___services___node_locale = 'services___servicespage___services___node_locale',
-  services___servicespage___services___servicespage = 'services___servicespage___services___servicespage',
   services___servicespage___spaceId = 'services___servicespage___spaceId',
   services___servicespage___contentful_id = 'services___servicespage___contentful_id',
   services___servicespage___createdAt = 'services___servicespage___createdAt',
   services___servicespage___updatedAt = 'services___servicespage___updatedAt',
   services___servicespage___sys___revision = 'services___servicespage___sys___revision',
   services___servicespage___node_locale = 'services___servicespage___node_locale',
+  services___spaceId = 'services___spaceId',
+  services___contentful_id = 'services___contentful_id',
+  services___createdAt = 'services___createdAt',
+  services___updatedAt = 'services___updatedAt',
+  services___sys___revision = 'services___sys___revision',
+  services___node_locale = 'services___node_locale',
   spaceId = 'spaceId',
   contentful_id = 'contentful_id',
   createdAt = 'createdAt',
@@ -8005,6 +8453,7 @@ export type QueryContentfulArticleArgs = {
   title?: Maybe<StringQueryOperatorInput>;
   slug?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  image?: Maybe<ContentfulAssetFilterInput>;
   category?: Maybe<ContentfulCategoryFilterInput>;
   author?: Maybe<ContentfulMemberFilterInput>;
   content?: Maybe<ContentfulArticleContentRichTextNodeFilterInput>;
@@ -8165,13 +8614,13 @@ export type QueryContentfulServiceArgs = {
   internal?: Maybe<InternalFilterInput>;
   title?: Maybe<StringQueryOperatorInput>;
   examples?: Maybe<StringQueryOperatorInput>;
+  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulServiceSysFilterInput>;
   node_locale?: Maybe<StringQueryOperatorInput>;
-  servicespage?: Maybe<ContentfulServicesPageFilterListInput>;
 };
 
 export type QueryAllContentfulServiceArgs = {
@@ -8257,6 +8706,7 @@ export type QueryContentfulAddressArgs = {
   street?: Maybe<StringQueryOperatorInput>;
   city?: Maybe<StringQueryOperatorInput>;
   postCode?: Maybe<StringQueryOperatorInput>;
+  contactpage?: Maybe<ContentfulContactPageFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   contentful_id?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
@@ -9662,23 +10112,14 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
       ContentfulArticle,
       'slug' | 'title' | 'date'
     > & {
+        image: Maybe<{ __typename?: 'ContentfulAsset' } & ArticleImageFragment>;
         category: Maybe<
           { __typename?: 'ContentfulCategory' } & Pick<
             ContentfulCategory,
             'title'
           > & {
               image: Maybe<
-                { __typename?: 'ContentfulAsset' } & Pick<
-                  ContentfulAsset,
-                  'title'
-                > & {
-                    fluid: Maybe<
-                      { __typename?: 'ContentfulFluid' } & Pick<
-                        ContentfulFluid,
-                        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
-                      >
-                    >;
-                  }
+                { __typename?: 'ContentfulAsset' } & ArticleImageFragment
               >;
             }
         >;
@@ -9722,6 +10163,18 @@ export type ArticleDetailQuery = { __typename?: 'Query' } & {
   };
 };
 
+export type ArticleImageFragment = { __typename?: 'ContentfulAsset' } & Pick<
+  ContentfulAsset,
+  'title'
+> & {
+    fluid: Maybe<
+      { __typename?: 'ContentfulFluid' } & Pick<
+        ContentfulFluid,
+        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+      >
+    >;
+  };
+
 export type AuthorAvatarFragment = { __typename?: 'ContentfulAsset' } & Pick<
   ContentfulAsset,
   'title'
@@ -9747,27 +10200,18 @@ export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
           ContentfulArticle,
           'slug' | 'title'
         > & {
+            image: Maybe<
+              { __typename?: 'ContentfulAsset' } & ArticlePreviewImageFragment
+            >;
             category: Maybe<
               { __typename?: 'ContentfulCategory' } & Pick<
                 ContentfulCategory,
                 'title'
               > & {
                   image: Maybe<
-                    { __typename?: 'ContentfulAsset' } & Pick<
-                      ContentfulAsset,
-                      'title'
-                    > & {
-                        fluid: Maybe<
-                          { __typename?: 'ContentfulFluid' } & Pick<
-                            ContentfulFluid,
-                            | 'src'
-                            | 'srcSet'
-                            | 'aspectRatio'
-                            | 'sizes'
-                            | 'base64'
-                          >
-                        >;
-                      }
+                    {
+                      __typename?: 'ContentfulAsset';
+                    } & ArticlePreviewImageFragment
                   >;
                 }
             >;
@@ -9776,3 +10220,14 @@ export type ArticlePreviewsQuery = { __typename?: 'Query' } & {
     >;
   };
 };
+
+export type ArticlePreviewImageFragment = {
+  __typename?: 'ContentfulAsset';
+} & Pick<ContentfulAsset, 'title'> & {
+    fluid: Maybe<
+      { __typename?: 'ContentfulFluid' } & Pick<
+        ContentfulFluid,
+        'src' | 'srcSet' | 'aspectRatio' | 'sizes' | 'base64'
+      >
+    >;
+  };

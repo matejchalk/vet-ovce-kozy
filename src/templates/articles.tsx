@@ -47,24 +47,31 @@ const ArticlesPage = ({
         <ul className={styles.previews}>
           {oc(allContentfulArticle)
             .edges([])
-            .map(({ node: { slug, title: articleTitle, category } }, index) => {
-              const fluid = getFluidImage(oc(category).image());
-              return (
-                <li key={slug || index} className={styles.preview}>
-                  <Card
-                    title={articleTitle || ''}
-                    image={
-                      fluid && {
-                        fluid,
-                        alt:
-                          oc(category).image.title() || oc(category).title(''),
+            .map(
+              (
+                { node: { slug, title: articleTitle, image, category } },
+                index
+              ) => {
+                const fluid = getFluidImage(image || oc(category).image());
+                return (
+                  <li key={slug || index} className={styles.preview}>
+                    <Card
+                      title={articleTitle || ''}
+                      image={
+                        fluid && {
+                          fluid,
+                          alt:
+                            oc(image).title() ||
+                            oc(category).image.title() ||
+                            oc(category).title(''),
+                        }
                       }
-                    }
-                    link={{ text: read, path: `/${slug}` }}
-                  />
-                </li>
-              );
-            })}
+                      link={{ text: read, path: `/${slug}` }}
+                    />
+                  </li>
+                );
+              }
+            )}
         </ul>
         <nav className={styles.nav}>
           {previousPagePath && (
@@ -96,21 +103,28 @@ export const pageQuery = graphql`
         node {
           slug
           title
+          image {
+            ...ArticlePreviewImage
+          }
           category {
             title
             image {
-              title
-              fluid(maxWidth: 750, maxHeight: 422, quality: 100) {
-                src
-                srcSet
-                aspectRatio
-                sizes
-                base64
-              }
+              ...ArticlePreviewImage
             }
           }
         }
       }
+    }
+  }
+
+  fragment ArticlePreviewImage on ContentfulAsset {
+    title
+    fluid(maxWidth: 750, maxHeight: 422, quality: 100) {
+      src
+      srcSet
+      aspectRatio
+      sizes
+      base64
     }
   }
 `;
