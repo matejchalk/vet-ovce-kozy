@@ -1,4 +1,4 @@
-if (process.env.ENVIROMENT !== 'production') {
+if (process.env.ENVIRONMENT !== 'production') {
   require('dotenv').config();
 }
 
@@ -14,7 +14,7 @@ module.exports = {
     description: i18n.description,
     keywords: i18n.keywords,
     url: process.env.URL,
-    image: 'logo.png',
+    image: 'icon.png',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

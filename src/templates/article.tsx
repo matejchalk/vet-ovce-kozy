@@ -130,6 +130,7 @@ const ArticleTemplate = ({
         keywords,
         image: {
           src: `https:${oc(image).fluid.src()}`,
+          aspectRatio: oc(image).fluid.aspectRatio(),
           alt: oc(image).title() || categoryTitle,
         },
         path: pathname,

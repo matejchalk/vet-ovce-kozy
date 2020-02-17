@@ -7,6 +7,8 @@ import { CONTENTFUL_IMAGE_CDN, LANG } from '../constants';
 import { SiteMetadataQuery } from '../types/graphql';
 import { forceEndingPeriod } from '../utils';
 
+const IMAGE_WIDTH = 1080;
+
 const SEO = (props: SEOProps) => {
   const { site } = useStaticQuery<SiteMetadataQuery>(graphql`
     query SiteMetadata {
@@ -37,6 +39,8 @@ const SEO = (props: SEOProps) => {
   const url = `${siteUrl}${props.path || ''}`;
   const imageSrc = oc(props).image.src() || siteImageSrc;
   const imageAlt = oc(props).image.alt() || siteTitle;
+  const imageWidth = IMAGE_WIDTH;
+  const imageHeight = imageWidth / oc(props).image.aspectRatio(1);
   const type = props.isArticle ? 'article' : 'website';
 
   const websiteSchema: WithContext<WebPage> = {
@@ -85,6 +89,7 @@ const SEO = (props: SEOProps) => {
   };
 
   const schema = props.isArticle ? articleSchema : websiteSchema;
+  const twitterCard = props.isArticle ? 'summary_large_image' : 'summary';
 
   return (
     <Helmet
@@ -105,7 +110,9 @@ const SEO = (props: SEOProps) => {
       <meta property="og:site_name" content={siteTitle} />
       <meta property="og:locale" content={LANG} />
       <meta property="og:image:alt" content={imageAlt} />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content={imageWidth.toString()} />
+      <meta property="og:image:height" content={imageHeight.toString()} />
+      <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title || siteTitle} />
       <meta name="twitter:description" content={description} />

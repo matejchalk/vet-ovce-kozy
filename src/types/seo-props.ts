@@ -2,6 +2,7 @@ type SEOProps = {
   title?: string;
   image?: {
     src: string;
+    aspectRatio?: number;
     alt?: string;
   };
   description?: string;
