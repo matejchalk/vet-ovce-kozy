@@ -5,6 +5,7 @@ import {
 import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import { oc } from 'ts-optchain';
 import Layout from '../components/layout';
@@ -78,14 +79,14 @@ const ArticleTemplate = ({
       },
 
       [INLINES.HYPERLINK]: (node, children) => (
-        <a
+        <OutboundLink
           href={node.data.uri}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.hyperlink}
         >
           {children}
-        </a>
+        </OutboundLink>
       ),
       [INLINES.ENTRY_HYPERLINK]: (node, children) => (
         <Link

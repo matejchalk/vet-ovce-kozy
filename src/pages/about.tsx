@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { oc } from 'ts-optchain';
@@ -123,20 +124,23 @@ const AboutPage = ({ location: { pathname } }: Props) => {
                         {phoneNumber && (
                           <span>
                             <MdPhone className={styles.linkIcon} />
-                            <a
+                            <OutboundLink
                               href={`tel:${phoneNumber}`}
                               className={styles.link}
                             >
                               {phoneNumber}
-                            </a>
+                            </OutboundLink>
                           </span>
                         )}
                         {email && (
                           <span>
                             <MdEmail className={styles.linkIcon} />
-                            <a href={`mailto:${email}`} className={styles.link}>
+                            <OutboundLink
+                              href={`mailto:${email}`}
+                              className={styles.link}
+                            >
                               {email}
-                            </a>
+                            </OutboundLink>
                           </span>
                         )}
                       </div>

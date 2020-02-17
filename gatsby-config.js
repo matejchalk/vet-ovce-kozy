@@ -17,6 +17,14 @@ module.exports = {
     image: 'icon.png',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-158685469-1',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-canonical-urls',

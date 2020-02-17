@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import { FaFacebookSquare, FaLocationArrow } from 'react-icons/fa';
 import { MdEmail, MdPhone } from 'react-icons/md';
@@ -41,24 +42,24 @@ const Footer = () => {
         <span className={styles.contactName}>{name}:</span>
         <span className={styles.contactLink}>
           <MdPhone className={styles.linkIcon} />
-          <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
+          <OutboundLink href={`tel:${phoneNumber}`}>{phoneNumber}</OutboundLink>
         </span>
         <span className={styles.contactLink}>
           <MdEmail className={styles.linkIcon} />
-          <a href={`mailto:${email}`}>{email}</a>
+          <OutboundLink href={`mailto:${email}`}>{email}</OutboundLink>
         </span>
       </div>
       <div className={styles.socialLinks}>
-        <a
+        <OutboundLink
           href={FACEBOOK_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={facebook}
         >
           <FaFacebookSquare className={styles.facebookButton} />
-        </a>
+        </OutboundLink>
       </div>
-      <a
+      <OutboundLink
         href={GOOGLE_MAPS_URL}
         target="_blank"
         rel="noopener noreferrer"
@@ -70,7 +71,7 @@ const Footer = () => {
           <span>{address.city}</span>
           <span>{address.postCode}</span>
         </div>
-      </a>
+      </OutboundLink>
     </footer>
   );
 };

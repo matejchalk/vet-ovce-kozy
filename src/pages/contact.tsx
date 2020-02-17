@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import React from 'react';
 import { FaFacebook } from 'react-icons/fa';
 import { MdPhone, MdEmail } from 'react-icons/md';
@@ -103,7 +104,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
                 <span>{contact.address.city}</span>
                 <span>{`${postCode}: ${contact.address.postCode}`}</span>
               </div>
-              <a
+              <OutboundLink
                 href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -111,7 +112,7 @@ const ContactPage = ({ location: { pathname } }: Props) => {
               >
                 <FaFacebook className={styles.facebookIcon} />
                 <span>{facebook}</span>
-              </a>
+              </OutboundLink>
             </div>
             <div className={styles.individualContacts}>
               {contact.members.filter(exists).map(member => (
@@ -131,21 +132,21 @@ const ContactPage = ({ location: { pathname } }: Props) => {
                   </div>
                   <span title={phoneNumber} className={styles.link}>
                     <MdPhone className={styles.linkIcon} />
-                    <a
+                    <OutboundLink
                       href={`tel:${member.phoneNumber}`}
                       className={styles.linkText}
                     >
                       {member.phoneNumber}
-                    </a>
+                    </OutboundLink>
                   </span>
                   <span title={email} className={styles.link}>
                     <MdEmail className={styles.linkIcon} />
-                    <a
+                    <OutboundLink
                       href={`mailto:${member.email}`}
                       className={styles.linkText}
                     >
                       {member.email}
-                    </a>
+                    </OutboundLink>
                   </span>
                 </div>
               ))}
