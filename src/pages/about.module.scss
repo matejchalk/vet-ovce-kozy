@@ -4,16 +4,16 @@ $card-gap: 60px;
 
 .intro {
   @include section-content-padding;
-  padding-top: 50vh;
-  padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 10vh;
   min-height: calc(100vh - #{$vok-header-height});
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 
-  @include screen-gt-sm {
-    align-items: flex-start;
+  @include screen-gt-xs {
+    padding-bottom: 20vh;
   }
 }
 
@@ -28,14 +28,12 @@ $card-gap: 60px;
 
   @include screen-gt-xs {
     font-size: 40px;
-    max-width: 550px;
+    max-width: 780px;
   }
 }
 
-@include screen-gt-sm {
-  .intro-button {
-    align-self: flex-end;
-  }
+.intro-button {
+  margin-top: 3em;
 }
 
 .team {

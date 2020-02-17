@@ -6,7 +6,8 @@
     "contact": { "title": "Kontakt", "path": "kontakt" }
   },
   "description": "Veterinární péče pro ovce a kozy",
-  "aboutUs": "Stručný text - popis kdo jsme, čím se zabýváme a kde působíme",
+  "aboutUs": "Jsme terénní veterinární lékaři zabývající se veterinární péčí o malé přežvýkavce a poradenstvím pro jejich chovatele",
+  "ourStory": "Náš příběh",
   "keywords": ["veterinární péče", "ovce", "kozy"],
   "headings": {
     "goals": "Co je naším cílem?",

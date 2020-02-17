@@ -3,6 +3,7 @@ import BackgroundImage from 'gatsby-background-image';
 import React from 'react';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { oc } from 'ts-optchain';
+import Button from '../components/button';
 import Card from '../components/card';
 import Layout from '../components/layout';
 import i18n from '../i18n.json';
@@ -29,6 +30,9 @@ const AboutPage = ({ location: { pathname } }: Props) => {
         }
       }
       contentfulAboutPage {
+        article {
+          slug
+        }
         teamMembers {
           name
           description {
@@ -58,8 +62,11 @@ const AboutPage = ({ location: { pathname } }: Props) => {
       about: { title },
     },
     aboutUs,
+    ourStory,
     headings: { team },
   } = i18n;
+
+  const storySlug = oc(contentfulAboutPage).article.slug();
 
   return (
     <Layout
@@ -77,6 +84,13 @@ const AboutPage = ({ location: { pathname } }: Props) => {
         className={styles.intro}
       >
         <h1 className={styles.introText}>{aboutUs}</h1>
+        {storySlug && (
+          <Button
+            text={ourStory}
+            path={`/${storySlug}`}
+            className={styles.introButton}
+          />
+        )}
       </BackgroundImage>
       <section className={styles.team}>
         <h2 className={styles.teamTitle}>{team}</h2>
