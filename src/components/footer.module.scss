@@ -36,6 +36,11 @@ $text-color: $vok-light-grey;
 
 .contact-name {
   margin-bottom: 0.3em;
+  text-align: center;
+
+  @include screen-gt-xs {
+    text-align: left;
+  }
 }
 
 .contact-link {
