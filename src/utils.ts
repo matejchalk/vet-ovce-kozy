@@ -51,5 +51,5 @@ export function getFirstParagraphFromRichText(
 }
 
 export function forceEndingPeriod(text: string): string {
-  return text.replace(/(?<!\.)$/, '.');
+  return text.replace(/([^.])$/, '$1.');
 }
