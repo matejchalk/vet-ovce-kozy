@@ -24,7 +24,7 @@ type Props = {
 };
 
 const ArticlesPage = ({
-  data: { allContentfulArticle },
+  data: { allContentfulArticle, contentfulAboutPage },
   pageContext: { humanPageNumber, previousPagePath, nextPagePath },
   location: { pathname },
 }: Props) => {
@@ -40,38 +40,41 @@ const ArticlesPage = ({
   const pageTitle =
     humanPageNumber <= 1 ? articles : `${articles} (${continued})`;
 
+  const aboutPageArticle = oc(contentfulAboutPage).article();
+  const articlePreviews = oc(allContentfulArticle)
+    .edges([])
+    .map(({ node }) => node)
+    .filter(
+      ({ slug }) => aboutPageArticle == null || aboutPageArticle.slug !== slug
+    );
+
   return (
     <Layout seo={{ title, path: pathname }}>
       <section className={styles.section}>
         <h1 className={styles.title}>{pageTitle}</h1>
         <ul className={styles.previews}>
-          {oc(allContentfulArticle)
-            .edges([])
-            .map(
-              (
-                { node: { slug, title: articleTitle, image, category } },
-                index
-              ) => {
-                const fluid = getFluidImage(image || oc(category).image());
-                return (
-                  <li key={slug || index} className={styles.preview}>
-                    <Card
-                      title={articleTitle || ''}
-                      image={
-                        fluid && {
-                          fluid,
-                          alt:
-                            oc(image).title() ||
-                            oc(category).image.title() ||
-                            oc(category).title(''),
-                        }
+          {articlePreviews.map(
+            ({ slug, title: articleTitle, image, category }, index) => {
+              const fluid = getFluidImage(image || oc(category).image());
+              return (
+                <li key={slug || index} className={styles.preview}>
+                  <Card
+                    title={articleTitle || ''}
+                    image={
+                      fluid && {
+                        fluid,
+                        alt:
+                          oc(image).title() ||
+                          oc(category).image.title() ||
+                          oc(category).title(''),
                       }
-                      link={{ text: read, path: `/${slug}` }}
-                    />
-                  </li>
-                );
-              }
-            )}
+                    }
+                    link={{ text: read, path: `/${slug}` }}
+                  />
+                </li>
+              );
+            }
+          )}
         </ul>
         <nav className={styles.nav}>
           {previousPagePath && (
@@ -113,6 +116,12 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+
+    contentfulAboutPage {
+      article {
+        slug
       }
     }
   }

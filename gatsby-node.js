@@ -14,6 +14,11 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      contentfulAboutPage {
+        article {
+          slug
+        }
+      }
     }
   `);
   if (result.errors) {
@@ -28,9 +33,15 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  const aboutPageArticle = result.data.contentfulAboutPage.article;
+  const filteredArticles = result.data.allContentfulArticle.edges.filter(
+    ({ node }) =>
+      aboutPageArticle == null || aboutPageArticle.slug !== node.slug
+  );
+
   paginate({
     createPage,
-    items: result.data.allContentfulArticle.edges,
+    items: filteredArticles,
     itemsPerPage: 6,
     pathPrefix: `/${i18n.pages.articles.path}`,
     component: path.resolve('src/templates/articles.tsx'),
