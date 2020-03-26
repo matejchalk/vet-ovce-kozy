@@ -40,7 +40,7 @@ const SEO = (props: SEOProps) => {
   const imageSrc = oc(props).image.src() || siteImageSrc;
   const imageAlt = oc(props).image.alt() || siteTitle;
   const imageWidth = IMAGE_WIDTH;
-  const imageHeight = imageWidth / oc(props).image.aspectRatio(1);
+  const imageHeight = Math.round(imageWidth / oc(props).image.aspectRatio(1));
   const type = props.isArticle ? 'article' : 'website';
 
   const websiteSchema: WithContext<WebPage> = {
