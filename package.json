@@ -52,7 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
-    "@graphql-codegen/cli": "^1.8.2",
+    "@graphql-codegen/cli": "^1.21.8",
     "@graphql-codegen/typescript": "^1.8.2",
     "@graphql-codegen/typescript-operations": "^1.8.2",
     "@types/react-helmet": "^5.0.7",
